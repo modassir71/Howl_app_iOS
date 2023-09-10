@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,12 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-//        let appearance = UITabBarItem.appearance()
-//        let attributes = [NSAttributedString.Key.font:UIFont(name: "Aileron-Bold", size: 14.0)]
-//        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
+        IQKeyboardManager.shared.enable = true
        
         return true
     }

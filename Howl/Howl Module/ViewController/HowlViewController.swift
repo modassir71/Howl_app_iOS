@@ -41,6 +41,11 @@ class HowlViewController: UIViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+      //  tabBar.frame.size.height = 100.0
+        self.tabBarController?.tabBar.frame.size.height = 100
+    }
+    
     //MARK: - Delegate Method
     func delegateMethod(){
         dogVarietyCollectionView.delegate = self

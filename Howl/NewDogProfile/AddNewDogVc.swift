@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class AddNewDogVc: UIViewController, UITextFieldDelegate {
-    
+//    MARK: - Outlet
     @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var colorTxtFld: UITextField!
@@ -24,8 +25,9 @@ class AddNewDogVc: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var addProfileImg: UIImageView!
     
+//    MARK: - variable
     var imagePicker = UIImagePickerController()
-    
+//    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         _setUi()
@@ -38,10 +40,6 @@ class AddNewDogVc: UIViewController, UITextFieldDelegate {
     
 //MARK: - TextField Delegates
     func txtFldDeleagte(){
-        navigationBarView.layer.shadowColor = UIColor.black.cgColor
-        navigationBarView.layer.shadowOpacity = 0.5
-        navigationBarView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        navigationBarView.layer.shadowRadius = 5
         colorTxtFld.delegate = self
         distinctiveTxtFld.delegate = self
         microchipNumberTxtFld.delegate = self
@@ -49,13 +47,17 @@ class AddNewDogVc: UIViewController, UITextFieldDelegate {
         dobTxtFld.delegate = self
         breedTxtFld.delegate = self
         dogNameTxtFld.delegate = self
-        addProfileImg.layer.cornerRadius = 10.0
-        addProfileImg.clipsToBounds = true
     }
 //MARK: - Setup UI
     func _setUi(){
+        navigationBarView.layer.shadowColor = UIColor.black.cgColor
+        navigationBarView.layer.shadowOpacity = 0.5
+        navigationBarView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        navigationBarView.layer.shadowRadius = 5
         createBtn.layer.cornerRadius = 5.0
         createBtn.clipsToBounds = true
+        addProfileImg.layer.cornerRadius = 10.0
+        addProfileImg.clipsToBounds = true
     }
     
 //MARK: - Button Action
@@ -96,7 +98,7 @@ class AddNewDogVc: UIViewController, UITextFieldDelegate {
         openActionSheetForUploadImage()
     }
 }
-
+//MARK: - ImagePicker Extension
 extension AddNewDogVc: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func openActionSheetForUploadImage(){

@@ -8,7 +8,7 @@
 import UIKit
 
 class AddDogViewController: UIViewController {
-
+//MARK: - Outlet
     @IBOutlet weak var districtiveFeature: UITextField!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var microchipNumberTxtFld: UITextField!
@@ -23,16 +23,13 @@ class AddDogViewController: UIViewController {
     @IBOutlet weak var dogNameTxtFld: UITextField!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var navigationView: UIView!
-    
+//    MARK: - Variable
     var imagePicker = UIImagePickerController()
-    let color = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha: 0.5)
-    let color3 = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha: 1.0)
-    
+//    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.setUI()
-        }
+        delegateMethod()
+        self.setUI()
         
     }
     
@@ -40,72 +37,50 @@ class AddDogViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
     }
-   
+//    MARK: - TextField Delegate
+    func delegateMethod(){
+        districtiveFeature.delegate = self
+        microchipDatabaseTxtFld.delegate = self
+        dateOfBirthTxtFld.delegate = self
+        microchipNumberTxtFld.delegate = self
+        colorTxtFld.delegate = self
+        bredextFld.delegate = self
+        dogNameTxtFld.delegate = self
+        
+    }
+//    MARK: - Set up UI
    func setUI(){
         navigationView.layer.shadowColor = UIColor.black.cgColor
         navigationView.layer.shadowOpacity = 0.2
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
         profileImg.layer.cornerRadius = profileImg.frame.width/2
-        profileImg.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
+        profileImg.layer.borderColor = TxtFldColor.primaryColor.cgColor
         profileImg.layer.borderWidth = 1
         profileImg.clipsToBounds = true
         createBtn.layer.cornerRadius = 10.0
-        dogNameTxtFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        dogNameTxtFld.layer.borderWidth = 1.0
-        dogNameTxtFld.layer.cornerRadius = 5.0
-        bredextFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        bredextFld.layer.borderWidth = 1.0
-        bredextFld.layer.cornerRadius = 5.0
-        colorTxtFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        colorTxtFld.layer.borderWidth = 1.0
-        colorTxtFld.layer.cornerRadius = 5.0
-        dateOfBirthTxtFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        dateOfBirthTxtFld.layer.borderWidth = 1.0
-        dateOfBirthTxtFld.layer.cornerRadius = 5.0
-        microchipDatabaseTxtFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        microchipDatabaseTxtFld.layer.borderWidth = 1.0
-        microchipDatabaseTxtFld.layer.cornerRadius = 5.0
-        microchipNumberTxtFld.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        microchipNumberTxtFld.layer.borderWidth = 1.0
-        microchipNumberTxtFld.layer.cornerRadius = 5.0
-        districtiveFeature.layer.borderColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5).cgColor
-        districtiveFeature.layer.borderWidth = 1.0
-        districtiveFeature.layer.cornerRadius = 5.0
-        dogNameTxtFld.textColor = color3
-        bredextFld.textColor = color3
-        colorTxtFld.textColor = color3
-        dateOfBirthTxtFld.textColor = color3
-        microchipDatabaseTxtFld.textColor = color3
-        microchipNumberTxtFld.textColor = color3
-        districtiveFeature.textColor = color3
-        let dog = "Dog Name"
-        let breed = "Breed"
-        let color1 = "Color"
-        let dob = "Date of Birth"
-        let microchipNumber = "Microchip Number"
-        let microchipDatabase = "Microchip Database"
-        let districtiveFeaturee = "Districtive Feature"
-        let attributes = [NSAttributedString.Key.foregroundColor: color]
-        dogNameTxtFld.attributedPlaceholder = NSAttributedString(string: dog, attributes: attributes)
-        let attributes1 = [NSAttributedString.Key.foregroundColor: color]
-        bredextFld.attributedPlaceholder = NSAttributedString(string: breed, attributes: attributes1)
-        let attributes2 = [NSAttributedString.Key.foregroundColor: color]
-        colorTxtFld.attributedPlaceholder = NSAttributedString(string: color1, attributes: attributes2)
-        let attributes3 = [NSAttributedString.Key.foregroundColor: color]
-        dateOfBirthTxtFld.attributedPlaceholder = NSAttributedString(string: dob, attributes: attributes3)
-        let attributes4 = [NSAttributedString.Key.foregroundColor: color]
-        microchipNumberTxtFld.attributedPlaceholder = NSAttributedString(string: microchipNumber, attributes: attributes4)
-        let attributes5 = [NSAttributedString.Key.foregroundColor: color]
-        microchipDatabaseTxtFld.attributedPlaceholder = NSAttributedString(string: microchipDatabase, attributes: attributes5)
-        let attributes6 = [NSAttributedString.Key.foregroundColor: color]
-        districtiveFeature.attributedPlaceholder = NSAttributedString(string: districtiveFeaturee, attributes: attributes6)
-       femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-       maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-       inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-       neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        customizeTxtFld(to: dogNameTxtFld, string: DogConstantString.dogName)
+        customizeTxtFld(to: bredextFld, string: DogConstantString.breed)
+        customizeTxtFld(to: colorTxtFld, string: DogConstantString.color)
+        customizeTxtFld(to: dateOfBirthTxtFld, string: DogConstantString.dob)
+        customizeTxtFld(to: microchipNumberTxtFld, string: DogConstantString.microchipNumber)
+        customizeTxtFld(to: microchipDatabaseTxtFld, string: DogConstantString.microchipDatabase)
+        customizeTxtFld(to: districtiveFeature, string: DogConstantString.distrinctiveFeature)
+        femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
     }
-
+//    MARK: - Customize text field
+    func customizeTxtFld(to txtFld: UITextField, string: String){
+        txtFld.layer.borderColor = TxtFldColor.primaryColor.cgColor
+        txtFld.layer.borderWidth = 1
+        txtFld.layer.cornerRadius = 5.0
+        txtFld.textColor = TxtFldColor.secondaryColor
+        let attributes = [NSAttributedString.Key.foregroundColor: TxtFldColor.primaryColor]
+        txtFld.attributedPlaceholder = NSAttributedString(string: string, attributes: attributes)
+    }
+//MARK: - Button Action
     @IBAction func addProfilePicBtn(_ sender: UIButton) {
         openActionSheetForUploadImage()
     }
@@ -144,12 +119,8 @@ class AddDogViewController: UIViewController {
     @IBAction func createdBtnOPress(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-//    @IBAction func backBtnPress(_ sender: UIButton) {
-//        self.navigationController?.popViewController(animated: true)
-//    }
 }
+//MARK: - ImagePicker delegate method extension
 extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func openActionSheetForUploadImage(){
@@ -211,5 +182,37 @@ extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("Cancel Tapped")
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+//MARK: - Textfield extension
+extension AddDogViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == dogNameTxtFld{
+            textField.resignFirstResponder()
+            bredextFld.becomeFirstResponder()
+        }
+        if textField == bredextFld{
+            textField.resignFirstResponder()
+        }
+        if textField == colorTxtFld{
+            textField.resignFirstResponder()
+            dateOfBirthTxtFld.becomeFirstResponder()
+        }
+        if textField == dateOfBirthTxtFld{
+            textField.resignFirstResponder()
+            microchipDatabaseTxtFld.becomeFirstResponder()
+        }
+        if textField == microchipDatabaseTxtFld{
+            textField.resignFirstResponder()
+            microchipNumberTxtFld.becomeFirstResponder()
+        }
+        if textField == microchipNumberTxtFld{
+            textField.resignFirstResponder()
+            districtiveFeature.becomeFirstResponder()
+        }
+        if textField == districtiveFeature{
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }

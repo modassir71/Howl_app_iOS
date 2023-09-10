@@ -67,6 +67,7 @@ class AddNewPersonVc: UIViewController {
         contactsBtn.clipsToBounds = true
         whatsAppBtn.clipsToBounds = true
         createBtn.clipsToBounds = true
+        phoneNoTxtFld.keyboardType = .numberPad
         
     }
     
