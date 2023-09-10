@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DogVarietyCollectionViewCell" customModule="Howl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="68" height="97"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="68" height="97"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-nX-6dE">
+                        <rect key="frame" x="0.0" y="0.0" width="68" height="97"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Selectable" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-qU-Js9">
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="Fva-Sh-ltu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Tva-0I-yAH">
+                                <rect key="frame" x="13" y="70" width="42" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fGu-qU-Js9" firstAttribute="top" secondItem="lVA-nX-6dE" secondAttribute="top" id="FO1-ID-gDS"/>
+                            <constraint firstItem="Tva-0I-yAH" firstAttribute="top" secondItem="fGu-qU-Js9" secondAttribute="bottom" constant="4" id="PH0-IB-Lpe"/>
+                            <constraint firstItem="Tva-0I-yAH" firstAttribute="leading" secondItem="lVA-nX-6dE" secondAttribute="leading" constant="13" id="WBa-Fm-g0V"/>
+                            <constraint firstAttribute="bottom" secondItem="Tva-0I-yAH" secondAttribute="bottom" constant="2" id="da9-y8-vg9"/>
+                            <constraint firstAttribute="trailing" secondItem="fGu-qU-Js9" secondAttribute="trailing" id="gjo-OD-Kfs"/>
+                            <constraint firstAttribute="trailing" secondItem="Tva-0I-yAH" secondAttribute="trailing" constant="13" id="rCD-lb-TrD"/>
+                            <constraint firstItem="fGu-qU-Js9" firstAttribute="leading" secondItem="lVA-nX-6dE" secondAttribute="leading" id="tpU-ra-RC7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="lVA-nX-6dE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1hQ-fy-uSZ"/>
+                <constraint firstAttribute="bottom" secondItem="lVA-nX-6dE" secondAttribute="bottom" id="3MK-Ao-UcJ"/>
+                <constraint firstItem="lVA-nX-6dE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ACx-Is-S2j"/>
+                <constraint firstAttribute="trailing" secondItem="lVA-nX-6dE" secondAttribute="trailing" id="Z5A-WA-h3R"/>
+            </constraints>
+            <size key="customSize" width="68" height="97"/>
+            <connections>
+                <outlet property="dogImg" destination="fGu-qU-Js9" id="cYq-eB-zXi"/>
+                <outlet property="dogName" destination="Tva-0I-yAH" id="fvo-Ln-jO7"/>
+            </connections>
+            <point key="canvasLocation" x="126.71755725190839" y="35.563380281690144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Howl_Selectable" width="46.5" height="46.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

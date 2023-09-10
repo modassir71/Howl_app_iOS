@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-Bold.otf">
+            <string>Aileron-Bold</string>
+        </array>
+        <array key="Aileron-SemiBold.otf">
+            <string>Aileron-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="89" id="KGk-i7-Jjw" customClass="DogTblViewCell" customModule="Howl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="382" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdU-Ur-ieO">
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="89"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogProfile_img" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-ro-4Q9">
+                                <rect key="frame" x="10" y="10" width="60" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="nTd-13-iDe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-jF-rGK">
+                                <rect key="frame" x="93" y="15.000000000000002" width="61.333333333333343" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2V-JU-4ao">
+                                <rect key="frame" x="93" y="58.666666666666664" width="48" height="24.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karan Sawant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6u-Xs-91o">
+                                <rect key="frame" x="164.33333333333334" y="19.666666666666671" width="101.33333333333334" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 24, 1994" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCT-FQ-pNf">
+                                <rect key="frame" x="164.33333333333331" y="53" width="128.33333333333331" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qSm-jF-rGK" firstAttribute="leading" secondItem="ff4-ro-4Q9" secondAttribute="trailing" constant="23" id="3vg-Cw-BxB"/>
+                            <constraint firstItem="TCT-FQ-pNf" firstAttribute="leading" secondItem="C6u-Xs-91o" secondAttribute="leading" id="6pg-DB-unG"/>
+                            <constraint firstItem="B2V-JU-4ao" firstAttribute="leading" secondItem="qSm-jF-rGK" secondAttribute="leading" id="AzQ-E4-X8W"/>
+                            <constraint firstItem="qSm-jF-rGK" firstAttribute="top" secondItem="QdU-Ur-ieO" secondAttribute="top" constant="15" id="BBL-dC-uVO"/>
+                            <constraint firstItem="B2V-JU-4ao" firstAttribute="top" secondItem="qSm-jF-rGK" secondAttribute="bottom" constant="15" id="It3-1a-DAK"/>
+                            <constraint firstItem="TCT-FQ-pNf" firstAttribute="centerY" secondItem="B2V-JU-4ao" secondAttribute="centerY" id="KZn-nS-U7r"/>
+                            <constraint firstItem="C6u-Xs-91o" firstAttribute="leading" secondItem="qSm-jF-rGK" secondAttribute="trailing" constant="10" id="L6X-dJ-Q2K"/>
+                            <constraint firstItem="ff4-ro-4Q9" firstAttribute="leading" secondItem="QdU-Ur-ieO" secondAttribute="leading" constant="10" id="QaX-Ws-Qzs"/>
+                            <constraint firstItem="ff4-ro-4Q9" firstAttribute="top" secondItem="QdU-Ur-ieO" secondAttribute="top" constant="10" id="UD2-WR-GlI"/>
+                            <constraint firstItem="C6u-Xs-91o" firstAttribute="centerY" secondItem="qSm-jF-rGK" secondAttribute="centerY" id="Xhy-FF-onB"/>
+                            <constraint firstAttribute="bottom" secondItem="ff4-ro-4Q9" secondAttribute="bottom" constant="10" id="iq4-7g-BsS"/>
+                            <constraint firstItem="ff4-ro-4Q9" firstAttribute="centerY" secondItem="QdU-Ur-ieO" secondAttribute="centerY" id="kpH-FD-6Ia"/>
+                            <constraint firstItem="C6u-Xs-91o" firstAttribute="top" secondItem="QdU-Ur-ieO" secondAttribute="top" constant="19.666666666666671" id="slj-cR-dk9"/>
+                            <constraint firstItem="TCT-FQ-pNf" firstAttribute="top" secondItem="C6u-Xs-91o" secondAttribute="bottom" constant="13.999999999999986" id="yoS-vu-QxB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QdU-Ur-ieO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="B7j-0p-zq0"/>
+                    <constraint firstAttribute="trailing" secondItem="QdU-Ur-ieO" secondAttribute="trailing" id="F8Z-RQ-vhz"/>
+                    <constraint firstItem="QdU-Ur-ieO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SDM-iY-mwZ"/>
+                    <constraint firstAttribute="bottom" secondItem="QdU-Ur-ieO" secondAttribute="bottom" id="aDu-bh-FkJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="profileDob" destination="TCT-FQ-pNf" id="G7q-Q0-LE7"/>
+                <outlet property="profileImg" destination="ff4-ro-4Q9" id="ac9-cS-pDc"/>
+                <outlet property="profileLbl" destination="C6u-Xs-91o" id="VTM-H4-51x"/>
+            </connections>
+            <point key="canvasLocation" x="-25.954198473282442" y="14.43661971830986"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dogProfile_img" width="521" height="521"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

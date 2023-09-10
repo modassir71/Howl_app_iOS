@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-Bold.otf">
+            <string>Aileron-Bold</string>
+        </array>
+        <array key="Aileron-SemiBold.otf">
+            <string>Aileron-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="PersonListingTableViewCell" customModule="Howl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oec-JA-Icz">
+                        <rect key="frame" x="22" y="10" width="321" height="77"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bruno" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-9q-hdO">
+                                <rect key="frame" x="10" y="3.6666666666666643" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="3Ln-5o-21f"/>
+                                    <constraint firstAttribute="height" constant="70" id="Ax9-Xi-Ujl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-vA-gJz">
+                                <rect key="frame" x="89" y="14.999999999999998" width="83" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-DM-h3Z">
+                                <rect key="frame" x="89" y="53.666666666666664" width="46" height="12.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfX-uY-WKi">
+                                <rect key="frame" x="180" y="14.000000000000002" width="46.666666666666657" height="22.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-Vk-sym">
+                                <rect key="frame" x="180" y="50.333333333333336" width="46.666666666666657" height="19.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wOh-DM-h3Z" firstAttribute="top" secondItem="2kh-vA-gJz" secondAttribute="bottom" constant="19.333333333333336" id="8xN-M7-1HP"/>
+                            <constraint firstItem="QFj-Vk-sym" firstAttribute="leading" secondItem="CfX-uY-WKi" secondAttribute="leading" id="CpH-jH-gJy"/>
+                            <constraint firstItem="CfX-uY-WKi" firstAttribute="top" secondItem="2kh-vA-gJz" secondAttribute="bottom" constant="-20.333333333333329" id="I0C-HL-Cb3"/>
+                            <constraint firstItem="wOh-DM-h3Z" firstAttribute="bottom" secondItem="aRz-9q-hdO" secondAttribute="bottom" multiplier="0.9" id="LJm-Cn-QyO"/>
+                            <constraint firstItem="2kh-vA-gJz" firstAttribute="top" secondItem="oec-JA-Icz" secondAttribute="top" constant="15" id="MAF-xD-76C"/>
+                            <constraint firstItem="aRz-9q-hdO" firstAttribute="leading" secondItem="oec-JA-Icz" secondAttribute="leading" constant="10" id="Vyk-SC-Onc"/>
+                            <constraint firstItem="wOh-DM-h3Z" firstAttribute="leading" secondItem="2kh-vA-gJz" secondAttribute="leading" id="ZwQ-lr-PMf"/>
+                            <constraint firstItem="aRz-9q-hdO" firstAttribute="centerY" secondItem="oec-JA-Icz" secondAttribute="centerY" id="dUG-au-o3R"/>
+                            <constraint firstItem="CfX-uY-WKi" firstAttribute="leading" secondItem="2kh-vA-gJz" secondAttribute="trailing" constant="8" symbolic="YES" id="den-pq-gL7"/>
+                            <constraint firstItem="QFj-Vk-sym" firstAttribute="centerY" secondItem="wOh-DM-h3Z" secondAttribute="centerY" id="wMh-08-gKv"/>
+                            <constraint firstItem="QFj-Vk-sym" firstAttribute="top" secondItem="CfX-uY-WKi" secondAttribute="bottom" constant="13.666666666666671" id="woU-4X-lma"/>
+                            <constraint firstItem="2kh-vA-gJz" firstAttribute="leading" secondItem="aRz-9q-hdO" secondAttribute="trailing" constant="9" id="yBb-eH-vpi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oec-JA-Icz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Brl-eW-Gc9"/>
+                    <constraint firstItem="oec-JA-Icz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="Je7-Sc-KWo"/>
+                    <constraint firstAttribute="bottom" secondItem="oec-JA-Icz" secondAttribute="bottom" constant="10" id="S8H-t5-Jwa"/>
+                    <constraint firstAttribute="trailing" secondItem="oec-JA-Icz" secondAttribute="trailing" constant="22" id="e8u-zP-X70"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="oec-JA-Icz" id="WIn-vy-ySH"/>
+                <outlet property="nameLbl" destination="QFj-Vk-sym" id="Bzy-RV-hJN"/>
+                <outlet property="nickNameLbl" destination="CfX-uY-WKi" id="4p7-D7-AXF"/>
+                <outlet property="profileImg" destination="aRz-9q-hdO" id="3M8-KQ-BCN"/>
+            </connections>
+            <point key="canvasLocation" x="70.992366412213741" y="17.253521126760564"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Bruno" width="49.5" height="49.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

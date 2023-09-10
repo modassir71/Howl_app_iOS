@@ -1,0 +1,20 @@
+PODS:
+  - lottie-ios (4.2.0)
+  - SKCountryPicker (2.0.2)
+
+DEPENDENCIES:
+  - lottie-ios
+  - SKCountryPicker (~> 2.0.0)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - SKCountryPicker
+
+SPEC CHECKSUMS:
+  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
+  SKCountryPicker: f4882c36fa432d6450099a3e07da60eceda0a8f0
+
+PODFILE CHECKSUM: 13fe1433d4a547eac16549c10805edfcc56aa675
+
+COCOAPODS: 1.12.1

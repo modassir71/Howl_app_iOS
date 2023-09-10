@@ -1,0 +1,137 @@
+//
+//  HowlViewController.swift
+//  Howl
+//
+//  Created by apple on 16/08/23.
+//
+
+import UIKit
+import Lottie
+
+class HowlViewController: UIViewController {
+//MARK: - Outlet
+    
+    @IBOutlet weak var navigationView: UIView!
+    
+    @IBOutlet weak var dogVarietyCollectionView: UICollectionView!
+    @IBOutlet weak var addNewDogBtn: UIButton!
+    @IBOutlet weak var arrowIcons: UIImageView!
+   // @IBOutlet weak var petTitle: UILabel!
+    @IBOutlet weak var petImageView: UIImageView!
+    
+    //MARK: - Variable
+    
+    var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
+    
+    //MARK: - LIfeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        animationView()
+        registerCollectionView()
+        delegateMethod()
+        _SetUpUi()
+        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem.image = UIImage(named: "Howl_Selectable")
+  }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem.image = UIImage(named: "Howl_Selectable")
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+//        self.tabBarController?.tabBar.isHidden = false
+//    }
+    //MARK: - Delegate Method
+    func delegateMethod(){
+        dogVarietyCollectionView.delegate = self
+        dogVarietyCollectionView.dataSource = self
+    }
+    
+    //MARK: - Datasource Method
+    func registerCollectionView(){
+        dogVarietyCollectionView.registerNib(of: NewDogVarietyCell.self)
+    }
+    
+    //MARK: - SetupUI
+    
+    func _SetUpUi(){
+       // dogVarietyCollectionView.backgroundColor = .red
+        let layout = UICollectionViewFlowLayout()
+        dogVarietyCollectionView.collectionViewLayout = layout
+        let layoutCollectionView = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        dogVarietyCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+    }
+    
+    //MARK: - Animation
+    func animationView(){
+        let jsonName = "animation_1"
+        let animation = LottieAnimation.named(jsonName)
+        let animationView = LottieAnimationView(animation: animation)
+        if isSmallDevice() {
+            animationView.frame = CGRect(x: 45, y: -35, width: 315, height: 280)
+        }else{
+            animationView.frame = CGRect(x: 50, y: 25, width: 315, height: 280)
+        }
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        petImageView.addSubview(animationView)
+        animationView.play()
+    }
+    
+    //MARK: - Device Extension
+    func isSmallDevice() -> Bool {
+           let screenSize = UIScreen.main.bounds.size
+           let maxWidth: CGFloat = 375
+           
+           return screenSize.width <= maxWidth
+       }
+    
+    //MARK: -Button Action
+    
+    @IBAction func addNewDog(_ sender: UIButton) {
+        let storyboard = AppStoryboard.Main.instance
+        let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
+        self.navigationController?.pushViewController(addNewDogVc, animated: true)
+    }
+    
+
+}
+//MARK: - Delegates and datsource Method
+extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dogVarietyArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.getCell(indexPath: indexPath) as NewDogVarietyCell
+        cell.dogImgView?.image = UIImage(named: "\(dogVarietyArr[indexPath.row])")
+        cell.dogNameLbl.text = dogVarietyArr[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = AppStoryboard.Main.instance
+        let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
+        dogWalkingVC.dogNameLbl = dogVarietyArr[indexPath.row]
+       // dogWalkingVC.dogImgItem = dogVarietyArr[i]
+        self.navigationController?.pushViewController(dogWalkingVC, animated: true)
+    }
+}
+
+//MARK: - DelegateFlowLayout
+
+extension HowlViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+           return 0
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 66, height: 66)
+    }
+}

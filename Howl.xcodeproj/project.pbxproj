@@ -1,0 +1,1156 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EF8E657386657161AD62893 /* Pods_Howl_HowlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3ED089617CD9FA05E37BAC /* Pods_Howl_HowlUITests.framework */; };
+		180254CF2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254CD2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift */; };
+		180254D02A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180254CE2A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib */; };
+		180254D42A8DECFA00C744CE /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D32A8DECFA00C744CE /* UICollectionView+Extension.swift */; };
+		180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D52A8DED2E00C744CE /* UITableView+Extension.swift */; };
+		180254D92A8DFE7900C744CE /* FontContant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D82A8DFE7900C744CE /* FontContant.swift */; };
+		180254DB2A8E2B6900C744CE /* animation_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 180254DA2A8E2B6900C744CE /* animation_1.json */; };
+		181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */; };
+		181C3A592A926B4400B50DE7 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C3A582A926B4400B50DE7 /* AppStoryboard.swift */; };
+		1821C6102AA862A800087FA7 /* PersonListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C60F2AA862A800087FA7 /* PersonListingVC.swift */; };
+		1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */; };
+		1821C6142AA867C500087FA7 /* PersonListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */; };
+		1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C6152AA9A46700087FA7 /* InfoViewController.swift */; };
+		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
+		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
+		1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */; };
+		1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FE2A9DC3650094B522 /* AddDogVc.swift */; };
+		1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D3032A9E13110094B522 /* DogTblViewCell.swift */; };
+		1872D3062A9E13110094B522 /* DogTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1872D3042A9E13110094B522 /* DogTblViewCell.xib */; };
+		1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D3072A9E13340094B522 /* PeopleTblViewCell.swift */; };
+		1872D30A2A9E13340094B522 /* PeopleTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1872D3082A9E13340094B522 /* PeopleTblViewCell.xib */; };
+		187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FF08E2A8F2F720087216C /* NewDogVarietyCell.swift */; };
+		187FF0912A8F2F720087216C /* NewDogVarietyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187FF08F2A8F2F720087216C /* NewDogVarietyCell.xib */; };
+		1884D87A2AA1B22200BC7523 /* AddDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884D8792AA1B22200BC7523 /* AddDogViewController.swift */; };
+		188BEB522AA9DBDE000C6DF4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB512AA9DBDE000C6DF4 /* MoreViewController.swift */; };
+		188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB562AA9DDB6000C6DF4 /* WorkViewController.swift */; };
+		188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB582AAA017D000C6DF4 /* EulaViewController.swift */; };
+		188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */; };
+		188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */; };
+		189A79662AAAE70A002A640C /* Siren2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A795E2AAAE70A002A640C /* Siren2.mp3 */; };
+		189A79672AAAE70A002A640C /* Siren1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A795F2AAAE70A002A640C /* Siren1.mp3 */; };
+		189A79682AAAE70A002A640C /* Siren6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79602AAAE70A002A640C /* Siren6.mp3 */; };
+		189A79692AAAE70A002A640C /* Siren7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79612AAAE70A002A640C /* Siren7.mp3 */; };
+		189A796A2AAAE70A002A640C /* Siren0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79622AAAE70A002A640C /* Siren0.mp3 */; };
+		189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79632AAAE70A002A640C /* Siren3.mp3 */; };
+		189A796C2AAAE70A002A640C /* Siren4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79642AAAE70A002A640C /* Siren4.mp3 */; };
+		189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79652AAAE70A002A640C /* Siren5.mp3 */; };
+		189A796F2AAAE769002A640C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A796E2AAAE769002A640C /* SoundManager.swift */; };
+		189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A79812AAAFE8F002A640C /* PermissionViewController.swift */; };
+		18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */; };
+		18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C212A8CABA800A1F937 /* SceneDelegate.swift */; };
+		18C86C242A8CABA800A1F937 /* MyPackVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C232A8CABA800A1F937 /* MyPackVc.swift */; };
+		18C86C272A8CABA800A1F937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C252A8CABA800A1F937 /* Main.storyboard */; };
+		18C86C2A2A8CABA800A1F937 /* Howl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C282A8CABA800A1F937 /* Howl.xcdatamodeld */; };
+		18C86C2C2A8CABA900A1F937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C2B2A8CABA900A1F937 /* Assets.xcassets */; };
+		18C86C2F2A8CABA900A1F937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */; };
+		18C86C3A2A8CABA900A1F937 /* HowlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C392A8CABA900A1F937 /* HowlTests.swift */; };
+		18C86C442A8CABA900A1F937 /* HowlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C432A8CABA900A1F937 /* HowlUITests.swift */; };
+		18C86C462A8CABA900A1F937 /* HowlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C452A8CABA900A1F937 /* HowlUITestsLaunchTests.swift */; };
+		18C86C532A8CD11400A1F937 /* HowlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C522A8CD11400A1F937 /* HowlViewController.swift */; };
+		18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C5B2A8CE0B200A1F937 /* Aileron-BlackItalic.otf */; };
+		18C86C6D2A8CE0B200A1F937 /* Aileron-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C5C2A8CE0B200A1F937 /* Aileron-Thin.otf */; };
+		18C86C6E2A8CE0B200A1F937 /* Aileron-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C5D2A8CE0B200A1F937 /* Aileron-UltraLight.otf */; };
+		18C86C6F2A8CE0B200A1F937 /* Aileron-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C5E2A8CE0B200A1F937 /* Aileron-SemiBold.otf */; };
+		18C86C702A8CE0B200A1F937 /* Aileron-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C5F2A8CE0B200A1F937 /* Aileron-Light.otf */; };
+		18C86C712A8CE0B200A1F937 /* Aileron-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C602A8CE0B200A1F937 /* Aileron-LightItalic.otf */; };
+		18C86C722A8CE0B200A1F937 /* Aileron-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C612A8CE0B200A1F937 /* Aileron-ThinItalic.otf */; };
+		18C86C732A8CE0B200A1F937 /* Aileron-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C622A8CE0B200A1F937 /* Aileron-Regular.otf */; };
+		18C86C742A8CE0B200A1F937 /* Aileron-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C632A8CE0B200A1F937 /* Aileron-HeavyItalic.otf */; };
+		18C86C752A8CE0B200A1F937 /* Aileron-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C642A8CE0B200A1F937 /* Aileron-Heavy.otf */; };
+		18C86C762A8CE0B200A1F937 /* Aileron-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C652A8CE0B200A1F937 /* Aileron-Italic.otf */; };
+		18C86C772A8CE0B200A1F937 /* Aileron-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C662A8CE0B200A1F937 /* Aileron-Bold.otf */; };
+		18C86C782A8CE0B200A1F937 /* Aileron-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C672A8CE0B200A1F937 /* Aileron-UltraLightItalic.otf */; };
+		18C86C792A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C682A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt */; };
+		18C86C7A2A8CE0B200A1F937 /* Aileron-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */; };
+		18C86C7B2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */; };
+		18C86C7C2A8CE0B200A1F937 /* Aileron-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */; };
+		18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */; };
+		18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA12A97671D007E2FF5 /* ConcernCell.swift */; };
+		18E02AA42A97671D007E2FF5 /* ConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E02AA22A97671D007E2FF5 /* ConcernCell.xib */; };
+		18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */; };
+		18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */; };
+		18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */; };
+		18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */; };
+		368AB51CF5A5E8BC479732C9 /* Pods_Howl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC7905058EE0410F53E25DD /* Pods_Howl.framework */; };
+		8460BC93457ED16FBA3927B4 /* Pods_HowlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956B4261F302FA8065C81A2D /* Pods_HowlTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18C86C362A8CABA900A1F937 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C86C142A8CABA800A1F937 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C86C1B2A8CABA800A1F937;
+			remoteInfo = Howl;
+		};
+		18C86C402A8CABA900A1F937 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C86C142A8CABA800A1F937 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C86C1B2A8CABA800A1F937;
+			remoteInfo = Howl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		180254CD2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogVarietyCollectionViewCell.swift; sourceTree = "<group>"; };
+		180254CE2A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogVarietyCollectionViewCell.xib; sourceTree = "<group>"; };
+		180254D32A8DECFA00C744CE /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		180254D52A8DED2E00C744CE /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		180254D82A8DFE7900C744CE /* FontContant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontContant.swift; sourceTree = "<group>"; };
+		180254DA2A8E2B6900C744CE /* animation_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_1.json; sourceTree = "<group>"; };
+		181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkingViewController.swift; sourceTree = "<group>"; };
+		181C3A582A926B4400B50DE7 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		1821C60F2AA862A800087FA7 /* PersonListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListingVC.swift; sourceTree = "<group>"; };
+		1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListingTableViewCell.swift; sourceTree = "<group>"; };
+		1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonListingTableViewCell.xib; sourceTree = "<group>"; };
+		1821C6152AA9A46700087FA7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
+		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
+		1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstant.swift; sourceTree = "<group>"; };
+		1872D2FE2A9DC3650094B522 /* AddDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVc.swift; sourceTree = "<group>"; };
+		1872D3032A9E13110094B522 /* DogTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTblViewCell.swift; sourceTree = "<group>"; };
+		1872D3042A9E13110094B522 /* DogTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogTblViewCell.xib; sourceTree = "<group>"; };
+		1872D3072A9E13340094B522 /* PeopleTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTblViewCell.swift; sourceTree = "<group>"; };
+		1872D3082A9E13340094B522 /* PeopleTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleTblViewCell.xib; sourceTree = "<group>"; };
+		187FF08E2A8F2F720087216C /* NewDogVarietyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogVarietyCell.swift; sourceTree = "<group>"; };
+		187FF08F2A8F2F720087216C /* NewDogVarietyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDogVarietyCell.xib; sourceTree = "<group>"; };
+		1884D8792AA1B22200BC7523 /* AddDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogViewController.swift; sourceTree = "<group>"; };
+		188BEB512AA9DBDE000C6DF4 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		188BEB562AA9DDB6000C6DF4 /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		188BEB582AAA017D000C6DF4 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
+		188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenViewController.swift; sourceTree = "<group>"; };
+		189A795E2AAAE70A002A640C /* Siren2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren2.mp3; sourceTree = "<group>"; };
+		189A795F2AAAE70A002A640C /* Siren1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren1.mp3; sourceTree = "<group>"; };
+		189A79602AAAE70A002A640C /* Siren6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren6.mp3; sourceTree = "<group>"; };
+		189A79612AAAE70A002A640C /* Siren7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren7.mp3; sourceTree = "<group>"; };
+		189A79622AAAE70A002A640C /* Siren0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren0.mp3; sourceTree = "<group>"; };
+		189A79632AAAE70A002A640C /* Siren3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren3.mp3; sourceTree = "<group>"; };
+		189A79642AAAE70A002A640C /* Siren4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren4.mp3; sourceTree = "<group>"; };
+		189A79652AAAE70A002A640C /* Siren5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren5.mp3; sourceTree = "<group>"; };
+		189A796E2AAAE769002A640C /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		189A79812AAAFE8F002A640C /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		18C86C1C2A8CABA800A1F937 /* Howl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18C86C212A8CABA800A1F937 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		18C86C232A8CABA800A1F937 /* MyPackVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPackVc.swift; sourceTree = "<group>"; };
+		18C86C262A8CABA800A1F937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18C86C292A8CABA800A1F937 /* Howl.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Howl.xcdatamodel; sourceTree = "<group>"; };
+		18C86C2B2A8CABA900A1F937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18C86C2E2A8CABA900A1F937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18C86C302A8CABA900A1F937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C86C352A8CABA900A1F937 /* HowlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C86C392A8CABA900A1F937 /* HowlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowlTests.swift; sourceTree = "<group>"; };
+		18C86C3F2A8CABA900A1F937 /* HowlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C86C432A8CABA900A1F937 /* HowlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowlUITests.swift; sourceTree = "<group>"; };
+		18C86C452A8CABA900A1F937 /* HowlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowlUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18C86C522A8CD11400A1F937 /* HowlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowlViewController.swift; sourceTree = "<group>"; };
+		18C86C5B2A8CE0B200A1F937 /* Aileron-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-BlackItalic.otf"; sourceTree = "<group>"; };
+		18C86C5C2A8CE0B200A1F937 /* Aileron-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Thin.otf"; sourceTree = "<group>"; };
+		18C86C5D2A8CE0B200A1F937 /* Aileron-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-UltraLight.otf"; sourceTree = "<group>"; };
+		18C86C5E2A8CE0B200A1F937 /* Aileron-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-SemiBold.otf"; sourceTree = "<group>"; };
+		18C86C5F2A8CE0B200A1F937 /* Aileron-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Light.otf"; sourceTree = "<group>"; };
+		18C86C602A8CE0B200A1F937 /* Aileron-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-LightItalic.otf"; sourceTree = "<group>"; };
+		18C86C612A8CE0B200A1F937 /* Aileron-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-ThinItalic.otf"; sourceTree = "<group>"; };
+		18C86C622A8CE0B200A1F937 /* Aileron-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Regular.otf"; sourceTree = "<group>"; };
+		18C86C632A8CE0B200A1F937 /* Aileron-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-HeavyItalic.otf"; sourceTree = "<group>"; };
+		18C86C642A8CE0B200A1F937 /* Aileron-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Heavy.otf"; sourceTree = "<group>"; };
+		18C86C652A8CE0B200A1F937 /* Aileron-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Italic.otf"; sourceTree = "<group>"; };
+		18C86C662A8CE0B200A1F937 /* Aileron-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Bold.otf"; sourceTree = "<group>"; };
+		18C86C672A8CE0B200A1F937 /* Aileron-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-UltraLightItalic.otf"; sourceTree = "<group>"; };
+		18C86C682A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt"; sourceTree = "<group>"; };
+		18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-BoldItalic.otf"; sourceTree = "<group>"; };
+		18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Black.otf"; sourceTree = "<group>"; };
+		18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
+		18E02AA12A97671D007E2FF5 /* ConcernCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernCell.swift; sourceTree = "<group>"; };
+		18E02AA22A97671D007E2FF5 /* ConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConcernCell.xib; sourceTree = "<group>"; };
+		18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDogIssues.swift; sourceTree = "<group>"; };
+		18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGFlingActionButton.swift; sourceTree = "<group>"; };
+		18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchSliderAnimation.swift; sourceTree = "<group>"; };
+		18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_dogWalk.json; sourceTree = "<group>"; };
+		1F5AE7C77A238A1C4E59C4B4 /* Pods-Howl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl.debug.xcconfig"; path = "Target Support Files/Pods-Howl/Pods-Howl.debug.xcconfig"; sourceTree = "<group>"; };
+		2A1C1C5D748F5524E2AAE7F7 /* Pods-HowlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowlTests.debug.xcconfig"; path = "Target Support Files/Pods-HowlTests/Pods-HowlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		956B4261F302FA8065C81A2D /* Pods_HowlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC7905058EE0410F53E25DD /* Pods_Howl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Howl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3ED089617CD9FA05E37BAC /* Pods_Howl_HowlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Howl_HowlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9149F64766775FA96111B54 /* Pods-HowlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowlTests.release.xcconfig"; path = "Target Support Files/Pods-HowlTests/Pods-HowlTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD0DD5041185440A2B33CAFB /* Pods-Howl-HowlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl-HowlUITests.release.xcconfig"; path = "Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DBC220C4A5BF9CCA08461842 /* Pods-Howl-HowlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl-HowlUITests.debug.xcconfig"; path = "Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDCCBAC17D3340BE359A4AE2 /* Pods-Howl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl.release.xcconfig"; path = "Target Support Files/Pods-Howl/Pods-Howl.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18C86C192A8CABA800A1F937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368AB51CF5A5E8BC479732C9 /* Pods_Howl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C322A8CABA900A1F937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8460BC93457ED16FBA3927B4 /* Pods_HowlTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C3C2A8CABA900A1F937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF8E657386657161AD62893 /* Pods_Howl_HowlUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		180254D22A8DECCE00C744CE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				189A796E2AAAE769002A640C /* SoundManager.swift */,
+				18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */,
+				18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */,
+				180254D32A8DECFA00C744CE /* UICollectionView+Extension.swift */,
+				180254D52A8DED2E00C744CE /* UITableView+Extension.swift */,
+				1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		180254D72A8DFE2700C744CE /* Constant File */ = {
+			isa = PBXGroup;
+			children = (
+				180254D82A8DFE7900C744CE /* FontContant.swift */,
+			);
+			path = "Constant File";
+			sourceTree = "<group>";
+		};
+		1821C6172AA9DB4400087FA7 /* MORE */ = {
+			isa = PBXGroup;
+			children = (
+				188BEB552AA9DC73000C6DF4 /* SubController */,
+				188BEB532AA9DC36000C6DF4 /* Controller */,
+			);
+			path = MORE;
+			sourceTree = "<group>";
+		};
+		183F38C92A98B9D8005D35D8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */,
+				18C86C212A8CABA800A1F937 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		183F38CA2A98BA43005D35D8 /* MYPack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MYPack;
+			sourceTree = "<group>";
+		};
+		1842E3062A9F21E4007BAE33 /* NewDogProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */,
+			);
+			path = NewDogProfile;
+			sourceTree = "<group>";
+		};
+		1872D3002A9E12730094B522 /* AddDog */ = {
+			isa = PBXGroup;
+			children = (
+				1872D3012A9E12910094B522 /* View */,
+			);
+			path = AddDog;
+			sourceTree = "<group>";
+		};
+		1872D3012A9E12910094B522 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1872D2FE2A9DC3650094B522 /* AddDogVc.swift */,
+				1872D3022A9E12A50094B522 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1872D3022A9E12A50094B522 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1872D3032A9E13110094B522 /* DogTblViewCell.swift */,
+				1872D3042A9E13110094B522 /* DogTblViewCell.xib */,
+				1872D3072A9E13340094B522 /* PeopleTblViewCell.swift */,
+				1872D3082A9E13340094B522 /* PeopleTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		188BEB532AA9DC36000C6DF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				188BEB512AA9DBDE000C6DF4 /* MoreViewController.swift */,
+				188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */,
+				188BEB582AAA017D000C6DF4 /* EulaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		188BEB552AA9DC73000C6DF4 /* SubController */ = {
+			isa = PBXGroup;
+			children = (
+				188BEB562AA9DDB6000C6DF4 /* WorkViewController.swift */,
+				188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */,
+				189A79812AAAFE8F002A640C /* PermissionViewController.swift */,
+			);
+			path = SubController;
+			sourceTree = "<group>";
+		};
+		189A795B2AAAE5F7002A640C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				189A79622AAAE70A002A640C /* Siren0.mp3 */,
+				189A795F2AAAE70A002A640C /* Siren1.mp3 */,
+				189A795E2AAAE70A002A640C /* Siren2.mp3 */,
+				189A79632AAAE70A002A640C /* Siren3.mp3 */,
+				189A79642AAAE70A002A640C /* Siren4.mp3 */,
+				189A79652AAAE70A002A640C /* Siren5.mp3 */,
+				189A79602AAAE70A002A640C /* Siren6.mp3 */,
+				189A79612AAAE70A002A640C /* Siren7.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		18C86C132A8CABA800A1F937 = {
+			isa = PBXGroup;
+			children = (
+				18E02AA52A977EBB007E2FF5 /* Model */,
+				18C86C1E2A8CABA800A1F937 /* Howl */,
+				18C86C562A8CD75B00A1F937 /* SupportingFiles */,
+				18C86C382A8CABA900A1F937 /* HowlTests */,
+				18C86C422A8CABA900A1F937 /* HowlUITests */,
+				18C86C1D2A8CABA800A1F937 /* Products */,
+				64BB7CA2FECC0EA182CF56B7 /* Pods */,
+				E3BF1D6F07130D26E3FB810D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18C86C1D2A8CABA800A1F937 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C1C2A8CABA800A1F937 /* Howl.app */,
+				18C86C352A8CABA900A1F937 /* HowlTests.xctest */,
+				18C86C3F2A8CABA900A1F937 /* HowlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18C86C1E2A8CABA800A1F937 /* Howl */ = {
+			isa = PBXGroup;
+			children = (
+				189A795B2AAAE5F7002A640C /* Sounds */,
+				1821C6172AA9DB4400087FA7 /* MORE */,
+				1842E3062A9F21E4007BAE33 /* NewDogProfile */,
+				183F38CA2A98BA43005D35D8 /* MYPack */,
+				183F38C92A98B9D8005D35D8 /* Application */,
+				180254D22A8DECCE00C744CE /* Extension */,
+				1872D3002A9E12730094B522 /* AddDog */,
+				18C86C232A8CABA800A1F937 /* MyPackVc.swift */,
+				180254CD2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift */,
+				180254CE2A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib */,
+				18C86C252A8CABA800A1F937 /* Main.storyboard */,
+				1821C6152AA9A46700087FA7 /* InfoViewController.swift */,
+				1821C60F2AA862A800087FA7 /* PersonListingVC.swift */,
+				1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */,
+				1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */,
+				18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */,
+				1884D8792AA1B22200BC7523 /* AddDogViewController.swift */,
+				18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */,
+				18E02AA12A97671D007E2FF5 /* ConcernCell.swift */,
+				18E02AA22A97671D007E2FF5 /* ConcernCell.xib */,
+				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
+				187FF08E2A8F2F720087216C /* NewDogVarietyCell.swift */,
+				187FF08F2A8F2F720087216C /* NewDogVarietyCell.xib */,
+				18C86C522A8CD11400A1F937 /* HowlViewController.swift */,
+				181C3A582A926B4400B50DE7 /* AppStoryboard.swift */,
+				18C86C2B2A8CABA900A1F937 /* Assets.xcassets */,
+				18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */,
+				18C86C302A8CABA900A1F937 /* Info.plist */,
+				18C86C282A8CABA800A1F937 /* Howl.xcdatamodeld */,
+			);
+			path = Howl;
+			sourceTree = "<group>";
+		};
+		18C86C382A8CABA900A1F937 /* HowlTests */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C392A8CABA900A1F937 /* HowlTests.swift */,
+			);
+			path = HowlTests;
+			sourceTree = "<group>";
+		};
+		18C86C422A8CABA900A1F937 /* HowlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C432A8CABA900A1F937 /* HowlUITests.swift */,
+				18C86C452A8CABA900A1F937 /* HowlUITestsLaunchTests.swift */,
+			);
+			path = HowlUITests;
+			sourceTree = "<group>";
+		};
+		18C86C562A8CD75B00A1F937 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */,
+				180254DA2A8E2B6900C744CE /* animation_1.json */,
+				180254D72A8DFE2700C744CE /* Constant File */,
+				18C86C572A8CD78E00A1F937 /* Font */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		18C86C572A8CD78E00A1F937 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C5A2A8CE08500A1F937 /* Aileron */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		18C86C5A2A8CE08500A1F937 /* Aileron */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */,
+				18C86C5B2A8CE0B200A1F937 /* Aileron-BlackItalic.otf */,
+				18C86C662A8CE0B200A1F937 /* Aileron-Bold.otf */,
+				18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */,
+				18C86C642A8CE0B200A1F937 /* Aileron-Heavy.otf */,
+				18C86C632A8CE0B200A1F937 /* Aileron-HeavyItalic.otf */,
+				18C86C652A8CE0B200A1F937 /* Aileron-Italic.otf */,
+				18C86C5F2A8CE0B200A1F937 /* Aileron-Light.otf */,
+				18C86C602A8CE0B200A1F937 /* Aileron-LightItalic.otf */,
+				18C86C622A8CE0B200A1F937 /* Aileron-Regular.otf */,
+				18C86C5E2A8CE0B200A1F937 /* Aileron-SemiBold.otf */,
+				18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */,
+				18C86C5C2A8CE0B200A1F937 /* Aileron-Thin.otf */,
+				18C86C612A8CE0B200A1F937 /* Aileron-ThinItalic.otf */,
+				18C86C5D2A8CE0B200A1F937 /* Aileron-UltraLight.otf */,
+				18C86C672A8CE0B200A1F937 /* Aileron-UltraLightItalic.otf */,
+				18C86C682A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt */,
+			);
+			path = Aileron;
+			sourceTree = "<group>";
+		};
+		18E02AA52A977EBB007E2FF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64BB7CA2FECC0EA182CF56B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F5AE7C77A238A1C4E59C4B4 /* Pods-Howl.debug.xcconfig */,
+				FDCCBAC17D3340BE359A4AE2 /* Pods-Howl.release.xcconfig */,
+				DBC220C4A5BF9CCA08461842 /* Pods-Howl-HowlUITests.debug.xcconfig */,
+				CD0DD5041185440A2B33CAFB /* Pods-Howl-HowlUITests.release.xcconfig */,
+				2A1C1C5D748F5524E2AAE7F7 /* Pods-HowlTests.debug.xcconfig */,
+				C9149F64766775FA96111B54 /* Pods-HowlTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E3BF1D6F07130D26E3FB810D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AC7905058EE0410F53E25DD /* Pods_Howl.framework */,
+				BE3ED089617CD9FA05E37BAC /* Pods_Howl_HowlUITests.framework */,
+				956B4261F302FA8065C81A2D /* Pods_HowlTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18C86C1B2A8CABA800A1F937 /* Howl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C86C492A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "Howl" */;
+			buildPhases = (
+				DBF8DE71620FCEC6853845E1 /* [CP] Check Pods Manifest.lock */,
+				18C86C182A8CABA800A1F937 /* Sources */,
+				18C86C192A8CABA800A1F937 /* Frameworks */,
+				18C86C1A2A8CABA800A1F937 /* Resources */,
+				D712D606B1C6056C69A86C7D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Howl;
+			productName = Howl;
+			productReference = 18C86C1C2A8CABA800A1F937 /* Howl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18C86C342A8CABA900A1F937 /* HowlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C86C4C2A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "HowlTests" */;
+			buildPhases = (
+				84F00ED29E5B921016781419 /* [CP] Check Pods Manifest.lock */,
+				18C86C312A8CABA900A1F937 /* Sources */,
+				18C86C322A8CABA900A1F937 /* Frameworks */,
+				18C86C332A8CABA900A1F937 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18C86C372A8CABA900A1F937 /* PBXTargetDependency */,
+			);
+			name = HowlTests;
+			productName = HowlTests;
+			productReference = 18C86C352A8CABA900A1F937 /* HowlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18C86C3E2A8CABA900A1F937 /* HowlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C86C4F2A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "HowlUITests" */;
+			buildPhases = (
+				45A1AAB3F537E9AA2D49954C /* [CP] Check Pods Manifest.lock */,
+				18C86C3B2A8CABA900A1F937 /* Sources */,
+				18C86C3C2A8CABA900A1F937 /* Frameworks */,
+				18C86C3D2A8CABA900A1F937 /* Resources */,
+				EC8E9E50CBFAAF692D425B64 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18C86C412A8CABA900A1F937 /* PBXTargetDependency */,
+			);
+			name = HowlUITests;
+			productName = HowlUITests;
+			productReference = 18C86C3F2A8CABA900A1F937 /* HowlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18C86C142A8CABA800A1F937 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					18C86C1B2A8CABA800A1F937 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					18C86C342A8CABA900A1F937 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 18C86C1B2A8CABA800A1F937;
+					};
+					18C86C3E2A8CABA900A1F937 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 18C86C1B2A8CABA800A1F937;
+					};
+				};
+			};
+			buildConfigurationList = 18C86C172A8CABA800A1F937 /* Build configuration list for PBXProject "Howl" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18C86C132A8CABA800A1F937;
+			productRefGroup = 18C86C1D2A8CABA800A1F937 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18C86C1B2A8CABA800A1F937 /* Howl */,
+				18C86C342A8CABA900A1F937 /* HowlTests */,
+				18C86C3E2A8CABA900A1F937 /* HowlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18C86C1A2A8CABA800A1F937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189A79692AAAE70A002A640C /* Siren7.mp3 in Resources */,
+				18C86C7C2A8CE0B200A1F937 /* Aileron-Black.otf in Resources */,
+				18C86C792A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt in Resources */,
+				180254D02A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib in Resources */,
+				18E02AA42A97671D007E2FF5 /* ConcernCell.xib in Resources */,
+				18C86C782A8CE0B200A1F937 /* Aileron-UltraLightItalic.otf in Resources */,
+				180254DB2A8E2B6900C744CE /* animation_1.json in Resources */,
+				1872D3062A9E13110094B522 /* DogTblViewCell.xib in Resources */,
+				18C86C772A8CE0B200A1F937 /* Aileron-Bold.otf in Resources */,
+				18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */,
+				18C86C6F2A8CE0B200A1F937 /* Aileron-SemiBold.otf in Resources */,
+				18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */,
+				18C86C2F2A8CABA900A1F937 /* LaunchScreen.storyboard in Resources */,
+				18C86C712A8CE0B200A1F937 /* Aileron-LightItalic.otf in Resources */,
+				189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */,
+				189A796A2AAAE70A002A640C /* Siren0.mp3 in Resources */,
+				18C86C742A8CE0B200A1F937 /* Aileron-HeavyItalic.otf in Resources */,
+				18C86C752A8CE0B200A1F937 /* Aileron-Heavy.otf in Resources */,
+				189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */,
+				18C86C762A8CE0B200A1F937 /* Aileron-Italic.otf in Resources */,
+				18C86C732A8CE0B200A1F937 /* Aileron-Regular.otf in Resources */,
+				18C86C6E2A8CE0B200A1F937 /* Aileron-UltraLight.otf in Resources */,
+				18C86C722A8CE0B200A1F937 /* Aileron-ThinItalic.otf in Resources */,
+				1821C6142AA867C500087FA7 /* PersonListingTableViewCell.xib in Resources */,
+				18C86C7B2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf in Resources */,
+				18C86C6D2A8CE0B200A1F937 /* Aileron-Thin.otf in Resources */,
+				189A79672AAAE70A002A640C /* Siren1.mp3 in Resources */,
+				18C86C2C2A8CABA900A1F937 /* Assets.xcassets in Resources */,
+				189A79682AAAE70A002A640C /* Siren6.mp3 in Resources */,
+				1872D30A2A9E13340094B522 /* PeopleTblViewCell.xib in Resources */,
+				18C86C7A2A8CE0B200A1F937 /* Aileron-BoldItalic.otf in Resources */,
+				18C86C272A8CABA800A1F937 /* Main.storyboard in Resources */,
+				187FF0912A8F2F720087216C /* NewDogVarietyCell.xib in Resources */,
+				189A796C2AAAE70A002A640C /* Siren4.mp3 in Resources */,
+				18C86C702A8CE0B200A1F937 /* Aileron-Light.otf in Resources */,
+				189A79662AAAE70A002A640C /* Siren2.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C332A8CABA900A1F937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C3D2A8CABA900A1F937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45A1AAB3F537E9AA2D49954C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Howl-HowlUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F00ED29E5B921016781419 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HowlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D712D606B1C6056C69A86C7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBF8DE71620FCEC6853845E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Howl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC8E9E50CBFAAF692D425B64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18C86C182A8CABA800A1F937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180254D42A8DECFA00C744CE /* UICollectionView+Extension.swift in Sources */,
+				18C86C242A8CABA800A1F937 /* MyPackVc.swift in Sources */,
+				180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */,
+				1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */,
+				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
+				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
+				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
+				181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */,
+				1884D87A2AA1B22200BC7523 /* AddDogViewController.swift in Sources */,
+				181C3A592A926B4400B50DE7 /* AppStoryboard.swift in Sources */,
+				1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */,
+				188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */,
+				188BEB522AA9DBDE000C6DF4 /* MoreViewController.swift in Sources */,
+				18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */,
+				18C86C532A8CD11400A1F937 /* HowlViewController.swift in Sources */,
+				1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */,
+				180254CF2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift in Sources */,
+				1821C6102AA862A800087FA7 /* PersonListingVC.swift in Sources */,
+				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
+				18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */,
+				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
+				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
+				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
+				18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */,
+				18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */,
+				180254D92A8DFE7900C744CE /* FontContant.swift in Sources */,
+				18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */,
+				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
+				1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */,
+				18C86C2A2A8CABA800A1F937 /* Howl.xcdatamodeld in Sources */,
+				188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */,
+				1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */,
+				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,
+				189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C312A8CABA900A1F937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C86C3A2A8CABA900A1F937 /* HowlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C86C3B2A8CABA900A1F937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C86C462A8CABA900A1F937 /* HowlUITestsLaunchTests.swift in Sources */,
+				18C86C442A8CABA900A1F937 /* HowlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18C86C372A8CABA900A1F937 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C86C1B2A8CABA800A1F937 /* Howl */;
+			targetProxy = 18C86C362A8CABA900A1F937 /* PBXContainerItemProxy */;
+		};
+		18C86C412A8CABA900A1F937 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C86C1B2A8CABA800A1F937 /* Howl */;
+			targetProxy = 18C86C402A8CABA900A1F937 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18C86C252A8CABA800A1F937 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18C86C262A8CABA800A1F937 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18C86C2E2A8CABA900A1F937 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18C86C472A8CABA900A1F937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18C86C482A8CABA900A1F937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18C86C4A2A8CABA900A1F937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5AE7C77A238A1C4E59C4B4 /* Pods-Howl.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DV48BW2GWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Howl/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.Howl1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18C86C4B2A8CABA900A1F937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDCCBAC17D3340BE359A4AE2 /* Pods-Howl.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DV48BW2GWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Howl/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.Howl1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18C86C4D2A8CABA900A1F937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1C1C5D748F5524E2AAE7F7 /* Pods-HowlTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.HowlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Howl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Howl";
+			};
+			name = Debug;
+		};
+		18C86C4E2A8CABA900A1F937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9149F64766775FA96111B54 /* Pods-HowlTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.HowlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Howl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Howl";
+			};
+			name = Release;
+		};
+		18C86C502A8CABA900A1F937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC220C4A5BF9CCA08461842 /* Pods-Howl-HowlUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.HowlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Howl;
+			};
+			name = Debug;
+		};
+		18C86C512A8CABA900A1F937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0DD5041185440A2B33CAFB /* Pods-Howl-HowlUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app-intelligence.howl.HowlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Howl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18C86C172A8CABA800A1F937 /* Build configuration list for PBXProject "Howl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C86C472A8CABA900A1F937 /* Debug */,
+				18C86C482A8CABA900A1F937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18C86C492A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "Howl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C86C4A2A8CABA900A1F937 /* Debug */,
+				18C86C4B2A8CABA900A1F937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18C86C4C2A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "HowlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C86C4D2A8CABA900A1F937 /* Debug */,
+				18C86C4E2A8CABA900A1F937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18C86C4F2A8CABA900A1F937 /* Build configuration list for PBXNativeTarget "HowlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C86C502A8CABA900A1F937 /* Debug */,
+				18C86C512A8CABA900A1F937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18C86C282A8CABA800A1F937 /* Howl.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18C86C292A8CABA800A1F937 /* Howl.xcdatamodel */,
+			);
+			currentVersion = 18C86C292A8CABA800A1F937 /* Howl.xcdatamodel */;
+			path = Howl.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18C86C142A8CABA800A1F937 /* Project object */;
+}

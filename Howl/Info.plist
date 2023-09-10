@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to take photos and record videos for our app&apos;s features.</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Aileron-Black.otf</string>
+		<string>Aileron-BlackItalic.otf</string>
+		<string>Aileron-Bold.otf</string>
+		<string>Aileron-BoldItalic.otf</string>
+		<string>Aileron-Heavy.otf</string>
+		<string>Aileron-HeavyItalic.otf</string>
+		<string>Aileron-Italic.otf</string>
+		<string>Aileron-Light.otf</string>
+		<string>Aileron-LightItalic.otf</string>
+		<string>Aileron-Regular.otf</string>
+		<string>Aileron-SemiBold.otf</string>
+		<string>Aileron-SemiBoldItalic.otf</string>
+		<string>Aileron-Thin.otf</string>
+		<string>Aileron-ThinItalic.otf</string>
+		<string>Aileron-UltraLight.otf</string>
+		<string>Aileron-UltraLightItalic.otf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
