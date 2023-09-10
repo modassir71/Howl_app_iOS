@@ -10,7 +10,7 @@ import UIKit
 
 enum AppStoryboard : String {
     case Main = "Main"
-    case vc = "ViewController"
+    //case vc = "ViewController"
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }

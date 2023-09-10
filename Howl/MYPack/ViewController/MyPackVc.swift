@@ -56,13 +56,13 @@ class MyPackVc: UIViewController  {
     
     //MARK: - SetupUI
     func setUpUI(){
-        notificationBtn.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
-        notificationBtn.layer.borderWidth = 2.0
-        notificationBtn.layer.cornerRadius = notificationBtn.frame.width/2
-        notificationBtn.clipsToBounds = true
+//        notificationBtn.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
+//        notificationBtn.layer.borderWidth = 2.0
+//        notificationBtn.layer.cornerRadius = notificationBtn.frame.width/2
+//        notificationBtn.clipsToBounds = true
         profileButtonView.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
         profileButtonView.layer.borderWidth = 2.0
-        profileButtonView.layer.cornerRadius = notificationBtn.frame.width/2
+        profileButtonView.layer.cornerRadius = profileButtonView.frame.width/2
         profileButtonView.clipsToBounds = true
         let layout = UICollectionViewFlowLayout()
         dogCollectionView.collectionViewLayout = layout

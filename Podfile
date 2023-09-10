@@ -8,6 +8,7 @@ target 'Howl' do
   # Pods for Howl
 pod 'lottie-ios'
 pod 'SKCountryPicker', '~> 2.0.0'
+pod 'IQKeyboardManagerSwift'
 
   target 'HowlTests' do
     inherit! :search_paths

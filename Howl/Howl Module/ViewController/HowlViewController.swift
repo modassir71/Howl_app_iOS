@@ -38,12 +38,9 @@ class HowlViewController: UIViewController {
         tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
         tabBarItem.image = UIImage(named: "Howl_Selectable")
         self.tabBarController?.tabBar.isHidden = false
+        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        self.tabBarController?.tabBar.isHidden = false
-//    }
     //MARK: - Delegate Method
     func delegateMethod(){
         dogVarietyCollectionView.delegate = self
@@ -58,7 +55,10 @@ class HowlViewController: UIViewController {
     //MARK: - SetupUI
     
     func _SetUpUi(){
-       // dogVarietyCollectionView.backgroundColor = .red
+        navigationView.layer.shadowColor = UIColor.black.cgColor
+        navigationView.layer.shadowOpacity = 0.2
+        navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        navigationView.layer.shadowRadius = 2
         let layout = UICollectionViewFlowLayout()
         dogVarietyCollectionView.collectionViewLayout = layout
         let layoutCollectionView = UICollectionViewFlowLayout()

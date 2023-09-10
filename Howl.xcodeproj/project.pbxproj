@@ -252,6 +252,7 @@
 		183F38C92A98B9D8005D35D8 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */,
 				18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */,
 				18C86C212A8CABA800A1F937 /* SceneDelegate.swift */,
 			);
@@ -261,6 +262,10 @@
 		183F38CA2A98BA43005D35D8 /* MYPack */ = {
 			isa = PBXGroup;
 			children = (
+				18F542CD2AADE529000B9B1E /* PersonListing Module */,
+				18F542D02AADE5DD000B9B1E /* AddNewPerson Module */,
+				18F542CC2AADE4E5000B9B1E /* Cell */,
+				18F542C92AADE14C000B9B1E /* ViewController */,
 			);
 			path = MYPack;
 			sourceTree = "<group>";
@@ -305,8 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				188BEB512AA9DBDE000C6DF4 /* MoreViewController.swift */,
-				188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */,
-				188BEB582AAA017D000C6DF4 /* EulaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,8 @@
 				188BEB562AA9DDB6000C6DF4 /* WorkViewController.swift */,
 				188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */,
 				189A79812AAAFE8F002A640C /* PermissionViewController.swift */,
+				188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */,
+				188BEB582AAA017D000C6DF4 /* EulaViewController.swift */,
 			);
 			path = SubController;
 			sourceTree = "<group>";
@@ -339,7 +344,6 @@
 		18C86C132A8CABA800A1F937 = {
 			isa = PBXGroup;
 			children = (
-				18E02AA52A977EBB007E2FF5 /* Model */,
 				18C86C1E2A8CABA800A1F937 /* Howl */,
 				18C86C562A8CD75B00A1F937 /* SupportingFiles */,
 				18C86C382A8CABA900A1F937 /* HowlTests */,
@@ -363,33 +367,17 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
-				189A795B2AAAE5F7002A640C /* Sounds */,
+				18F542DB2AADEB0C000B9B1E /* Assets */,
+				18F542DA2AADEAE7000B9B1E /* Storyboard */,
+				18F542CA2AADE1F1000B9B1E /* Howl Module */,
 				1821C6172AA9DB4400087FA7 /* MORE */,
 				1842E3062A9F21E4007BAE33 /* NewDogProfile */,
 				183F38CA2A98BA43005D35D8 /* MYPack */,
 				183F38C92A98B9D8005D35D8 /* Application */,
 				180254D22A8DECCE00C744CE /* Extension */,
 				1872D3002A9E12730094B522 /* AddDog */,
-				18C86C232A8CABA800A1F937 /* MyPackVc.swift */,
-				180254CD2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift */,
-				180254CE2A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib */,
-				18C86C252A8CABA800A1F937 /* Main.storyboard */,
 				1821C6152AA9A46700087FA7 /* InfoViewController.swift */,
-				1821C60F2AA862A800087FA7 /* PersonListingVC.swift */,
-				1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */,
-				1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */,
-				18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */,
-				1884D8792AA1B22200BC7523 /* AddDogViewController.swift */,
-				18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */,
-				18E02AA12A97671D007E2FF5 /* ConcernCell.swift */,
-				18E02AA22A97671D007E2FF5 /* ConcernCell.xib */,
-				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
-				187FF08E2A8F2F720087216C /* NewDogVarietyCell.swift */,
-				187FF08F2A8F2F720087216C /* NewDogVarietyCell.xib */,
-				18C86C522A8CD11400A1F937 /* HowlViewController.swift */,
-				181C3A582A926B4400B50DE7 /* AppStoryboard.swift */,
-				18C86C2B2A8CABA900A1F937 /* Assets.xcassets */,
-				18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */,
+				18F542D92AADE7D1000B9B1E /* Constant */,
 				18C86C302A8CABA900A1F937 /* Info.plist */,
 				18C86C282A8CABA800A1F937 /* Howl.xcdatamodeld */,
 			);
@@ -462,6 +450,170 @@
 				18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18F542C92AADE14C000B9B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C232A8CABA800A1F937 /* MyPackVc.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18F542CA2AADE1F1000B9B1E /* Howl Module */ = {
+			isa = PBXGroup;
+			children = (
+				18F542D72AADE75B000B9B1E /* ConcernModule */,
+				18F542D52AADE71B000B9B1E /* DogWalking Module */,
+				18F542D42AADE6B2000B9B1E /* Cell */,
+				18F542D22AADE66C000B9B1E /* AddDogModule */,
+				18F542CB2AADE201000B9B1E /* ViewController */,
+			);
+			path = "Howl Module";
+			sourceTree = "<group>";
+		};
+		18F542CB2AADE201000B9B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C522A8CD11400A1F937 /* HowlViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18F542CC2AADE4E5000B9B1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				180254CD2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift */,
+				180254CE2A8DE29F00C744CE /* DogVarietyCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18F542CD2AADE529000B9B1E /* PersonListing Module */ = {
+			isa = PBXGroup;
+			children = (
+				18F542CF2AADE559000B9B1E /* Cell */,
+				18F542CE2AADE545000B9B1E /* View Controller */,
+			);
+			path = "PersonListing Module";
+			sourceTree = "<group>";
+		};
+		18F542CE2AADE545000B9B1E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1821C60F2AA862A800087FA7 /* PersonListingVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		18F542CF2AADE559000B9B1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */,
+				1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18F542D02AADE5DD000B9B1E /* AddNewPerson Module */ = {
+			isa = PBXGroup;
+			children = (
+				18F542D12AADE5F2000B9B1E /* ViewController */,
+			);
+			path = "AddNewPerson Module";
+			sourceTree = "<group>";
+		};
+		18F542D12AADE5F2000B9B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18F542D22AADE66C000B9B1E /* AddDogModule */ = {
+			isa = PBXGroup;
+			children = (
+				18F542D32AADE67D000B9B1E /* ViewController */,
+			);
+			path = AddDogModule;
+			sourceTree = "<group>";
+		};
+		18F542D32AADE67D000B9B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1884D8792AA1B22200BC7523 /* AddDogViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18F542D42AADE6B2000B9B1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				187FF08E2A8F2F720087216C /* NewDogVarietyCell.swift */,
+				187FF08F2A8F2F720087216C /* NewDogVarietyCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18F542D52AADE71B000B9B1E /* DogWalking Module */ = {
+			isa = PBXGroup;
+			children = (
+				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
+			);
+			path = "DogWalking Module";
+			sourceTree = "<group>";
+		};
+		18F542D62AADE739000B9B1E /* ConcernCell */ = {
+			isa = PBXGroup;
+			children = (
+				18E02AA12A97671D007E2FF5 /* ConcernCell.swift */,
+				18E02AA22A97671D007E2FF5 /* ConcernCell.xib */,
+			);
+			path = ConcernCell;
+			sourceTree = "<group>";
+		};
+		18F542D72AADE75B000B9B1E /* ConcernModule */ = {
+			isa = PBXGroup;
+			children = (
+				18E02AA52A977EBB007E2FF5 /* Model */,
+				18F542D62AADE739000B9B1E /* ConcernCell */,
+				18F542D82AADE776000B9B1E /* ViewController */,
+			);
+			path = ConcernModule;
+			sourceTree = "<group>";
+		};
+		18F542D82AADE776000B9B1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18F542D92AADE7D1000B9B1E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				181C3A582A926B4400B50DE7 /* AppStoryboard.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		18F542DA2AADEAE7000B9B1E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				18C86C252A8CABA800A1F937 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18F542DB2AADEB0C000B9B1E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				189A795B2AAAE5F7002A640C /* Sounds */,
+				18C86C2B2A8CABA900A1F937 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		64BB7CA2FECC0EA182CF56B7 /* Pods */ = {
