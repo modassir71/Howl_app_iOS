@@ -14,5 +14,8 @@ enum DogIssues: String, CaseIterable {
      case yourPetHasHurtHimself = "Your Pet has hurt himself"
      case strangeBehaviourObserved = "Strange behaviour observed"
      case hasBiteAnotherPerson = "Has Bite Another Person"
+     case illness = "Illness"
+     case injury = "Injury"
      case someOtherReason = "Some Other Reason"
+     
 }

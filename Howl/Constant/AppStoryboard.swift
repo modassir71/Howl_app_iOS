@@ -10,6 +10,7 @@ import UIKit
 
 enum AppStoryboard : String {
     case Main = "Main"
+    case DialogePopUp = "CustomPopUp"
     //case vc = "ViewController"
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

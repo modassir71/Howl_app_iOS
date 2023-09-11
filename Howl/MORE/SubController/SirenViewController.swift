@@ -16,12 +16,13 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var playStopBtn: UIButton!
     @IBOutlet weak var setBtn: UIButton!
     
+    var buttonState = 0
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         sirenPickerView.delegate = self
         _setUi()
-      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,26 +51,31 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func playBtnPress(_ sender: UIButton) {
         // If nothing to play, return
+      //  var playBtn = sender as UIButton
         let kSoundManager = SoundManager.sharedInstance
-        if sirenPickerView.selectedRow(inComponent: 0) == 8 {
-            return
-        }
-        
-        if kSoundManager.audioPlayer == nil {
-            
-            kSoundManager.playSiren(index: sirenPickerView.selectedRow(inComponent: 0),
-                                    volume: 0.3,
-                                    testing: true)
-        } else {
-            
-            if kSoundManager.audioPlayer.isPlaying {
-                
-                kSoundManager.stopSiren()
-            } else {
-                kSoundManager.playSiren(index: sirenPickerView.selectedRow(inComponent: 0),
-                                        volume: 0.3,
-                                        testing: true)
+        if buttonState == 0 {
+            playStopBtn.setTitle("Stop", for: .normal)
+            let kSoundManager = SoundManager.sharedInstance
+            if sirenPickerView.selectedRow(inComponent: 0) == 8 {
+                return
             }
+            
+            if kSoundManager.audioPlayer == nil {
+                kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
+            } else {
+                
+                if kSoundManager.audioPlayer.isPlaying {
+                    
+                    kSoundManager.stopSiren()
+                } else {
+                    kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
+                }
+            }
+            buttonState = 1
+        }else{
+            playStopBtn.setTitle("Play", for: .normal)
+            kSoundManager.stopSiren()
+            buttonState = 0
         }
 
     }
@@ -95,7 +101,6 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
         var label = UILabel()
         if let v = view {
             label = v as! UILabel
@@ -109,9 +114,9 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             label.text = "Video Only"
         }
         
-        label.font = UIFont (name: "Helvetica Neue", size: 35)
+        label.font = UIFont (name: "Helvetica Neue", size: 26)
         label.textAlignment = .center
-        
+        pickerView.subviews[1].backgroundColor = UIColor(displayP3Red: 189.0/255.0, green: 43.0/255.0, blue: 91.0/255.0, alpha: 0.4)
         return label
     }
     

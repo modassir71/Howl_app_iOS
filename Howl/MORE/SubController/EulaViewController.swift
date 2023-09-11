@@ -21,22 +21,27 @@ class EulaViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         override func viewDidLoad() {
             super.viewDidLoad()
             setUI()
-            if let url = URL(string: "https://www.howlforhelp.com/eula") {
-                let request = URLRequest(url: url)
-                let preferences = WKPreferences()
-                preferences.javaScriptCanOpenWindowsAutomatically = true
-                let configuration = WKWebViewConfiguration()
-                configuration.preferences = preferences
-                webView.allowsBackForwardNavigationGestures = false
-                webView.navigationDelegate = self
-                webView.uiDelegate = self
-                webView.load(request)
-            }
+            _loadWebView()
         }
         
         override func viewWillAppear(_ animated: Bool) {
             self.tabBarController?.tabBar.isHidden = true
         }
+    
+//    MARK: - Load web view
+    func _loadWebView(){
+        if let url = URL(string: "https://www.howlforhelp.com/eula") {
+            let request = URLRequest(url: url)
+            let preferences = WKPreferences()
+            preferences.javaScriptCanOpenWindowsAutomatically = true
+            let configuration = WKWebViewConfiguration()
+            configuration.preferences = preferences
+            webView.allowsBackForwardNavigationGestures = false
+            webView.navigationDelegate = self
+            webView.uiDelegate = self
+            webView.load(request)
+        }
+    }
     //    MARK: - SetUI
         func setUI(){
             setCornerRadius(to: homeBtn)

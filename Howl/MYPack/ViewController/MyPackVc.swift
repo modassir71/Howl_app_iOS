@@ -56,10 +56,6 @@ class MyPackVc: UIViewController  {
     
     //MARK: - SetupUI
     func setUpUI(){
-//        notificationBtn.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
-//        notificationBtn.layer.borderWidth = 2.0
-//        notificationBtn.layer.cornerRadius = notificationBtn.frame.width/2
-//        notificationBtn.clipsToBounds = true
         profileButtonView.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
         profileButtonView.layer.borderWidth = 2.0
         profileButtonView.layer.cornerRadius = profileButtonView.frame.width/2
@@ -88,23 +84,18 @@ extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(indexPath: indexPath) as DogVarietyCollectionViewCell
-//        if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-//           let image = UIImage(named: "Add_New")
-//            cell.dogImg.image = image
-//            cell.dogName.text = "Add New"
-//        }else{
             cell.dogImg?.image = UIImage(named: "\(dogArr[indexPath.row])")
             cell.dogName.text = dogArr[indexPath.row]
-//        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1{
-//            let storyboard = AppStoryboard.Main.instance
-//            let addDogVc = storyboard.instantiateViewController(withIdentifier: "AddDogVc") as! AddDogVc
-//            self.navigationController?.pushViewController(addDogVc, animated: true)
-//        }
+        let vc = DogDetailPopUp(nibName: DogDetailPopUp.className, bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.dogName = dogArr[indexPath.row]
+        self.present(vc, animated: true)
+        
     }
 }
 

@@ -14,6 +14,8 @@
 		180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D52A8DED2E00C744CE /* UITableView+Extension.swift */; };
 		180254D92A8DFE7900C744CE /* FontContant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D82A8DFE7900C744CE /* FontContant.swift */; };
 		180254DB2A8E2B6900C744CE /* animation_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 180254DA2A8E2B6900C744CE /* animation_1.json */; };
+		1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819325D2AAEEE0100E375A2 /* DogDetailPopUp.swift */; };
+		181932602AAEEE0100E375A2 /* DogDetailPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1819325E2AAEEE0100E375A2 /* DogDetailPopUp.xib */; };
 		181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */; };
 		181C3A592A926B4400B50DE7 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C3A582A926B4400B50DE7 /* AppStoryboard.swift */; };
 		1821C6102AA862A800087FA7 /* PersonListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C60F2AA862A800087FA7 /* PersonListingVC.swift */; };
@@ -110,6 +112,8 @@
 		180254D52A8DED2E00C744CE /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		180254D82A8DFE7900C744CE /* FontContant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontContant.swift; sourceTree = "<group>"; };
 		180254DA2A8E2B6900C744CE /* animation_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_1.json; sourceTree = "<group>"; };
+		1819325D2AAEEE0100E375A2 /* DogDetailPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailPopUp.swift; sourceTree = "<group>"; };
+		1819325E2AAEEE0100E375A2 /* DogDetailPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogDetailPopUp.xib; sourceTree = "<group>"; };
 		181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkingViewController.swift; sourceTree = "<group>"; };
 		181C3A582A926B4400B50DE7 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		1821C60F2AA862A800087FA7 /* PersonListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListingVC.swift; sourceTree = "<group>"; };
@@ -242,6 +246,15 @@
 			path = "Constant File";
 			sourceTree = "<group>";
 		};
+		181932542AAEE19400E375A2 /* Dog Details Dialouge */ = {
+			isa = PBXGroup;
+			children = (
+				1819325D2AAEEE0100E375A2 /* DogDetailPopUp.swift */,
+				1819325E2AAEEE0100E375A2 /* DogDetailPopUp.xib */,
+			);
+			path = "Dog Details Dialouge";
+			sourceTree = "<group>";
+		};
 		1821C6172AA9DB4400087FA7 /* MORE */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +277,7 @@
 		183F38CA2A98BA43005D35D8 /* MYPack */ = {
 			isa = PBXGroup;
 			children = (
+				181932542AAEE19400E375A2 /* Dog Details Dialouge */,
 				18F542CD2AADE529000B9B1E /* PersonListing Module */,
 				18F542D02AADE5DD000B9B1E /* AddNewPerson Module */,
 				18F542CC2AADE4E5000B9B1E /* Cell */,
@@ -771,6 +785,7 @@
 				18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */,
 				18C86C6F2A8CE0B200A1F937 /* Aileron-SemiBold.otf in Resources */,
 				18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */,
+				181932602AAEEE0100E375A2 /* DogDetailPopUp.xib in Resources */,
 				18C86C2F2A8CABA900A1F937 /* LaunchScreen.storyboard in Resources */,
 				18C86C712A8CE0B200A1F937 /* Aileron-LightItalic.otf in Resources */,
 				189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */,
@@ -953,6 +968,7 @@
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
 				1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */,
 				18C86C2A2A8CABA800A1F937 /* Howl.xcdatamodeld in Sources */,
+				1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */,
 				188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */,
 				1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */,
 				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,

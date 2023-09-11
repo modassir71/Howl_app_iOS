@@ -2129,7 +2129,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select HOWL Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-19-v29">
-                                        <rect key="frame" x="89.666666666666671" y="90" width="195.66666666666663" height="24.333333333333329"/>
+                                        <rect key="frame" x="93" y="90" width="189" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

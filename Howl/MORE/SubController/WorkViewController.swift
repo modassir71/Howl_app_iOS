@@ -21,6 +21,14 @@ class WorkViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        _loadWebVew()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+//   MARK: - Load Web view
+    func _loadWebVew(){
         if let url = URL(string: "https://www.howlforhelp.com/how-it-works") {
             let request = URLRequest(url: url)
             let preferences = WKPreferences()
@@ -32,10 +40,6 @@ class WorkViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             webView.uiDelegate = self
             webView.load(request)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
     }
 //    MARK: - SetUI
     func setUI(){

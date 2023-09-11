@@ -37,15 +37,15 @@ class SoundManager: NSObject, AVAudioPlayerDelegate, AVSpeechSynthesizerDelegate
         
         super.init()
         
-//        if kDeepDataLogging {
-//            
-//            let allVoices = AVSpeechSynthesisVoice.speechVoices()
-//            
-//            for voice in allVoices {
-//                
-//                print("Voice Name: \(voice.name) Identifier: \(voice.identifier) Quality: \((voice.quality).rawValue))")
-//            }
-//        }
+        if kDeepDataLogging {
+            
+            let allVoices = AVSpeechSynthesisVoice.speechVoices()
+            
+            for voice in allVoices {
+                
+                print("Voice Name: \(voice.name) Identifier: \(voice.identifier) Quality: \((voice.quality).rawValue))")
+            }
+        }
         
         self.speechOutput = AVSpeechSynthesizer()
         self.speechOutput.delegate = self
@@ -57,27 +57,48 @@ class SoundManager: NSObject, AVAudioPlayerDelegate, AVSpeechSynthesizerDelegate
         self.continuingSpeaking = false
     }
     
-    func playSiren(index: Int, volume: Float, testing: Bool) {
-        
+//    func playSiren(index: Int, volume: Float, testing: Bool) {
+//
+//        let fileName = "Siren\(index)"
+//
+//        let siren = Bundle.main.url(forResource: "Siren0", withExtension: "mp3")!//Bundle.main.url(forResource: fileName, withExtension: "mp3")!
+//
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: siren)
+//            audioPlayer.volume = volume // 30% volume
+//
+//            switch testing {
+//
+//            case true:
+//                audioPlayer.numberOfLoops = 3 // Infinite loop
+//            case false:
+//                audioPlayer.numberOfLoops = -1 // Infinite loop
+//            }
+//            audioPlayer.play() // play the sound
+//        } catch let error1 as NSError {
+//            error = error1
+//            print(error!)
+//        }
+//    }
+    func playSound(index: Int, testing: Bool) {
         let fileName = "Siren\(index)"
-        
-        let siren = Bundle.main.url(forResource: fileName, withExtension: "mp3")!
-        
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else { return }
+
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: siren)
-            audioPlayer.volume = volume // 30% volume
-            
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             switch testing {
-                
             case true:
-                audioPlayer.numberOfLoops = 3 // Infinite loop
+                audioPlayer.numberOfLoops = 3 //Infinite loop
             case false:
-                audioPlayer.numberOfLoops = -1 // Infinite loop
+                audioPlayer.numberOfLoops = -1
             }
-            audioPlayer.play() // play the sound
-        } catch let error1 as NSError {
-            error = error1
-            print(error!)
+            guard let player = audioPlayer else { return }
+            player.play()
+
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
