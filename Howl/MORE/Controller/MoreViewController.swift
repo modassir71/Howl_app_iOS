@@ -39,6 +39,7 @@ class MoreViewController: UIViewController {
         navigationView.layer.shadowOpacity = 0.2
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
+        infoTxtView.isEditable = false
         addShadow(to: privacyBtn, cornerRadius: 10.0)
         addShadow(to: eulaBtn, cornerRadius: 10.0)
         addShadow(to: unarchiveBtn, cornerRadius: 10.0)

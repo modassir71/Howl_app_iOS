@@ -28,6 +28,12 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        let alert = UIAlertController(title: StringConstant.sirenTitle,
+                                      message: StringConstant.sirenMsg,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
 //    MARK: - SetUp UI
@@ -45,13 +51,12 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
 //    MARK: - Button Action
     
     @IBAction func backBtnPress(_ sender: UIButton) {
+        SoundManager.sharedInstance.stopSiren()
         self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func playBtnPress(_ sender: UIButton) {
-        // If nothing to play, return
-      //  var playBtn = sender as UIButton
         let kSoundManager = SoundManager.sharedInstance
         if buttonState == 0 {
             playStopBtn.setTitle("Stop", for: .normal)
@@ -82,6 +87,7 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     @IBAction func setBtnPress(_ sender: UIButton) {
+        
     }
     
     // MARK: SIREN PICKER

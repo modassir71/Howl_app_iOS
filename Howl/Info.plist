@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow HOWL app to access this device&apos;s location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow HOWL app to access this device&apos;s location</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Allow HOWL app to access this device&apos;s location</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We need access to your camera to take photos and record videos for our app&apos;s features.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to the microphone for recording audio.</string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>UIAppFonts</key>

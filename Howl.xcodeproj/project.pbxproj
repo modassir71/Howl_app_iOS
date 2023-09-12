@@ -22,6 +22,7 @@
 		1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */; };
 		1821C6142AA867C500087FA7 /* PersonListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */; };
 		1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C6152AA9A46700087FA7 /* InfoViewController.swift */; };
+		182839992AB09175003D212D /* SoundDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182839982AB09175003D212D /* SoundDataManager.swift */; };
 		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
 		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
 		1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */; };
@@ -76,6 +77,8 @@
 		18C86C7A2A8CE0B200A1F937 /* Aileron-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */; };
 		18C86C7B2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */; };
 		18C86C7C2A8CE0B200A1F937 /* Aileron-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */; };
+		18D76E482AB035EE005B88EF /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D76E472AB035EE005B88EF /* StringConstant.swift */; };
+		18D76E4A2AB03AFB005B88EF /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D76E492AB03AFB005B88EF /* AlertManager.swift */; };
 		18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */; };
 		18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA12A97671D007E2FF5 /* ConcernCell.swift */; };
 		18E02AA42A97671D007E2FF5 /* ConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E02AA22A97671D007E2FF5 /* ConcernCell.xib */; };
@@ -120,6 +123,7 @@
 		1821C6112AA867C500087FA7 /* PersonListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListingTableViewCell.swift; sourceTree = "<group>"; };
 		1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonListingTableViewCell.xib; sourceTree = "<group>"; };
 		1821C6152AA9A46700087FA7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		182839982AB09175003D212D /* SoundDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDataManager.swift; sourceTree = "<group>"; };
 		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
 		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
 		1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstant.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 		18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-BoldItalic.otf"; sourceTree = "<group>"; };
 		18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Black.otf"; sourceTree = "<group>"; };
+		18D76E472AB035EE005B88EF /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
+		18D76E492AB03AFB005B88EF /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
 		18E02AA12A97671D007E2FF5 /* ConcernCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernCell.swift; sourceTree = "<group>"; };
 		18E02AA22A97671D007E2FF5 /* ConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConcernCell.xib; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				180254D32A8DECFA00C744CE /* UICollectionView+Extension.swift */,
 				180254D52A8DED2E00C744CE /* UITableView+Extension.swift */,
 				1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */,
+				18D76E492AB03AFB005B88EF /* AlertManager.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				180254D82A8DFE7900C744CE /* FontContant.swift */,
+				18D76E472AB035EE005B88EF /* StringConstant.swift */,
 			);
 			path = "Constant File";
 			sourceTree = "<group>";
@@ -258,10 +266,19 @@
 		1821C6172AA9DB4400087FA7 /* MORE */ = {
 			isa = PBXGroup;
 			children = (
+				182839972AB09153003D212D /* DataManager */,
 				188BEB552AA9DC73000C6DF4 /* SubController */,
 				188BEB532AA9DC36000C6DF4 /* Controller */,
 			);
 			path = MORE;
+			sourceTree = "<group>";
+		};
+		182839972AB09153003D212D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				182839982AB09175003D212D /* SoundDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		183F38C92A98B9D8005D35D8 /* Application */ = {
@@ -955,15 +972,18 @@
 				1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */,
 				180254CF2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift in Sources */,
 				18F542DE2AAE1460000B9B1E /* DogConstantString.swift in Sources */,
+				18D76E482AB035EE005B88EF /* StringConstant.swift in Sources */,
 				1821C6102AA862A800087FA7 /* PersonListingVC.swift in Sources */,
 				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
 				18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */,
+				182839992AB09175003D212D /* SoundDataManager.swift in Sources */,
 				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
 				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
 				18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */,
 				18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */,
 				180254D92A8DFE7900C744CE /* FontContant.swift in Sources */,
+				18D76E4A2AB03AFB005B88EF /* AlertManager.swift in Sources */,
 				18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */,
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
 				1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */,
