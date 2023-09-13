@@ -320,6 +320,38 @@
             endingLineNumber = "86"
             landmarkName = "playSound(index:testing:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB21B7B3-DC21-4EEB-A074-452AF5EA035D - cf01b8e6a28d96da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.SoundManager.playSound(index: Swift.Int, testing: Swift.Bool) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extension/SoundManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1236">
+               </Location>
+               <Location
+                  uuid = "CB21B7B3-DC21-4EEB-A074-452AF5EA035D - cf01b8e6a28d96da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.SoundManager.playSound(index: Swift.Int, testing: Swift.Bool) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extension/SoundManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1372">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -366,6 +398,36 @@
                   startingLineNumber = "85"
                   endingLineNumber = "85"
                   offsetFromSymbolStart = "2888">
+               </Location>
+               <Location
+                  uuid = "47E08916-A28E-47D9-98AD-9297F3DB5252 - cf01b8e6a28d96bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.SoundManager.playSound(index: Swift.Int, testing: Swift.Bool) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extension/SoundManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  uuid = "47E08916-A28E-47D9-98AD-9297F3DB5252 - cf01b8e6a28d96bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.SoundManager.playSound(index: Swift.Int, testing: Swift.Bool) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extension/SoundManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "2752">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -444,8 +506,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "requestMicrophonePermission()"
             landmarkType = "7">
             <Locations>
@@ -479,26 +541,8 @@
                   endingLineNumber = "103"
                   offsetFromSymbolStart = "308">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "850E0AF9-7260-401E-9854-3E95C530895A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/MORE/SubController/PermissionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "requestMicrophonePermission()"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "850E0AF9-7260-401E-9854-3E95C530895A - a2093aec217b7378"
+                  uuid = "3BBD8879-6DB9-4FB1-AD47-74C4A552BB9C - a2093aec217b6dae"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -508,12 +552,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "908">
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "248">
                </Location>
                <Location
-                  uuid = "850E0AF9-7260-401E-9854-3E95C530895A - a2093aec217b6c87"
+                  uuid = "3BBD8879-6DB9-4FB1-AD47-74C4A552BB9C - a2093aec217b739f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -523,9 +567,24 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "628">
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "3BBD8879-6DB9-4FB1-AD47-74C4A552BB9C - a2093aec217b739f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "332">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -540,8 +599,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "requestMicrophonePermission()"
             landmarkType = "7">
             <Locations>
@@ -590,6 +649,81 @@
                   endingLineNumber = "110"
                   offsetFromSymbolStart = "24">
                </Location>
+               <Location
+                  uuid = "CACBFB91-0464-432F-9BBA-9D226BA7682E - a2093aec217b6ce4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "CACBFB91-0464-432F-9BBA-9D226BA7682E - 8150e0381d5f9f25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "CACBFB91-0464-432F-9BBA-9D226BA7682E - a2093aec217b72d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "CACBFB91-0464-432F-9BBA-9D226BA7682E - 8150e0381d5f8156"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "CACBFB91-0464-432F-9BBA-9D226BA7682E - a2093aec217b72d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.requestMicrophonePermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "468">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -603,8 +737,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -638,6 +772,36 @@
                   endingLineNumber = "199"
                   offsetFromSymbolStart = "84">
                </Location>
+               <Location
+                  uuid = "C6CF5BF2-FB18-4BB2-94B6-2C8ADC1EE668 - 753009f92f55814c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "C6CF5BF2-FB18-4BB2-94B6-2C8ADC1EE668 - 753009f92f5587f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "84">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -651,8 +815,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -686,6 +850,36 @@
                   endingLineNumber = "201"
                   offsetFromSymbolStart = "128">
                </Location>
+               <Location
+                  uuid = "600425DA-0781-4E5A-94C9-D72E63AC1BCF - 753009f92f558102"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "600425DA-0781-4E5A-94C9-D72E63AC1BCF - 753009f92f5587b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "128">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -699,8 +893,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -734,6 +928,36 @@
                   endingLineNumber = "207"
                   offsetFromSymbolStart = "424">
                </Location>
+               <Location
+                  uuid = "765E9346-A63D-4C84-913D-0A9BC3D4C7BA - 753009f92f558644"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "765E9346-A63D-4C84-913D-0A9BC3D4C7BA - 753009f92f558489"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "804">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -747,8 +971,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -782,6 +1006,36 @@
                   endingLineNumber = "212"
                   offsetFromSymbolStart = "700">
                </Location>
+               <Location
+                  uuid = "F5DE0650-5734-4611-857E-34B5FBE878E5 - 753009f92f5586b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "F5DE0650-5734-4611-857E-34B5FBE878E5 - 753009f92f5585a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "1460">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -795,8 +1049,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -830,6 +1084,36 @@
                   endingLineNumber = "212"
                   offsetFromSymbolStart = "700">
                </Location>
+               <Location
+                  uuid = "4FE14EAC-A4F8-4796-8395-ECA0178A9D1B - 753009f92f5586b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "4FE14EAC-A4F8-4796-8395-ECA0178A9D1B - 753009f92f5585a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "1460">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -843,8 +1127,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -878,6 +1162,36 @@
                   endingLineNumber = "216"
                   offsetFromSymbolStart = "752">
                </Location>
+               <Location
+                  uuid = "6A39397A-15F2-4B46-9B17-11CA71322911 - 753009f92f55873d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "752">
+               </Location>
+               <Location
+                  uuid = "6A39397A-15F2-4B46-9B17-11CA71322911 - 753009f92f567a24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "242"
+                  endingLineNumber = "242"
+                  offsetFromSymbolStart = "1512">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -891,8 +1205,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -926,6 +1240,36 @@
                   endingLineNumber = "220"
                   offsetFromSymbolStart = "804">
                </Location>
+               <Location
+                  uuid = "E2008EED-687D-4693-9482-95F202EF7C9A - 753009f92f5587b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "804">
+               </Location>
+               <Location
+                  uuid = "E2008EED-687D-4693-9482-95F202EF7C9A - 753009f92f567ab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "246"
+                  endingLineNumber = "246"
+                  offsetFromSymbolStart = "1564">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -939,8 +1283,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -974,6 +1318,36 @@
                   endingLineNumber = "220"
                   offsetFromSymbolStart = "804">
                </Location>
+               <Location
+                  uuid = "F3BC047F-9A09-4492-B7A6-BB8FF77966C4 - 753009f92f5587b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "804">
+               </Location>
+               <Location
+                  uuid = "F3BC047F-9A09-4492-B7A6-BB8FF77966C4 - 753009f92f567ab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "246"
+                  endingLineNumber = "246"
+                  offsetFromSymbolStart = "1564">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -987,8 +1361,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "setLocationPermission()"
             landmarkType = "7">
             <Locations>
@@ -1022,6 +1396,36 @@
                   endingLineNumber = "224"
                   offsetFromSymbolStart = "856">
                </Location>
+               <Location
+                  uuid = "5B36245C-B7EE-441D-8DF6-F76FFECB2D7F - 753009f92f558435"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  uuid = "5B36245C-B7EE-441D-8DF6-F76FFECB2D7F - 753009f92f567b3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.setLocationPermission() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "250"
+                  endingLineNumber = "250"
+                  offsetFromSymbolStart = "1616">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1035,8 +1439,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1085,6 +1489,36 @@
                   endingLineNumber = "230"
                   offsetFromSymbolStart = "92">
                </Location>
+               <Location
+                  uuid = "A7F9AEF2-531D-4109-BD4B-FAB03B4F5E50 - 3016d03354097e7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "A7F9AEF2-531D-4109-BD4B-FAB03B4F5E50 - 3016d033540a8345"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
+                  offsetFromSymbolStart = "92">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1098,8 +1532,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1163,6 +1597,36 @@
                   endingLineNumber = "233"
                   offsetFromSymbolStart = "280">
                </Location>
+               <Location
+                  uuid = "0FDBEB93-0F84-4223-ADC0-DB49BB21517E - 3016d03354097ed1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "0FDBEB93-0F84-4223-ADC0-DB49BB21517E - 3016d033540a8326"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "280">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1176,8 +1640,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1226,6 +1690,36 @@
                   endingLineNumber = "236"
                   offsetFromSymbolStart = "856">
                </Location>
+               <Location
+                  uuid = "0D3E5D12-5BD6-4DB3-9176-F335375353ED - 3016d03354097eb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  uuid = "0D3E5D12-5BD6-4DB3-9176-F335375353ED - 3016d033540a83bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "262"
+                  endingLineNumber = "262"
+                  offsetFromSymbolStart = "856">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1239,8 +1733,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1304,6 +1798,66 @@
                   endingLineNumber = "240"
                   offsetFromSymbolStart = "1124">
                </Location>
+               <Location
+                  uuid = "C4892E06-36FC-45F6-AE34-2ED9D76702E3 - 3016d033540a8136"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  uuid = "C4892E06-36FC-45F6-AE34-2ED9D76702E3 - 7ac9d5a60cfea325"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "C4892E06-36FC-45F6-AE34-2ED9D76702E3 - 3016d033540a823f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  uuid = "C4892E06-36FC-45F6-AE34-2ED9D76702E3 - 7ac9d5a60cfea02c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "0">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1317,8 +1871,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1352,6 +1906,36 @@
                   endingLineNumber = "241"
                   offsetFromSymbolStart = "1220">
                </Location>
+               <Location
+                  uuid = "E0853731-F962-4B8D-B68A-11EAD20BD566 - 3016d033540a81c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+               <Location
+                  uuid = "E0853731-F962-4B8D-B68A-11EAD20BD566 - 3016d033540a82de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "1220">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1365,8 +1949,8 @@
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "confirmedSetup()"
             landmarkType = "7">
             <Locations>
@@ -1428,6 +2012,36 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "244"
                   endingLineNumber = "244"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+               <Location
+                  uuid = "05FBFA63-4FAF-41B1-8580-B2A23EB3E658 - 3016d033540a81aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+               <Location
+                  uuid = "05FBFA63-4FAF-41B1-8580-B2A23EB3E658 - 3016d033540a82b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.PermissionViewController.confirmedSetup() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MORE/SubController/PermissionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
                   offsetFromSymbolStart = "1232">
                </Location>
             </Locations>

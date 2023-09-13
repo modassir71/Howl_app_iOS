@@ -34,13 +34,24 @@ class PermissionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getSavedColor(key: "microphoneColor", color: &microphoneBtn.backgroundColor!)
+        getSavedColor(key: "cameraBackgroudColor", color: &cameraBtn.backgroundColor!)
+        getSavedColor(key: "LocationBackgroundColor", color: &locationBtn.backgroundColor!)
+        getSavedColor(key: "notificationBackgroundColor", color: &notificationBtn.backgroundColor!)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
     }
  
+//   MARK: - Retrive button bg color
+    func getSavedColor(key: String, color: inout UIColor){
+        if let colorData = UserDefaults.standard.data(forKey: key),
+           let loadedColor = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData) {
+            color = loadedColor
+        }
+    }
 //    MARK: - Add shadow and corner Radius
     func addShadow(to Button: UIButton){
-        Button.layer.shadowColor = UIColor.red.cgColor
+        Button.layer.shadowColor = UIColor.gray.cgColor
         Button.layer.shadowOpacity = 0.2
         Button.layer.shadowOffset = CGSize(width: 0, height: 5)
         Button.layer.shadowRadius = 2
@@ -101,6 +112,12 @@ class PermissionViewController: UIViewController {
         self.present(alert, animated: true)
 
     }
+//    MARK: - Save button background color
+    func saveColor(color: UIColor, key: String){
+        if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: color , requiringSecureCoding: false) {
+            UserDefaults.standard.set(colorData, forKey: key)
+        }
+    }
 //    MARK: - Microphone access Method
    func requestMicrophonePermission() {
        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .audio)
@@ -114,8 +131,8 @@ class PermissionViewController: UIViewController {
            })
            
        case .authorized:
-           
            microphoneBtn.backgroundColor = enableBtnColor
+           saveColor(color: microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
            
        case .restricted, .denied:
            
@@ -152,6 +169,7 @@ class PermissionViewController: UIViewController {
         case .authorized:
             
             cameraBtn.backgroundColor = enableBtnColor
+            saveColor(color: cameraBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
             
         case .restricted, .denied:
             
@@ -182,6 +200,7 @@ class PermissionViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.notificationBtn.backgroundColor = self.enableBtnColor
+                    self.saveColor(color: self.notificationBtn.backgroundColor ?? UIColor(), key: "notificationBackgroundColor")
                 }
                 
             } else if let error = error {
@@ -204,11 +223,15 @@ class PermissionViewController: UIViewController {
         case .authorizedAlways:
             
             locationBtn.backgroundColor = enableBtnColor
+            self.saveColor(color: self.locationBtn.backgroundColor ?? UIColor(), key: "LocationBackgroundColor")
+            
             
         case .authorizedWhenInUse:
             
             locationManager.requestAlwaysAuthorization()
             locationBtn.backgroundColor = enableBtnColor
+            self.saveColor(color: self.locationBtn.backgroundColor ?? UIColor(), key: "LocationBackgroundColor")
+            
             
         case .notDetermined:
             
@@ -235,7 +258,6 @@ class PermissionViewController: UIViewController {
             // now head back to the load page
             fromFirstLoadToPermissions = false
             UIApplication.shared.windows.first!.rootViewController?.dismiss(animated: true, completion: {})
-            //self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: {})
         } else if fromInfoToPermissions == true {
             
             // Just go back to the info page
@@ -245,11 +267,9 @@ class PermissionViewController: UIViewController {
             
             // Initial setup so follow completion process
             UserDefaults.standard.setValue(true, forKey: "firstloadcompleted")
-           // UIApplication.shared.windows.first!.rootViewController?.dismiss(animated: true, completion: {})
             if let navigationController = self.navigationController {
                 navigationController.popToRootViewController(animated: true)
             }
-            //self.presentingViewController?.presentingViewController?.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: {})
         }
     }
 

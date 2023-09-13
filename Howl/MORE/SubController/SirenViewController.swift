@@ -87,7 +87,8 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     @IBAction func setBtnPress(_ sender: UIButton) {
-        
+        SoundDataManager.sharedInstance.saveSiren(index: sirenPickerView.selectedRow(inComponent: 0))
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: SIREN PICKER

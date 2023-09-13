@@ -80,10 +80,21 @@ class MoreViewController: UIViewController {
     }
     
     @IBAction func unarchiveBtnPress(_ sender: UIButton) {
+        let alert = UIAlertController(title: StringConstant.archiveTitle, message: StringConstant.archiveMsg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                // Handle the OK button tap (if needed)
+            }
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
     }
     
     
     @IBAction func accessBtnPress(_ sender: UIButton) {
+        if let appSettingsURL = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(appSettingsURL) {
+                UIApplication.shared.open(appSettingsURL, options: [:], completionHandler: nil)
+            }
+        }
     }
     
     

@@ -22,5 +22,9 @@ struct StringConstant {
 //    Siren msg
     static let sirenTitle = "SELECT SIREN"
     static let sirenMsg = "Please select a siren to be played to deter any potential offender should you use the HOWL functionality of the app.  As a test menu the sirens will be played at 30% volume.  Please ensure your device is not in silent mode"
+//    Archive msg
+    static let archiveTitle = "No Data"
+    static let archiveMsg = "There is no ay data"
+    
     
 }
