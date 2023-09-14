@@ -25,6 +25,7 @@ class AddDogViewController: UIViewController {
     @IBOutlet weak var navigationView: UIView!
 //    MARK: - Variable
     var imagePicker = UIImagePickerController()
+    let vm: InitialDogInfoDelegate = AddDogVm()
 //    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,6 @@ class AddDogViewController: UIViewController {
         colorTxtFld.delegate = self
         bredextFld.delegate = self
         dogNameTxtFld.delegate = self
-        
     }
 //    MARK: - Set up UI
    func setUI(){
@@ -67,8 +67,8 @@ class AddDogViewController: UIViewController {
         customizeTxtFld(to: microchipDatabaseTxtFld, string: DogConstantString.microchipDatabase)
         customizeTxtFld(to: districtiveFeature, string: DogConstantString.distrinctiveFeature)
         femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
     }
 //    MARK: - Customize text field
@@ -117,7 +117,15 @@ class AddDogViewController: UIViewController {
     
     
     @IBAction func createdBtnOPress(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", microchipDb: microchipDatabaseTxtFld.text ?? "", microchipNo: microchipNumberTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "")
+        let status = validationResult.0
+        let message = validationResult.1
+        if status == true{
+            self.navigationController?.popViewController(animated: true)
+        } else{
+            alert("Alert", message: message)
+        }
+        
     }
 }
 //MARK: - ImagePicker delegate method extension

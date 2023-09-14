@@ -25,6 +25,13 @@
 		182839992AB09175003D212D /* SoundDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182839982AB09175003D212D /* SoundDataManager.swift */; };
 		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
 		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
+		18530A692AB2CD7000C190D3 /* DogRegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */; };
+		18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A6B2AB2D11600C190D3 /* AddNewDogModel.swift */; };
+		18530A6F2AB2D18100C190D3 /* DogsWalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A6E2AB2D18100C190D3 /* DogsWalkModel.swift */; };
+		18530A722AB2D6C100C190D3 /* AddPersonVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A712AB2D6C100C190D3 /* AddPersonVm.swift */; };
+		18530A742AB2EAE500C190D3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A732AB2EAE500C190D3 /* UIViewController.swift */; };
+		18530A772AB30AE400C190D3 /* AddDogVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A762AB30AE400C190D3 /* AddDogVm.swift */; };
+		18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A792AB3338100C190D3 /* AddNewPersonModel.swift */; };
 		1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */; };
 		1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FE2A9DC3650094B522 /* AddDogVc.swift */; };
 		1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D3032A9E13110094B522 /* DogTblViewCell.swift */; };
@@ -126,6 +133,13 @@
 		182839982AB09175003D212D /* SoundDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDataManager.swift; sourceTree = "<group>"; };
 		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
 		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
+		18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogRegistrationValidation.swift; sourceTree = "<group>"; };
+		18530A6B2AB2D11600C190D3 /* AddNewDogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogModel.swift; sourceTree = "<group>"; };
+		18530A6E2AB2D18100C190D3 /* DogsWalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsWalkModel.swift; sourceTree = "<group>"; };
+		18530A712AB2D6C100C190D3 /* AddPersonVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonVm.swift; sourceTree = "<group>"; };
+		18530A732AB2EAE500C190D3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		18530A762AB30AE400C190D3 /* AddDogVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVm.swift; sourceTree = "<group>"; };
+		18530A792AB3338100C190D3 /* AddNewPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonModel.swift; sourceTree = "<group>"; };
 		1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstant.swift; sourceTree = "<group>"; };
 		1872D2FE2A9DC3650094B522 /* AddDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVc.swift; sourceTree = "<group>"; };
 		1872D3032A9E13110094B522 /* DogTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTblViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +255,7 @@
 				180254D52A8DED2E00C744CE /* UITableView+Extension.swift */,
 				1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */,
 				18D76E492AB03AFB005B88EF /* AlertManager.swift */,
+				18530A732AB2EAE500C190D3 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -309,6 +324,54 @@
 				1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */,
 			);
 			path = NewDogProfile;
+			sourceTree = "<group>";
+		};
+		18530A672AB2CD3800C190D3 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		18530A6A2AB2D0F800C190D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18530A6B2AB2D11600C190D3 /* AddNewDogModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18530A6D2AB2D16E00C190D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18530A6E2AB2D18100C190D3 /* DogsWalkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18530A702AB2D69700C190D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18530A712AB2D6C100C190D3 /* AddPersonVm.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18530A752AB30AAA00C190D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18530A762AB30AE400C190D3 /* AddDogVm.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18530A782AB3334400C190D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18530A792AB3338100C190D3 /* AddNewPersonModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1872D3002A9E12730094B522 /* AddDog */ = {
@@ -400,6 +463,7 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				18530A672AB2CD3800C190D3 /* Validation */,
 				18F542DB2AADEB0C000B9B1E /* Assets */,
 				18F542DA2AADEAE7000B9B1E /* Storyboard */,
 				18F542CA2AADE1F1000B9B1E /* Howl Module */,
@@ -551,6 +615,8 @@
 		18F542D02AADE5DD000B9B1E /* AddNewPerson Module */ = {
 			isa = PBXGroup;
 			children = (
+				18530A782AB3334400C190D3 /* Model */,
+				18530A702AB2D69700C190D3 /* ViewModel */,
 				18F542D12AADE5F2000B9B1E /* ViewController */,
 			);
 			path = "AddNewPerson Module";
@@ -567,6 +633,8 @@
 		18F542D22AADE66C000B9B1E /* AddDogModule */ = {
 			isa = PBXGroup;
 			children = (
+				18530A752AB30AAA00C190D3 /* ViewModel */,
+				18530A6A2AB2D0F800C190D3 /* Model */,
 				18F542DC2AAE13F9000B9B1E /* ConstantString */,
 				18F542D32AADE67D000B9B1E /* ViewController */,
 			);
@@ -593,6 +661,7 @@
 		18F542D52AADE71B000B9B1E /* DogWalking Module */ = {
 			isa = PBXGroup;
 			children = (
+				18530A6D2AB2D16E00C190D3 /* Model */,
 				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
 			);
 			path = "DogWalking Module";
@@ -961,12 +1030,15 @@
 				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
 				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
+				18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */,
 				181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */,
+				18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */,
 				1884D87A2AA1B22200BC7523 /* AddDogViewController.swift in Sources */,
 				181C3A592A926B4400B50DE7 /* AppStoryboard.swift in Sources */,
 				1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */,
 				188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */,
 				188BEB522AA9DBDE000C6DF4 /* MoreViewController.swift in Sources */,
+				18530A742AB2EAE500C190D3 /* UIViewController.swift in Sources */,
 				18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */,
 				18C86C532A8CD11400A1F937 /* HowlViewController.swift in Sources */,
 				1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */,
@@ -980,6 +1052,7 @@
 				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
 				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
+				18530A722AB2D6C100C190D3 /* AddPersonVm.swift in Sources */,
 				18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */,
 				18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */,
 				180254D92A8DFE7900C744CE /* FontContant.swift in Sources */,
@@ -988,11 +1061,14 @@
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
 				1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */,
 				18C86C2A2A8CABA800A1F937 /* Howl.xcdatamodeld in Sources */,
+				18530A772AB30AE400C190D3 /* AddDogVm.swift in Sources */,
+				18530A692AB2CD7000C190D3 /* DogRegistrationValidation.swift in Sources */,
 				1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */,
 				188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */,
 				1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */,
 				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,
 				189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */,
+				18530A6F2AB2D18100C190D3 /* DogsWalkModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

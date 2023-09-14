@@ -27,6 +27,7 @@ class AddNewPersonVc: UIViewController {
     var dailingCode: String?
     var countryCode: String?
     var imagePicker = UIImagePickerController()
+    let vm: InitialInfoDelegate = AddPersonVm()
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,15 @@ class AddNewPersonVc: UIViewController {
     
     
     @IBAction func createBtnPress(_ sender: UIButton) {
+        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", nickName: nickNameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "")
+        let status = validationResult.0
+        let message = validationResult.1
+        if status == true{
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            alert("Alert", message: message)
+        }
+        
     }
     
     @IBAction func backBtnPress(_ sender: UIButton) {
