@@ -14,6 +14,9 @@ class PersonListingVC: UIViewController {
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var addPersonBtn: UIButton!
     
+    
+    var peopleDataManager = AddPeopleDataManager.sharedInstance
+    
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class PersonListingVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        personListingTblView.reloadData()
     }
     
 //    MARK: - Delegate Method
@@ -62,11 +66,18 @@ class PersonListingVC: UIViewController {
 
 extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return peopleDataManager.people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell() as PersonListingTableViewCell
+        cell.nameLbl.text = peopleDataManager.people[indexPath.row].personName
+        cell.nickNameLbl.text = peopleDataManager.people[indexPath.row].personNickname
+        if let dogImageData = peopleDataManager.people[indexPath.row].personImage {
+            if let dogImage = UIImage(data: dogImageData) {
+                cell.profileImg.image = dogImage
+            }
+        }
         return cell
     }
     

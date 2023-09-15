@@ -20,7 +20,7 @@ class HowlViewController: UIViewController {
     @IBOutlet weak var petImageView: UIImageView!
     
     //MARK: - Variable
-    
+    let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
     
     //MARK: - LIfeCycle
@@ -38,6 +38,7 @@ class HowlViewController: UIViewController {
         tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
         tabBarItem.image = UIImage(named: "Howl_Selectable")
         self.tabBarController?.tabBar.isHidden = false
+        dogVarietyCollectionView.reloadData()
         
     }
     
@@ -110,11 +111,19 @@ class HowlViewController: UIViewController {
 //MARK: - Delegates and datsource Method
 extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dogVarietyArr.count
+     //  return dataManager.dogs.count
+        return dogVarietyArr.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(indexPath: indexPath) as NewDogVarietyCell
+//        if let dogImageData = dataManager.dogs[indexPath.row].dogImage {
+//            if let dogImage = UIImage(data: dogImageData) {
+//                cell.dogImgView.image = dogImage
+//            }
+//        }
+//        cell.dogNameLbl.text = dataManager.dogs[indexPath.row].dogName
         cell.dogImgView?.image = UIImage(named: "\(dogVarietyArr[indexPath.row])")
         cell.dogNameLbl.text = dogVarietyArr[indexPath.row]
         return cell

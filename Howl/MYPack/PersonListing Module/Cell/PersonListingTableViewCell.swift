@@ -36,7 +36,9 @@ class PersonListingTableViewCell: UITableViewCell {
         containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
         containerView.layer.shadowRadius = 5
         containerView.layer.cornerRadius = 10.0
-      //  containerView.clipsToBounds = true
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .clear
+        selectedBackgroundView = backgroundView
     }
     
 }

@@ -26,6 +26,7 @@ class AddDogViewController: UIViewController {
 //    MARK: - Variable
     var imagePicker = UIImagePickerController()
     let vm: InitialDogInfoDelegate = AddDogVm()
+    var dogImageData: Data!
 //    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,9 +122,37 @@ class AddDogViewController: UIViewController {
         let status = validationResult.0
         let message = validationResult.1
         if status == true{
-            self.navigationController?.popViewController(animated: true)
-        } else{
+            createDog()
+            
+        }else{
             alert("Alert", message: message)
+        }
+        
+    }
+    
+//    MARK: - Create a Dog
+    func createDog(){
+        if let dogImage = profileImg.image {
+            
+            dogImageData = dogImage.jpegData(compressionQuality: 1)
+        } else {
+            dogImageData = Data()
+        }
+        let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: "Male", breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: true, distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkUpdate]())
+        DogDataManager.shared.dogs.append(newDog)
+        if DogDataManager.shared.saveDogs() {
+            
+            switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+                
+            case true:
+                
+                self.navigationController?.popViewController(animated: true)
+                
+            case false:
+                print("Not Added Error")
+            }
+        }else{
+            print("Eroor")
         }
         
     }

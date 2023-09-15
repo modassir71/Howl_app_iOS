@@ -28,6 +28,7 @@ class AddNewPersonVc: UIViewController {
     var countryCode: String?
     var imagePicker = UIImagePickerController()
     let vm: InitialInfoDelegate = AddPersonVm()
+    var personImageData: Data!
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,31 @@ class AddNewPersonVc: UIViewController {
         let status = validationResult.0
         let message = validationResult.1
         if status == true{
-            self.navigationController?.popViewController(animated: true)
+            if let personImage = profilePicImg.image {
+                
+                personImageData = personImage.jpegData(compressionQuality: 1)
+            } else {
+                personImageData = Data()
+            }
+            let newPerson = Person(name: nameTxtFld.text ?? "", nickname: nickNameTxtFld.text ?? "", countryDialCode: countryCodeLbl.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
+            AddPeopleDataManager.sharedInstance.people.append(newPerson)
+            if AddPeopleDataManager.sharedInstance.savePeople() {
+                switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+                    
+                case true:
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                case false:
+//                    DispatchQueue.main.async {
+//                        self.performSegue(withIdentifier: "personToSiren", sender: self)
+//                    }
+                    print("Not Saved")
+                }
+            }else{
+                print("Error")
+            }
+           
         }else{
             alert("Alert", message: message)
         }

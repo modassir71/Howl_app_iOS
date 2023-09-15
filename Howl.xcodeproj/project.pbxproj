@@ -23,6 +23,9 @@
 		1821C6142AA867C500087FA7 /* PersonListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */; };
 		1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821C6152AA9A46700087FA7 /* InfoViewController.swift */; };
 		182839992AB09175003D212D /* SoundDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182839982AB09175003D212D /* SoundDataManager.swift */; };
+		18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F832AB4332B00D97A36 /* ApiProvider.swift */; };
+		18297F872AB4394500D97A36 /* DogDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F862AB4394500D97A36 /* DogDataManger.swift */; };
+		18297F8A2AB4422800D97A36 /* AddPeopleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */; };
 		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
 		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
 		18530A692AB2CD7000C190D3 /* DogRegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */; };
@@ -131,6 +134,9 @@
 		1821C6122AA867C500087FA7 /* PersonListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonListingTableViewCell.xib; sourceTree = "<group>"; };
 		1821C6152AA9A46700087FA7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		182839982AB09175003D212D /* SoundDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDataManager.swift; sourceTree = "<group>"; };
+		18297F832AB4332B00D97A36 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		18297F862AB4394500D97A36 /* DogDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDataManger.swift; sourceTree = "<group>"; };
+		18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleDataManager.swift; sourceTree = "<group>"; };
 		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
 		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
 		18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogRegistrationValidation.swift; sourceTree = "<group>"; };
@@ -292,6 +298,30 @@
 			isa = PBXGroup;
 			children = (
 				182839982AB09175003D212D /* SoundDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		18297F822AB4331100D97A36 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				18297F832AB4332B00D97A36 /* ApiProvider.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		18297F852AB4392800D97A36 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				18297F862AB4394500D97A36 /* DogDataManger.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		18297F882AB4420B00D97A36 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -463,6 +493,7 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				18297F822AB4331100D97A36 /* Config */,
 				18530A672AB2CD3800C190D3 /* Validation */,
 				18F542DB2AADEB0C000B9B1E /* Assets */,
 				18F542DA2AADEAE7000B9B1E /* Storyboard */,
@@ -615,6 +646,7 @@
 		18F542D02AADE5DD000B9B1E /* AddNewPerson Module */ = {
 			isa = PBXGroup;
 			children = (
+				18297F882AB4420B00D97A36 /* DataManager */,
 				18530A782AB3334400C190D3 /* Model */,
 				18530A702AB2D69700C190D3 /* ViewModel */,
 				18F542D12AADE5F2000B9B1E /* ViewController */,
@@ -633,6 +665,7 @@
 		18F542D22AADE66C000B9B1E /* AddDogModule */ = {
 			isa = PBXGroup;
 			children = (
+				18297F852AB4392800D97A36 /* DataManager */,
 				18530A752AB30AAA00C190D3 /* ViewModel */,
 				18530A6A2AB2D0F800C190D3 /* Model */,
 				18F542DC2AAE13F9000B9B1E /* ConstantString */,
@@ -1035,6 +1068,7 @@
 				18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */,
 				1884D87A2AA1B22200BC7523 /* AddDogViewController.swift in Sources */,
 				181C3A592A926B4400B50DE7 /* AppStoryboard.swift in Sources */,
+				18297F872AB4394500D97A36 /* DogDataManger.swift in Sources */,
 				1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */,
 				188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */,
 				188BEB522AA9DBDE000C6DF4 /* MoreViewController.swift in Sources */,
@@ -1049,6 +1083,7 @@
 				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
 				18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */,
 				182839992AB09175003D212D /* SoundDataManager.swift in Sources */,
+				18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */,
 				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
 				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
@@ -1066,6 +1101,7 @@
 				1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */,
 				188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */,
 				1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */,
+				18297F8A2AB4422800D97A36 /* AddPeopleDataManager.swift in Sources */,
 				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,
 				189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */,
 				18530A6F2AB2D18100C190D3 /* DogsWalkModel.swift in Sources */,
