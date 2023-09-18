@@ -236,13 +236,13 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="290"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Pet from your Pack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8l-65-KZY">
-                                <rect key="frame" x="95" y="435" width="185" height="48.333333333333314"/>
+                                <rect key="frame" x="95" y="435" width="185" height="46.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cy-pb-nhx">
-                                <rect key="frame" x="19.999999999999996" y="664" width="54.666666666666657" height="49.666666666666629"/>
+                                <rect key="frame" x="19.999999999999996" y="662.33333333333337" width="54.666666666666657" height="49.666666666666629"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=" " image="Add_New"/>
                                 <connections>
@@ -250,13 +250,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line_Img" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-1h-ZFJ">
-                                <rect key="frame" x="89.666666666666671" y="659" width="2" height="60"/>
+                                <rect key="frame" x="89.666666666666671" y="657.33333333333337" width="2" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="md2-Yi-ODa"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-d8-USo">
-                                <rect key="frame" x="101.66666666666666" y="664" width="273.33333333333337" height="64"/>
+                                <rect key="frame" x="101.66666666666666" y="662.33333333333337" width="273.33333333333337" height="65.666666666666629"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EK9-V1-g6Q">
                                     <size key="itemSize" width="128" height="128"/>
@@ -290,10 +290,10 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-ud-6Pp">
-                                <rect key="frame" x="0.0" y="489" width="218" height="152"/>
+                                <rect key="frame" x="0.0" y="487.33333333333326" width="218" height="152"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGx-uT-gPL">
-                                <rect key="frame" x="18" y="713.66666666666663" width="73.666666666666671" height="19.333333333333371"/>
+                                <rect key="frame" x="18" y="712" width="73.666666666666671" height="19.333333333333371"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1008,7 +1008,7 @@
         <scene sceneID="DV5-m1-oza">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMS-Lt-5ud" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="HOWL" image="Howl_Selectable" selectedImage="Howl_Selectable" id="bUa-t7-WyB">
+                    <tabBarItem key="tabBarItem" title="HOWL" image="Howl_Unslectable" selectedImage="Howl_Selectable" id="bUa-t7-WyB">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="10"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1051,13 +1051,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concern Related to" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-bw-8HA">
-                                        <rect key="frame" x="30" y="67" width="273" height="36"/>
+                                        <rect key="frame" x="30" y="67" width="261.33333333333331" height="35"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-mE-KaC">
-                                        <rect key="frame" x="0.0" y="117.99999999999997" width="375" height="401.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="116.99999999999997" width="375" height="402.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TI6-9g-37M">
@@ -3188,7 +3188,7 @@
         <scene sceneID="FZe-79-Tvx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="caQ-39-8aT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MORE" image="More_Selectable" selectedImage="More_Selectable" id="JnQ-yR-tsD">
+                    <tabBarItem key="tabBarItem" title="MORE" image="More_Unselectable" selectedImage="More_Selectable" id="JnQ-yR-tsD">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="10"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -3231,8 +3231,10 @@
         <image name="Home_Icon" width="355" height="193"/>
         <image name="Howl_Icons" width="98.5" height="37"/>
         <image name="Howl_Selectable" width="46.5" height="46.5"/>
+        <image name="Howl_Unslectable" width="39" height="39"/>
         <image name="Line_Img" width="1" height="60"/>
         <image name="More_Selectable" width="39" height="37.5"/>
+        <image name="More_Unselectable" width="39" height="37.5"/>
         <image name="My_Pack_Selectable" width="39" height="39"/>
         <image name="My_Pack_Unslectable" width="39" height="39"/>
         <image name="access_Img" width="35" height="35"/>

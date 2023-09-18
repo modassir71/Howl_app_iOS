@@ -111,21 +111,21 @@ class HowlViewController: UIViewController {
 //MARK: - Delegates and datsource Method
 extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     //  return dataManager.dogs.count
-        return dogVarietyArr.count
+      return dataManager.dogs.count
+       // return dogVarietyArr.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(indexPath: indexPath) as NewDogVarietyCell
-//        if let dogImageData = dataManager.dogs[indexPath.row].dogImage {
-//            if let dogImage = UIImage(data: dogImageData) {
-//                cell.dogImgView.image = dogImage
-//            }
-//        }
-//        cell.dogNameLbl.text = dataManager.dogs[indexPath.row].dogName
-        cell.dogImgView?.image = UIImage(named: "\(dogVarietyArr[indexPath.row])")
-        cell.dogNameLbl.text = dogVarietyArr[indexPath.row]
+        if let dogImageData = dataManager.dogs[indexPath.row].dogImage {
+            if let dogImage = UIImage(data: dogImageData) {
+                cell.dogImgView.image = dogImage
+            }
+        }
+        cell.dogNameLbl.text = dataManager.dogs[indexPath.row].dogName
+//        cell.dogImgView?.image = UIImage(named: "\(dogVarietyArr[indexPath.row])")
+//        cell.dogNameLbl.text = dogVarietyArr[indexPath.row]
         return cell
     }
     

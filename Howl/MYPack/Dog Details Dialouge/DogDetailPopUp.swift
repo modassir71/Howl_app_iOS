@@ -20,6 +20,10 @@ class DogDetailPopUp: UIViewController {
     
 //    MARK: - Variables
     var dogName = String()
+    var dogImages: Data?
+    var dob = String()
+    var color = String()
+    var breed = String()
     
 //    MARK: - Life cycle
     override func viewDidLoad() {
@@ -30,8 +34,23 @@ class DogDetailPopUp: UIViewController {
     func _setUpUi(){
         popupView.layer.cornerRadius = 10.0
         popupView.clipsToBounds = true
+        dogImage.layer.cornerRadius = dogImage.frame.width/2
+        dogImage.clipsToBounds = true
+        dogImage.contentMode = .scaleAspectFill
+        setData()
+    }
+    
+//    MARK: - SetData
+    func setData(){
+        breedLbl.text = breed
+        colorLbl.text = color
+        dobLbl.text = dob
         dogNameLbl.text = dogName
-        dogImage.image = UIImage(named: dogName)
+        if let imageData = dogImages {
+            let image = UIImage(data: imageData) // Convert the image data back to a UIImage
+            dogImage.image = image // Set the UIImage to the UIImageView
+        }
+        
     }
     
 //   MARK: - Button Action

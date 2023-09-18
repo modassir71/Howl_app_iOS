@@ -22,13 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="68" height="97"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Selectable" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-qU-Js9">
-                                <rect key="frame" x="0.0" y="0.0" width="68" height="66"/>
+                                <rect key="frame" x="1" y="0.0" width="66" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="Fva-Sh-ltu"/>
+                                    <constraint firstAttribute="width" constant="66" id="VY9-Eq-3pg"/>
+                                    <constraint firstAttribute="height" constant="66" id="wOA-FR-TVK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Tva-0I-yAH">
-                                <rect key="frame" x="13" y="70" width="42" height="25"/>
+                                <rect key="frame" x="0.0" y="74" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,13 +37,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fGu-qU-Js9" firstAttribute="top" secondItem="lVA-nX-6dE" secondAttribute="top" id="FO1-ID-gDS"/>
-                            <constraint firstItem="Tva-0I-yAH" firstAttribute="top" secondItem="fGu-qU-Js9" secondAttribute="bottom" constant="4" id="PH0-IB-Lpe"/>
-                            <constraint firstItem="Tva-0I-yAH" firstAttribute="leading" secondItem="lVA-nX-6dE" secondAttribute="leading" constant="13" id="WBa-Fm-g0V"/>
+                            <constraint firstItem="Tva-0I-yAH" firstAttribute="leading" secondItem="lVA-nX-6dE" secondAttribute="leading" id="WBa-Fm-g0V"/>
                             <constraint firstAttribute="bottom" secondItem="Tva-0I-yAH" secondAttribute="bottom" constant="2" id="da9-y8-vg9"/>
-                            <constraint firstAttribute="trailing" secondItem="fGu-qU-Js9" secondAttribute="trailing" id="gjo-OD-Kfs"/>
-                            <constraint firstAttribute="trailing" secondItem="Tva-0I-yAH" secondAttribute="trailing" constant="13" id="rCD-lb-TrD"/>
-                            <constraint firstItem="fGu-qU-Js9" firstAttribute="leading" secondItem="lVA-nX-6dE" secondAttribute="leading" id="tpU-ra-RC7"/>
+                            <constraint firstItem="fGu-qU-Js9" firstAttribute="top" secondItem="lVA-nX-6dE" secondAttribute="top" id="oFd-ES-hGu"/>
+                            <constraint firstAttribute="trailing" secondItem="Tva-0I-yAH" secondAttribute="trailing" id="rCD-lb-TrD"/>
+                            <constraint firstItem="fGu-qU-Js9" firstAttribute="centerX" secondItem="lVA-nX-6dE" secondAttribute="centerX" id="wkJ-o7-Ucd"/>
+                            <constraint firstItem="Tva-0I-yAH" firstAttribute="top" secondItem="fGu-qU-Js9" secondAttribute="bottom" constant="8" id="ycN-kq-tJq"/>
                         </constraints>
                     </view>
                 </subviews>

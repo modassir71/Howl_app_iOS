@@ -22,7 +22,7 @@ class MyPackVc: UIViewController  {
     //MARK: - Variable
     var interactionLayer: UIView!
     var dogArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
-    
+    var instance = DogDataManager.shared
     //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class MyPackVc: UIViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        dogCollectionView.reloadData()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -79,13 +80,17 @@ class MyPackVc: UIViewController  {
 
 extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dogArr.count
+        return instance.dogs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(indexPath: indexPath) as DogVarietyCollectionViewCell
-            cell.dogImg?.image = UIImage(named: "\(dogArr[indexPath.row])")
-            cell.dogName.text = dogArr[indexPath.row]
+        cell.dogName.text = instance.dogs[indexPath.row].dogName
+        if let dogImageData = instance.dogs[indexPath.row].dogImage {
+            if let dogImage = UIImage(data: dogImageData) {
+                cell.dogImg.image = dogImage
+            }
+        }
         return cell
     }
     
@@ -93,7 +98,12 @@ extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
         let vc = DogDetailPopUp(nibName: DogDetailPopUp.className, bundle: nil)
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
-        vc.dogName = dogArr[indexPath.row]
+        let item = instance.dogs[indexPath.row]
+        vc.dogName = item.dogName
+        vc.dogImages = item.dogImage
+        vc.dob = item.dogDOB
+        vc.color = item.dogColour
+        vc.breed = item.dogBreed
         self.present(vc, animated: true)
         
     }
