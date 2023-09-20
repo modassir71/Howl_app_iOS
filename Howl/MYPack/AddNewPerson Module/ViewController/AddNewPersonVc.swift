@@ -29,11 +29,21 @@ class AddNewPersonVc: UIViewController {
     var imagePicker = UIImagePickerController()
     let vm: InitialInfoDelegate = AddPersonVm()
     var personImageData: Data!
+    var isEdit: Bool?
+    var profileImge: Data!
+    var name: String?
+    var nickName: String?
+    var contryCode: String?
+    var phoneNumber: String?
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPUI()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _SetData()
     }
     
     func setUPUI(){
@@ -47,15 +57,15 @@ class AddNewPersonVc: UIViewController {
         profilePicImg.clipsToBounds = true
         nameTxtFld.layer.borderWidth = 1
         nameTxtFld.layer.borderColor = color.cgColor
-        let name = "Name"
+        let name = DogConstantString.name
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: color]
         let attributedPlaceholder = NSAttributedString(string: name, attributes: attributes)
         nameTxtFld.attributedPlaceholder = attributedPlaceholder
-        let nickName = "Nick Name"
+        let nickName = DogConstantString.nickName
         let attributesNickName: [NSAttributedString.Key: Any] = [.foregroundColor: color]
         let attributedNickNamePlaceHolder = NSAttributedString(string: nickName, attributes: attributesNickName)
         nickNameTxtFld.attributedPlaceholder = attributedNickNamePlaceHolder
-        let phoneNo = "Phone Number"
+        let phoneNo = DogConstantString.phoneNumber
         let attributesPhoneNo: [NSAttributedString.Key: Any] = [.foregroundColor: color]
         let attributedPhoneNoPlaceHolder = NSAttributedString(string: phoneNo, attributes: attributesPhoneNo)
         phoneNoTxtFld.attributedPlaceholder = attributedPhoneNoPlaceHolder
@@ -70,7 +80,27 @@ class AddNewPersonVc: UIViewController {
         whatsAppBtn.clipsToBounds = true
         createBtn.clipsToBounds = true
         phoneNoTxtFld.keyboardType = .numberPad
-        
+        if isEdit == true{
+            createBtn.setTitle(DogConstantString.update, for: .normal)
+        }else{
+            createBtn.setTitle(DogConstantString.create, for: .normal)
+        }
+    }
+    
+//    MARK: - SetData
+    func _SetData(){
+        if isEdit == true{
+            if let imageData = profilePicImg {
+                let image = UIImage(data: profileImge)
+                profilePicImg.image = image
+            }
+           // profilePicImg.image = profilePicImg
+            nameTxtFld.text = name
+            nickNameTxtFld.text = nickName
+            countryCodeLbl.text = countryCode
+            phoneNoTxtFld.text = phoneNumber
+            
+        }
     }
     
     //MARK: - Button Action

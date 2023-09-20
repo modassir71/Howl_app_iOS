@@ -11,7 +11,7 @@ class NewDogVarietyCell: UICollectionViewCell {
 //MARK: - Outlet
     @IBOutlet weak var dogNameLbl: UILabel!
     @IBOutlet weak var dogImgView: UIImageView!
-    
+    @IBOutlet weak var containerView: UIView!
     //MARK: - Life cycle
     
     override func awakeFromNib() {
@@ -23,9 +23,9 @@ class NewDogVarietyCell: UICollectionViewCell {
     //MARK: - SetUpUI
     func _setUpUI(){
         dogNameLbl.font = UIFont.appFont(.AileronBold, size: 13.0)
-        dogImgView.contentMode = .scaleAspectFit
-//        dogImgView.layer.cornerRadius = dogImgView.frame.width/2
-//        dogImgView.clipsToBounds = true
+        dogImgView.contentMode = .scaleAspectFill
+        containerView.layer.cornerRadius = containerView.frame.width/2
+        containerView.clipsToBounds = true
     }
 
 }

@@ -20,3 +20,8 @@ extension UIViewController{
         }
     }
 }
+extension String {
+    func capitalizeFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+}

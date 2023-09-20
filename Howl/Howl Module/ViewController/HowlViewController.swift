@@ -69,7 +69,7 @@ class HowlViewController: UIViewController {
         dogVarietyCollectionView.collectionViewLayout = layout
         let layoutCollectionView = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        dogVarietyCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      //  dogVarietyCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     }
     
@@ -102,7 +102,7 @@ class HowlViewController: UIViewController {
     
     @IBAction func addNewDog(_ sender: UIButton) {
         let storyboard = AppStoryboard.Main.instance
-        let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
+        let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "DogListingViewController") as! DogListingViewController
         self.navigationController?.pushViewController(addNewDogVc, animated: true)
     }
     
@@ -132,8 +132,10 @@ extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = AppStoryboard.Main.instance
         let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
-        dogWalkingVC.dogNameLbl = dogVarietyArr[indexPath.row]
-       // dogWalkingVC.dogImgItem = dogVarietyArr[i]
+        let item = dataManager.dogs[indexPath.row]
+        dogWalkingVC.dogNameLbl = item.dogName
+        dogWalkingVC.dogImgItem = item.dogImage
+         
         self.navigationController?.pushViewController(dogWalkingVC, animated: true)
     }
 }
@@ -141,11 +143,8 @@ extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //MARK: - DelegateFlowLayout
 
 extension HowlViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-           return 0
-       }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 66, height: 66)
+        return CGSize(width: (collectionView.frame.width / 4.8) - 2, height: (collectionView.frame.height))
     }
 }

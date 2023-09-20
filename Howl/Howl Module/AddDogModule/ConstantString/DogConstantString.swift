@@ -16,6 +16,20 @@ struct DogConstantString{
     static let microchipDatabase = "Microchip Database"
     static let microchipNumber = "MicrochipNumber"
     static let distrinctiveFeature = "Distrinctive Feature"
+    static let raiseConcern = "Raise a Cocern Related"
+    static let peopleDeleteErrorTitle = "SAVE ERROR"
+    static let peopleDeleteError = "Save data error.Please try again or contact the app developer to review"
+    static let deleteTitle = "Delete"
+    static let warningTitle = "Warning"
+    static let warningMsg = "You are about to delete from your pack.Do you wish to proceed?"
+    static let proceedTitle = "Proceed"
+    static let dog = "Dog Name"
+    static let breedName = "Breed"
+    static let name = "Name"
+    static let nickName = "NickName"
+    static let phoneNumber = "PhoneNumber"
+    static let create = "Create"
+    static let update = "Update"
 }
 
 struct TxtFldColor{

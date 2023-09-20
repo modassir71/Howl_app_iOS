@@ -26,6 +26,8 @@
 		18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F832AB4332B00D97A36 /* ApiProvider.swift */; };
 		18297F872AB4394500D97A36 /* DogDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F862AB4394500D97A36 /* DogDataManger.swift */; };
 		18297F8A2AB4422800D97A36 /* AddPeopleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */; };
+		1839588E2ABAEC1A00CBC56E /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839588D2ABAEC1A00CBC56E /* InstructionViewController.swift */; };
+		183958922ABB066200CBC56E /* DogListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183958912ABB066200CBC56E /* DogListingViewController.swift */; };
 		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
 		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
 		18530A692AB2CD7000C190D3 /* DogRegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */; };
@@ -137,6 +139,8 @@
 		18297F832AB4332B00D97A36 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		18297F862AB4394500D97A36 /* DogDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDataManger.swift; sourceTree = "<group>"; };
 		18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleDataManager.swift; sourceTree = "<group>"; };
+		1839588D2ABAEC1A00CBC56E /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		183958912ABB066200CBC56E /* DogListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListingViewController.swift; sourceTree = "<group>"; };
 		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
 		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
 		18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogRegistrationValidation.swift; sourceTree = "<group>"; };
@@ -326,6 +330,30 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		1839588C2ABAEBDF00CBC56E /* LoadView */ = {
+			isa = PBXGroup;
+			children = (
+				1839588D2ABAEC1A00CBC56E /* InstructionViewController.swift */,
+			);
+			path = LoadView;
+			sourceTree = "<group>";
+		};
+		1839588F2ABB061B00CBC56E /* DogListing */ = {
+			isa = PBXGroup;
+			children = (
+				183958902ABB062A00CBC56E /* ViewController */,
+			);
+			path = DogListing;
+			sourceTree = "<group>";
+		};
+		183958902ABB062A00CBC56E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				183958912ABB066200CBC56E /* DogListingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		183F38C92A98B9D8005D35D8 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +521,7 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				1839588C2ABAEBDF00CBC56E /* LoadView */,
 				18297F822AB4331100D97A36 /* Config */,
 				18530A672AB2CD3800C190D3 /* Validation */,
 				18F542DB2AADEB0C000B9B1E /* Assets */,
@@ -580,6 +609,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18E9FBC22ABADA42009D96F5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		18F542C92AADE14C000B9B1E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +628,7 @@
 		18F542CA2AADE1F1000B9B1E /* Howl Module */ = {
 			isa = PBXGroup;
 			children = (
+				1839588F2ABB061B00CBC56E /* DogListing */,
 				18F542D72AADE75B000B9B1E /* ConcernModule */,
 				18F542D52AADE71B000B9B1E /* DogWalking Module */,
 				18F542D42AADE6B2000B9B1E /* Cell */,
@@ -694,8 +732,8 @@
 		18F542D52AADE71B000B9B1E /* DogWalking Module */ = {
 			isa = PBXGroup;
 			children = (
+				18E9FBC22ABADA42009D96F5 /* ViewController */,
 				18530A6D2AB2D16E00C190D3 /* Model */,
-				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
 			);
 			path = "DogWalking Module";
 			sourceTree = "<group>";
@@ -1101,10 +1139,12 @@
 				1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */,
 				188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */,
 				1872D3092A9E13340094B522 /* PeopleTblViewCell.swift in Sources */,
+				1839588E2ABAEC1A00CBC56E /* InstructionViewController.swift in Sources */,
 				18297F8A2AB4422800D97A36 /* AddPeopleDataManager.swift in Sources */,
 				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,
 				189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */,
 				18530A6F2AB2D18100C190D3 /* DogsWalkModel.swift in Sources */,
+				183958922ABB066200CBC56E /* DogListingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ class DogWalkingViewController: UIViewController {
     
 //MARK: - Outlet
     
+    @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var concernBtn: UIButton!
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var redBtn: UIButton!
@@ -31,7 +32,7 @@ class DogWalkingViewController: UIViewController {
     //MARK: - Variable
     var dogNameLbl = String()
     var dogOwnerNameLbl = String()
-    var dogImgItem = UIImage()
+    var dogImgItem: Data?
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -49,13 +50,20 @@ class DogWalkingViewController: UIViewController {
     
     //MARK: - SetUi
     func setUi(){
+     navigationView.layer.shadowColor = UIColor.black.cgColor
+     navigationView.layer.shadowOpacity = 0.2
+     navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
+     navigationView.layer.shadowRadius = 2
      dogImage.layer.borderWidth = 1.0
      dogImage.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
-     dogImage.layer.cornerRadius = dogName.frame.width/2
+     dogImage.layer.cornerRadius = dogImage.frame.width/2
      dogImage.clipsToBounds = true
      dogImage.contentMode = .scaleAspectFit
-     dogName.text = dogNameLbl
-     dogImage.image = UIImage(named: dogNameLbl)
+        dogName.text = dogNameLbl.capitalizeFirstLetter()
+        if let imageData = dogImgItem {
+            let image = UIImage(data: imageData) // Convert the image data back to a UIImage
+            dogImage.image = image // Set the UIImage to the UIImageView
+        }
      dogImage.contentMode = .scaleAspectFit
      streetImg.isHidden = true
      redBtn.layer.cornerRadius = redBtn.frame.width/2
@@ -69,9 +77,10 @@ class DogWalkingViewController: UIViewController {
      concernBtn.isHidden = true
      concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
     concernBtn.layer.borderWidth = 2.0
-    concernBtn.setTitle("Raise a Cocern Related", for: .normal)
+        concernBtn.setTitle(DogConstantString.raiseConcern, for: .normal)
     concernBtn.setTitleColor(.black, for: .normal)
-        concernBtn.titleLabel?.font = .appFont(.AileronBold, size: 20)
+    concernBtn.titleLabel?.font = .appFont(.AileronBold, size: 20)
+    dogName.font = .appFont(.AileronBold, size: 20.0)
     }
     //MARK: - Action
     

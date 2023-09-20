@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,25 +37,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-vA-gJz">
-                                <rect key="frame" x="89" y="14.999999999999998" width="83" height="19.333333333333329"/>
+                                <rect key="frame" x="89" y="14.999999999999998" width="79" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-DM-h3Z">
-                                <rect key="frame" x="89" y="53.666666666666664" width="46" height="12.333333333333336"/>
+                                <rect key="frame" x="89" y="53.666666666666664" width="42.666666666666657" height="12.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfX-uY-WKi">
-                                <rect key="frame" x="180" y="14.000000000000002" width="46.666666666666657" height="22.666666666666671"/>
+                                <rect key="frame" x="176" y="14.000000000000002" width="46.666666666666657" height="22.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-Vk-sym">
-                                <rect key="frame" x="180" y="50.333333333333336" width="46.666666666666657" height="19.333333333333336"/>
+                                <rect key="frame" x="176" y="50.333333333333336" width="46.666666666666657" height="19.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +89,9 @@
             <connections>
                 <outlet property="containerView" destination="oec-JA-Icz" id="WIn-vy-ySH"/>
                 <outlet property="nameLbl" destination="QFj-Vk-sym" id="Bzy-RV-hJN"/>
+                <outlet property="nameTitle" destination="wOh-DM-h3Z" id="cLl-rB-Q4c"/>
                 <outlet property="nickNameLbl" destination="CfX-uY-WKi" id="4p7-D7-AXF"/>
+                <outlet property="nickNameTitle" destination="2kh-vA-gJz" id="Lhr-mD-DdX"/>
                 <outlet property="profileImg" destination="aRz-9q-hdO" id="3M8-KQ-BCN"/>
             </connections>
             <point key="canvasLocation" x="70.992366412213741" y="17.253521126760564"/>

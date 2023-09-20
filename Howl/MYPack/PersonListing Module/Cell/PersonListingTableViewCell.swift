@@ -9,6 +9,8 @@ import UIKit
 
 class PersonListingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameTitle: UILabel!
+    @IBOutlet weak var nickNameTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var nickNameLbl: UILabel!
