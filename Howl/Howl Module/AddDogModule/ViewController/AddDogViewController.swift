@@ -9,6 +9,8 @@ import UIKit
 
 class AddDogViewController: UIViewController {
 //MARK: - Outlet
+    
+    @IBOutlet weak var picImgBtn: UIButton!
     @IBOutlet weak var districtiveFeature: UITextField!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var microchipNumberTxtFld: UITextField!
@@ -27,11 +29,23 @@ class AddDogViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     let vm: InitialDogInfoDelegate = AddDogVm()
     var dogImageData: Data!
+    var isUpdate: Bool?
+    var dogName: String?
+    var breed: String?
+    var color: String?
+    var dob: String?
+    var microchipDb: String?
+    var microchipNumber: String?
+    var feature: String?
+    var profileImage: Data!
+    var genderType: String?
+    var dogType: String?
 //    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         delegateMethod()
         self.setUI()
+        _setData()
         
     }
     
@@ -48,6 +62,28 @@ class AddDogViewController: UIViewController {
         colorTxtFld.delegate = self
         bredextFld.delegate = self
         dogNameTxtFld.delegate = self
+        if isUpdate == true{
+            createBtn.setTitle(DogConstantString.update, for: .normal)
+        }else{
+            createBtn.setTitle(DogConstantString.create, for: .normal)
+        }
+    }
+//    MARK: - SetData
+    func _setData(){
+        if isUpdate == true{
+            dogNameTxtFld.text = dogName
+            bredextFld.text = breed
+            colorTxtFld.text = color
+            dateOfBirthTxtFld.text = dob
+            microchipDatabaseTxtFld.text = microchipDb
+            microchipNumberTxtFld.text = microchipNumber
+            districtiveFeature.text = feature
+            if let imageData = profileImage {
+                let image = UIImage(data: profileImage)
+                profileImg.image = image
+            }
+            
+        }
     }
 //    MARK: - Set up UI
    func setUI(){
@@ -71,6 +107,9 @@ class AddDogViewController: UIViewController {
         maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+       picImgBtn.layer.cornerRadius = picImgBtn.frame.width/2
+       picImgBtn.clipsToBounds = true
+       
     }
 //    MARK: - Customize text field
     func customizeTxtFld(to txtFld: UITextField, string: String){
@@ -95,12 +134,14 @@ class AddDogViewController: UIViewController {
     @IBAction func maleBtnPress(_ sender: UIButton) {
         maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        genderType = "MALE"
     }
     
     
     @IBAction func intactBtnPress(_ sender: UIButton) {
         inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        genderType = "FEMALE"
     }
     
     
@@ -108,6 +149,7 @@ class AddDogViewController: UIViewController {
     @IBAction func femaleBtnPress(_ sender: UIButton) {
         femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        
     }
     
     
@@ -139,7 +181,13 @@ class AddDogViewController: UIViewController {
             dogImageData = Data()
         }
         let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: "Male", breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: true, distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkUpdate]())
-        DogDataManager.shared.dogs.append(newDog)
+        if isUpdate == true{
+            DogDataManager.shared.dogs.remove(at: DogDataManager.shared.selectedIndex)
+            DogDataManager.shared.dogs.insert(newDog, at: DogDataManager.shared.selectedIndex)
+        }else{
+            DogDataManager.shared.dogs.append(newDog)
+        }
+       
         if DogDataManager.shared.saveDogs() {
             
             switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {

@@ -121,14 +121,16 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
                 let storyBoard = AppStoryboard.Main.instance
                 let addNewVc = storyBoard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
                 let items = self.peopleDataManager.people[indexPath.row]
+                self.peopleDataManager.selectedIndex = indexPath.row
                 addNewVc.isEdit = true
                 addNewVc.name = items.personName
                 addNewVc.profileImge =  items.personImage
                 addNewVc.nickName = items.personNickname
                 addNewVc.contryCode = items.personCountryCode
                 addNewVc.phoneNumber = items.personMobileNumber
-                addNewVc.navigationController?.pushViewController(addNewVc, animated: true)
-               // self.deletePeople(index: indexPath.row)
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(addNewVc, animated: true)
+                }
             }))
             self.present(alert, animated: true, completion: nil)
          //   edit.backgroundColor = UIColor.lightGray

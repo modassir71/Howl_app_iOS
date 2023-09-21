@@ -12,7 +12,7 @@ struct Person: Codable {
     // Variables
     var personName: String!
     var personNickname: String!
-    var personCountryDialCode: String!
+  //  var personCountryDialCode: String!
     var personCountryCode: String!
     var personMobileNumber: String!
     var personNotificationType: String!
@@ -32,7 +32,7 @@ struct Person: Codable {
     init(
         name: String,
         nickname: String,
-        countryDialCode: String,
+       // countryDialCode: String,
         countryCode: String,
         mobileNumber: String,
         notificationType: String,
@@ -40,7 +40,7 @@ struct Person: Codable {
     ) {
         personName = name
         personNickname = nickname
-        personCountryDialCode = countryDialCode
+     //   personCountryDialCode = countryDialCode
         personCountryCode = countryCode
         personMobileNumber = mobileNumber
         personNotificationType = notificationType
@@ -51,7 +51,7 @@ struct Person: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(personName, forKey: .personName)
         try container.encode(personNickname, forKey: .personNickname)
-        try container.encode(personCountryDialCode, forKey: .personCountryDialCode)
+      //  try container.encode(personCountryDialCode, forKey: .personCountryDialCode)
         try container.encode(personCountryCode, forKey: .personCountryCode)
         try container.encode(personMobileNumber, forKey: .personMobileNumber)
         try container.encode(personNotificationType, forKey: .personNotificationType)
@@ -64,7 +64,7 @@ struct Person: Codable {
         
         personName = try container.decode(String.self, forKey: .personName)
         personNickname = try container.decode(String.self, forKey: .personNickname)
-        personCountryDialCode = try container.decode(String.self, forKey: .personCountryDialCode)
+       // personCountryDialCode = try container.decode(String.self, forKey: .personCountryDialCode)
         personCountryCode = try container.decode(String.self, forKey: .personCountryCode)
         personMobileNumber = try container.decode(String.self, forKey: .personMobileNumber)
         personNotificationType = try container.decode(String.self, forKey: .personNotificationType)

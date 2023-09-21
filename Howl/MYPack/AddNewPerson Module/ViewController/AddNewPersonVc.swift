@@ -10,6 +10,7 @@ import SKCountryPicker
 
 class AddNewPersonVc: UIViewController {
     //MARK: - Outlet
+    
     @IBOutlet weak var dropDownBtn: UIButton!
     @IBOutlet weak var countryCodeLbl: UILabel!
     @IBOutlet weak var phoneNumberView: UIView!
@@ -23,6 +24,7 @@ class AddNewPersonVc: UIViewController {
     @IBOutlet weak var contactsBtn: UIButton!
     @IBOutlet weak var phoneNoTxtFld: UITextField!
     
+//    MARK: - Variable
     let color = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5)
     var dailingCode: String?
     var countryCode: String?
@@ -39,11 +41,11 @@ class AddNewPersonVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPUI()
-        
+        _setData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        _SetData()
+        //_SetData()
     }
     
     func setUPUI(){
@@ -85,21 +87,21 @@ class AddNewPersonVc: UIViewController {
         }else{
             createBtn.setTitle(DogConstantString.create, for: .normal)
         }
+        addProfileBtn.layer.cornerRadius = addProfileBtn.frame.width/2
+        addProfileBtn.clipsToBounds = true
     }
     
 //    MARK: - SetData
-    func _SetData(){
+    func _setData(){
         if isEdit == true{
             if let imageData = profilePicImg {
                 let image = UIImage(data: profileImge)
-                profilePicImg.image = image
+                 profilePicImg.image = image
             }
-           // profilePicImg.image = profilePicImg
             nameTxtFld.text = name
             nickNameTxtFld.text = nickName
-            countryCodeLbl.text = countryCode
+            countryCodeLbl.text = contryCode
             phoneNoTxtFld.text = phoneNumber
-            
         }
     }
     
@@ -118,20 +120,24 @@ class AddNewPersonVc: UIViewController {
         let message = validationResult.1
         if status == true{
             if let personImage = profilePicImg.image {
-                
                 personImageData = personImage.jpegData(compressionQuality: 1)
             } else {
                 personImageData = Data()
             }
-            let newPerson = Person(name: nameTxtFld.text ?? "", nickname: nickNameTxtFld.text ?? "", countryDialCode: countryCodeLbl.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
-            AddPeopleDataManager.sharedInstance.people.append(newPerson)
+            let newPerson = Person(name: nameTxtFld.text ?? "", nickname: nickNameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
+            if isEdit == true {
+                //Update data
+                AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)
+                AddPeopleDataManager.sharedInstance.people.insert(newPerson, at: AddPeopleDataManager.sharedInstance.selectedIndex)
+            }else{
+                //Save new data
+                AddPeopleDataManager.sharedInstance.people.append(newPerson)
+            }
             if AddPeopleDataManager.sharedInstance.savePeople() {
                 switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
                     
                 case true:
-                    
                     self.navigationController?.popViewController(animated: true)
-                    
                 case false:
 //                    DispatchQueue.main.async {
 //                        self.performSegue(withIdentifier: "personToSiren", sender: self)
@@ -225,7 +231,7 @@ extension AddNewPersonVc: UIImagePickerControllerDelegate, UINavigationControlle
             profilePicImg.image = image
         }
         
-      //  _updateUserImage(image: image)
+       // _updateUserImage(image: image)
         picker.dismiss(animated: true,completion: nil)
     }
     

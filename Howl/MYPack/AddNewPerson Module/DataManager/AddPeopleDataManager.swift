@@ -15,6 +15,9 @@ class AddPeopleDataManager{
     }()
     
     var people: [Person]! = []
+    var updating: Bool! = false
+    var selectedIndex: Int! = 0
+    
     init() {
         if let loaded = loadPeople() {
             

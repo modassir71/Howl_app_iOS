@@ -15,6 +15,7 @@ class DogDataManager{
 //    MARK: - Variable
     var dogsArchive: [Dog]! = []
     var dogs: [Dog]! = []
+    var selectedIndex: Int! = 0
     let kDocumentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     
     init(){
