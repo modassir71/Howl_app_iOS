@@ -14,7 +14,7 @@ struct Dog: Codable {
     var dogBreed: String!
     var dogColour: String!
     var dogDOB: String!
-    var dogNeuteredOrSpayed: Bool!
+    var dogNeuteredOrSpayed: String!
     var dogDistinctiveFeatures: String!
     var dogMicrochipNumber: String!
     var dogMicrochipSupplier: String!
@@ -44,7 +44,7 @@ struct Dog: Codable {
         breed: String,
         colour: String,
         dob: String,
-        neuteredOrSpayed: Bool,
+        neuteredOrSpayed: String,
         distinctiveFeatures: String,
         microchipNumber: String,
         microchipSupplier: String,
@@ -93,7 +93,7 @@ struct Dog: Codable {
         dogBreed = try container.decode(String.self, forKey: .dogBreed)
         dogColour = try container.decode(String.self, forKey: .dogColour)
         dogDOB = try container.decode(String.self, forKey: .dogDOB)
-        dogNeuteredOrSpayed = try container.decode(Bool.self, forKey: .dogNeuteredOrSpayed)
+        dogNeuteredOrSpayed = try container.decode(String.self, forKey: .dogNeuteredOrSpayed)
         dogDistinctiveFeatures = try container.decode(String.self, forKey: .dogDistinctiveFeatures)
         dogMicrochipNumber = try container.decode(String.self, forKey: .dogMicrochipNumber)
         dogMicrochipSupplier = try container.decode(String.self, forKey: .dogMicrochipSupplier)

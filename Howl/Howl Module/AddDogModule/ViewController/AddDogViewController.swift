@@ -52,6 +52,20 @@ class AddDogViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        if genderType == "MALE"{
+            maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        }else{
+            maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        }
+        if dogType == "INTACT"{
+            inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        }else{
+            inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        }
     }
 //    MARK: - TextField Delegate
     func delegateMethod(){
@@ -62,11 +76,7 @@ class AddDogViewController: UIViewController {
         colorTxtFld.delegate = self
         bredextFld.delegate = self
         dogNameTxtFld.delegate = self
-        if isUpdate == true{
-            createBtn.setTitle(DogConstantString.update, for: .normal)
-        }else{
-            createBtn.setTitle(DogConstantString.create, for: .normal)
-        }
+       
     }
 //    MARK: - SetData
     func _setData(){
@@ -104,11 +114,21 @@ class AddDogViewController: UIViewController {
         customizeTxtFld(to: microchipDatabaseTxtFld, string: DogConstantString.microchipDatabase)
         customizeTxtFld(to: districtiveFeature, string: DogConstantString.distrinctiveFeature)
         femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-        inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
        picImgBtn.layer.cornerRadius = picImgBtn.frame.width/2
        picImgBtn.clipsToBounds = true
+       if isUpdate == true{
+           createBtn.setTitle(DogConstantString.update, for: .normal)
+       }else{
+           createBtn.setTitle(DogConstantString.create, for: .normal)
+       }
+//       if genderType == "FEMALE"{
+//           femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+//       }else{
+//           maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+//       }
        
     }
 //    MARK: - Customize text field
@@ -135,13 +155,16 @@ class AddDogViewController: UIViewController {
         maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         genderType = "MALE"
+        print(genderType)
     }
     
     
     @IBAction func intactBtnPress(_ sender: UIButton) {
         inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        genderType = "FEMALE"
+        dogType = "INTACT"
+        print(dogType)
+        
     }
     
     
@@ -149,6 +172,8 @@ class AddDogViewController: UIViewController {
     @IBAction func femaleBtnPress(_ sender: UIButton) {
         femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        genderType = "FEMALE"
+        print(genderType)
         
     }
     
@@ -156,20 +181,22 @@ class AddDogViewController: UIViewController {
     @IBAction func neuteredBtnPress(_ sender: UIButton) {
         neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        dogType = "SPAYED"
+        print(dogType)
     }
     
     
     @IBAction func createdBtnOPress(_ sender: UIButton) {
+       
         let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", microchipDb: microchipDatabaseTxtFld.text ?? "", microchipNo: microchipNumberTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "")
         let status = validationResult.0
         let message = validationResult.1
-        if status == true{
-            createDog()
-            
-        }else{
-            alert("Alert", message: message)
-        }
-        
+            if status == true{
+                createDog()
+                
+            }else{
+                alert("Alert", message: message)
+            }
     }
     
 //    MARK: - Create a Dog
@@ -180,7 +207,7 @@ class AddDogViewController: UIViewController {
         } else {
             dogImageData = Data()
         }
-        let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: "Male", breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: true, distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkUpdate]())
+        let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: genderType ?? "" , breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: dogType ?? "" , distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkUpdate]())
         if isUpdate == true{
             DogDataManager.shared.dogs.remove(at: DogDataManager.shared.selectedIndex)
             DogDataManager.shared.dogs.insert(newDog, at: DogDataManager.shared.selectedIndex)
@@ -190,15 +217,15 @@ class AddDogViewController: UIViewController {
        
         if DogDataManager.shared.saveDogs() {
             
-            switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+           // switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
                 
-            case true:
+          //  case true:
                 
                 self.navigationController?.popViewController(animated: true)
                 
-            case false:
-                print("Not Added Error")
-            }
+         //   case false:
+              //  print("Not Added Error")
+          //  }
         }else{
             print("Eroor")
         }

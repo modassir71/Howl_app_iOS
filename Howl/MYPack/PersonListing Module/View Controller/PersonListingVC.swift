@@ -110,7 +110,7 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         edit = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
             
             let alert = UIAlertController(title: DogConstantString.warningTitle,
-                                          message: DogConstantString.warningMsg,
+                                          message: DogConstantString.editMsg,
                                           preferredStyle: .alert)
             
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))

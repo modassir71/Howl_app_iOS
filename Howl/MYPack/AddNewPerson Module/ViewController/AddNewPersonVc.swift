@@ -139,6 +139,7 @@ class AddNewPersonVc: UIViewController {
                 case true:
                     self.navigationController?.popViewController(animated: true)
                 case false:
+                    self.navigationController?.popViewController(animated: true)
 //                    DispatchQueue.main.async {
 //                        self.performSegue(withIdentifier: "personToSiren", sender: self)
 //                    }

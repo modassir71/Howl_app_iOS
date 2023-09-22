@@ -22,6 +22,7 @@ struct DogConstantString{
     static let deleteTitle = "Delete"
     static let warningTitle = "Warning"
     static let warningMsg = "You are about to delete from your pack.Do you wish to proceed?"
+    static let editMsg = "You are about to edit from your pack.Do you wish to proceed?"
     static let proceedTitle = "Proceed"
     static let dog = "Dog Name"
     static let breedName = "Breed"
