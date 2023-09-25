@@ -14,7 +14,7 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let isiPhoneSE = screenHeight <= 667 // Assuming iPhone SE has a height of 568 points
+        let isiPhoneSE = screenHeight <= 667 
         print("ScreenHeight", screenHeight)
         self.delegate = self
         tabBar.items?[0].title = "MY PACK"

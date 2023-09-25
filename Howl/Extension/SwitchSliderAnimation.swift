@@ -341,6 +341,7 @@ public class DSSlider: UIView {
     guard isImageViewRotating else { return }
     print("Last Angle --\(angle)")
     sliderImageView.transform = CGAffineTransform(rotationAngle: angle)
+      
   }
 
   @objc private func handlePanGesture(_ sender: UIPanGestureRecognizer) {

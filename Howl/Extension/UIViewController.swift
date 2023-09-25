@@ -19,6 +19,11 @@ extension UIViewController{
             topViewController.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    func isiPhoneSE() -> Bool {
+        let screenHeight = UIScreen.main.bounds.height
+        return screenHeight <= 667
+    }
 }
 extension String {
     func capitalizeFirstLetter() -> String {

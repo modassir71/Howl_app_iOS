@@ -22,12 +22,12 @@ final class RegistrationValidation {
             return (false, "Enter your valid name")
         }
         
-        guard nickName!.count >= 3 && containsOnlyCharacters(nickName!) == true else {
-            return (false, "Enter your valid nick name")
-        }
+//        guard nickName!.count >= 3 && containsOnlyCharacters(nickName!) == true else {
+//            return (false, "Enter your valid nick name")
+//        }
         
         if mobileNumber != "" {
-            guard mobileNumber!.count == 10 && containsOnlyNumbers(mobileNumber!) == true else {
+            guard containsOnlyNumbers(mobileNumber!) == true else {
                 return (false, "Enter your valid mobile number")
             }
         }

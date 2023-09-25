@@ -12,6 +12,10 @@ class DogWalkingViewController: UIViewController {
     
 //MARK: - Outlet
     
+    @IBOutlet weak var concernBtnHeight: NSLayoutConstraint!
+    @IBOutlet weak var concernBtnTop: NSLayoutConstraint!
+    @IBOutlet weak var redBtnHeight: NSLayoutConstraint!
+    @IBOutlet weak var redBtnWidth: NSLayoutConstraint!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var concernBtn: UIButton!
     @IBOutlet weak var shadowView: UIView!
@@ -72,7 +76,7 @@ class DogWalkingViewController: UIViewController {
      shadowView.clipsToBounds = true
      shadowView.isHidden = true
      redBtn.isHidden = true
-     concernBtn.layer.cornerRadius = 26.0
+     concernBtn.layer.cornerRadius = 20.0
      concernBtn.clipsToBounds = true
      concernBtn.isHidden = true
      concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
@@ -81,6 +85,16 @@ class DogWalkingViewController: UIViewController {
     concernBtn.setTitleColor(.black, for: .normal)
     concernBtn.titleLabel?.font = .appFont(.AileronBold, size: 20)
     dogName.font = .appFont(.AileronBold, size: 20.0)
+        if isiPhoneSE(){
+            concernBtnTop.constant = 10
+            concernBtnHeight.constant = 44
+            
+        }else{
+            concernBtnTop.constant = 40
+            concernBtnHeight.constant = 54
+            
+        }
+        
     }
     //MARK: - Action
     
@@ -95,6 +109,9 @@ class DogWalkingViewController: UIViewController {
     //MARK: - Setup Swipe Button
     private func _setupSliderView() {
       //  let slider = DSSlider(frame: animationSliderView.bounds, delegate: self)
+       // swipeSlider.
+        swipeSlider.layer.cornerRadius = 10.0
+        swipeSlider.clipsToBounds = true
         swipeSlider.comeFromStartRide = ""
         swipeSlider.isDoubleSideEnabled = true
         swipeSlider.isImageViewRotating = true
