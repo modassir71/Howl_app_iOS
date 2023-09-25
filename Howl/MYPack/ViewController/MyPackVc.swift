@@ -30,8 +30,8 @@ class MyPackVc: UIViewController  {
         navigationView.layer.shadowOpacity = 0.2
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
-        tabBarItem.selectedImage = UIImage(named: "My_Pack_Selectable")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem.image = UIImage(named: "My_Pack_Unslectable")
+//        tabBarItem.selectedImage = UIImage(named: "My_Pack_Selectable")?.withRenderingMode(.alwaysOriginal)
+//        tabBarItem.image = UIImage(named: "My_Pack_Unslectable")
         setUpUI()
         setUpDelegate()
         registerCollectionView()

@@ -61,6 +61,7 @@
 		189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79652AAAE70A002A640C /* Siren5.mp3 */; };
 		189A796F2AAAE769002A640C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A796E2AAAE769002A640C /* SoundManager.swift */; };
 		189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A79812AAAFE8F002A640C /* PermissionViewController.swift */; };
+		18C42A102AC0925700C973F6 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C42A0F2AC0925700C973F6 /* MainTabBar.swift */; };
 		18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */; };
 		18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C212A8CABA800A1F937 /* SceneDelegate.swift */; };
 		18C86C242A8CABA800A1F937 /* MyPackVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C232A8CABA800A1F937 /* MyPackVc.swift */; };
@@ -174,6 +175,7 @@
 		189A79652AAAE70A002A640C /* Siren5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren5.mp3; sourceTree = "<group>"; };
 		189A796E2AAAE769002A640C /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		189A79812AAAFE8F002A640C /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		18C42A0F2AC0925700C973F6 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		18C86C1C2A8CABA800A1F937 /* Howl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C86C212A8CABA800A1F937 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				18C86C2D2A8CABA900A1F937 /* LaunchScreen.storyboard */,
 				18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */,
+				18C42A0F2AC0925700C973F6 /* MainTabBar.swift */,
 				18C86C212A8CABA800A1F937 /* SceneDelegate.swift */,
 			);
 			path = Application;
@@ -1110,6 +1113,7 @@
 				1821C6162AA9A46700087FA7 /* InfoViewController.swift in Sources */,
 				188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */,
 				188BEB522AA9DBDE000C6DF4 /* MoreViewController.swift in Sources */,
+				18C42A102AC0925700C973F6 /* MainTabBar.swift in Sources */,
 				18530A742AB2EAE500C190D3 /* UIViewController.swift in Sources */,
 				18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */,
 				18C86C532A8CD11400A1F937 /* HowlViewController.swift in Sources */,

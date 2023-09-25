@@ -23,8 +23,8 @@ class MoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarItem.selectedImage = UIImage(named: "More_Selectable")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem.image = UIImage(named: "More_Selectable")
+//        tabBarItem.selectedImage = UIImage(named: "More_Selectable")?.withRenderingMode(.alwaysOriginal)
+//        tabBarItem.image = UIImage(named: "More_Selectable")
         setUpUI()
     }
     

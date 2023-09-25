@@ -22,6 +22,7 @@ class HowlViewController: UIViewController {
     //MARK: - Variable
     let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
+    let screenHeight = UIScreen.main.bounds.size.height
     
     //MARK: - LIfeCycle
     override func viewDidLoad() {
@@ -30,21 +31,25 @@ class HowlViewController: UIViewController {
         registerCollectionView()
         delegateMethod()
         _SetUpUi()
-        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem.image = UIImage(named: "Howl_Selectable")
+//        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
+//        tabBarItem.image = UIImage(named: "Howl_Selectable")
   }
     
     override func viewWillAppear(_ animated: Bool) {
-        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem.image = UIImage(named: "Howl_Selectable")
+//       tabBarItem.image = UIImage(named: "Howl_Selectable")
         self.tabBarController?.tabBar.isHidden = false
         dogVarietyCollectionView.reloadData()
         
     }
     
     override func viewWillLayoutSubviews() {
-      //  tabBar.frame.size.height = 100.0
-        self.tabBarController?.tabBar.frame.size.height = 100
+        let isiPhoneSE = screenHeight <= 667
+        if isiPhoneSE {
+           self.tabBarController?.tabBar.frame.size.height = 47
+            print(self.tabBarController?.tabBar.frame.size.height)
+        }else{
+            self.tabBarController?.tabBar.frame.size.height = 100
+        }
     }
     
     //MARK: - Delegate Method
