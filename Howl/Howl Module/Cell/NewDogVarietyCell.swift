@@ -23,9 +23,12 @@ class NewDogVarietyCell: UICollectionViewCell {
     //MARK: - SetUpUI
     func _setUpUI(){
         dogNameLbl.font = UIFont.appFont(.AileronBold, size: 13.0)
-        dogImgView.contentMode = .scaleAspectFill
-        containerView.layer.cornerRadius = containerView.frame.width/2
+        dogImgView.contentMode = .scaleToFill
+        containerView.layer.cornerRadius = dogImgView.frame.width/2
         containerView.clipsToBounds = true
+        dogImgView.layer.cornerRadius = dogImgView.frame.width/2
+        dogImgView.clipsToBounds = true
+        
     }
 
 }

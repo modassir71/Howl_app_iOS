@@ -10,42 +10,48 @@ import UIKit
 class MainTabBar: UITabBarController, UITabBarControllerDelegate {
 
     let screenHeight = UIScreen.main.bounds.size.height
-    
+   // let hasAppLaunchedBeforeKey = "HasAppLaunchedBefore"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: hasAppLaunchedBeforeKey)
         let isiPhoneSE = screenHeight <= 667 
         print("ScreenHeight", screenHeight)
         self.delegate = self
-        tabBar.items?[0].title = "MY PACK"
-        tabBar.items?[1].title = "HOWL"
-        tabBar.items?[2].title = "MORE"
-        if isiPhoneSE {
-            tabBar.items?[0].selectedImage = UIImage(named: "My_Pack_Selectable")
-            tabBar.items?[0].image = UIImage(named: "My_Pack_Unslectable")
-            
-            tabBar.items?[1].selectedImage = UIImage(named: "Howl_Selectable")
-            tabBar.items?[1].image = UIImage(named: "Howl_Unslectable")
-            
-            tabBar.items?[2].selectedImage = UIImage(named: "More_Selectable")
-            tabBar.items?[2].image = UIImage(named: "More_Unselectable")
-        } else{
-            tabBar.items?[0].selectedImage = UIImage(named: "MyPack_select")
-            tabBar.items?[0].image = UIImage(named: "MyPack_unselect")
-            
-            tabBar.items?[1].selectedImage = UIImage(named: "Howl_select")
-            tabBar.items?[1].image = UIImage(named: "Howl_unselect")
-            
-            tabBar.items?[2].selectedImage = UIImage(named: "More_select")
-            tabBar.items?[2].image = UIImage(named: "More_unselect")
-        }
-        
+        setTabBar()
     }
+    
+    
     
     private func createTabBarItem(title: String, imageName: String) -> UITabBarItem {
             let tabBarItem = UITabBarItem(title: title, image: UIImage(named: imageName), selectedImage: nil)
             return tabBarItem
         }
+    
+    func setTabBar(){
+        tabBar.items?[0].title = StringConstant.mypack_Tab
+        tabBar.items?[1].title = StringConstant.howl_Tab
+        tabBar.items?[2].title = StringConstant.more_Tab
+        if isiPhoneSE() {
+            tabBar.items?[0].selectedImage = UIImage(named: ImageStringConstant.myPackSelectable)
+            tabBar.items?[0].image = UIImage(named: ImageStringConstant.myPackUnselectable)
+            
+            tabBar.items?[1].selectedImage = UIImage(named: ImageStringConstant.howlSelectable)
+            tabBar.items?[1].image = UIImage(named: ImageStringConstant.howlUnselectable)
+            
+            tabBar.items?[2].selectedImage = UIImage(named: ImageStringConstant.moreSelectable)
+            tabBar.items?[2].image = UIImage(named: ImageStringConstant.moreUnselectable)
+        } else{
+            tabBar.items?[0].selectedImage = UIImage(named: ImageStringConstant.myPackSelectable_Icon)
+            tabBar.items?[0].image = UIImage(named: ImageStringConstant.myPackUnselectable_Icon)
+            
+            tabBar.items?[1].selectedImage = UIImage(named: ImageStringConstant.howlSelectable_Icon)
+            tabBar.items?[1].image = UIImage(named: ImageStringConstant.howlUnselectable_Icon)
+            
+            tabBar.items?[2].selectedImage = UIImage(named: ImageStringConstant.moreSelectable_Icon)
+            tabBar.items?[2].image = UIImage(named: ImageStringConstant.moreUnselectable_Icon)
+        }
+    }
     
 
 

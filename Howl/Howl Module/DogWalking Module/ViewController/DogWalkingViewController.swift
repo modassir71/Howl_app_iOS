@@ -65,8 +65,8 @@ class DogWalkingViewController: UIViewController {
      dogImage.contentMode = .scaleAspectFit
         dogName.text = dogNameLbl.capitalizeFirstLetter()
         if let imageData = dogImgItem {
-            let image = UIImage(data: imageData) // Convert the image data back to a UIImage
-            dogImage.image = image // Set the UIImage to the UIImageView
+            let image = UIImage(data: imageData)
+            dogImage.image = image
         }
      dogImage.contentMode = .scaleAspectFit
      streetImg.isHidden = true
@@ -108,8 +108,8 @@ class DogWalkingViewController: UIViewController {
     }
     //MARK: - Setup Swipe Button
     private func _setupSliderView() {
-      //  let slider = DSSlider(frame: animationSliderView.bounds, delegate: self)
-       // swipeSlider.
+        let sliderButtonColor = UIColor(red: 255/255, green: 36/255, blue: 109/255, alpha: 1)
+        let sliderDragedColor = UIColor(red: 31/255, green: 29/255, blue: 23/255, alpha: 1)
         swipeSlider.layer.cornerRadius = 10.0
         swipeSlider.clipsToBounds = true
         swipeSlider.comeFromStartRide = ""
@@ -125,21 +125,20 @@ class DogWalkingViewController: UIViewController {
         swipeSlider.sliderImageViewStartingDistance = 5
         swipeSlider.sliderTextLabelLeadingDistance = 0
         swipeSlider.sliderCornerRadius = swipeSlider.frame.height / 2
-        swipeSlider.sliderBackgroundColor =  UIColor(red: 255/255, green: 36/255, blue: 109/255, alpha: 1)
+        swipeSlider.sliderBackgroundColor = sliderButtonColor
         swipeSlider.sliderBackgroundViewTextColor = .white
         swipeSlider.sliderDraggedViewTextColor = .white
-        swipeSlider.sliderDraggedViewBackgroundColor = UIColor(red: 31/255, green: 29/255, blue: 23/255, alpha: 1)
+        swipeSlider.sliderDraggedViewBackgroundColor = sliderDragedColor
         if swipeSlider.sliderPosition == .left{
-            swipeSlider.sliderImageViewBackgroundColor = UIColor(red: 255/255, green: 36/255, blue: 109/255, alpha: 1)
+            swipeSlider.sliderImageViewBackgroundColor = sliderButtonColor
         }
         if swipeSlider.sliderPosition == .rigth{
-            swipeSlider.sliderImageViewBackgroundColor = UIColor(red: 31/255, green: 29/255, blue: 23/255, alpha: 1)
+            swipeSlider.sliderImageViewBackgroundColor = sliderDragedColor
         }
         swipeSlider.delegate = self
         swipeSlider.sliderTextFont = .appFont(.AileronBold, size: 25)
-     //   swipeSlider.sliderImageView.image = UIImage(named: "arrow-icon")
-        swipeSlider.sliderBackgroundViewTextLabel.text = "START WALKING"
-        swipeSlider.sliderDraggedViewTextLabel.text = "STOP WALKING"
+        swipeSlider.sliderBackgroundViewTextLabel.text = DogConstantString.startWalk
+        swipeSlider.sliderDraggedViewTextLabel.text = DogConstantString.stopWalk
     }
 
     //MARK: - Button Action

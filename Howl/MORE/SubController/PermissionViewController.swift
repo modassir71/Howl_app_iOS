@@ -41,6 +41,14 @@ class PermissionViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let alert = UIAlertController(title: DogConstantString.setPermisionTitle, message: DogConstantString.permissionMsg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
  
 //   MARK: - Retrive button bg color
     func getSavedColor(key: String, color: inout UIColor){

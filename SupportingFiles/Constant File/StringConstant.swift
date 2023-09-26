@@ -25,6 +25,29 @@ struct StringConstant {
 //    Archive msg
     static let archiveTitle = "No Data"
     static let archiveMsg = "There is no ay data"
+//    TABBAR
+    static let mypack_Tab = "MY PACK"
+    static let howl_Tab = "HOWL"
+    static let more_Tab = "MORE"
+
     
     
+}
+
+struct ImageStringConstant{
+//    Iphone se
+    static let myPackSelectable = "My_Pack_Selectable"
+    static let myPackUnselectable = "My_Pack_Unslectable"
+    static let howlSelectable = "Howl_Selectable"
+    static let howlUnselectable = "Howl_Unslectable"
+    static let moreSelectable = "More_Selectable"
+    static let moreUnselectable = "More_Unselectable"
+    
+//Normal iphone
+    static let myPackSelectable_Icon = "MyPack_select"
+    static let myPackUnselectable_Icon = "MyPack_unselect"
+    static let howlSelectable_Icon = "Howl_select"
+    static let howlUnselectable_Icon = "Howl_unselect"
+    static let moreSelectable_Icon = "More_select"
+    static let moreUnselectable_Icon = "More_unselect"
 }

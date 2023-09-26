@@ -23,16 +23,17 @@ class HowlViewController: UIViewController {
     let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
     let screenHeight = UIScreen.main.bounds.size.height
+    let hasAppLaunchedBeforeKey = "HasAppLaunchedBefore"
+   
     
     //MARK: - LIfeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       instructionVc()
         animationView()
         registerCollectionView()
         delegateMethod()
         _SetUpUi()
-//        tabBarItem.selectedImage = UIImage(named: "Howl_Selectable")?.withRenderingMode(.alwaysOriginal)
-//        tabBarItem.image = UIImage(named: "Howl_Selectable")
   }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,20 @@ class HowlViewController: UIViewController {
         }else{
             self.tabBarController?.tabBar.frame.size.height = 100
         }
+    }
+    
+//    MARK: - Launch Instruction VC
+    func instructionVc(){
+        let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: hasAppLaunchedBeforeKey)
+      //  if !hasAppLaunchedBefore {
+            let storyboard = AppStoryboard.Main.instance
+            let instructionVc = storyboard.instantiateViewController(withIdentifier: "InstructionViewController") as! InstructionViewController
+           // instructionVc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(instructionVc, animated: true)
+//            UserDefaults.standard.set(true, forKey: hasAppLaunchedBeforeKey)
+//        }else{
+//            print("Same controller")
+//        }
     }
     
     //MARK: - Delegate Method

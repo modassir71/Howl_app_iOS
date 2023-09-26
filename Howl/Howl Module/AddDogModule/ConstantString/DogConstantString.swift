@@ -31,6 +31,11 @@ struct DogConstantString{
     static let phoneNumber = "PhoneNumber"
     static let create = "Create"
     static let update = "Update"
+    static let startWalk = "START WALK"
+    static let stopWalk = "STOP WALK"
+    static let howlInstruction = "Thank you for choosing HOWL\n\nSome important things before you start:\n\nEverything stays on your phone unless and until you export it (even we can’t see it!)\n\nYour emergency contact(s) will also need to download HOWL to be able to receive any HOWLs for help from you\n\nYou’ll need to “Always Allow” HOWL to access your location, but that’s the techy bit and we'll help you with that in the setup process.  The app will only actually track you when you tell it to.  We wont be asking you to setup an account or sending you any advertisments through the apps core functionality.  The safety of you and your beloved dog are our primary concern.  Each walk will generate a unique code which you’ll need to share with your chosen contact each time\n\nIn order for HOWL to work, your emergency contact must follow the link you send to them on each occasion, allowing them to recieve status updates you send\n\nPlease spend a few minutes setting up HOWL so it’s ready for your first walk"
+    static let setPermisionTitle = "SET PERMISSIONS"
+    static let permissionMsg = "Ok, you’ve skipped setup. That’s fine, but please note that HOWL is unable to function properly if you don’t allow it access to various settings. If you want to use HOWL please follow this menu to completion, ensuring all buttons are green"
 }
 
 struct TxtFldColor{
