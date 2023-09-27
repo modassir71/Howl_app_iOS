@@ -18,6 +18,18 @@ class InstructionViewController: UIViewController {
         _setUi()
        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+        let screenHeight = UIScreen.main.bounds.size.height
+        let isiPhoneSE = screenHeight <= 667
+        if isiPhoneSE {
+           self.tabBarController?.tabBar.frame.size.height = 47
+           // print(self.tabBarController?.tabBar.frame.size.height)
+        }else{
+            self.tabBarController?.tabBar.frame.size.height = 100
+        }
+    }
 //    MARK: - SetUp UI
     func _setUi(){
         navigationView.layer.shadowColor = UIColor.black.cgColor
@@ -34,11 +46,15 @@ class InstructionViewController: UIViewController {
     @IBAction func skipBtnPress(_ sender: UIButton) {
         let storyboard = AppStoryboard.Main.instance
         let permissionVc = storyboard.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
-        self.navigationController?.present(permissionVc, animated: true)
+        self.navigationController?.pushViewController(permissionVc, animated: true)
     }
     
     
     @IBAction func setUpBtnPress(_ sender: UIButton) {
+        let storyboard = AppStoryboard.Main.instance
+        let vc = storyboard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
+        vc.iscomeFromInstruction = true
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

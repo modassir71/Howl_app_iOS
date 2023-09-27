@@ -26,6 +26,7 @@ class AddDogViewController: UIViewController {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var navigationView: UIView!
 //    MARK: - Variable
+    var iscomeFromInstruction: Bool?
     var imagePicker = UIImagePickerController()
     let vm: InitialDogInfoDelegate = AddDogVm()
     var dogImageData: Data!
@@ -65,6 +66,16 @@ class AddDogViewController: UIViewController {
         }else{
             inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
             neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if iscomeFromInstruction == true{
+            let alert = UIAlertController(title: DogConstantString.dogAlertTitle, message: DogConstantString.dogAlertMsg, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 //    MARK: - TextField Delegate
@@ -220,8 +231,14 @@ class AddDogViewController: UIViewController {
            // switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
                 
           //  case true:
-                
+            if iscomeFromInstruction == true{
+                let storyboard = AppStoryboard.Main.instance
+                let peopleVc = storyboard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
+                peopleVc.iscomeFromInstruction = iscomeFromInstruction
+                self.navigationController?.pushViewController(peopleVc, animated: true)
+            }else{
                 self.navigationController?.popViewController(animated: true)
+            }
                 
          //   case false:
               //  print("Not Added Error")

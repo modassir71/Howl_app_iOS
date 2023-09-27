@@ -22,8 +22,8 @@ class HowlViewController: UIViewController {
     //MARK: - Variable
     let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
-    let screenHeight = UIScreen.main.bounds.size.height
-    let hasAppLaunchedBeforeKey = "HasAppLaunchedBefore"
+    
+    
    
     
     //MARK: - LIfeCycle
@@ -44,10 +44,11 @@ class HowlViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        let screenHeight = UIScreen.main.bounds.size.height
         let isiPhoneSE = screenHeight <= 667
         if isiPhoneSE {
            self.tabBarController?.tabBar.frame.size.height = 47
-            print(self.tabBarController?.tabBar.frame.size.height)
+           // print(self.tabBarController?.tabBar.frame.size.height)
         }else{
             self.tabBarController?.tabBar.frame.size.height = 100
         }
@@ -55,16 +56,15 @@ class HowlViewController: UIViewController {
     
 //    MARK: - Launch Instruction VC
     func instructionVc(){
-        let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: hasAppLaunchedBeforeKey)
-      //  if !hasAppLaunchedBefore {
+        let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: StringConstant.hasAppLaunchedBeforeKey)
+        if !hasAppLaunchedBefore {
             let storyboard = AppStoryboard.Main.instance
             let instructionVc = storyboard.instantiateViewController(withIdentifier: "InstructionViewController") as! InstructionViewController
-           // instructionVc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(instructionVc, animated: true)
-//            UserDefaults.standard.set(true, forKey: hasAppLaunchedBeforeKey)
-//        }else{
-//            print("Same controller")
-//        }
+            
+        }else{
+            print("Same controller")
+        }
     }
     
     //MARK: - Delegate Method

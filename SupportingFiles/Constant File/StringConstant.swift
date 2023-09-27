@@ -29,8 +29,12 @@ struct StringConstant {
     static let mypack_Tab = "MY PACK"
     static let howl_Tab = "HOWL"
     static let more_Tab = "MORE"
-
     
+//Paermission Msg
+    static let congrulationTitle = "Congratulations!!"
+    static let setupMsg = "You have set all the required permissions."
+//    Userdefault key
+     static let hasAppLaunchedBeforeKey = "HasAppLaunchedBefore"
     
 }
 

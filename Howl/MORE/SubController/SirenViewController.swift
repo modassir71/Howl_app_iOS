@@ -17,6 +17,7 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var setBtn: UIButton!
     
     var buttonState = 0
+    var iscomeFromInstruction: Bool?
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +88,16 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     @IBAction func setBtnPress(_ sender: UIButton) {
-        SoundDataManager.sharedInstance.saveSiren(index: sirenPickerView.selectedRow(inComponent: 0))
-        self.navigationController?.popViewController(animated: true)
+        if iscomeFromInstruction == true{
+            let storyboard = AppStoryboard.Main.instance
+            let permissiionVc = storyboard.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            permissiionVc.iscomeFromInstruction = iscomeFromInstruction
+            self.navigationController?.pushViewController(permissiionVc, animated: true)
+            
+        }else{
+            SoundDataManager.sharedInstance.saveSiren(index: sirenPickerView.selectedRow(inComponent: 0))
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     // MARK: SIREN PICKER

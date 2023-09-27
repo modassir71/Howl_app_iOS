@@ -26,6 +26,7 @@ class PermissionViewController: UIViewController {
     let locationManager = CLLocationManager()
     var fromFirstLoadToPermissions: Bool! = false
     var fromInfoToPermissions: Bool! = false
+    var iscomeFromInstruction: Bool?
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,32 @@ class PermissionViewController: UIViewController {
         getSavedColor(key: "notificationBackgroundColor", color: &notificationBtn.backgroundColor!)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
+        let screenHeight = UIScreen.main.bounds.size.height
+        let isiPhoneSE = screenHeight <= 667
+        if isiPhoneSE {
+           self.tabBarController?.tabBar.frame.size.height = 47
+        }else{
+            self.tabBarController?.tabBar.frame.size.height = 100
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let alert = UIAlertController(title: DogConstantString.setPermisionTitle, message: DogConstantString.permissionMsg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: StringConstant.hasAppLaunchedBeforeKey)
+        if !hasAppLaunchedBefore == true {
+            let alert = UIAlertController(title: DogConstantString.setPermisionTitle, message: DogConstantString.permissionMsg, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alert.addAction(okAction)
+            UserDefaults.standard.set(true, forKey: StringConstant.hasAppLaunchedBeforeKey)
+            self.present(alert, animated: true, completion: nil)
         }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        if iscomeFromInstruction == true{
+            let alert = UIAlertController(title: DogConstantString.setPermisionTitle, message: DogConstantString.permissionMsgAlert, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
  
 //   MARK: - Retrive button bg color
@@ -101,23 +120,32 @@ class PermissionViewController: UIViewController {
     
     
     @IBAction func setPermissionBtnPress(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: StringConstant.permissionTitle,
-                                      message: StringConstant.permissionMsg,
-                                      preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in }))
-        
-        alert.addAction(UIAlertAction(title: "Proceed", style: .default, handler: {_ in
+        if locationBtn.backgroundColor == enableBtnColor || microphoneBtn.backgroundColor == enableBtnColor || cameraBtn.backgroundColor == enableBtnColor || notificationBtn.backgroundColor == enableBtnColor {
+            let alert = UIAlertController(title: StringConstant.congrulationTitle, message: StringConstant.setupMsg, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                alert.dismiss(animated: true) {
+                    self.confirmedSetup()
+                }
+            }))
+            self.present(alert, animated: true)
+        }else{
+            let alert = UIAlertController(title: StringConstant.permissionTitle,
+                                          message: StringConstant.permissionMsg,
+                                          preferredStyle: .alert)
             
-            alert.dismiss(animated: true, completion: {
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in }))
+            
+            alert.addAction(UIAlertAction(title: "Proceed", style: .default, handler: {_ in
                 
-                self.confirmedSetup()
-                
-            })
-        }))
-        
-        self.present(alert, animated: true)
+                alert.dismiss(animated: true, completion: {
+                    
+                    self.confirmedSetup()
+                    
+                })
+            }))
+            
+            self.present(alert, animated: true)
+        }
 
     }
 //    MARK: - Save button background color
@@ -135,7 +163,15 @@ class PermissionViewController: UIViewController {
        case .notDetermined:
            
            AVCaptureDevice.requestAccess(for: .audio, completionHandler: {accessGranted in
-               guard accessGranted == true else { return }
+               if accessGranted == true{
+                   DispatchQueue.main.async {
+                       self.microphoneBtn.backgroundColor = self.enableBtnColor
+                       self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
+                   }
+               }else{
+                   return
+               }
+              
            })
            
        case .authorized:
@@ -171,7 +207,14 @@ class PermissionViewController: UIViewController {
         case .notDetermined:
             
             AVCaptureDevice.requestAccess(for: .video, completionHandler: {accessGranted in
-                guard accessGranted == true else { return }
+                if accessGranted == true{
+                    DispatchQueue.main.async {
+                        self.cameraBtn.backgroundColor = self.enableBtnColor
+                        self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
+                    }
+                }else{
+                    return
+                }
             })
             
         case .authorized:

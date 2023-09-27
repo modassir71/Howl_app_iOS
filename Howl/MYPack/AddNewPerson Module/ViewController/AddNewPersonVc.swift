@@ -25,6 +25,7 @@ class AddNewPersonVc: UIViewController {
     @IBOutlet weak var phoneNoTxtFld: UITextField!
     
 //    MARK: - Variable
+    var iscomeFromInstruction: Bool?
     let color = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha:  0.5)
     var dailingCode: String?
     var countryCode: String?
@@ -48,6 +49,17 @@ class AddNewPersonVc: UIViewController {
         //_SetData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if iscomeFromInstruction == true{
+            let alert = UIAlertController(title: DogConstantString.personAlertTitle, message: DogConstantString.personAlertMsg, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+//    MARK: - SetUp ui
     func setUPUI(){
         navigationView.layer.shadowColor = UIColor.black.cgColor
         navigationView.layer.shadowOpacity = 0.2
@@ -134,17 +146,25 @@ class AddNewPersonVc: UIViewController {
                 AddPeopleDataManager.sharedInstance.people.append(newPerson)
             }
             if AddPeopleDataManager.sharedInstance.savePeople() {
-                switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+          //      switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
                     
-                case true:
+                //case true:
+                if iscomeFromInstruction == true{
+                    let storyboard = AppStoryboard.Main.instance
+                    let sirenVc = storyboard.instantiateViewController(withIdentifier: "SirenViewController") as! SirenViewController
+                    sirenVc.iscomeFromInstruction = true
+                    self.navigationController?.pushViewController(sirenVc, animated: true)
+                }else{
                     self.navigationController?.popViewController(animated: true)
-                case false:
-                    self.navigationController?.popViewController(animated: true)
+                }
+                    
+//                case false:
+//                    self.navigationController?.popViewController(animated: true)
 //                    DispatchQueue.main.async {
 //                        self.performSegue(withIdentifier: "personToSiren", sender: self)
 //                    }
-                    print("Not Saved")
-                }
+                  //  print("Not Saved")
+               // }
             }else{
                 print("Error")
             }
