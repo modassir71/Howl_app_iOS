@@ -14,6 +14,7 @@
 		180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D52A8DED2E00C744CE /* UITableView+Extension.swift */; };
 		180254D92A8DFE7900C744CE /* FontContant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180254D82A8DFE7900C744CE /* FontContant.swift */; };
 		180254DB2A8E2B6900C744CE /* animation_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 180254DA2A8E2B6900C744CE /* animation_1.json */; };
+		180CF56D2AC6CAED00A8458C /* dogData.json in Resources */ = {isa = PBXBuildFile; fileRef = 180CF56C2AC6CAED00A8458C /* dogData.json */; };
 		1819325F2AAEEE0100E375A2 /* DogDetailPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819325D2AAEEE0100E375A2 /* DogDetailPopUp.swift */; };
 		181932602AAEEE0100E375A2 /* DogDetailPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1819325E2AAEEE0100E375A2 /* DogDetailPopUp.xib */; };
 		181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */; };
@@ -128,6 +129,7 @@
 		180254D52A8DED2E00C744CE /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		180254D82A8DFE7900C744CE /* FontContant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontContant.swift; sourceTree = "<group>"; };
 		180254DA2A8E2B6900C744CE /* animation_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_1.json; sourceTree = "<group>"; };
+		180CF56C2AC6CAED00A8458C /* dogData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogData.json; sourceTree = "<group>"; };
 		1819325D2AAEEE0100E375A2 /* DogDetailPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailPopUp.swift; sourceTree = "<group>"; };
 		1819325E2AAEEE0100E375A2 /* DogDetailPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogDetailPopUp.xib; sourceTree = "<group>"; };
 		181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalkingViewController.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 		18C86C562A8CD75B00A1F937 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				180CF56C2AC6CAED00A8458C /* dogData.json */,
 				18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */,
 				180254DA2A8E2B6900C744CE /* animation_1.json */,
 				180254D72A8DFE2700C744CE /* Constant File */,
@@ -947,6 +950,7 @@
 				18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */,
 				181932602AAEEE0100E375A2 /* DogDetailPopUp.xib in Resources */,
 				18C86C2F2A8CABA900A1F937 /* LaunchScreen.storyboard in Resources */,
+				180CF56D2AC6CAED00A8458C /* dogData.json in Resources */,
 				18C86C712A8CE0B200A1F937 /* Aileron-LightItalic.otf in Resources */,
 				189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */,
 				189A796A2AAAE70A002A640C /* Siren0.mp3 in Resources */,

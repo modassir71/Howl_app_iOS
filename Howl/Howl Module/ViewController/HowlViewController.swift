@@ -165,6 +165,11 @@ extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HowlViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width / 4.8) - 2, height: (collectionView.frame.height))
+        if isiPhoneSE(){
+            return CGSize(width: (collectionView.frame.width / 4.3) - 2, height: (collectionView.frame.height))
+        }else{
+            return CGSize(width: (collectionView.frame.width / 4.5) - 2, height: (collectionView.frame.height))
+        }
+       
     }
 }

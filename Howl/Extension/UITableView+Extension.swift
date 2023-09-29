@@ -27,6 +27,10 @@ extension UITableView {
             self.deselectRow(at: indexPathForSelectedRow, animated: animated)
         }
     }
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
 }
 extension NSObject {
     class var className: String {
