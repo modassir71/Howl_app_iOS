@@ -120,6 +120,13 @@ class HowlViewController: UIViewController {
     
     //MARK: -Button Action
     
+    @IBAction func trackDogBtn(_ sender: UIButton) {
+        let storyboard = AppStoryboard.Main.instance
+        let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
+        self.navigationController?.pushViewController(trackerVc, animated: true)
+    }
+    
+    
     @IBAction func addNewDog(_ sender: UIButton) {
         let storyboard = AppStoryboard.Main.instance
         let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "DogListingViewController") as! DogListingViewController

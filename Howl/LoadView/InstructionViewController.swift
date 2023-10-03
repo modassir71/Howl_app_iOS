@@ -23,12 +23,12 @@ class InstructionViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         let screenHeight = UIScreen.main.bounds.size.height
         let isiPhoneSE = screenHeight <= 667
-        if isiPhoneSE {
-           self.tabBarController?.tabBar.frame.size.height = 47
-           // print(self.tabBarController?.tabBar.frame.size.height)
-        }else{
+//        if isiPhoneSE {
+//           self.tabBarController?.tabBar.frame.size.height = 47
+//           // print(self.tabBarController?.tabBar.frame.size.height)
+//        }else{
             self.tabBarController?.tabBar.frame.size.height = 100
-        }
+       // }
     }
 //    MARK: - SetUp UI
     func _setUi(){

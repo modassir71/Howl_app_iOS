@@ -19,7 +19,10 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         print("ScreenHeight", screenHeight)
         self.delegate = self
         setTabBar()
+        tabBar.backgroundColor = .white
     }
+    
+    
     
     
     

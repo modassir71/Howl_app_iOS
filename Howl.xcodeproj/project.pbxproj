@@ -62,6 +62,12 @@
 		189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79652AAAE70A002A640C /* Siren5.mp3 */; };
 		189A796F2AAAE769002A640C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A796E2AAAE769002A640C /* SoundManager.swift */; };
 		189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A79812AAAFE8F002A640C /* PermissionViewController.swift */; };
+		18A7CFA62AC9C3C4009DFA71 /* TrackWalkerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */; };
+		18A7CFA82ACBF9F1009DFA71 /* WalkerStatusVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */; };
+		18A7CFAA2ACBFA34009DFA71 /* WalkerMapVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */; };
+		18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */; };
+		18A7CFB22ACC2BD7009DFA71 /* WalkerStatusTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */; };
+		18A7CFB32ACC2BD7009DFA71 /* WalkerStatusTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */; };
 		18C42A102AC0925700C973F6 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C42A0F2AC0925700C973F6 /* MainTabBar.swift */; };
 		18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */; };
 		18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C212A8CABA800A1F937 /* SceneDelegate.swift */; };
@@ -177,6 +183,12 @@
 		189A79652AAAE70A002A640C /* Siren5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren5.mp3; sourceTree = "<group>"; };
 		189A796E2AAAE769002A640C /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		189A79812AAAFE8F002A640C /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWalkerVc.swift; sourceTree = "<group>"; };
+		18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusVc.swift; sourceTree = "<group>"; };
+		18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerMapVc.swift; sourceTree = "<group>"; };
+		18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusCell.swift; sourceTree = "<group>"; };
+		18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusTblCell.swift; sourceTree = "<group>"; };
+		18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkerStatusTblCell.xib; sourceTree = "<group>"; };
 		18C42A0F2AC0925700C973F6 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		18C86C1C2A8CABA800A1F937 /* Howl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -500,6 +512,35 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		18A7CFA32AC9C37B009DFA71 /* TrackWalker */ = {
+			isa = PBXGroup;
+			children = (
+				18A7CFAB2ACC0054009DFA71 /* Cell */,
+				18A7CFA42AC9C3A2009DFA71 /* ViewController */,
+			);
+			path = TrackWalker;
+			sourceTree = "<group>";
+		};
+		18A7CFA42AC9C3A2009DFA71 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */,
+				18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */,
+				18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		18A7CFAB2ACC0054009DFA71 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */,
+				18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */,
+				18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		18C86C132A8CABA800A1F937 = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +567,7 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				18A7CFA32AC9C37B009DFA71 /* TrackWalker */,
 				1839588C2ABAEBDF00CBC56E /* LoadView */,
 				18297F822AB4331100D97A36 /* Config */,
 				18530A672AB2CD3800C190D3 /* Validation */,
@@ -960,6 +1002,7 @@
 				18C86C762A8CE0B200A1F937 /* Aileron-Italic.otf in Resources */,
 				18C86C732A8CE0B200A1F937 /* Aileron-Regular.otf in Resources */,
 				18C86C6E2A8CE0B200A1F937 /* Aileron-UltraLight.otf in Resources */,
+				18A7CFB32ACC2BD7009DFA71 /* WalkerStatusTblCell.xib in Resources */,
 				18C86C722A8CE0B200A1F937 /* Aileron-ThinItalic.otf in Resources */,
 				1821C6142AA867C500087FA7 /* PersonListingTableViewCell.xib in Resources */,
 				18C86C7B2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf in Resources */,
@@ -1104,6 +1147,7 @@
 				180254D42A8DECFA00C744CE /* UICollectionView+Extension.swift in Sources */,
 				18C86C242A8CABA800A1F937 /* MyPackVc.swift in Sources */,
 				180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */,
+				18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */,
 				1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */,
 				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
@@ -1124,6 +1168,7 @@
 				1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */,
 				180254CF2A8DE29F00C744CE /* DogVarietyCollectionViewCell.swift in Sources */,
 				18F542DE2AAE1460000B9B1E /* DogConstantString.swift in Sources */,
+				18A7CFA62AC9C3C4009DFA71 /* TrackWalkerVc.swift in Sources */,
 				18D76E482AB035EE005B88EF /* StringConstant.swift in Sources */,
 				1821C6102AA862A800087FA7 /* PersonListingVC.swift in Sources */,
 				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
@@ -1132,9 +1177,11 @@
 				18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */,
 				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
+				18A7CFA82ACBF9F1009DFA71 /* WalkerStatusVc.swift in Sources */,
 				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
 				18530A722AB2D6C100C190D3 /* AddPersonVm.swift in Sources */,
 				18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */,
+				18A7CFAA2ACBFA34009DFA71 /* WalkerMapVc.swift in Sources */,
 				18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */,
 				180254D92A8DFE7900C744CE /* FontContant.swift in Sources */,
 				18D76E4A2AB03AFB005B88EF /* AlertManager.swift in Sources */,
@@ -1152,6 +1199,7 @@
 				187FF0902A8F2F720087216C /* NewDogVarietyCell.swift in Sources */,
 				189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */,
 				18530A6F2AB2D18100C190D3 /* DogsWalkModel.swift in Sources */,
+				18A7CFB22ACC2BD7009DFA71 /* WalkerStatusTblCell.swift in Sources */,
 				183958922ABB066200CBC56E /* DogListingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
