@@ -10,6 +10,7 @@ pod 'lottie-ios'
 pod 'SKCountryPicker', '~> 2.0.0'
 pod 'IQKeyboardManagerSwift'
 pod 'CarbonKit'
+pod 'GoogleMaps'
 
   target 'HowlTests' do
     inherit! :search_paths

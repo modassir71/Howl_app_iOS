@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-Bold.otf">
+            <string>Aileron-Bold</string>
+        </array>
+        <array key="Aileron-Regular.otf">
+            <string>Aileron-Regular</string>
+        </array>
+        <array key="Aileron-SemiBold.otf">
+            <string>Aileron-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="WalkerStatusCell" customModule="Howl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="336" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xah-lC-6mk">
+                        <rect key="frame" x="15" y="10" width="306" height="91"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOWL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXD-aq-7AT">
+                                <rect key="frame" x="128.33333333333334" y="5" width="49.666666666666657" height="19.333333333333332"/>
+                                <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LFQ-eF-IYG">
+                                <rect key="frame" x="15" y="23.333333333333336" width="276" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iv-xu-LIs">
+                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgS-Ax-3e3">
+                                        <rect key="frame" x="131" y="0.0" width="38.333333333333343" height="24"/>
+                                        <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-ah-0by">
+                                        <rect key="frame" x="220.66666666666666" y="0.0" width="55.333333333333343" height="24"/>
+                                        <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="mYm-N3-hj5"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="00v-oX-uhz">
+                                <rect key="frame" x="10" y="49.333333333333336" width="286" height="24.000000000000007"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29/08/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-ne-yhg">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="24"/>
+                                        <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:08:03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGy-cj-tIO">
+                                        <rect key="frame" x="121" y="0.0" width="68.333333333333314" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-Nj-xCl">
+                                        <rect key="frame" x="220.66666666666666" y="0.0" width="65.333333333333343" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="dCX-IZ-Itc"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="w3w:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmj-we-1VD">
+                                <rect key="frame" x="133" y="74.333333333333329" width="40.333333333333343" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="what three Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-He-WFv">
+                                <rect key="frame" x="175.33333333333337" y="74" width="129.66666666666663" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LFQ-eF-IYG" firstAttribute="top" secondItem="LXD-aq-7AT" secondAttribute="bottom" constant="-1" id="09U-RF-C5L"/>
+                            <constraint firstItem="00v-oX-uhz" firstAttribute="top" secondItem="LFQ-eF-IYG" secondAttribute="bottom" constant="2" id="0a5-XP-8of"/>
+                            <constraint firstItem="kMr-He-WFv" firstAttribute="leading" secondItem="Vmj-we-1VD" secondAttribute="trailing" constant="2" id="3Wf-SP-dC2"/>
+                            <constraint firstAttribute="trailing" secondItem="LFQ-eF-IYG" secondAttribute="trailing" constant="15" id="9L3-bb-Xjb"/>
+                            <constraint firstItem="KlX-Nj-xCl" firstAttribute="centerX" secondItem="Ihj-ah-0by" secondAttribute="centerX" id="9io-DL-MPJ"/>
+                            <constraint firstItem="Vmj-we-1VD" firstAttribute="centerX" secondItem="Xah-lC-6mk" secondAttribute="centerX" id="DjI-29-u3D"/>
+                            <constraint firstItem="LXD-aq-7AT" firstAttribute="centerX" secondItem="Xah-lC-6mk" secondAttribute="centerX" id="RZC-5h-6Hg"/>
+                            <constraint firstItem="a8b-ne-yhg" firstAttribute="centerX" secondItem="1Iv-xu-LIs" secondAttribute="centerX" id="WC5-Nr-URw"/>
+                            <constraint firstItem="qGy-cj-tIO" firstAttribute="centerX" secondItem="FgS-Ax-3e3" secondAttribute="centerX" id="ZTc-ep-THU"/>
+                            <constraint firstItem="Vmj-we-1VD" firstAttribute="top" secondItem="qGy-cj-tIO" secondAttribute="bottom" constant="1" id="ejP-Yv-owu"/>
+                            <constraint firstItem="00v-oX-uhz" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="10" id="hSx-dr-Wpg"/>
+                            <constraint firstItem="LXD-aq-7AT" firstAttribute="top" secondItem="Xah-lC-6mk" secondAttribute="top" constant="5" id="k0x-bk-E2U"/>
+                            <constraint firstAttribute="trailing" secondItem="00v-oX-uhz" secondAttribute="trailing" constant="10" id="kre-21-eVm"/>
+                            <constraint firstItem="kMr-He-WFv" firstAttribute="top" secondItem="00v-oX-uhz" secondAttribute="bottom" constant="0.66666666666665719" id="q9O-qc-Ao9"/>
+                            <constraint firstItem="LFQ-eF-IYG" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="15" id="sbu-oa-4J6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Xah-lC-6mk" secondAttribute="bottom" constant="10" id="BU9-Yf-IgY"/>
+                    <constraint firstItem="Xah-lC-6mk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="CLP-Tz-eZ6"/>
+                    <constraint firstAttribute="trailing" secondItem="Xah-lC-6mk" secondAttribute="trailing" constant="15" id="RxG-on-JB2"/>
+                    <constraint firstItem="Xah-lC-6mk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WMK-SI-bm1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="Xah-lC-6mk" id="bcc-3D-WbP"/>
+            </connections>
+            <point key="canvasLocation" x="68.702290076335871" y="23.591549295774648"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

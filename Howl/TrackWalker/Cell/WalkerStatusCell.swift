@@ -12,7 +12,7 @@ class WalkerStatusCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        //_setUi()
+        _setUi()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

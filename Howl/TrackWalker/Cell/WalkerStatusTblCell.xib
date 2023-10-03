@@ -18,26 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="397" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-vl-8gW">
-                        <rect key="frame" x="10" y="10" width="377" height="129"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rkq-vl-8gW">
+                        <rect key="frame" x="63" y="10" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Rkq-vl-8gW" secondAttribute="bottom" constant="10" id="87K-iX-h8I"/>
-                    <constraint firstAttribute="trailing" secondItem="Rkq-vl-8gW" secondAttribute="trailing" constant="10" id="RpA-m9-anX"/>
-                    <constraint firstItem="Rkq-vl-8gW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qpn-Z7-M8i"/>
-                    <constraint firstItem="Rkq-vl-8gW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rcC-ml-ZGt"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="153.43511450381678" y="35.563380281690144"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -27,6 +27,10 @@ SOFTWARE.
 
 
 
+## GoogleMaps
+
+Copyright 2023 Google
+
 ## IQKeyboardManagerSwift
 
 MIT License

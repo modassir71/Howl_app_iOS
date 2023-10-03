@@ -27,7 +27,7 @@ class WalkerStatusVc: UIViewController {
     
 //    MARK: - Register cell
     func _registerCell(){
-        walkerListTbLview.registerNib(of: PersonListingTableViewCell.self)
+        walkerListTbLview.registerNib(of: WalkerStatusCell.self)
     }
     
 //    MARK: - Set UI
@@ -45,13 +45,12 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.getCell() as PersonListingTableViewCell
-        cell.layoutIfNeeded()
+        let cell = tableView.getCell() as WalkerStatusCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 118
     }
     
    

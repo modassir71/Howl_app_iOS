@@ -68,6 +68,7 @@
 		18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */; };
 		18A7CFB22ACC2BD7009DFA71 /* WalkerStatusTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */; };
 		18A7CFB32ACC2BD7009DFA71 /* WalkerStatusTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */; };
+		18A7CFB52ACC45DA009DFA71 /* WalkerStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7CFB42ACC45DA009DFA71 /* WalkerStatusCell.xib */; };
 		18C42A102AC0925700C973F6 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C42A0F2AC0925700C973F6 /* MainTabBar.swift */; };
 		18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */; };
 		18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C212A8CABA800A1F937 /* SceneDelegate.swift */; };
@@ -189,6 +190,7 @@
 		18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusCell.swift; sourceTree = "<group>"; };
 		18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusTblCell.swift; sourceTree = "<group>"; };
 		18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkerStatusTblCell.xib; sourceTree = "<group>"; };
+		18A7CFB42ACC45DA009DFA71 /* WalkerStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkerStatusCell.xib; sourceTree = "<group>"; };
 		18C42A0F2AC0925700C973F6 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		18C86C1C2A8CABA800A1F937 /* Howl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 		18A7CFAB2ACC0054009DFA71 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				18A7CFB42ACC45DA009DFA71 /* WalkerStatusCell.xib */,
 				18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */,
 				18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */,
 				18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */,
@@ -881,6 +884,7 @@
 				18C86C192A8CABA800A1F937 /* Frameworks */,
 				18C86C1A2A8CABA800A1F937 /* Resources */,
 				D712D606B1C6056C69A86C7D /* [CP] Embed Pods Frameworks */,
+				67B167A79FD068C98B4C43C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -919,6 +923,7 @@
 				18C86C3C2A8CABA900A1F937 /* Frameworks */,
 				18C86C3D2A8CABA900A1F937 /* Resources */,
 				EC8E9E50CBFAAF692D425B64 /* [CP] Embed Pods Frameworks */,
+				5B6DE1394BAC963A5BC275C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1017,6 +1022,7 @@
 				189A796C2AAAE70A002A640C /* Siren4.mp3 in Resources */,
 				18C86C702A8CE0B200A1F937 /* Aileron-Light.otf in Resources */,
 				189A79662AAAE70A002A640C /* Siren2.mp3 in Resources */,
+				18A7CFB52ACC45DA009DFA71 /* WalkerStatusCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1063,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B6DE1394BAC963A5BC275C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67B167A79FD068C98B4C43C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Howl/Pods-Howl-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84F00ED29E5B921016781419 /* [CP] Check Pods Manifest.lock */ = {
