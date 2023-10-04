@@ -7,6 +7,7 @@
 
 import UIKit
 import SKCountryPicker
+import ContactsUI
 
 class AddNewPersonVc: UIViewController {
     //MARK: - Outlet
@@ -43,6 +44,7 @@ class AddNewPersonVc: UIViewController {
         super.viewDidLoad()
         setUPUI()
         _setData()
+        _txtFldDelegates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +61,14 @@ class AddNewPersonVc: UIViewController {
         }
     }
     
+//    MARK: - Textfield delegates
+    func _txtFldDelegates(){
+        let textfield = [nickNameTxtFld, nameTxtFld, phoneNoTxtFld]
+        for textField in textfield{
+            textField?.delegate = self
+            textField?.autocapitalizationType = .words
+        }
+    }
 //    MARK: - SetUp ui
     func setUPUI(){
         navigationView.layer.shadowColor = UIColor.black.cgColor
@@ -120,6 +130,9 @@ class AddNewPersonVc: UIViewController {
     //MARK: - Button Action
     
     @IBAction func contactBtnPress(_ sender: UIButton) {
+        let contactPicker = CNContactPickerViewController()
+               contactPicker.delegate = self
+               present(contactPicker, animated: true, completion: nil)
     }
     
     @IBAction func whatsappBtnPress(_ sender: UIButton) {
@@ -260,4 +273,43 @@ extension AddNewPersonVc: UIImagePickerControllerDelegate, UINavigationControlle
         print("Cancel Tapped")
         imagePicker.dismiss(animated: true, completion: nil)
     }
+}
+//MARK: - Textfield delegates
+extension AddNewPersonVc: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTxtFld{
+            resignFirstResponder()
+            nickNameTxtFld.becomeFirstResponder()
+        }
+        if textField == nickNameTxtFld{
+            resignFirstResponder()
+            phoneNoTxtFld.becomeFirstResponder()
+        }
+        if textField == phoneNoTxtFld{
+            resignFirstResponder()
+        }
+        return true
+    }
+    
+}
+//MARK: - Contact picker extension
+extension AddNewPersonVc: CNContactPickerDelegate{
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        nameTxtFld.text = CNContactFormatter.string(from: contact, style: .fullName)
+
+        if let phoneNumber = contact.phoneNumbers.first?.value {
+            let phoneNumberString = phoneNumber.stringValue
+            
+            // Remove non-digit characters
+            let digits = phoneNumberString.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            phoneNoTxtFld.text = digits
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+
+
+        func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+            dismiss(animated: true, completion: nil)
+        }
 }

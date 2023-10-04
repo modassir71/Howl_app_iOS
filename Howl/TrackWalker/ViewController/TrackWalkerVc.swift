@@ -21,28 +21,6 @@ class TrackWalkerVc: UIViewController, CarbonTabSwipeNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayoutOfTopSegmentBar()
-//        carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: ["Walker Status", "Walker Map"], delegate: self)
-//        carbonTabSwipeNavigation.setTabExtraWidth(90)
-//
-//        carbonTabSwipeNavigation.setIndicatorColor(UIColor(displayP3Red: 222.0/255.0, green: 0/255.0, blue: 68.0/255.0, alpha: 1.0))
-//        carbonTabSwipeNavigation.setSelectedColor(.black, font: UIFont.boldSystemFont(ofSize: 14))
-//        carbonTabSwipeNavigation.setNormalColor(.gray, font: UIFont.systemFont(ofSize: 13))
-//        navigationView.layer.shadowColor = UIColor.black.cgColor
-//        navigationView.layer.shadowOpacity = 0.2
-//        navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
-//        navigationView.layer.shadowRadius = 2
-//     //   carbonTabSwipeNavigation.isUserInteractionEnabled = true
-//        // or
-//        carbonTabSwipeNavigation.carbonSegmentedControl?.isUserInteractionEnabled = true
-//        carbonTabSwipeNavigation.insert(intoRootViewController: self, andTargetView: carbonKitView)
-      //  self.carbonKitView.addSubview(carbonTabSwipeNavigation.view)
-//        carbonTabSwipeNavigation.view.translatesAutoresizingMaskIntoConstraints = false
-//                NSLayoutConstraint.activate([
-//                    carbonTabSwipeNavigation.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                    carbonTabSwipeNavigation.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//                    carbonTabSwipeNavigation.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//                    carbonTabSwipeNavigation.view.heightAnchor.constraint(equalToConstant: 44) // Adjust the height as needed
-//                ])
     }
     
     fileprivate func setLayoutOfTopSegmentBar(){

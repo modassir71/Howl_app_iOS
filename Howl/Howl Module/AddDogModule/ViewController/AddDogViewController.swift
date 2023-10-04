@@ -41,12 +41,14 @@ class AddDogViewController: UIViewController {
     var profileImage: Data!
     var genderType: String?
     var dogType: String?
+    let datePicker = UIDatePicker()
 //    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         delegateMethod()
         self.setUI()
         _setData()
+
         
     }
     
@@ -80,15 +82,54 @@ class AddDogViewController: UIViewController {
     }
 //    MARK: - TextField Delegate
     func delegateMethod(){
-        districtiveFeature.delegate = self
-        microchipDatabaseTxtFld.delegate = self
-        dateOfBirthTxtFld.delegate = self
-        microchipNumberTxtFld.delegate = self
-        colorTxtFld.delegate = self
-        bredextFld.delegate = self
-        dogNameTxtFld.delegate = self
-       
+        let textFields = [
+            microchipNumberTxtFld,
+            dateOfBirthTxtFld,
+            microchipDatabaseTxtFld,
+            colorTxtFld,
+            bredextFld,
+            dogNameTxtFld,
+            districtiveFeature
+        ]
+        for textField in textFields {
+            textField?.delegate = self
+            textField?.autocapitalizationType = .words
+            if textField == dateOfBirthTxtFld {
+                setUpDatePicker(for: dateOfBirthTxtFld)
+            }
+        }
     }
+//    MARK: - Setup datepicker for dob
+    func setUpDatePicker(for textField: UITextField) {
+        if #available(iOS 13.4, *) {
+            datePicker.datePickerMode = .date
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            datePicker.datePickerMode = .date
+        }
+
+        // Set maximum date to the current date to prevent selecting future dates
+        datePicker.maximumDate = Date()
+
+        textField.inputView = datePicker
+
+        // Add a toolbar with a "Done" button to dismiss the date picker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(datePickerDoneButtonTapped))
+        toolbar.setItems([doneButton], animated: false)
+
+        textField.inputAccessoryView = toolbar
+    }
+
+    
+    @objc func datePickerDoneButtonTapped() {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateOfBirthTxtFld.text = dateFormatter.string(from: datePicker.date)
+            dateOfBirthTxtFld.resignFirstResponder()
+        }
 //    MARK: - SetData
     func _setData(){
         if isUpdate == true{
@@ -325,7 +366,7 @@ extension AddDogViewController: UITextFieldDelegate{
         }
         if textField == colorTxtFld{
             textField.resignFirstResponder()
-            dateOfBirthTxtFld.becomeFirstResponder()
+           dateOfBirthTxtFld.becomeFirstResponder()
         }
         if textField == dateOfBirthTxtFld{
             textField.resignFirstResponder()

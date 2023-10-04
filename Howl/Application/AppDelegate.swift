@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if #available(iOS 13.0, *) {
+                    for windowScene in UIApplication.shared.connectedScenes {
+                        if let windowScene = windowScene as? UIWindowScene {
+                            for window in windowScene.windows {
+                                window.overrideUserInterfaceStyle = .light
+                            }
+                        }
+                    }
+                }
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
         return true
