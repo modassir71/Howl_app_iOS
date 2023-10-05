@@ -1,0 +1,6 @@
+framework module W3WSwiftApi {
+  umbrella header "W3WSwiftApi-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -144,7 +144,6 @@ class AddDogViewController: UIViewController {
                 let image = UIImage(data: profileImage)
                 profileImg.image = image
             }
-            
         }
     }
 //    MARK: - Set up UI
@@ -207,7 +206,6 @@ class AddDogViewController: UIViewController {
         maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         genderType = "MALE"
-        print(genderType)
     }
     
     
@@ -215,7 +213,6 @@ class AddDogViewController: UIViewController {
         inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         dogType = "INTACT"
-        print(dogType)
         
     }
     
@@ -225,7 +222,6 @@ class AddDogViewController: UIViewController {
         femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         genderType = "FEMALE"
-        print(genderType)
         
     }
     
@@ -234,7 +230,7 @@ class AddDogViewController: UIViewController {
         neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         dogType = "SPAYED"
-        print(dogType)
+    
     }
     
     

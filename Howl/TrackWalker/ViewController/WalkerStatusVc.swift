@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import W3WSwiftApi
+import what3words
+
 
 class WalkerStatusVc: UIViewController {
 //MARK: - Oultets

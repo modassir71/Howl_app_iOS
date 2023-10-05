@@ -345,6 +345,21 @@
             </objects>
             <point key="canvasLocation" x="536.79999999999995" y="-839.73013493253382"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="caS-gA-zLC">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I90-oQ-MZS" customClass="SplashViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="76Z-rJ-N4V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2Na-P1-7zs"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8E-HL-3v6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="-847"/>
+        </scene>
         <!--Howl View Controller-->
         <scene sceneID="7aD-Th-cf6">
             <objects>
@@ -914,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1S-QU-5P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4458" y="10"/>
+            <point key="canvasLocation" x="4593" y="-4"/>
         </scene>
         <!--Dog Walking View Controller-->
         <scene sceneID="KTQ-Ce-eYp">
@@ -3547,7 +3562,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybC-av-WwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3737" y="-2"/>
+            <point key="canvasLocation" x="3831" y="-4"/>
         </scene>
     </scenes>
     <resources>
@@ -3599,6 +3614,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

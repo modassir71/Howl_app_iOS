@@ -967,6 +967,8 @@
 				Base,
 			);
 			mainGroup = 18C86C132A8CABA800A1F937;
+			packageReferences = (
+			);
 			productRefGroup = 18C86C1D2A8CABA800A1F937 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

@@ -11,6 +11,8 @@ pod 'SKCountryPicker', '~> 2.0.0'
 pod 'IQKeyboardManagerSwift'
 pod 'CarbonKit'
 pod 'GoogleMaps'
+pod 'W3WSwiftApi'
+pod 'what3words'
 
   target 'HowlTests' do
     inherit! :search_paths
