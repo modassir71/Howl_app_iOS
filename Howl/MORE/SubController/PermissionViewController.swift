@@ -14,12 +14,12 @@ class PermissionViewController: UIViewController {
     
     @IBOutlet weak var titleTxtView: UITextView!
     @IBOutlet weak var navigationView: UIView!
-    
     @IBOutlet weak var setPermissionBtn: UIButton!
     @IBOutlet weak var notificationBtn: UIButton!
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var microphoneBtn: UIButton!
+    @IBOutlet weak var grantAllPermissionBtn: UIButton!
     
 //    MARK: - Variable
     var enableBtnColor = UIColor(displayP3Red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0)
@@ -39,6 +39,7 @@ class PermissionViewController: UIViewController {
         getSavedColor(key: "cameraBackgroudColor", color: &cameraBtn.backgroundColor!)
         getSavedColor(key: "LocationBackgroundColor", color: &locationBtn.backgroundColor!)
         getSavedColor(key: "notificationBackgroundColor", color: &notificationBtn.backgroundColor!)
+        getSavedColor(key: "allPermissionEnable", color: &grantAllPermissionBtn.backgroundColor!)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
         let screenHeight = UIScreen.main.bounds.size.height
@@ -97,25 +98,110 @@ class PermissionViewController: UIViewController {
         addShadow(to: locationBtn)
         addShadow(to: notificationBtn)
         addShadow(to: setPermissionBtn)
-        
+        addShadow(to: grantAllPermissionBtn)
     }
 
 //    MARK: - Button Action
+    
+    @IBAction func allPermissionBtnPress(_ sender: UIButton) {
+        let group = DispatchGroup()
+        
+        var microphoneGranted = false
+        var cameraGranted = false
+        var locationGranted = false
+        var notificationGranted = false
+        
+        group.enter()
+        requestMicrophonePermission { granted in
+            microphoneGranted = granted
+            group.leave()
+        }
+        
+       
+        group.enter()
+        setCameraPermission { granted in
+            cameraGranted = granted
+            group.leave()
+        }
+        
+        
+        group.enter()
+        setLocationPermission { granted in
+            locationGranted = granted
+            group.leave()
+        }
+        
+       
+        group.enter()
+        setNotificationPermission { granted in
+            notificationGranted = granted
+            group.leave()
+        }
+        
+       
+        group.notify(queue: .main) {
+            if microphoneGranted || cameraGranted || locationGranted || notificationGranted {
+                self.grantAllPermissionBtn.backgroundColor = self.enableBtnColor
+                self.saveColor(color: self.grantAllPermissionBtn.backgroundColor ?? UIColor(), key: "allPermissionEnable")
+            }
+        }
+    }
+    
     @IBAction func microphoneBtnPress(_ sender: UIButton) {
-        requestMicrophonePermission()
+        requestMicrophonePermission { granted in
+                if granted {
+                    // Microphone permission granted
+                    // Perform actions for granted permission
+                    print("Microphone permission granted")
+                } else {
+                    // Microphone permission denied
+                    // Handle the denial or take appropriate action
+                    print("Microphone permission denied")
+                }
+            }
     }
     
     @IBAction func cameraBtnPress(_ sender: UIButton) {
-        setCameraPermission()
+        setCameraPermission { granted in
+                if granted {
+                    // Camera permission granted
+                    // Perform actions for granted permission
+                    print("Camera permission granted")
+                } else {
+                    // Camera permission denied
+                    // Handle the denial or take appropriate action
+                    print("Camera permission denied")
+                }
+            }
     }
     
     @IBAction func locationBtnPress(_ sender: UIButton) {
-        setLocationPermission()
-    }
+        setLocationPermission { granted in
+                if granted {
+                    // Location permission granted
+                    // Perform actions for granted permission
+                    print("Location permission granted")
+                } else {
+                    // Location permission denied
+                    // Handle the denial or take appropriate action
+                    print("Location permission denied")
+                }
+            }
+        }
     
     
     @IBAction func notificationsBtnPress(_ sender: UIButton) {
-        setNotificationPermission()
+        setNotificationPermission { granted in
+               if granted {
+                   // Notification permission granted
+                   // Perform actions for granted permission
+                   print("Notification permission granted")
+               } else {
+                   // Notification permission denied
+                   // Handle the denial or take appropriate action
+                   print("Notification permission denied")
+               }
+           }
     }
     
     
@@ -155,152 +241,141 @@ class PermissionViewController: UIViewController {
         }
     }
 //    MARK: - Microphone access Method
-   func requestMicrophonePermission() {
-       let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .audio)
-       
-       switch cameraAuthorizationStatus {
-       
-       case .notDetermined:
-           
-           AVCaptureDevice.requestAccess(for: .audio, completionHandler: {accessGranted in
-               if accessGranted == true{
-                   DispatchQueue.main.async {
-                       self.microphoneBtn.backgroundColor = self.enableBtnColor
-                       self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
-                   }
-               }else{
-                   return
-               }
-              
-           })
-           
-       case .authorized:
-           microphoneBtn.backgroundColor = enableBtnColor
-           saveColor(color: microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
-           
-       case .restricted, .denied:
-           
-           let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
-           
-           
-           let alert = UIAlertController(title: StringConstant.microphoneAccessTitle,
-                                         message: StringConstant.microphoneAccessMsg,
-                                         preferredStyle: .alert)
-           
-           alert.addAction(UIAlertAction(title: "Cancel", style: .default))
-           alert.addAction(UIAlertAction(title: "Allow", style: .default, handler: {_ in
-               
-               UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
-           }))
-           
-           
-       @unknown default:
-           ()
-       }
+    func requestMicrophonePermission(completion: @escaping (Bool) -> Void) {
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .audio)
+        
+        switch cameraAuthorizationStatus {
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .audio) { accessGranted in
+                DispatchQueue.main.async {
+                    if accessGranted {
+                        self.microphoneBtn.backgroundColor = self.enableBtnColor
+                        self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
+                    }
+                    completion(accessGranted)
+                }
+            }
+            
+        case .authorized:
+            // Microphone permission already granted
+            DispatchQueue.main.async {
+                self.microphoneBtn.backgroundColor = self.enableBtnColor
+                self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "microphoneColor")
+            }
+            completion(true)
+            
+        case .restricted, .denied:
+            let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+            
+            let alert = UIAlertController(title: StringConstant.microphoneAccessTitle,
+                                          message: StringConstant.microphoneAccessMsg,
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default) { _ in
+                completion(false)
+            })
+            alert.addAction(UIAlertAction(title: "Allow", style: .default) { _ in
+                UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+            })
+            
+            present(alert, animated: true, completion: nil)
+            completion(false)
+            
+        @unknown default:
+            completion(false)
+        }
     }
+
 //    MARK: - Camera Permission Method
-    func setCameraPermission(){
+    func setCameraPermission(completion: @escaping (Bool) -> Void) {
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         
         switch cameraAuthorizationStatus {
-        
         case .notDetermined:
-            
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: {accessGranted in
-                if accessGranted == true{
-                    DispatchQueue.main.async {
+            AVCaptureDevice.requestAccess(for: .video) { accessGranted in
+                DispatchQueue.main.async {
+                    if accessGranted {
                         self.cameraBtn.backgroundColor = self.enableBtnColor
-                        self.saveColor(color: self.microphoneBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
+                        self.saveColor(color: self.cameraBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
                     }
-                }else{
-                    return
+                    completion(accessGranted)
                 }
-            })
+            }
             
         case .authorized:
-            
-            cameraBtn.backgroundColor = enableBtnColor
-            saveColor(color: cameraBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
+            // Camera permission already granted
+            DispatchQueue.main.async {
+                self.cameraBtn.backgroundColor = self.enableBtnColor
+                self.saveColor(color: self.cameraBtn.backgroundColor ?? UIColor(), key: "cameraBackgroudColor")
+            }
+            completion(true)
             
         case .restricted, .denied:
+            // Camera permission denied
+            DispatchQueue.main.async {
+                completion(false)
+            }
             
             let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
-            
-            
             let alert = UIAlertController(title: StringConstant.cameraAccessTitle,
                                           message: StringConstant.cameraAccessMsg,
                                           preferredStyle: .alert)
-            
             alert.addAction(UIAlertAction(title: "Cancel", style: .default))
-            alert.addAction(UIAlertAction(title: "Allow", style: .default, handler: {_ in
-                
+            alert.addAction(UIAlertAction(title: "Allow", style: .default) { _ in
                 UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
-            }))
-            
+            })
+            present(alert, animated: true, completion: nil)
             
         @unknown default:
-            ()
+            completion(false)
         }
     }
+
     
 //    MARK: - Notification Permission Method
-    func setNotificationPermission(){
+    func setNotificationPermission(completion: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            
             if success {
-                
                 DispatchQueue.main.async {
                     self.notificationBtn.backgroundColor = self.enableBtnColor
                     self.saveColor(color: self.notificationBtn.backgroundColor ?? UIColor(), key: "notificationBackgroundColor")
                 }
-                
+                completion(true)
             } else if let error = error {
                 let alert = UIAlertController(title: StringConstant.notificationAccessTitle,
                                               message: StringConstant.notificationAccessMsg,
                                               preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
-                
+                completion(false)
             }
         }
-
     }
+
     
 //    MARK: - Location Permission Method
-    func setLocationPermission(){
+    func setLocationPermission(completion: @escaping (Bool) -> Void) {
         switch locationManager.authorizationStatus {
-        
-        case .authorizedAlways:
-            
+        case .authorizedAlways, .authorizedWhenInUse:
+            // Location permission already granted
             locationBtn.backgroundColor = enableBtnColor
             self.saveColor(color: self.locationBtn.backgroundColor ?? UIColor(), key: "LocationBackgroundColor")
-            
-            
-        case .authorizedWhenInUse:
-            
-            locationManager.requestAlwaysAuthorization()
-            locationBtn.backgroundColor = enableBtnColor
-            self.saveColor(color: self.locationBtn.backgroundColor ?? UIColor(), key: "LocationBackgroundColor")
-            
-            
+            completion(true)
+
         case .notDetermined:
-            
             locationManager.requestWhenInUseAuthorization()
-            
-        case .denied:
-            
+
+        case .denied, .restricted:
             locationManager.requestWhenInUseAuthorization()
-            
-        case .restricted:
-            
-            locationManager.requestWhenInUseAuthorization()
-            
+            completion(false)
+
         default:
-            
             locationManager.requestWhenInUseAuthorization()
+            completion(false)
         }
     }
+
     
     func confirmedSetup() {
         

@@ -22,6 +22,7 @@ class InstructionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         let screenHeight = UIScreen.main.bounds.size.height
+        instructionTxtView.isEditable = false
         let isiPhoneSE = screenHeight <= 667
 //        if isiPhoneSE {
 //           self.tabBarController?.tabBar.frame.size.height = 47

@@ -103,10 +103,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="pps-Sp-b7e">
-                                                                        <rect key="frame" x="110.66666666666669" y="0.0" width="154" height="70"/>
+                                                                        <rect key="frame" x="140.66666666666666" y="15" width="94" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="154" id="2KW-eY-Rw2"/>
-                                                                            <constraint firstAttribute="height" constant="70" id="8Hd-m5-0gb"/>
+                                                                            <constraint firstAttribute="width" constant="94" id="2KW-eY-Rw2"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="8Hd-m5-0gb"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
@@ -239,10 +239,10 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="69"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="m3H-g9-PnS">
-                                        <rect key="frame" x="110.66666666666669" y="-0.3333333333333357" width="154" height="70"/>
+                                        <rect key="frame" x="140.66666666666666" y="14.666666666666671" width="94" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="154" id="Zuv-aR-myV"/>
-                                            <constraint firstAttribute="height" constant="70" id="kol-w4-uQd"/>
+                                            <constraint firstAttribute="width" constant="94" id="Zuv-aR-myV"/>
+                                            <constraint firstAttribute="height" constant="40" id="kol-w4-uQd"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -373,13 +373,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Pet from your Pack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8l-65-KZY">
-                                <rect key="frame" x="95" y="435" width="185" height="46.666666666666686"/>
+                                <rect key="frame" x="95" y="435" width="185" height="48.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cy-pb-nhx">
-                                <rect key="frame" x="19.999999999999996" y="662.33333333333337" width="54.666666666666657" height="50"/>
+                                <rect key="frame" x="19.999999999999996" y="664" width="54.666666666666657" height="50"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=" " image="Add_New"/>
                                 <connections>
@@ -387,13 +387,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line_Img" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-1h-ZFJ">
-                                <rect key="frame" x="89.666666666666671" y="657.33333333333337" width="2" height="60"/>
+                                <rect key="frame" x="89.666666666666671" y="659" width="2" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="md2-Yi-ODa"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-d8-USo">
-                                <rect key="frame" x="101.66666666666666" y="654.33333333333337" width="273.33333333333337" height="74.666666666666629"/>
+                                <rect key="frame" x="101.66666666666666" y="656" width="273.33333333333337" height="73"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EK9-V1-g6Q">
                                     <size key="itemSize" width="128" height="128"/>
@@ -407,10 +407,10 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="doH-TV-5uq">
-                                        <rect key="frame" x="110.66666666666669" y="0.0" width="154" height="70"/>
+                                        <rect key="frame" x="140.66666666666666" y="15" width="94" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="154" id="etp-1M-jZa"/>
-                                            <constraint firstAttribute="height" constant="70" id="fvE-Q6-gCL"/>
+                                            <constraint firstAttribute="width" constant="94" id="etp-1M-jZa"/>
+                                            <constraint firstAttribute="height" constant="40" id="fvE-Q6-gCL"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9a7-HV-L03">
@@ -436,10 +436,10 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-ud-6Pp">
-                                <rect key="frame" x="0.0" y="487.33333333333326" width="218" height="152"/>
+                                <rect key="frame" x="0.0" y="489" width="218" height="152"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGx-uT-gPL">
-                                <rect key="frame" x="18" y="712.33333333333337" width="73.666666666666671" height="19"/>
+                                <rect key="frame" x="18" y="714" width="73.666666666666671" height="19"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -503,10 +503,10 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="KQH-QB-6LC">
-                                        <rect key="frame" x="115.66666666666669" y="5" width="144" height="60"/>
+                                        <rect key="frame" x="140.66666666666666" y="15" width="94" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="U0x-AE-JKn"/>
-                                            <constraint firstAttribute="width" constant="144" id="s1C-BU-zU6"/>
+                                            <constraint firstAttribute="height" constant="40" id="U0x-AE-JKn"/>
+                                            <constraint firstAttribute="width" constant="94" id="s1C-BU-zU6"/>
                                         </constraints>
                                     </imageView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSH-TV-zGg">
@@ -957,7 +957,7 @@
                                             <constraint firstAttribute="width" constant="60" id="czx-Fw-y3E"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rocky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-qT-yyw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Rocky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-qT-yyw">
                                         <rect key="frame" x="85" y="10" width="65.666666666666686" height="28"/>
                                         <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="25"/>
                                         <nil key="textColor"/>
@@ -971,8 +971,8 @@
                                             <action selector="crossBtnPress:" destination="Bdg-1c-EKC" eventType="touchUpInside" id="zPN-xz-VO3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Karan Sawant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-hb-DM2">
-                                        <rect key="frame" x="85" y="42" width="125.33333333333331" height="23.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-hb-DM2">
+                                        <rect key="frame" x="85" y="42" width="93" height="32.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Aileron-Light" family="Aileron" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1023,13 +1023,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title=" "/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap 3 Times To" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-Rw-d5t">
-                                        <rect key="frame" x="45" y="50" width="85" height="39.666666666666657"/>
+                                        <rect key="frame" x="45" y="49.333333333333258" width="85" height="41"/>
                                         <fontDescription key="fontDescription" name="Aileron-Light" family="Aileron" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOWL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-1f-BoK">
-                                        <rect key="frame" x="54.999999999999993" y="102.66666666666663" width="65.333333333333314" height="25.666666666666657"/>
+                                        <rect key="frame" x="52.666666666666657" y="102" width="70" height="26.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Aileron-Black" family="Aileron" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2231,13 +2231,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="Lks-2t-O5f">
-                                                <rect key="frame" x="115.66666666666669" y="0.6666666666666643" width="144" height="60"/>
+                                                <rect key="frame" x="140.66666666666666" y="10.666666666666664" width="94" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="1Lw-hH-cWo"/>
-                                                    <constraint firstAttribute="width" constant="144" id="KVh-KQ-F6X"/>
+                                                    <constraint firstAttribute="height" constant="40" id="1Lw-hH-cWo"/>
+                                                    <constraint firstAttribute="width" constant="94" id="KVh-KQ-F6X"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooz-na-NTE">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooz-na-NTE">
                                                 <rect key="frame" x="321" y="8.6666666666666643" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="44" id="C4q-Oi-KPz"/>
@@ -2446,7 +2446,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5V-cj-BTW">
-                                                <rect key="frame" x="15" y="280" width="345" height="44"/>
+                                                <rect key="frame" x="15" y="344" width="345" height="44"/>
                                                 <color key="backgroundColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="1da-R3-GKa"/>
@@ -2472,15 +2472,32 @@
                                                     <action selector="microphoneBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="tDJ-fI-N1B"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbL-sj-yPB">
+                                                <rect key="frame" x="15" y="280" width="345" height="44"/>
+                                                <color key="backgroundColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="uTW-di-aQ1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Grant All Permission"/>
+                                                <connections>
+                                                    <action selector="allPermissionBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="g4d-ld-7cl"/>
+                                                    <action selector="notificationsBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="0I6-q4-fRR"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="DbL-sj-yPB" firstAttribute="top" secondItem="tnu-eA-X41" secondAttribute="bottom" constant="20" id="58c-0j-xTf"/>
+                                            <constraint firstItem="DbL-sj-yPB" firstAttribute="trailing" secondItem="tnu-eA-X41" secondAttribute="trailing" id="5N3-G6-7Af"/>
                                             <constraint firstItem="m5V-cj-BTW" firstAttribute="trailing" secondItem="tnu-eA-X41" secondAttribute="trailing" id="6Ud-jS-1Xd"/>
                                             <constraint firstItem="hxk-Ld-Dth" firstAttribute="top" secondItem="q8f-sk-B1B" secondAttribute="bottom" constant="20" id="7nT-g7-ziG"/>
                                             <constraint firstItem="q8f-sk-B1B" firstAttribute="top" secondItem="pvA-JF-C8p" secondAttribute="top" constant="24" id="Ha1-nY-ca2"/>
+                                            <constraint firstItem="DbL-sj-yPB" firstAttribute="leading" secondItem="tnu-eA-X41" secondAttribute="leading" id="ZhG-7I-cBb"/>
                                             <constraint firstItem="hxk-Ld-Dth" firstAttribute="trailing" secondItem="q8f-sk-B1B" secondAttribute="trailing" id="c32-Z2-Qhy"/>
-                                            <constraint firstItem="m5V-cj-BTW" firstAttribute="top" secondItem="tnu-eA-X41" secondAttribute="bottom" constant="20" id="cMi-zp-mmf"/>
                                             <constraint firstItem="tnu-eA-X41" firstAttribute="trailing" secondItem="kEM-hL-NJb" secondAttribute="trailing" id="hYJ-qT-8eP"/>
+                                            <constraint firstItem="m5V-cj-BTW" firstAttribute="top" secondItem="DbL-sj-yPB" secondAttribute="bottom" constant="20" id="hxR-1o-Iea"/>
                                             <constraint firstItem="kEM-hL-NJb" firstAttribute="top" secondItem="hxk-Ld-Dth" secondAttribute="bottom" constant="20" id="jid-eP-k8N"/>
                                             <constraint firstItem="m5V-cj-BTW" firstAttribute="leading" secondItem="tnu-eA-X41" secondAttribute="leading" id="klc-Wm-lSn"/>
                                             <constraint firstItem="tnu-eA-X41" firstAttribute="leading" secondItem="kEM-hL-NJb" secondAttribute="leading" id="l17-ad-gmy"/>
@@ -2523,6 +2540,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cameraBtn" destination="hxk-Ld-Dth" id="yHr-Ht-CX2"/>
+                        <outlet property="grantAllPermissionBtn" destination="DbL-sj-yPB" id="7Pm-D3-yjD"/>
                         <outlet property="locationBtn" destination="kEM-hL-NJb" id="Otm-Al-jKf"/>
                         <outlet property="microphoneBtn" destination="q8f-sk-B1B" id="GUB-HQ-ARL"/>
                         <outlet property="navigationView" destination="2GG-7h-r86" id="jxY-gZ-fuS"/>
@@ -2586,10 +2604,10 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="aab-6h-mru">
-                                        <rect key="frame" x="119" y="5" width="137" height="60"/>
+                                        <rect key="frame" x="140.66666666666666" y="15" width="94" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="137" id="fjt-ix-78T"/>
-                                            <constraint firstAttribute="height" constant="60" id="jXK-96-oIH"/>
+                                            <constraint firstAttribute="width" constant="94" id="fjt-ix-78T"/>
+                                            <constraint firstAttribute="height" constant="40" id="jXK-96-oIH"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-E9-NYP">
@@ -3574,7 +3592,7 @@
         <image name="Howl_Selectable" width="30" height="30"/>
         <image name="Howl_Unslectable" width="30" height="30"/>
         <image name="Line_Img" width="1" height="60"/>
-        <image name="More_Selectable" width="30" height="29"/>
+        <image name="More_Selectable" width="33" height="31.5"/>
         <image name="More_Unselectable" width="30" height="29"/>
         <image name="My_Pack_Selectable" width="30" height="30"/>
         <image name="My_Pack_Unslectable" width="30" height="30"/>

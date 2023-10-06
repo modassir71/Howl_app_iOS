@@ -102,7 +102,6 @@ extension DogListingViewController: UITableViewDelegate, UITableViewDataSource{
         if instance.dogs.count == 0{
             animationViewStart()
         }else{
-            tableView.restore()
             animationView.removeFromSuperview()
            
         

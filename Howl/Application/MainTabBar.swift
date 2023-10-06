@@ -22,10 +22,6 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
         tabBar.backgroundColor = .white
     }
     
-    
-    
-    
-    
     private func createTabBarItem(title: String, imageName: String) -> UITabBarItem {
             let tabBarItem = UITabBarItem(title: title, image: UIImage(named: imageName), selectedImage: nil)
             return tabBarItem
@@ -54,6 +50,7 @@ class MainTabBar: UITabBarController, UITabBarControllerDelegate {
             tabBar.items?[2].selectedImage = UIImage(named: ImageStringConstant.moreSelectable_Icon)
             tabBar.items?[2].image = UIImage(named: ImageStringConstant.moreUnselectable_Icon)
         }
+        tabBar.tintColor = .black
     }
     
 

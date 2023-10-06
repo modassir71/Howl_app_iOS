@@ -17,21 +17,16 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
             super.viewDidLoad()
-            
             // Initialize Google Maps
             mapView = GMSMapView(frame: .zero)
             mapView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(mapView)
-            
             // Location manager setup
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
-            
             mapView.settings.myLocationButton = true
             mapView.isMyLocationEnabled = true
-            
             locationManager.startUpdatingLocation()
-            
             // Add constraints to fill the entire view
             NSLayoutConstraint.activate([
                 mapView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -52,7 +47,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate {
                                                       zoom: 15.0)
                 mapView.animate(to: camera)
             }
-        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         }
 
       func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

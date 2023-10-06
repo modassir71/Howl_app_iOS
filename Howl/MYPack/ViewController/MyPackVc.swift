@@ -23,6 +23,8 @@ class MyPackVc: UIViewController  {
     var interactionLayer: UIView!
     var dogArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
     var instance = DogDataManager.shared
+    let noDataLabel = UILabel()
+    let noDataDesLbl = UILabel()
     //MARK: -LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +82,31 @@ class MyPackVc: UIViewController  {
 
 extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if instance.dogs.count == 0{
+            noDataLabel.text = "No Data Found"
+            noDataLabel.textAlignment = .center
+            noDataLabel.textColor = .gray
+            noDataLabel.font = UIFont.appFont(.AileronBold, size: 20.0)
+            let centerX = dogCollectionView.bounds.width / 2.0
+            let centerY = dogCollectionView.bounds.height / 2.0
+            let viewWidth: CGFloat = 150
+            let viewHeight: CGFloat = 100
+            noDataLabel.frame = CGRect(x: centerX - viewWidth / 2.0, y: centerY - viewHeight / 2.0 - 60, width: viewWidth, height: viewHeight)
+            self.dogCollectionView.addSubview(noDataLabel)
+            //Des Lbl
+            noDataDesLbl.text = "There is no any data as for now, please add \nthe data first"
+            noDataDesLbl.textAlignment = .center
+            noDataDesLbl.textColor = .gray
+            noDataDesLbl.numberOfLines = 2
+            noDataDesLbl.font = UIFont.appFont(.AileronSemiBold, size: 14.0)
+            let lblWidth: CGFloat = 340
+            let lblHeight: CGFloat = 500
+            noDataDesLbl.frame = CGRect(x: centerX - lblWidth / 2.0, y: centerY - lblHeight / 2.0 - 20, width: lblWidth, height: lblHeight)
+            self.dogCollectionView.addSubview(noDataDesLbl)
+        }else{
+            noDataLabel.removeFromSuperview()
+            noDataDesLbl.removeFromSuperview()
+        }
         return instance.dogs.count
     }
     
