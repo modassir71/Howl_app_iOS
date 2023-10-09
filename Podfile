@@ -7,7 +7,7 @@ target 'Howl' do
 
   # Pods for Howl
 pod 'lottie-ios'
-pod 'SKCountryPicker', '~> 2.0.0'
+pod 'SKCountryPicker'
 pod 'IQKeyboardManagerSwift'
 pod 'CarbonKit'
 pod 'GoogleMaps'

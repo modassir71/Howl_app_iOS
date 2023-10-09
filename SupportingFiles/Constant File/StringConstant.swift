@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct StringConstant {
 //  Microphone Access msg
     static let microphoneAccessTitle = "MIC ACCESS REQUIRED"
@@ -54,4 +55,8 @@ struct ImageStringConstant{
     static let howlUnselectable_Icon = "Howl_unselect"
     static let moreSelectable_Icon = "More_select"
     static let moreUnselectable_Icon = "More_unselect"
+    
+//    Color constant
+    static let pinkColor = UIColor(red: 229.0/255.0, green: 7.0/255.0, blue: 82.0/255.0, alpha: 1.0)
+    static let greenColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0)
 }

@@ -46,6 +46,7 @@ class AddNewPersonVc: UIViewController {
         setUPUI()
         _setData()
         _txtFldDelegates()
+        _setupCountryCode()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,15 @@ class AddNewPersonVc: UIViewController {
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
+    }
+//    MARK: - setup country code
+    private func _setupCountryCode() {
+        let locale = Locale.current
+        let code = locale.regionCode
+        let country = Country(countryCode: code ?? "")
+        countryCode = code ?? ""
+        countryCodeLbl.text = country.dialingCode
+        dailingCode = country.dialingCode
     }
     
 //    MARK: - Textfield delegates

@@ -18,9 +18,9 @@ final class RegistrationValidation {
             return (false, "Please fill the required fields")
         }
         
-        guard name!.count >= 3 && containsOnlyCharacters(name!) == true else {
-            return (false, "Enter your valid name")
-        }
+//        guard name!.count >= 3 && containsOnlyCharacters(name!) == true else {
+//            return (false, "Enter your valid name")
+//        }
         
 //        guard nickName!.count >= 3 && containsOnlyCharacters(nickName!) == true else {
 //            return (false, "Enter your valid nick name")

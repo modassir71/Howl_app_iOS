@@ -16,7 +16,7 @@ DEPENDENCIES:
   - GoogleMaps
   - IQKeyboardManagerSwift
   - lottie-ios
-  - SKCountryPicker (~> 2.0.0)
+  - SKCountryPicker
   - W3WSwiftApi
   - what3words
 
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   W3WSwiftApi: 59efd8528755afc26ce91a48dad8d128f2922718
   what3words: af6d77b4fa2044fdfc2a5de3382c52b40514443f
 
-PODFILE CHECKSUM: cf4771ab6c6c974807b95a47f5610d2a904a13db
+PODFILE CHECKSUM: a951cd805cae866b96083255a38287b1c9ced52d
 
 COCOAPODS: 1.12.1

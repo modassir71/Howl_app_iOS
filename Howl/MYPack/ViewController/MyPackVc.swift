@@ -116,6 +116,7 @@ extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
         if let dogImageData = instance.dogs[indexPath.row].dogImage {
             if let dogImage = UIImage(data: dogImageData) {
                 cell.dogImg.image = dogImage
+                
             }
         }
         return cell

@@ -26,6 +26,7 @@ class DogVarietyCollectionViewCell: UICollectionViewCell {
         dogImg.clipsToBounds = true
         dogImg.layer.borderWidth = 1.0
         dogImg.layer.borderColor = UIColor(displayP3Red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
+        dogName.contentMode = .scaleAspectFill
     }
 
 }
