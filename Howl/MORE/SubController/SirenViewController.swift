@@ -18,6 +18,7 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     var buttonState = 0
     var iscomeFromInstruction: Bool?
+    let kSoundManager = SoundManager.sharedInstance
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         navigationView.layer.shadowRadius = 2
         playStopBtn.layer.cornerRadius = 10.0
         playStopBtn.clipsToBounds = true
+        setBtn.backgroundColor = TxtFldColor.greenColor
         setBtn.layer.cornerRadius = 10.0
         setBtn.clipsToBounds = true
     }
@@ -56,27 +58,48 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.navigationController?.popViewController(animated: true)
     }
     
+    func playSoundForIndex(index:Int){
+        if sirenPickerView.selectedRow(inComponent: 0) == 8 {
+            return
+        }
+        kSoundManager.playSound(index: index, testing: true)
+        
+        
+//        if kSoundManager.audioPlayer == nil {
+//            kSoundManager.playSound(index: index, testing: true)
+//        } else {
+//
+//            if kSoundManager.audioPlayer.isPlaying {
+//                kSoundManager.stopSiren()
+//            } else {
+//                kSoundManager.playSound(index: index, testing: true)
+//            }
+//        }
+    }
+
+    
     
     @IBAction func playBtnPress(_ sender: UIButton) {
         let kSoundManager = SoundManager.sharedInstance
         if buttonState == 0 {
             playStopBtn.setTitle("Stop", for: .normal)
-            let kSoundManager = SoundManager.sharedInstance
-            if sirenPickerView.selectedRow(inComponent: 0) == 8 {
-                return
-            }
-            
-            if kSoundManager.audioPlayer == nil {
-                kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
-            } else {
-                
-                if kSoundManager.audioPlayer.isPlaying {
-                    
-                    kSoundManager.stopSiren()
-                } else {
-                    kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
-                }
-            }
+            playSoundForIndex(index: sirenPickerView.selectedRow(inComponent: 0))
+//            let kSoundManager = SoundManager.sharedInstance
+//            if sirenPickerView.selectedRow(inComponent: 0) == 8 {
+//                return
+//            }
+//
+//            if kSoundManager.audioPlayer == nil {
+//                kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
+//            } else {
+//
+//                if kSoundManager.audioPlayer.isPlaying {
+//
+//                    kSoundManager.stopSiren()
+//                } else {
+//                    kSoundManager.playSound(index: sirenPickerView.selectedRow(inComponent: 0), testing: true)
+//                }
+//            }
             buttonState = 1
         }else{
             playStopBtn.setTitle("Play", for: .normal)
@@ -116,25 +139,39 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         return 50
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("\(row) got Selected")
+
+        if buttonState == 1 {
+            playSoundForIndex(index: (row))
+        }else if sirenPickerView.selectedRow(inComponent: 0) == 8 {
+            kSoundManager.stopSiren()
+        }else{
+            kSoundManager.stopSiren()
+        }
+    }
+
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
+
         if let v = view {
             label = v as! UILabel
         }
-        
+
         switch row {
-            
         case 0...7:
             label.text = "Siren \(row)"
-        default: // IMPOSSIBLE
+        default:
             label.text = "Video Only"
         }
-        
-        label.font = UIFont (name: "Helvetica Neue", size: 26)
+
+        label.font = UIFont(name: "Helvetica Neue", size: 26)
         label.textAlignment = .center
         pickerView.subviews[1].backgroundColor = UIColor(displayP3Red: 189.0/255.0, green: 43.0/255.0, blue: 91.0/255.0, alpha: 0.4)
         return label
     }
+
+
     
 
 }

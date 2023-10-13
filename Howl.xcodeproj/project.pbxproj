@@ -60,6 +60,7 @@
 		188BEB592AAA017D000C6DF4 /* EulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB582AAA017D000C6DF4 /* EulaViewController.swift */; };
 		188BEB5B2AAA0B0E000C6DF4 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */; };
 		188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */; };
+		188E77262AD928AD0066F117 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E77252AD928AD0066F117 /* NetworkManager.swift */; };
 		189A79662AAAE70A002A640C /* Siren2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A795E2AAAE70A002A640C /* Siren2.mp3 */; };
 		189A79672AAAE70A002A640C /* Siren1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A795F2AAAE70A002A640C /* Siren1.mp3 */; };
 		189A79682AAAE70A002A640C /* Siren6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79602AAAE70A002A640C /* Siren6.mp3 */; };
@@ -80,7 +81,7 @@
 		18B3FA6C2AD518A200F40F56 /* WalkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA6B2AD518A200F40F56 /* WalkStatusManager.swift */; };
 		18B3FA6E2AD5235F00F40F56 /* MonitorLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA6D2AD5235F00F40F56 /* MonitorLocationManager.swift */; };
 		18B3FA712AD5330E00F40F56 /* WebUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA702AD5330E00F40F56 /* WebUrls.swift */; };
-		18B3FA732AD5347100F40F56 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA722AD5347100F40F56 /* NetworkManager.swift */; };
+		18B3FA732AD5347100F40F56 /* NetworkManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA722AD5347100F40F56 /* NetworkManagers.swift */; };
 		18B3FA752AD5368800F40F56 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA742AD5368800F40F56 /* StringExtension.swift */; };
 		18C42A102AC0925700C973F6 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C42A0F2AC0925700C973F6 /* MainTabBar.swift */; };
 		18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */; };
@@ -195,6 +196,7 @@
 		188BEB582AAA017D000C6DF4 /* EulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaViewController.swift; sourceTree = "<group>"; };
 		188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenViewController.swift; sourceTree = "<group>"; };
+		188E77252AD928AD0066F117 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		189A795E2AAAE70A002A640C /* Siren2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren2.mp3; sourceTree = "<group>"; };
 		189A795F2AAAE70A002A640C /* Siren1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren1.mp3; sourceTree = "<group>"; };
 		189A79602AAAE70A002A640C /* Siren6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren6.mp3; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		18B3FA6B2AD518A200F40F56 /* WalkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkStatusManager.swift; sourceTree = "<group>"; };
 		18B3FA6D2AD5235F00F40F56 /* MonitorLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorLocationManager.swift; sourceTree = "<group>"; };
 		18B3FA702AD5330E00F40F56 /* WebUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUrls.swift; sourceTree = "<group>"; };
-		18B3FA722AD5347100F40F56 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18B3FA722AD5347100F40F56 /* NetworkManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagers.swift; sourceTree = "<group>"; };
 		18B3FA742AD5368800F40F56 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		18C42A0F2AC0925700C973F6 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		18C86C1C2A8CABA800A1F937 /* Howl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Howl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +348,7 @@
 		18261DE22AD6AB6900E388C5 /* Extr Code */ = {
 			isa = PBXGroup;
 			children = (
+				188E77252AD928AD0066F117 /* NetworkManager.swift */,
 				18261DF32AD6D17C00E388C5 /* System Log.swift */,
 				18261DF12AD6D00100E388C5 /* Helpers.swift */,
 				18261DEF2AD6CF9800E388C5 /* Reachability.swift */,
@@ -600,7 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				18B3FA702AD5330E00F40F56 /* WebUrls.swift */,
-				18B3FA722AD5347100F40F56 /* NetworkManager.swift */,
+				18B3FA722AD5347100F40F56 /* NetworkManagers.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -1260,7 +1263,7 @@
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
 				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
 				18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */,
-				18B3FA732AD5347100F40F56 /* NetworkManager.swift in Sources */,
+				18B3FA732AD5347100F40F56 /* NetworkManagers.swift in Sources */,
 				181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */,
 				18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */,
 				1884D87A2AA1B22200BC7523 /* AddDogViewController.swift in Sources */,
@@ -1305,6 +1308,7 @@
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
 				18261DEC2AD6CD3A00E388C5 /* DataManager.swift in Sources */,
 				18B3FA6E2AD5235F00F40F56 /* MonitorLocationManager.swift in Sources */,
+				188E77262AD928AD0066F117 /* NetworkManager.swift in Sources */,
 				1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */,
 				18C86C2A2A8CABA800A1F937 /* Howl.xcdatamodeld in Sources */,
 				18530A772AB30AE400C190D3 /* AddDogVm.swift in Sources */,
@@ -1496,7 +1500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.1;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1515,7 +1519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231006";
+				MARKETING_VERSION = "TV-1.0.0.20231013";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1533,7 +1537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.1;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1552,7 +1556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231006";
+				MARKETING_VERSION = "TV-1.0.0.20231013";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

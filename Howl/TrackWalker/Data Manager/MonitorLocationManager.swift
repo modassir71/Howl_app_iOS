@@ -4,7 +4,7 @@
 //
 //  Created by apple on 10/10/23.
 //
-
+/*
 import Foundation
 import UIKit
 import CoreLocation
@@ -238,3 +238,4 @@ class MonitorLocationManager: NSObject, CLLocationManagerDelegate{
     }
     
 }
+*/

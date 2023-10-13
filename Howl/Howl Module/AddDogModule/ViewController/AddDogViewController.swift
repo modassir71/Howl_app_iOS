@@ -157,6 +157,7 @@ class AddDogViewController: UIViewController {
         profileImg.layer.borderWidth = 1
         profileImg.clipsToBounds = true
         createBtn.layer.cornerRadius = 10.0
+       createBtn.backgroundColor = TxtFldColor.greenColor
         customizeTxtFld(to: dogNameTxtFld, string: DogConstantString.dogName)
         customizeTxtFld(to: bredextFld, string: DogConstantString.breed)
         customizeTxtFld(to: colorTxtFld, string: DogConstantString.color)

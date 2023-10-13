@@ -53,6 +53,7 @@ class WalkerStatusVc: UIViewController {
                 
             case 0:
                 processLabel = "Active Monitoring"
+                print("processLabel1", processLabel)
             default:
                 
                 let counter = kDataManager.monitorYouNullDataCounter + 1
@@ -60,12 +61,15 @@ class WalkerStatusVc: UIViewController {
                 if counter == 360 {
                     
                     processLabel = "Inactive: No Data After One Hour"
+                    print("processLabel2", processLabel)
                 } else {
                     processLabel = "Active: No Data Attempt \(String(describing: counter)) of 360"
+                    print("processLabel3", processLabel)
                 }
             }
         } else {
             processLabel = "Monitoring Inactive"
+            print("processLabel4", processLabel)
         }
     }
     
@@ -105,6 +109,7 @@ class WalkerStatusVc: UIViewController {
 
 extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Count",kDataManager.monitorYouOutput.count)
         return kDataManager.monitorYouOutput.count
     }
     

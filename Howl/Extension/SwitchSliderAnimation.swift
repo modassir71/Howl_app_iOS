@@ -1,4 +1,4 @@
-//
+
 //  SwitchSliderAnimation.swift
 //  VivoCabsDriver
 //
@@ -81,23 +81,11 @@ public class DSSlider: UIView {
     didSet {
         let viewwidth = sliderView.frame.width
         let constant = viewwidth - 50.0
-        
-        if comeFromStartRide == "comeFromStartRide" {
-            leadingImageViewConstraint?.constant = startRide ?? false ? constant :  5.0
-            sliderPosition = startRide ?? false ? .rigth : .left
-            let angle =   startRide ?? false ? 3.0 : 0.0
+        leadingImageViewConstraint?.constant = startRide ?? false ? constant :  5.0
+        sliderPosition = startRide ?? false ? .rigth : .left
+        let angle =   startRide ?? false ? 3.0 : 0.0
             updateImageView(withAngle: CGFloat(angle))
           trailingDraggedViewConstraint?.constant = sliderImageViewStartingDistance
-            
-        } else {
-//            leadingImageViewConstraint?.constant =  UserDeafultData.isDriverOnline ?? false ? constant :  5.0
-//            sliderPosition = UserDeafultData.isDriverOnline ?? false ? .rigth : .left
-//            let angle =   UserDeafultData.isDriverOnline ?? false ? 3.0 : 0.0
-//            updateImageView(withAngle: CGFloat(angle))
-          trailingDraggedViewConstraint?.constant = sliderImageViewStartingDistance
-        }
-        
-        
       setNeedsLayout()
     }
   }
@@ -160,7 +148,7 @@ public class DSSlider: UIView {
 
   // MARK: Private Properties
 
-   var leadingImageViewConstraint: NSLayoutConstraint?
+    var leadingImageViewConstraint: NSLayoutConstraint?
   private var leadingTextLabelConstraint: NSLayoutConstraint?
   private var topSliderConstraint: NSLayoutConstraint?
   private var topImageViewConstraint: NSLayoutConstraint?
@@ -310,6 +298,13 @@ public class DSSlider: UIView {
   public static func dsSliderRedColor() -> UIColor {
     return UIColor.dsSliderRedColor
   }
+    
+    public func slideToEnd(){
+        updateThumbnail(withPosition: xEndingPoint, andAnimation: false)
+        updateTextLabels(withPosition: xEndingPoint)
+        sliderPosition = .rigth
+        layoutIfNeeded()
+    }
 
   // MARK: - Private Methods
 

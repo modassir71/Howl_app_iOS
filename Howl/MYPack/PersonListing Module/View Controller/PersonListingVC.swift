@@ -14,6 +14,7 @@ class PersonListingVC: UIViewController {
     @IBOutlet weak var personListingTblView: UITableView!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var addPersonBtn: UIButton!
+    @IBOutlet weak var animationContainer: UIView!
     
     var animationView = LottieAnimationView()
     var peopleDataManager = AddPeopleDataManager.sharedInstance
@@ -103,8 +104,10 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         
         if peopleDataManager.people.count == 0{
             animationViewStart()
+            animationContainer.isHidden = false
         }else{
             animationView.removeFromSuperview()
+            animationContainer.isHidden = true
         }
         return peopleDataManager.people.count
     }
@@ -211,7 +214,7 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         animationView.backgroundColor = .white
         animationView.loopMode = .loop
         animationView.animationSpeed = 1
-        self.view.addSubview(animationView)
+        self.animationContainer.addSubview(animationView)
         animationView.play()
     }
 }

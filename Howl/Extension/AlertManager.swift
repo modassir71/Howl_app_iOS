@@ -35,4 +35,19 @@ class AlertManager{
 //            kSoundManager.addTextToBeSpokenNext(warningTitle)
 //        }
     }
+    
+    //MARK: STANDARD ALERT WITH PASSED TITLE AND MESSAGE WITH OK CLOSURE
+        func triggerAlertTypeWarningWithAction(warningTitle: String, warningMessage: String,initialiser: UIViewController, okClosure:(()->Void)?,cancelClosure:(()->Void)?) {
+            let alert = UIAlertController(title: warningTitle,
+                                          message: warningMessage,
+                                          preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in   okClosure?()
+            }
+            alert.addAction(okAction)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                cancelClosure?()
+            }
+            alert.addAction(cancelAction)
+            initialiser.present(alert, animated: true)
+        }
 }

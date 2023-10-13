@@ -46,4 +46,5 @@ struct DogConstantString{
 struct TxtFldColor{
     static let primaryColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha: 0.5)
     static let secondaryColor = UIColor(red: 220/255, green: 2/255, blue: 65/255, alpha: 1)
+    static let greenColor = UIColor(red: 0.56, green: 0.82, blue: 0.71, alpha: 1.00)
 }

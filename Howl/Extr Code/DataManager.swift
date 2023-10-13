@@ -84,7 +84,7 @@ class DataManager {
             
             if let secondLoad = UserDefaults.standard.value(forKey: "monitormeid") as? String {
                 
-                monitorMeID = secondLoad
+                monitorMeID = "A5BI4CG4QIF24RUCADCPXMA62MC8M2"//secondLoad
             } else {
                 monitorMeID = "X"
             }

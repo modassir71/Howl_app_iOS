@@ -4,7 +4,7 @@
 //
 //  Created by apple on 10/10/23.
 //
-
+/*
 import Foundation
 import UIKit
 
@@ -200,4 +200,4 @@ class NetworkManager: NSObject, URLSessionDelegate{
         }
     }
 }
-
+*/

@@ -3247,6 +3247,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-Wj-n8d">
                                 <rect key="frame" x="0.0" y="50" width="375" height="762"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqI-4o-br4">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="682"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kbJ-Ct-AbA">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-9q-Dmv">
+                                                <rect key="frame" x="0.0" y="-80" width="375" height="762"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kbJ-Ct-AbA" secondAttribute="trailing" id="2fv-Jw-TC5"/>
+                                            <constraint firstItem="kbJ-Ct-AbA" firstAttribute="leading" secondItem="uqI-4o-br4" secondAttribute="leading" id="890-pK-zpm"/>
+                                            <constraint firstAttribute="bottom" secondItem="kbJ-Ct-AbA" secondAttribute="bottom" id="C56-LO-ui4"/>
+                                            <constraint firstItem="kbJ-Ct-AbA" firstAttribute="top" secondItem="uqI-4o-br4" secondAttribute="top" id="Ecv-Mj-Luv"/>
+                                            <constraint firstItem="ObU-9q-Dmv" firstAttribute="leading" secondItem="uqI-4o-br4" secondAttribute="leading" id="EeQ-y3-DFL"/>
+                                            <constraint firstAttribute="trailing" secondItem="ObU-9q-Dmv" secondAttribute="trailing" id="NOl-vd-5vu"/>
+                                            <constraint firstAttribute="bottom" secondItem="ObU-9q-Dmv" secondAttribute="bottom" id="tCB-eP-uC2"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ut-QG-jTg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <subviews>
@@ -3289,22 +3312,6 @@
                                             <constraint firstItem="SAi-wE-grN" firstAttribute="centerX" secondItem="4ut-QG-jTg" secondAttribute="centerX" id="vJ5-1f-j8z"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqI-4o-br4">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="682"/>
-                                        <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kbJ-Ct-AbA">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="kbJ-Ct-AbA" secondAttribute="trailing" id="2fv-Jw-TC5"/>
-                                            <constraint firstItem="kbJ-Ct-AbA" firstAttribute="leading" secondItem="uqI-4o-br4" secondAttribute="leading" id="890-pK-zpm"/>
-                                            <constraint firstAttribute="bottom" secondItem="kbJ-Ct-AbA" secondAttribute="bottom" id="C56-LO-ui4"/>
-                                            <constraint firstItem="kbJ-Ct-AbA" firstAttribute="top" secondItem="uqI-4o-br4" secondAttribute="top" id="Ecv-Mj-Luv"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -3313,6 +3320,7 @@
                                     <constraint firstAttribute="trailing" secondItem="uqI-4o-br4" secondAttribute="trailing" id="ByB-yi-7co"/>
                                     <constraint firstAttribute="trailing" secondItem="4ut-QG-jTg" secondAttribute="trailing" id="Fas-BV-z0I"/>
                                     <constraint firstItem="uqI-4o-br4" firstAttribute="leading" secondItem="Xwb-Wj-n8d" secondAttribute="leading" id="HpM-XJ-Boj"/>
+                                    <constraint firstItem="ObU-9q-Dmv" firstAttribute="top" secondItem="Xwb-Wj-n8d" secondAttribute="top" id="uhx-qj-8ls"/>
                                     <constraint firstItem="4ut-QG-jTg" firstAttribute="leading" secondItem="Xwb-Wj-n8d" secondAttribute="leading" id="wny-zx-V0Z"/>
                                     <constraint firstItem="4ut-QG-jTg" firstAttribute="top" secondItem="Xwb-Wj-n8d" secondAttribute="top" id="zWs-dV-wlA"/>
                                 </constraints>
@@ -3331,6 +3339,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addPersonBtn" destination="JC0-Hv-lkF" id="Lef-E1-OBT"/>
+                        <outlet property="animationContainer" destination="ObU-9q-Dmv" id="Wvw-ka-K5J"/>
                         <outlet property="navigationView" destination="4ut-QG-jTg" id="Sey-WZ-wxT"/>
                         <outlet property="personListingTblView" destination="kbJ-Ct-AbA" id="CxP-eC-7S5"/>
                     </connections>
@@ -3354,11 +3363,19 @@
                                         <rect key="frame" x="0.0" y="70" width="375" height="692"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-S2-o1y">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="762"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hYT-S2-o1y" firstAttribute="leading" secondItem="xvP-rw-xIJ" secondAttribute="leading" id="Dlg-L2-QEA"/>
+                                    <constraint firstAttribute="bottom" secondItem="hYT-S2-o1y" secondAttribute="bottom" id="Fym-SP-h0j"/>
+                                    <constraint firstAttribute="trailing" secondItem="hYT-S2-o1y" secondAttribute="trailing" id="QEA-9j-yrj"/>
                                     <constraint firstItem="VPf-Mm-lPo" firstAttribute="leading" secondItem="xvP-rw-xIJ" secondAttribute="leading" id="mHd-QU-gUj"/>
                                     <constraint firstAttribute="bottom" secondItem="VPf-Mm-lPo" secondAttribute="bottom" id="oMe-1R-foS"/>
+                                    <constraint firstItem="hYT-S2-o1y" firstAttribute="top" secondItem="xvP-rw-xIJ" secondAttribute="top" id="okB-La-CDs"/>
                                     <constraint firstAttribute="trailing" secondItem="VPf-Mm-lPo" secondAttribute="trailing" id="v8R-bM-Lb3"/>
                                 </constraints>
                             </view>
@@ -3424,6 +3441,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addDogBtn" destination="Vkl-Wv-cE4" id="MZ3-WK-eSU"/>
+                        <outlet property="animationContainer" destination="hYT-S2-o1y" id="ooj-RI-IaD"/>
                         <outlet property="dogTblView" destination="VPf-Mm-lPo" id="Ldk-Uv-Wgh"/>
                         <outlet property="navigationView" destination="oHq-6E-Dig" id="xAB-wa-2OX"/>
                     </connections>

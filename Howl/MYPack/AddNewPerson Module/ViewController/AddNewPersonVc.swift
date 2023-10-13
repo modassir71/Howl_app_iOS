@@ -109,9 +109,11 @@ class AddNewPersonVc: UIViewController {
         nickNameTxtFld.layer.borderWidth = 1.0
         nickNameTxtFld.layer.borderColor = color.cgColor
         contactsBtn.layer.cornerRadius = 10.0
+        contactsBtn.backgroundColor = TxtFldColor.greenColor
         whatsAppBtn.layer.cornerRadius = 10.0
         createBtn.layer.cornerRadius = 10.0
         contactsBtn.clipsToBounds = true
+        createBtn.backgroundColor = TxtFldColor.greenColor
         whatsAppBtn.clipsToBounds = true
         createBtn.clipsToBounds = true
         phoneNoTxtFld.keyboardType = .numberPad
