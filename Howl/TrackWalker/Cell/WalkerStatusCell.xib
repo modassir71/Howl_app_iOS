@@ -133,7 +133,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="batteryLbl" destination="KlX-Nj-xCl" id="TGN-kk-si5"/>
                 <outlet property="containerView" destination="Xah-lC-6mk" id="bcc-3D-WbP"/>
+                <outlet property="dateLbl" destination="a8b-ne-yhg" id="zdY-jt-4oz"/>
+                <outlet property="statusLbl" destination="LXD-aq-7AT" id="qPZ-ro-UD2"/>
+                <outlet property="timeLbl" destination="qGy-cj-tIO" id="93o-S0-OnE"/>
+                <outlet property="w3wLbl" destination="kMr-He-WFv" id="CxC-PF-bCn"/>
             </connections>
             <point key="canvasLocation" x="68.702290076335871" y="23.591549295774648"/>
         </tableViewCell>

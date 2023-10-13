@@ -9,6 +9,12 @@ import UIKit
 
 class WalkerStatusCell: UITableViewCell {
 
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var batteryLbl: UILabel!
+    
+    @IBOutlet weak var w3wLbl: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()

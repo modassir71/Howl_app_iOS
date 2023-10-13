@@ -13,6 +13,9 @@ pod 'CarbonKit'
 pod 'GoogleMaps'
 pod 'W3WSwiftApi'
 pod 'what3words'
+pod 'Alamofire'
+pod 'SwiftyJSON'
+
 
   target 'HowlTests' do
     inherit! :search_paths

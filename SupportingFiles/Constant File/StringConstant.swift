@@ -40,7 +40,7 @@ struct StringConstant {
 }
 
 struct ImageStringConstant{
-//    Iphone se
+    //    Iphone se
     static let myPackSelectable = "My_Pack_Selectable"
     static let myPackUnselectable = "My_Pack_Unslectable"
     static let howlSelectable = "Howl_Selectable"
@@ -48,15 +48,20 @@ struct ImageStringConstant{
     static let moreSelectable = "More_Selectable"
     static let moreUnselectable = "More_Unselectable"
     
-//Normal iphone
+    //Normal iphone
     static let myPackSelectable_Icon = "MyPack_select"
     static let myPackUnselectable_Icon = "MyPack_unselect"
     static let howlSelectable_Icon = "Howl_select"
     static let howlUnselectable_Icon = "Howl_unselect"
     static let moreSelectable_Icon = "More_select"
     static let moreUnselectable_Icon = "More_unselect"
-    
-//    Color constant
-    static let pinkColor = UIColor(red: 229.0/255.0, green: 7.0/255.0, blue: 82.0/255.0, alpha: 1.0)
-    static let greenColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0)
 }
+
+struct ColorConstant{
+//    Color constant
+    static let pinkColor = UIColor(red: 229.0/255.0, green: 6.0/255.0, blue: 82.0/255.0, alpha: 1.0)
+    static let greenColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0)
+    static let amberColor = UIColor(red: 251.0/255.0, green: 189.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+    
+}
+

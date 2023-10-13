@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }
                     }
                 }
+        _ = DataManager.sharedInstance
+        UIDevice.current.isBatteryMonitoringEnabled = true
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
         
