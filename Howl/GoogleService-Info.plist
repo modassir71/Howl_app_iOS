@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBgGYfFbofqqmI6w0RASdJM2xnN0Tw_vgs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>396651539309</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.howl.barkside</string>
+	<key>PROJECT_ID</key>
+	<string>howl-18890</string>
+	<key>STORAGE_BUCKET</key>
+	<string>howl-18890.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:396651539309:ios:d0bb38c9b3ad605f8a0864</string>
+	<key>DATABASE_URL</key>
+	<string>https://howl-18890-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>

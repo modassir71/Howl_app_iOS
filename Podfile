@@ -15,7 +15,9 @@ pod 'W3WSwiftApi'
 pod 'what3words'
 pod 'Alamofire'
 pod 'SwiftyJSON'
-
+pod 'Swift-EventBus'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 
   target 'HowlTests' do
     inherit! :search_paths

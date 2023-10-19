@@ -7,11 +7,14 @@
 
 import UIKit
 import Lottie
+import CoreLocation
+import Firebase
 
 class DogWalkingViewController: UIViewController {
     
 //MARK: - Outlet
     
+    @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var concernBtnHeight: NSLayoutConstraint!
     @IBOutlet weak var concernBtnTop: NSLayoutConstraint!
     @IBOutlet weak var redBtnHeight: NSLayoutConstraint!
@@ -34,13 +37,19 @@ class DogWalkingViewController: UIViewController {
     @IBOutlet weak var crossBtn: UIButton!
     
     //MARK: - Variable
+    var locationEnabled: Bool?
       var dogNameLbl = String()
       var dogOwnerNameLbl = String()
       var dogImgItem: Data?
+      private let locationManager = CLLocationManager()
+    var tapsToHOWL: Int! = 0
+    var tapTimer: Timer!
       //MARK: - Life Cycle
       
       override func viewDidLoad() {
           super.viewDidLoad()
+          locationManager.delegate = self
+          locationManager.requestWhenInUseAuthorization()
           setUi()
           DispatchQueue.main.async {
               self._setupSliderView()
@@ -49,7 +58,7 @@ class DogWalkingViewController: UIViewController {
       
       override func viewWillAppear(_ animated: Bool) {
           self.navigationController?.setNavigationBarHidden(true, animated: animated)
-          self.tabBarController?.tabBar.isHidden = false
+          self.tabBarController?.tabBar.isHidden = true
       }
       
       //MARK: - SetUi
@@ -96,6 +105,30 @@ class DogWalkingViewController: UIViewController {
           }
           
       }
+    
+    func startTapTimer() {
+        
+        if tapTimer == nil || !(tapTimer?.isValid)! {
+            
+            tapTimer = Timer.scheduledTimer(timeInterval: 10,
+                                         target: self,
+                                         selector: #selector(resetHOWLTap),
+                                         userInfo: nil,
+                                         repeats: false)
+        }
+    }
+    
+    @objc func resetHOWLTap() {
+        
+        if tapTimer != nil && (tapTimer?.isValid)! {
+            
+            tapTimer.invalidate()
+            tapTimer = nil
+            tapsToHOWL = 0
+            tapLabel.text = "Tap 3 Times To"
+           // howlForHelpImageView.image = UIImage(named: "howl_tap_1.jpg")
+        }
+    }
       //MARK: - Action
       
       @IBAction func crossBtnPress(_ sender: UIButton) {
@@ -150,7 +183,35 @@ class DogWalkingViewController: UIViewController {
           self.navigationController?.present(concernVc, animated: true)
       }
       
-      
+    
+    @IBAction func tap3TimesBtnPress(_ sender: UIButton) {
+        switch tapsToHOWL {
+            
+        case 0:
+            
+            tapsToHOWL += 1
+            startTapTimer()
+            tapLabel.text = "Tap 2 Times To"
+            
+        case 1:
+            tapsToHOWL += 1
+            tapLabel.text = "Tap 1 Times To"
+            
+        case 2:
+            
+            resetHOWLTap()
+           // let storyboard = AppStoryboard.Main.instance
+            let customViewController = RecordViewController()
+            kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL")
+            navigationController?.pushViewController(customViewController, animated: true)
+            resetHOWLTap()
+            
+        default:
+            ()
+        }
+        
+    }
+    
       
       
   }
@@ -165,6 +226,7 @@ class DogWalkingViewController: UIViewController {
                       }
                       self.dogAnimationView.isHidden = true
                   }
+                  kMonitorMeLocationManager.stopMonitoringMe()
                   self.dogStopImg.isHidden = false
                   self.streetImg.isHidden = true
                   self.tabBarController?.tabBar.isHidden = false
@@ -175,19 +237,60 @@ class DogWalkingViewController: UIViewController {
                   self.swipeSlider.slideToEnd()
               })
           }else{
-              dogStopImg.isHidden = true
-              streetImg.isHidden = false
-              DispatchQueue.main.async {
-                  self.animationView()
-                  self.dogAnimationView.isHidden = false
-                  self.tabBarController?.tabBar.isHidden = true
-                  self.shadowView.isHidden = false
-                  self.redBtn.isHidden = false
-                  self.concernBtn.isHidden = false
+              if AddPeopleDataManager.sharedInstance.people.isEmpty{
+                  let alert = UIAlertController(title: DogConstantString.noPeopleTitle, message: DogConstantString.noPeopleMsg, preferredStyle: .alert)
+                  
+                  let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                     self.swipeSlider.slideToEndLft()
+                         }
+
+                         alert.addAction(okAction)
+
+                         present(alert, animated: true, completion: nil)
+
+              }else{
+              checkLocationPermission()
+             // if locationEnabled == true{
+                  dogStopImg.isHidden = true
+                  streetImg.isHidden = false
+                  DispatchQueue.main.async {
+                      self.animationView()
+                      self.dogAnimationView.isHidden = false
+                      self.tabBarController?.tabBar.isHidden = true
+                      self.shadowView.isHidden = false
+                      self.redBtn.isHidden = false
+                      self.concernBtn.isHidden = false
+                      self.startWalk(indexOfEmergencyContact: 0)
+                  }
+                  
               }
           }
       }
       
+      func startWalk(indexOfEmergencyContact: Int){
+          kDataManager.monitorMeID = generateRandomString(length: 30)//String().randomString(length: 30)
+          print("Monitor ID", kDataManager.monitorMeID!)
+          kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
+          kMonitorMeLocationManager.monitorMe()
+          sendWalkIDToEmergencyContact()
+          kMonitorMeLocationManager.forceUpdateToMonitorMeServer(with: kDataManager.monitorMeID)
+      }
+      
+      func sendWalkIDToEmergencyContact() {
+          let message = "Hello, please check out this link:"+base_url+kDataManager.monitorMeID
+          let personCode = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personCountryCode ?? ""
+          let personMobileNumber = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
+          let collapseMobile: String = personCode + personMobileNumber
+          print(collapseMobile)
+          let untrimmedMobile: String = collapseMobile
+          print(untrimmedMobile)
+          let mobile = untrimmedMobile.replacingOccurrences(of: " ", with: "")
+          let shareItem = [message]
+          let activityViewController = UIActivityViewController(activityItems: shareItem, applicationActivities: nil)
+          activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
+          self.present(activityViewController, animated: true, completion: nil)
+          
+      }
       // MARK: - Animation View
       func animationView(){
           let jsonName = "animation_dogWalk"
@@ -201,3 +304,38 @@ class DogWalkingViewController: UIViewController {
           animationView.play()
       }
   }
+
+extension DogWalkingViewController: CLLocationManagerDelegate {
+    @objc func checkLocationPermission() {
+            let authorizationStatus = locationManager.authorizationStatus
+
+            switch authorizationStatus {
+            case .authorizedAlways, .authorizedWhenInUse:
+                // Location permission is enabled
+                print("Location permission is enabled")
+                locationEnabled = true
+            case .denied, .restricted:
+                // Location permission is disabled
+                print("Location permission is disabled")
+
+                // Show an alert to the user informing them that they need to enable location permission
+                let alert = UIAlertController(title: "Location Permission Disabled", message: "Please enable location permission in order to use this feature.", preferredStyle: .alert)
+
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    // Open the Settings app so the user can enable location permission
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    self.locationEnabled = true
+                }
+
+                alert.addAction(okAction)
+                locationEnabled = false
+                present(alert, animated: true, completion: nil)
+            case .notDetermined:
+                // Location permission has not been requested yet
+                locationManager.requestWhenInUseAuthorization()
+            @unknown default:
+                print("error")
+            }
+        }
+}
+

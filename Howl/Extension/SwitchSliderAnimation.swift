@@ -305,6 +305,13 @@ public class DSSlider: UIView {
         sliderPosition = .rigth
         layoutIfNeeded()
     }
+    
+    public func slideToEndLft(){
+        updateThumbnail(withPosition: xStartPoint, andAnimation: false)
+        updateTextLabels(withPosition: xStartPoint)
+        sliderPosition = .left
+        layoutIfNeeded()
+    }
 
   // MARK: - Private Methods
 

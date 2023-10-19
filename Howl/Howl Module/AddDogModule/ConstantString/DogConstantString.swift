@@ -41,6 +41,10 @@ struct DogConstantString{
     static let personAlertTitle = "CREATE A PERSON"
     static let personAlertMsg = "Please use this area to set up the profile of an emergency contact.  You can setup additional contacts later.  Everything will stay on your phone so no need to worry about privacy and you can use your contacts list from your phone if you wish to"
     static let permissionMsgAlert = "Perfect!  Finally, HOWL requires certain device permissions to be able to function.  Let's get those set up"
+    static let noPeopleTitle = "NO PEOPLE IN YOUR PACK"
+    static let noPeopleMsg = "Add a person to your pack to allow them to monitor you and be set as your emergency contact"
+    static let incidentTitle = "INCIDENT SAVED"
+    static let incidentMsg = "Your video has been saved to the camera roll and your incident has been saved.  Swipe left on your dog on the pack menu to allocate this incident to the dog or dogs that this incident relates to"
 }
 
 struct TxtFldColor{

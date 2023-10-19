@@ -162,6 +162,7 @@ class AddNewPersonVc: UIViewController {
             } else {
                 personImageData = Data()
             }
+            print("PhoneNumber", phoneNoTxtFld.text!)
             let newPerson = Person(name: nameTxtFld.text ?? "", nickname: nickNameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
             if isEdit == true {
                 //Update data

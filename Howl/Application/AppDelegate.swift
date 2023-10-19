@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import IQKeyboardManagerSwift
 import GoogleMaps
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIDevice.current.isBatteryMonitoringEnabled = true
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
-        
+        FirebaseApp.configure()
         return true
     }
 
@@ -40,6 +41,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Handle the URL scheme
+        if url.scheme == "howlforhelp" {
+            // Process the URL as needed
+            // Extract path after the domain and perform actions based on it
+            if !url.pathComponents.isEmpty {
+                let dynamicPath = url.pathComponents.joined(separator: "/")
+                // Example: Open specific view controller or perform an action based on the dynamic path
+                print("Dynamic Path: \(dynamicPath)")
+            }
+            return true
+        }
+        return false
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {

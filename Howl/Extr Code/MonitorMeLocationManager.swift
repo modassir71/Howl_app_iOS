@@ -6,11 +6,11 @@
 //  Copyright © 2021 App Intelligence Ltd. All rights reserved.
 //
 
-
 import UIKit
 import AVFoundation
 import CoreLocation
 import W3WSwiftApi
+import Firebase
 
 class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     
@@ -75,6 +75,20 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         }
         
         print(String(describing: locationManager.authorizationStatus))
+    }
+    
+    func forceUpdateToMonitorMeServer(with monitorID: String) {
+        let databaseReference = Database.database().reference()
+
+        databaseReference.child(monitorID).setValue(true) { (error, _) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                // Handle the error, you might want to show a message to the user
+            } else {
+                print("Monitor ID Updated Successfully")
+                // You can put any code here that you want to execute on successful update
+            }
+        }
     }
     
     func monitorMe() {
@@ -276,6 +290,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func stopMonitoringMe() {
+        
         forceUpdateToMonitorMeServerWithState(state: "End Session")
         
         // Confirm you will stop being monitored
@@ -298,6 +313,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         
         // Save your last walk to file for selection
         if kDataManager.monitorMeLocalHistoric.count > 7 {
+            
             kDataManager.monitorMeLocalHistoric.insert(kDataManager.monitorMeLocal, at: 0)
             kDataManager.monitorMeLocalHistoric.removeLast()
             kDataManager.monitorMeLocal.removeAll()

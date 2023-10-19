@@ -37,6 +37,7 @@
 		18297F8A2AB4422800D97A36 /* AddPeopleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */; };
 		1839588E2ABAEC1A00CBC56E /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839588D2ABAEC1A00CBC56E /* InstructionViewController.swift */; };
 		183958922ABB066200CBC56E /* DogListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183958912ABB066200CBC56E /* DogListingViewController.swift */; };
+		184155482AE13DBB0084DF94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 184155472AE13DBB0084DF94 /* GoogleService-Info.plist */; };
 		1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */; };
 		18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */; };
 		18530A692AB2CD7000C190D3 /* DogRegistrationValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */; };
@@ -46,6 +47,7 @@
 		18530A742AB2EAE500C190D3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A732AB2EAE500C190D3 /* UIViewController.swift */; };
 		18530A772AB30AE400C190D3 /* AddDogVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A762AB30AE400C190D3 /* AddDogVm.swift */; };
 		18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A792AB3338100C190D3 /* AddNewPersonModel.swift */; };
+		185B7CC92ADBC25A00C1C9EB /* WalkerStatusVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */; };
 		1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */; };
 		1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FE2A9DC3650094B522 /* AddDogVc.swift */; };
 		1872D3052A9E13110094B522 /* DogTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D3032A9E13110094B522 /* DogTblViewCell.swift */; };
@@ -69,15 +71,16 @@
 		189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79632AAAE70A002A640C /* Siren3.mp3 */; };
 		189A796C2AAAE70A002A640C /* Siren4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79642AAAE70A002A640C /* Siren4.mp3 */; };
 		189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79652AAAE70A002A640C /* Siren5.mp3 */; };
-		189A796F2AAAE769002A640C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A796E2AAAE769002A640C /* SoundManager.swift */; };
 		189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A79812AAAFE8F002A640C /* PermissionViewController.swift */; };
+		18A7436C2AE1177000BD7CED /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7436A2AE1177000BD7CED /* RecordViewController.swift */; };
+		18A7436D2AE1177000BD7CED /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7436B2AE1177000BD7CED /* RecordViewController.xib */; };
 		18A7CFA62AC9C3C4009DFA71 /* TrackWalkerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */; };
-		18A7CFA82ACBF9F1009DFA71 /* WalkerStatusVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */; };
 		18A7CFAA2ACBFA34009DFA71 /* WalkerMapVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */; };
 		18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */; };
 		18A7CFB22ACC2BD7009DFA71 /* WalkerStatusTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */; };
 		18A7CFB32ACC2BD7009DFA71 /* WalkerStatusTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */; };
 		18A7CFB52ACC45DA009DFA71 /* WalkerStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7CFB42ACC45DA009DFA71 /* WalkerStatusCell.xib */; };
+		18ADE6DE2ADFB92300BF1934 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ADE6DD2ADFB92300BF1934 /* Utils.swift */; };
 		18B3FA6C2AD518A200F40F56 /* WalkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA6B2AD518A200F40F56 /* WalkStatusManager.swift */; };
 		18B3FA6E2AD5235F00F40F56 /* MonitorLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA6D2AD5235F00F40F56 /* MonitorLocationManager.swift */; };
 		18B3FA712AD5330E00F40F56 /* WebUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3FA702AD5330E00F40F56 /* WebUrls.swift */; };
@@ -118,6 +121,7 @@
 		18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA12A97671D007E2FF5 /* ConcernCell.swift */; };
 		18E02AA42A97671D007E2FF5 /* ConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E02AA22A97671D007E2FF5 /* ConcernCell.xib */; };
 		18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */; };
+		18EE75F62AE10FED00C1D7D8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */; };
 		18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */; };
 		18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */; };
 		18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */; };
@@ -173,6 +177,7 @@
 		18297F892AB4422700D97A36 /* AddPeopleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleDataManager.swift; sourceTree = "<group>"; };
 		1839588D2ABAEC1A00CBC56E /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		183958912ABB066200CBC56E /* DogListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListingViewController.swift; sourceTree = "<group>"; };
+		184155472AE13DBB0084DF94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1842E3072A9F2263007BAE33 /* AddNewDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDogVc.swift; sourceTree = "<group>"; };
 		18471E312AA5D1980046EA05 /* AddNewPersonVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonVc.swift; sourceTree = "<group>"; };
 		18530A682AB2CD7000C190D3 /* DogRegistrationValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogRegistrationValidation.swift; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 		18530A732AB2EAE500C190D3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		18530A762AB30AE400C190D3 /* AddDogVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVm.swift; sourceTree = "<group>"; };
 		18530A792AB3338100C190D3 /* AddNewPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonModel.swift; sourceTree = "<group>"; };
+		185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkerStatusVc.swift; sourceTree = "<group>"; };
 		1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstant.swift; sourceTree = "<group>"; };
 		1872D2FE2A9DC3650094B522 /* AddDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVc.swift; sourceTree = "<group>"; };
 		1872D3032A9E13110094B522 /* DogTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTblViewCell.swift; sourceTree = "<group>"; };
@@ -205,15 +211,16 @@
 		189A79632AAAE70A002A640C /* Siren3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren3.mp3; sourceTree = "<group>"; };
 		189A79642AAAE70A002A640C /* Siren4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren4.mp3; sourceTree = "<group>"; };
 		189A79652AAAE70A002A640C /* Siren5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren5.mp3; sourceTree = "<group>"; };
-		189A796E2AAAE769002A640C /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		189A79812AAAFE8F002A640C /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		18A7436A2AE1177000BD7CED /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		18A7436B2AE1177000BD7CED /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWalkerVc.swift; sourceTree = "<group>"; };
-		18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusVc.swift; sourceTree = "<group>"; };
 		18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerMapVc.swift; sourceTree = "<group>"; };
 		18A7CFAC2ACC0083009DFA71 /* WalkerStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusCell.swift; sourceTree = "<group>"; };
 		18A7CFB02ACC2BD7009DFA71 /* WalkerStatusTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerStatusTblCell.swift; sourceTree = "<group>"; };
 		18A7CFB12ACC2BD7009DFA71 /* WalkerStatusTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkerStatusTblCell.xib; sourceTree = "<group>"; };
 		18A7CFB42ACC45DA009DFA71 /* WalkerStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkerStatusCell.xib; sourceTree = "<group>"; };
+		18ADE6DD2ADFB92300BF1934 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		18B3FA6B2AD518A200F40F56 /* WalkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkStatusManager.swift; sourceTree = "<group>"; };
 		18B3FA6D2AD5235F00F40F56 /* MonitorLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorLocationManager.swift; sourceTree = "<group>"; };
 		18B3FA702AD5330E00F40F56 /* WebUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUrls.swift; sourceTree = "<group>"; };
@@ -258,6 +265,7 @@
 		18E02AA12A97671D007E2FF5 /* ConcernCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernCell.swift; sourceTree = "<group>"; };
 		18E02AA22A97671D007E2FF5 /* ConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConcernCell.xib; sourceTree = "<group>"; };
 		18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDogIssues.swift; sourceTree = "<group>"; };
+		18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGFlingActionButton.swift; sourceTree = "<group>"; };
 		18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchSliderAnimation.swift; sourceTree = "<group>"; };
 		18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_dogWalk.json; sourceTree = "<group>"; };
@@ -304,7 +312,6 @@
 		180254D22A8DECCE00C744CE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				189A796E2AAAE769002A640C /* SoundManager.swift */,
 				18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */,
 				18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */,
 				180254D32A8DECFA00C744CE /* UICollectionView+Extension.swift */,
@@ -348,6 +355,7 @@
 		18261DE22AD6AB6900E388C5 /* Extr Code */ = {
 			isa = PBXGroup;
 			children = (
+				18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */,
 				188E77252AD928AD0066F117 /* NetworkManager.swift */,
 				18261DF32AD6D17C00E388C5 /* System Log.swift */,
 				18261DF12AD6D00100E388C5 /* Helpers.swift */,
@@ -357,6 +365,7 @@
 				18261DE52AD6CB2A00E388C5 /* MonitorYouLocationManager.swift */,
 				18261DE42AD6CB2A00E388C5 /* WebURLs.swift */,
 				18261DE92AD6CCDF00E388C5 /* Constant.swift */,
+				18ADE6DD2ADFB92300BF1934 /* Utils.swift */,
 			);
 			path = "Extr Code";
 			sourceTree = "<group>";
@@ -572,8 +581,8 @@
 		18A7CFA42AC9C3A2009DFA71 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */,
 				18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */,
-				18A7CFA72ACBF9F1009DFA71 /* WalkerStatusVc.swift */,
 				18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */,
 			);
 			path = ViewController;
@@ -634,6 +643,7 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				184155472AE13DBB0084DF94 /* GoogleService-Info.plist */,
 				18261DE22AD6AB6900E388C5 /* Extr Code */,
 				18B3FA6F2AD532E700F40F56 /* Networks */,
 				18A7CFA32AC9C37B009DFA71 /* TrackWalker */,
@@ -730,6 +740,8 @@
 			isa = PBXGroup;
 			children = (
 				181C3A562A926A8A00B50DE7 /* DogWalkingViewController.swift */,
+				18A7436A2AE1177000BD7CED /* RecordViewController.swift */,
+				18A7436B2AE1177000BD7CED /* RecordViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1060,6 +1072,7 @@
 				180254DB2A8E2B6900C744CE /* animation_1.json in Resources */,
 				1872D3062A9E13110094B522 /* DogTblViewCell.xib in Resources */,
 				18C86C772A8CE0B200A1F937 /* Aileron-Bold.otf in Resources */,
+				18A7436D2AE1177000BD7CED /* RecordViewController.xib in Resources */,
 				18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */,
 				18C86C6F2A8CE0B200A1F937 /* Aileron-SemiBold.otf in Resources */,
 				18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */,
@@ -1091,6 +1104,7 @@
 				18C86C702A8CE0B200A1F937 /* Aileron-Light.otf in Resources */,
 				189A79662AAAE70A002A640C /* Siren2.mp3 in Resources */,
 				18A7CFB52ACC45DA009DFA71 /* WalkerStatusCell.xib in Resources */,
+				184155482AE13DBB0084DF94 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1257,9 +1271,11 @@
 				180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */,
 				18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */,
 				18261DF22AD6D00100E388C5 /* Helpers.swift in Sources */,
+				18EE75F62AE10FED00C1D7D8 /* SoundManager.swift in Sources */,
 				1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */,
 				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
 				18261DF02AD6CF9800E388C5 /* Reachability.swift in Sources */,
+				185B7CC92ADBC25A00C1C9EB /* WalkerStatusVc.swift in Sources */,
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
 				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
 				18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */,
@@ -1290,21 +1306,21 @@
 				182839992AB09175003D212D /* SoundDataManager.swift in Sources */,
 				18B3FA752AD5368800F40F56 /* StringExtension.swift in Sources */,
 				18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */,
-				189A796F2AAAE769002A640C /* SoundManager.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
-				18A7CFA82ACBF9F1009DFA71 /* WalkerStatusVc.swift in Sources */,
 				1821C6132AA867C500087FA7 /* PersonListingTableViewCell.swift in Sources */,
 				18530A722AB2D6C100C190D3 /* AddPersonVm.swift in Sources */,
 				18B3FA6C2AD518A200F40F56 /* WalkStatusManager.swift in Sources */,
 				18261DEA2AD6CCDF00E388C5 /* Constant.swift in Sources */,
 				18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */,
 				18A7CFAA2ACBFA34009DFA71 /* WalkerMapVc.swift in Sources */,
+				18ADE6DE2ADFB92300BF1934 /* Utils.swift in Sources */,
 				18C86C222A8CABA800A1F937 /* SceneDelegate.swift in Sources */,
 				180254D92A8DFE7900C744CE /* FontContant.swift in Sources */,
 				18261DE72AD6CB2A00E388C5 /* WebURLs.swift in Sources */,
 				18D76E4A2AB03AFB005B88EF /* AlertManager.swift in Sources */,
 				18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */,
 				18261DE62AD6CB2A00E388C5 /* MonitorMeLocationManager.swift in Sources */,
+				18A7436C2AE1177000BD7CED /* RecordViewController.swift in Sources */,
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
 				18261DEC2AD6CD3A00E388C5 /* DataManager.swift in Sources */,
 				18B3FA6E2AD5235F00F40F56 /* MonitorLocationManager.swift in Sources */,
@@ -1506,14 +1522,15 @@
 				INFOPLIST_FILE = Howl/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos and record videos for our app's features.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow HOWL app to access this device's location";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow HOWL app to access this device's location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow HOWL app to access this device's location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location for turn-by-turn directions even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide nearby recommendations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone for recording audio.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1543,14 +1560,15 @@
 				INFOPLIST_FILE = Howl/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos and record videos for our app's features.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow HOWL app to access this device's location";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow HOWL app to access this device's location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow HOWL app to access this device's location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location for turn-by-turn directions even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide nearby recommendations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone for recording audio.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

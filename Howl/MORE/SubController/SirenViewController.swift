@@ -62,7 +62,8 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         if sirenPickerView.selectedRow(inComponent: 0) == 8 {
             return
         }
-        kSoundManager.playSound(index: index, testing: true)
+        kSoundManager.playSiren(index: index, volume: 30.0, testing: true)
+        //kSoundManager.playSound(index: index, testing: true)
         
         
 //        if kSoundManager.audioPlayer == nil {

@@ -15,7 +15,7 @@ struct Person: Codable {
   //  var personCountryDialCode: String!
     var personCountryCode: String!
     var personMobileNumber: String!
-    var personNotificationType: String!
+    var personNotificationType = "WHATSAPP"
     var personImage: Data!
     
     enum CodingKeys: String, CodingKey {
