@@ -13,8 +13,8 @@ final class RegistrationValidation {
     
 //    MARK: - User Validation
     
-    func validationBasicInfo(name: String?, nickName: String?, mobileNumber: String?) -> (Bool, String) {
-        guard name != "" && nickName != "" && mobileNumber != "" else {
+    func validationBasicInfo(name: String?, mobileNumber: String?) -> (Bool, String) {
+        guard name != "" && mobileNumber != "" else {
             return (false, "Please fill the required fields")
         }
         

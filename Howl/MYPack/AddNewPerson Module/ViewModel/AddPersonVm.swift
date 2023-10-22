@@ -8,12 +8,12 @@
 import Foundation
 
 protocol InitialInfoDelegate{
-    func initialBasicInfoVlaidate(name: String, nickName: String, mobileNumber: String) -> (Bool, String)
+    func initialBasicInfoVlaidate(name: String, mobileNumber: String) -> (Bool, String)
 }
 
 class AddPersonVm: InitialInfoDelegate{
-    func initialBasicInfoVlaidate(name: String, nickName: String, mobileNumber: String) -> (Bool, String){
-        let response = RegistrationValidation.shared.validationBasicInfo(name: name, nickName: nickName, mobileNumber: mobileNumber)
+    func initialBasicInfoVlaidate(name: String, mobileNumber: String) -> (Bool, String){
+        let response = RegistrationValidation.shared.validationBasicInfo(name: name, mobileNumber: mobileNumber)
         return response
     }
 }

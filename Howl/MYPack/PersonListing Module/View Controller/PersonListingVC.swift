@@ -63,7 +63,7 @@ class PersonListingVC: UIViewController {
             let storyboard = AppStoryboard.Main.instance
             let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
             self.navigationController?.pushViewController(addNewDogVc, animated: true)
-            }
+        }
     
 //    MARK: - Delegate Method
     func delegateMethod(){
@@ -115,8 +115,8 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell() as PersonListingTableViewCell
         animationView.isHidden = true
-        cell.nameLbl.text = peopleDataManager.people[indexPath.row].personName
-        cell.nickNameLbl.text = peopleDataManager.people[indexPath.row].personNickname
+        cell.nameLbl.text = peopleDataManager.people[indexPath.row].personMobileNumber
+        cell.nickNameLbl.text = peopleDataManager.people[indexPath.row].personName
         if let dogImageData = peopleDataManager.people[indexPath.row].personImage {
             if let dogImage = UIImage(data: dogImageData) {
                 cell.profileImg.image = dogImage
@@ -169,7 +169,7 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
                 addNewVc.isEdit = true
                 addNewVc.name = items.personName
                 addNewVc.profileImge =  items.personImage
-                addNewVc.nickName = items.personNickname
+               // addNewVc.nickName = items.personNickname
                 addNewVc.contryCode = items.personCountryCode
                 addNewVc.phoneNumber = items.personMobileNumber
                 DispatchQueue.main.async {

@@ -132,6 +132,10 @@ extension MyPackVc: UICollectionViewDelegate, UICollectionViewDataSource{
         vc.dob = item.dogDOB
         vc.color = item.dogColour
         vc.breed = item.dogBreed
+        vc.gender = item.dogSex
+        vc.type = item.dogNeuteredOrSpayed
+        vc.uniqueNo = item.dogMicrochipNumber
+        vc.feature = item.dogDistinctiveFeatures
         self.present(vc, animated: true)
         
     }

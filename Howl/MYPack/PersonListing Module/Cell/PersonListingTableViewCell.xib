@@ -36,26 +36,26 @@
                                     <constraint firstAttribute="height" constant="70" id="Ax9-Xi-Ujl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-vA-gJz">
-                                <rect key="frame" x="89" y="14.999999999999998" width="79" height="19.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-vA-gJz">
+                                <rect key="frame" x="89" y="14.999999999999998" width="45.333333333333343" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-DM-h3Z">
-                                <rect key="frame" x="89" y="53.666666666666664" width="42.666666666666657" height="12.333333333333336"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-DM-h3Z">
+                                <rect key="frame" x="89" y="53.666666666666664" width="52.333333333333343" height="12.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfX-uY-WKi">
-                                <rect key="frame" x="176" y="14.000000000000002" width="46.666666666666657" height="22.666666666666671"/>
+                                <rect key="frame" x="148.33333333333334" y="14.000000000000002" width="46.666666666666657" height="22.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFj-Vk-sym">
-                                <rect key="frame" x="176" y="50.333333333333336" width="46.666666666666657" height="19.333333333333336"/>
+                                <rect key="frame" x="148.33333333333334" y="50.333333333333336" width="46.666666666666657" height="19.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                             <constraint firstItem="aRz-9q-hdO" firstAttribute="leading" secondItem="oec-JA-Icz" secondAttribute="leading" constant="10" id="Vyk-SC-Onc"/>
                             <constraint firstItem="wOh-DM-h3Z" firstAttribute="leading" secondItem="2kh-vA-gJz" secondAttribute="leading" id="ZwQ-lr-PMf"/>
                             <constraint firstItem="aRz-9q-hdO" firstAttribute="centerY" secondItem="oec-JA-Icz" secondAttribute="centerY" id="dUG-au-o3R"/>
-                            <constraint firstItem="CfX-uY-WKi" firstAttribute="leading" secondItem="2kh-vA-gJz" secondAttribute="trailing" constant="8" symbolic="YES" id="den-pq-gL7"/>
+                            <constraint firstItem="CfX-uY-WKi" firstAttribute="leading" secondItem="2kh-vA-gJz" secondAttribute="trailing" constant="14" id="den-pq-gL7"/>
                             <constraint firstItem="QFj-Vk-sym" firstAttribute="centerY" secondItem="wOh-DM-h3Z" secondAttribute="centerY" id="wMh-08-gKv"/>
                             <constraint firstItem="QFj-Vk-sym" firstAttribute="top" secondItem="CfX-uY-WKi" secondAttribute="bottom" constant="13.666666666666671" id="woU-4X-lma"/>
                             <constraint firstItem="2kh-vA-gJz" firstAttribute="leading" secondItem="aRz-9q-hdO" secondAttribute="trailing" constant="9" id="yBb-eH-vpi"/>

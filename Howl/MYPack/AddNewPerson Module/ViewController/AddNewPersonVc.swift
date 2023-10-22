@@ -16,7 +16,7 @@ class AddNewPersonVc: UIViewController {
     @IBOutlet weak var dropDownBtn: UIButton!
     @IBOutlet weak var countryCodeLbl: UILabel!
     @IBOutlet weak var phoneNumberView: UIView!
-    @IBOutlet weak var nickNameTxtFld: UITextField!
+//    @IBOutlet weak var nickNameTxtFld: UITextField!
     @IBOutlet weak var nameTxtFld: UITextField!
     @IBOutlet weak var addProfileBtn: UIButton!
     @IBOutlet weak var profilePicImg: UIImageView!
@@ -74,7 +74,7 @@ class AddNewPersonVc: UIViewController {
     
 //    MARK: - Textfield delegates
     func _txtFldDelegates(){
-        let textfield = [nickNameTxtFld, nameTxtFld, phoneNoTxtFld]
+        let textfield = [nameTxtFld, phoneNoTxtFld]
         for textField in textfield{
             textField?.delegate = self
             textField?.autocapitalizationType = .words
@@ -99,15 +99,15 @@ class AddNewPersonVc: UIViewController {
         let nickName = DogConstantString.nickName
         let attributesNickName: [NSAttributedString.Key: Any] = [.foregroundColor: color]
         let attributedNickNamePlaceHolder = NSAttributedString(string: nickName, attributes: attributesNickName)
-        nickNameTxtFld.attributedPlaceholder = attributedNickNamePlaceHolder
+       // nickNameTxtFld.attributedPlaceholder = attributedNickNamePlaceHolder
         let phoneNo = DogConstantString.phoneNumber
         let attributesPhoneNo: [NSAttributedString.Key: Any] = [.foregroundColor: color]
         let attributedPhoneNoPlaceHolder = NSAttributedString(string: phoneNo, attributes: attributesPhoneNo)
         phoneNoTxtFld.attributedPlaceholder = attributedPhoneNoPlaceHolder
         phoneNumberView.layer.borderWidth = 1.0
         phoneNumberView.layer.borderColor = color.cgColor
-        nickNameTxtFld.layer.borderWidth = 1.0
-        nickNameTxtFld.layer.borderColor = color.cgColor
+//        nickNameTxtFld.layer.borderWidth = 1.0
+//        nickNameTxtFld.layer.borderColor = color.cgColor
         contactsBtn.layer.cornerRadius = 10.0
         contactsBtn.backgroundColor = TxtFldColor.greenColor
         whatsAppBtn.layer.cornerRadius = 10.0
@@ -134,7 +134,7 @@ class AddNewPersonVc: UIViewController {
                  profilePicImg.image = image
             }
             nameTxtFld.text = name
-            nickNameTxtFld.text = nickName
+//            nickNameTxtFld.text = nickName
             countryCodeLbl.text = contryCode
             phoneNoTxtFld.text = phoneNumber
         }
@@ -153,7 +153,7 @@ class AddNewPersonVc: UIViewController {
     
     
     @IBAction func createBtnPress(_ sender: UIButton) {
-        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", nickName: nickNameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "")
+        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "")
         let status = validationResult.0
         let message = validationResult.1
         if status == true{
@@ -163,7 +163,7 @@ class AddNewPersonVc: UIViewController {
                 personImageData = Data()
             }
             print("PhoneNumber", phoneNoTxtFld.text!)
-            let newPerson = Person(name: nameTxtFld.text ?? "", nickname: nickNameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
+            let newPerson = Person(name: nameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
             if isEdit == true {
                 //Update data
                 AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)
@@ -293,15 +293,15 @@ extension AddNewPersonVc: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTxtFld{
             resignFirstResponder()
-            nickNameTxtFld.becomeFirstResponder()
-        }
-        if textField == nickNameTxtFld{
-            resignFirstResponder()
             phoneNoTxtFld.becomeFirstResponder()
         }
         if textField == phoneNoTxtFld{
             resignFirstResponder()
+            //phoneNoTxtFld.becomeFirstResponder()
         }
+//        if textField == phoneNoTxtFld{
+//            resignFirstResponder()
+//        }
         return true
     }
     

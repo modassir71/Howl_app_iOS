@@ -16,7 +16,9 @@ class DogDetailPopUp: UIViewController {
     @IBOutlet weak var colorLbl: UILabel!
     @IBOutlet weak var dobLbl: UILabel!
     @IBOutlet weak var dogNameLbl: UILabel!
-    
+    @IBOutlet weak var genderTpeLbl: UILabel!
+    @IBOutlet weak var uniqueNoLbl: UILabel!
+    @IBOutlet weak var featureLbl: UILabel!
     
 //    MARK: - Variables
     var dogName = String()
@@ -24,6 +26,10 @@ class DogDetailPopUp: UIViewController {
     var dob = String()
     var color = String()
     var breed = String()
+    var gender = String()
+    var type = String()
+    var uniqueNo = String()
+    var feature = String()
     
 //    MARK: - Life cycle
     override func viewDidLoad() {
@@ -42,6 +48,10 @@ class DogDetailPopUp: UIViewController {
     
 //    MARK: - SetData
     func setData(){
+        featureLbl.text = feature
+        uniqueNoLbl.text = uniqueNo
+        let combinedText = gender + " / " + type
+        genderTpeLbl.text = combinedText
         breedLbl.text = breed
         colorLbl.text = color
         dobLbl.text = dob

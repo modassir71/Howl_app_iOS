@@ -157,7 +157,7 @@ class AddDogViewController: UIViewController {
         profileImg.layer.borderWidth = 1
         profileImg.clipsToBounds = true
         createBtn.layer.cornerRadius = 10.0
-       createBtn.backgroundColor = TxtFldColor.greenColor
+        createBtn.backgroundColor = TxtFldColor.greenColor
         customizeTxtFld(to: dogNameTxtFld, string: DogConstantString.dogName)
         customizeTxtFld(to: bredextFld, string: DogConstantString.breed)
         customizeTxtFld(to: colorTxtFld, string: DogConstantString.color)
@@ -188,7 +188,8 @@ class AddDogViewController: UIViewController {
         txtFld.layer.borderColor = TxtFldColor.primaryColor.cgColor
         txtFld.layer.borderWidth = 1
         txtFld.layer.cornerRadius = 5.0
-        txtFld.textColor = TxtFldColor.secondaryColor
+        txtFld.textColor = .black//TxtFldColor.secondaryColor
+        txtFld.tintColor = .black
         let attributes = [NSAttributedString.Key.foregroundColor: TxtFldColor.primaryColor]
         txtFld.attributedPlaceholder = NSAttributedString(string: string, attributes: attributes)
     }
