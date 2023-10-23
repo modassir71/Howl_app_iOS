@@ -11,6 +11,21 @@ import AVFoundation
 import CoreLocation
 import W3WSwiftApi
 import Firebase
+struct WalkModel: Codable {
+    var battery: String
+    var course: String
+    var date: String
+    var flag: String
+    var id: Int
+    var lat: String
+    var lon: String
+    var randomId: String
+    var speed: String
+    var state: String
+    var time: String
+    var w3w: String
+    var w3wurl: String
+}
 
 class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     

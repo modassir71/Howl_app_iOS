@@ -115,6 +115,10 @@
 		18C86C7A2A8CE0B200A1F937 /* Aileron-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */; };
 		18C86C7B2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */; };
 		18C86C7C2A8CE0B200A1F937 /* Aileron-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */; };
+		18CB66B82AE6424400D57005 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB66B62AE6424400D57005 /* TipsViewController.swift */; };
+		18CB66B92AE6424400D57005 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CB66B72AE6424400D57005 /* TipsViewController.xib */; };
+		18CB66BD2AE64F9900D57005 /* ShopVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB66BB2AE64F9900D57005 /* ShopVc.swift */; };
+		18CB66BE2AE64F9900D57005 /* ShopVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CB66BC2AE64F9900D57005 /* ShopVc.xib */; };
 		18D76E482AB035EE005B88EF /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D76E472AB035EE005B88EF /* StringConstant.swift */; };
 		18D76E4A2AB03AFB005B88EF /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D76E492AB03AFB005B88EF /* AlertManager.swift */; };
 		18E02AA02A973F37007E2FF5 /* ConcernViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */; };
@@ -203,6 +207,7 @@
 		188BEB5A2AAA0B0E000C6DF4 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		188BEB5C2AAA0E88000C6DF4 /* SirenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenViewController.swift; sourceTree = "<group>"; };
 		188E77252AD928AD0066F117 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18986CE32AE5089E006A4429 /* Howl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Howl.entitlements; sourceTree = "<group>"; };
 		189A795E2AAAE70A002A640C /* Siren2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren2.mp3; sourceTree = "<group>"; };
 		189A795F2AAAE70A002A640C /* Siren1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren1.mp3; sourceTree = "<group>"; };
 		189A79602AAAE70A002A640C /* Siren6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren6.mp3; sourceTree = "<group>"; };
@@ -259,6 +264,10 @@
 		18C86C692A8CE0B200A1F937 /* Aileron-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-BoldItalic.otf"; sourceTree = "<group>"; };
 		18C86C6A2A8CE0B200A1F937 /* Aileron-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		18C86C6B2A8CE0B200A1F937 /* Aileron-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aileron-Black.otf"; sourceTree = "<group>"; };
+		18CB66B62AE6424400D57005 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		18CB66B72AE6424400D57005 /* TipsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsViewController.xib; sourceTree = "<group>"; };
+		18CB66BB2AE64F9900D57005 /* ShopVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVc.swift; sourceTree = "<group>"; };
+		18CB66BC2AE64F9900D57005 /* ShopVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopVc.xib; sourceTree = "<group>"; };
 		18D76E472AB035EE005B88EF /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
 		18D76E492AB03AFB005B88EF /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		18E02A9F2A973F37007E2FF5 /* ConcernViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernViewController.swift; sourceTree = "<group>"; };
@@ -643,6 +652,9 @@
 		18C86C1E2A8CABA800A1F937 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				18CB66BA2AE64F8000D57005 /* Shop */,
+				18CB66B52AE6418E00D57005 /* Tips */,
+				18986CE32AE5089E006A4429 /* Howl.entitlements */,
 				184155472AE13DBB0084DF94 /* GoogleService-Info.plist */,
 				18261DE22AD6AB6900E388C5 /* Extr Code */,
 				18B3FA6F2AD532E700F40F56 /* Networks */,
@@ -726,6 +738,24 @@
 				18C86C682A8CE0B200A1F937 /* CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt */,
 			);
 			path = Aileron;
+			sourceTree = "<group>";
+		};
+		18CB66B52AE6418E00D57005 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				18CB66B62AE6424400D57005 /* TipsViewController.swift */,
+				18CB66B72AE6424400D57005 /* TipsViewController.xib */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		18CB66BA2AE64F8000D57005 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				18CB66BB2AE64F9900D57005 /* ShopVc.swift */,
+				18CB66BC2AE64F9900D57005 /* ShopVc.xib */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		18E02AA52A977EBB007E2FF5 /* Model */ = {
@@ -1073,6 +1103,7 @@
 				1872D3062A9E13110094B522 /* DogTblViewCell.xib in Resources */,
 				18C86C772A8CE0B200A1F937 /* Aileron-Bold.otf in Resources */,
 				18A7436D2AE1177000BD7CED /* RecordViewController.xib in Resources */,
+				18CB66BE2AE64F9900D57005 /* ShopVc.xib in Resources */,
 				18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */,
 				18C86C6F2A8CE0B200A1F937 /* Aileron-SemiBold.otf in Resources */,
 				18C86C6C2A8CE0B200A1F937 /* Aileron-BlackItalic.otf in Resources */,
@@ -1081,6 +1112,7 @@
 				180CF56D2AC6CAED00A8458C /* dogData.json in Resources */,
 				18C86C712A8CE0B200A1F937 /* Aileron-LightItalic.otf in Resources */,
 				189A796B2AAAE70A002A640C /* Siren3.mp3 in Resources */,
+				18CB66B92AE6424400D57005 /* TipsViewController.xib in Resources */,
 				189A796A2AAAE70A002A640C /* Siren0.mp3 in Resources */,
 				18C86C742A8CE0B200A1F937 /* Aileron-HeavyItalic.otf in Resources */,
 				18C86C752A8CE0B200A1F937 /* Aileron-Heavy.otf in Resources */,
@@ -1276,6 +1308,7 @@
 				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
 				18261DF02AD6CF9800E388C5 /* Reachability.swift in Sources */,
 				185B7CC92ADBC25A00C1C9EB /* WalkerStatusVc.swift in Sources */,
+				18CB66BD2AE64F9900D57005 /* ShopVc.swift in Sources */,
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
 				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
 				18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */,
@@ -1304,6 +1337,7 @@
 				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
 				18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */,
 				182839992AB09175003D212D /* SoundDataManager.swift in Sources */,
+				18CB66B82AE6424400D57005 /* TipsViewController.swift in Sources */,
 				18B3FA752AD5368800F40F56 /* StringExtension.swift in Sources */,
 				18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */,
 				188BEB5D2AAA0E88000C6DF4 /* SirenViewController.swift in Sources */,
@@ -1514,6 +1548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3.1;
@@ -1552,6 +1587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3.1;

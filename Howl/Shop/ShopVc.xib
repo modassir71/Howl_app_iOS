@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-SemiBold.otf">
+            <string>Aileron-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopVc" customModule="Howl" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="rIJ-V2-0NI" id="hTC-i1-lIJ"/>
+                <outlet property="dismissBtn" destination="iYn-Lr-zXI" id="45B-e3-JmI"/>
+                <outlet property="forwardBtn" destination="zRd-KF-KTm" id="dKD-X4-y3V"/>
+                <outlet property="homeBtn" destination="5hE-tj-Hli" id="5YD-mp-Ffr"/>
+                <outlet property="refreshBtn" destination="BSq-Xg-kgk" id="FLD-8j-Fgg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="emM-H8-s6h" id="JOH-0K-pjA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ju-oV-K53">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZz-ak-MC6">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Qd-AJ-8r5">
+                                    <rect key="frame" x="10" y="0.0" width="373" height="55"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIJ-V2-0NI">
+                                            <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="55"/>
+                                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title=" " image="arrow.backward" catalog="system"/>
+                                            <connections>
+                                                <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="xb9-z3-mcN"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRd-KF-KTm">
+                                            <rect key="frame" x="97.333333333333343" y="0.0" width="81.333333333333343" height="55"/>
+                                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                            <connections>
+                                                <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="fuU-HM-Rkw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-Xg-kgk">
+                                            <rect key="frame" x="194.66666666666666" y="0.0" width="80.999999999999972" height="55"/>
+                                            <color key="backgroundColor" red="0.94901961089999998" green="0.78431373829999995" blue="0.31764706970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                            <connections>
+                                                <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="lnL-bp-zuS"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-tj-Hli">
+                                            <rect key="frame" x="291.66666666666669" y="0.0" width="81.333333333333314" height="55"/>
+                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                            <connections>
+                                                <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="lpc-fo-WeD"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="3Qd-AJ-8r5" secondAttribute="trailing" constant="10" id="BJU-MB-P0g"/>
+                                <constraint firstAttribute="bottom" secondItem="3Qd-AJ-8r5" secondAttribute="bottom" id="XeT-Iq-zyN"/>
+                                <constraint firstAttribute="height" constant="55" id="d82-0H-FQC"/>
+                                <constraint firstItem="3Qd-AJ-8r5" firstAttribute="leading" secondItem="OZz-ak-MC6" secondAttribute="leading" constant="10" id="h5Y-Ve-2KC"/>
+                                <constraint firstItem="3Qd-AJ-8r5" firstAttribute="top" secondItem="OZz-ak-MC6" secondAttribute="top" id="m0X-WY-4qH"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-RI-J3y">
+                            <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYn-Lr-zXI">
+                                    <rect key="frame" x="10" y="10" width="373" height="40"/>
+                                    <color key="backgroundColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="21"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Back"/>
+                                    <connections>
+                                        <action selector="backBtnPress:" destination="-1" eventType="touchUpInside" id="RLU-XI-shA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="iYn-Lr-zXI" firstAttribute="leading" secondItem="GVb-RI-J3y" secondAttribute="leading" constant="10" id="GTJ-VR-m23"/>
+                                <constraint firstItem="iYn-Lr-zXI" firstAttribute="top" secondItem="GVb-RI-J3y" secondAttribute="top" constant="10" id="MVs-PA-0ku"/>
+                                <constraint firstAttribute="height" constant="50" id="Xid-W8-uCJ"/>
+                                <constraint firstAttribute="bottom" secondItem="iYn-Lr-zXI" secondAttribute="bottom" id="fBJ-Bw-McV"/>
+                                <constraint firstAttribute="trailing" secondItem="iYn-Lr-zXI" secondAttribute="trailing" constant="10" id="hIj-tl-Kzq"/>
+                            </constraints>
+                        </view>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emM-H8-s6h">
+                            <rect key="frame" x="0.0" y="119" width="393" height="640"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="GVb-RI-J3y" firstAttribute="leading" secondItem="6Ju-oV-K53" secondAttribute="leading" id="228-RY-GHV"/>
+                        <constraint firstItem="GVb-RI-J3y" firstAttribute="top" secondItem="3Qd-AJ-8r5" secondAttribute="bottom" constant="4" id="75Z-H5-cm4"/>
+                        <constraint firstItem="emM-H8-s6h" firstAttribute="leading" secondItem="6Ju-oV-K53" secondAttribute="leading" id="Bxu-AK-Vxt"/>
+                        <constraint firstAttribute="trailing" secondItem="OZz-ak-MC6" secondAttribute="trailing" id="H0b-li-zdL"/>
+                        <constraint firstAttribute="bottom" secondItem="emM-H8-s6h" secondAttribute="bottom" id="KrE-bb-eNl"/>
+                        <constraint firstItem="emM-H8-s6h" firstAttribute="top" secondItem="GVb-RI-J3y" secondAttribute="bottom" constant="10" id="MgL-nY-rGN"/>
+                        <constraint firstAttribute="trailing" secondItem="emM-H8-s6h" secondAttribute="trailing" id="Mwq-Ch-oEE"/>
+                        <constraint firstItem="OZz-ak-MC6" firstAttribute="leading" secondItem="6Ju-oV-K53" secondAttribute="leading" id="Rx8-7K-n6d"/>
+                        <constraint firstItem="OZz-ak-MC6" firstAttribute="top" secondItem="6Ju-oV-K53" secondAttribute="top" id="bbn-JZ-YC0"/>
+                        <constraint firstAttribute="trailing" secondItem="GVb-RI-J3y" secondAttribute="trailing" id="zPI-Ym-wGs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Ju-oV-K53" secondAttribute="trailing" id="S2E-Wn-Nfa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6Ju-oV-K53" secondAttribute="bottom" id="aUe-CN-jxx"/>
+                <constraint firstItem="6Ju-oV-K53" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mGS-uu-kSz"/>
+                <constraint firstItem="6Ju-oV-K53" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tOM-1g-JQc"/>
+            </constraints>
+            <point key="canvasLocation" x="102" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="arrow.forward" catalog="system" width="128" height="95"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,7 +13,9 @@ class MoreViewController: UIViewController {
     
     @IBOutlet weak var privacyBtn: UIButton!
     @IBOutlet weak var eulaBtn: UIButton!
-    @IBOutlet weak var workBtn: UIButton!
+    @IBOutlet weak var tipsBtn: UIButton!
+    
+    @IBOutlet weak var shopBtn: UIButton!
     @IBOutlet weak var unarchiveBtn: UIButton!
     @IBOutlet weak var configureBtn: UIButton!
     @IBOutlet weak var permissionBtn: UIButton!
@@ -40,13 +42,15 @@ class MoreViewController: UIViewController {
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
         infoTxtView.isEditable = false
-        addShadow(to: privacyBtn, cornerRadius: 10.0)
-        addShadow(to: eulaBtn, cornerRadius: 10.0)
-        addShadow(to: unarchiveBtn, cornerRadius: 10.0)
-        addShadow(to: configureBtn, cornerRadius: 10.0)
-        addShadow(to: permissionBtn, cornerRadius: 10.0)
-        addShadow(to: howlSirenBtn, cornerRadius: 10.0)
-        addShadow(to: workBtn, cornerRadius: 10.0)
+        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn, tipsBtn, shopBtn]
+        for button in buttons {
+            button.layer.cornerRadius = 10.0
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowOffset = CGSize(width: 0, height: 2)
+            button.layer.shadowRadius = 4.0
+            button.layer.shadowOpacity = 0.2
+        }
+        
     }
     
 //    MARK: - Add shadow
@@ -79,13 +83,15 @@ class MoreViewController: UIViewController {
         self.navigationController?.pushViewController(workVc, animated: true)
     }
     
-    @IBAction func unarchiveBtnPress(_ sender: UIButton) {
-        let alert = UIAlertController(title: StringConstant.archiveTitle, message: StringConstant.archiveMsg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
-                // Handle the OK button tap (if needed)
-            }
-        alert.addAction(okAction)
-        self.present(alert, animated: true)
+    @IBAction func tipsBtnPress(_ sender: UIButton) {
+        let newViewController = TipsViewController(nibName: "TipsViewController", bundle: nil)
+               self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    
+    @IBAction func shopBtnPress(_ sender: UIButton) {
+        let newViewController = ShopVc(nibName: "ShopVc", bundle: nil)
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     

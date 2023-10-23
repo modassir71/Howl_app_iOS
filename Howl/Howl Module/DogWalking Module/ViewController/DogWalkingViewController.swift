@@ -273,8 +273,47 @@ class DogWalkingViewController: UIViewController {
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
           sendWalkIDToEmergencyContact()
-          kMonitorMeLocationManager.forceUpdateToMonitorMeServer(with: kDataManager.monitorMeID)
+         // kMonitorMeLocationManager.forceUpdateToMonitorMeServer(with: kDataManager.monitorMeID)
+          updateFirebaseWithModelAndID()
       }
+      
+      func updateFirebaseWithModelAndID() {
+          let monitorID = kDataManager.monitorMeID//"your_monitor_id" // Replace with the actual monitor ID
+             let yourModel = WalkModel(
+                battery: "0",
+                 course: "0",
+                 date: "",
+                 flag: "1",
+                 id: 0,
+                 lat: "0",
+                 lon: "0",
+                 randomId: monitorID ?? "",
+                 speed: "0",
+                 state: "End Session",
+                 time: "",
+                 w3w: "NA",
+                 w3wurl: "NA"
+             )
+
+             // Initialize Firebase database reference
+             let databaseReference = Database.database().reference()
+
+             // Encode the model to a dictionary
+             let encoder = JSONEncoder()
+             if let modelData = try? encoder.encode(yourModel),
+                let modelDict = try? JSONSerialization.jsonObject(with: modelData, options: .allowFragments) as? [String: Any] {
+                 // Set the values in the Firebase Realtime Database
+                 databaseReference.child(monitorID ?? "").setValue(modelDict) { (error, _) in
+                     if let error = error {
+                         print("Error: \(error.localizedDescription)")
+                         // Handle the error, you might want to show a message to the user
+                     } else {
+                         print("Monitor ID Updated Successfully")
+                         // You can put any code here that you want to execute on a successful update
+                     }
+                 }
+             }
+         }
       
       func sendWalkIDToEmergencyContact() {
           let message = "Hello, please check out this link:"+base_url+kDataManager.monitorMeID

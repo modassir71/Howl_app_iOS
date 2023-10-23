@@ -45,6 +45,8 @@ struct DogConstantString{
     static let noPeopleMsg = "Add a person to your pack to allow them to monitor you and be set as your emergency contact"
     static let incidentTitle = "INCIDENT SAVED"
     static let incidentMsg = "Your video has been saved to the camera roll and your incident has been saved.  Swipe left on your dog on the pack menu to allocate this incident to the dog or dogs that this incident relates to"
+    static let networkErrorTitle = "NETWORK ISSUE"
+    static let networkErrorMsg = "Network connection is not available.  Please connect to a network and try again. See the system log for more information on the issue if required."
 }
 
 struct TxtFldColor{

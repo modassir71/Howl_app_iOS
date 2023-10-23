@@ -18,6 +18,7 @@ class PersonListingVC: UIViewController {
     
     var animationView = LottieAnimationView()
     var peopleDataManager = AddPeopleDataManager.sharedInstance
+    let emptyLabel = UILabel()
     
 //    MARK: - Life cycle
     override func viewDidLoad() {
@@ -105,7 +106,10 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         if peopleDataManager.people.count == 0{
             animationViewStart()
             animationContainer.isHidden = false
+            emptyLabel.isHidden = false
         }else{
+            emptyLabel.removeFromSuperview()
+            emptyLabel.isHidden = true
             animationView.removeFromSuperview()
             animationContainer.isHidden = true
         }
@@ -115,6 +119,7 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell() as PersonListingTableViewCell
         animationView.isHidden = true
+        emptyLabel.isHidden = true
         cell.nameLbl.text = peopleDataManager.people[indexPath.row].personMobileNumber
         cell.nickNameLbl.text = peopleDataManager.people[indexPath.row].personName
         if let dogImageData = peopleDataManager.people[indexPath.row].personImage {
@@ -215,6 +220,23 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         animationView.loopMode = .loop
         animationView.animationSpeed = 1
         self.animationContainer.addSubview(animationView)
+        emptyLblMsg()
         animationView.play()
+    }
+    
+    func emptyLblMsg(){
+        
+        emptyLabel.text = "This part of your pack is empty.\nAdd a contact"
+        emptyLabel.textColor = UIColor.gray
+        emptyLabel.numberOfLines = 2
+        emptyLabel.font = UIFont.systemFont(ofSize: 18)
+       // label.backgroundColor = .red
+        emptyLabel.textAlignment = .center
+        let centerX = view.bounds.width / 2.0
+        let centerY = view.bounds.height / 2.0
+        let viewWidth: CGFloat = 284
+        let viewHeight: CGFloat = 60
+        emptyLabel.frame = CGRect(x: centerX - viewWidth / 2.0, y: centerY - viewHeight / 2.0 - 120, width: viewWidth, height: viewHeight)
+        view.addSubview(emptyLabel)
     }
 }

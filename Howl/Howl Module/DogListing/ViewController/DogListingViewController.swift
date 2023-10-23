@@ -11,6 +11,7 @@ import Lottie
 class DogListingViewController: UIViewController {
 
 //  MARK:- Outlet
+    @IBOutlet weak var importBtn: UIButton!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var dogTblView: UITableView!
     @IBOutlet weak var addDogBtn: UIButton!
@@ -18,6 +19,7 @@ class DogListingViewController: UIViewController {
     //    MARK: - Variable
         var animationView = LottieAnimationView()
         var instance  = DogDataManager.shared
+         let emptyLbl = UILabel()
     //    MARK: - Life cycle
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -77,6 +79,8 @@ class DogListingViewController: UIViewController {
             navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
             navigationView.layer.shadowRadius = 2
             addDogBtn.isHidden = true
+            importBtn.layer.cornerRadius = 5.0
+            importBtn.clipsToBounds = true
             
         }
     //MARK: - Button Action
@@ -89,7 +93,35 @@ class DogListingViewController: UIViewController {
             let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
             self.navigationController?.pushViewController(addNewDogVc, animated: true)
         }
+    
+    
+    @IBAction func importBtnPress(_ sender: Any) {
+        if kDataManager.sharedDogImport == true {
+            
+            let alert = UIAlertController(title: "DOG IMPORT",
+                                          message: "A shared dog file was imported.  Would you like to add this dog to your pack?",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: {_ in
+                
+                kDataManager.sharedDogImport = false
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {_ in
+                
+                kDataManager.importDogShare()
+            }))
+            
+            kDataManager.onScreenViewController.present(alert, animated: true)
+        } else {
+            
+            kAlertManager.triggerAlertTypeWarning(warningTitle: "NO DATA FOUND",
+                                                  warningMessage: "No shared dog data was imported.  Please import a dog via the shared email and try again",
+                                                  initialiser: self)
+        }
         
+    }
+    
     }
 
     //MARK: - Delegates and datsource method
@@ -98,7 +130,10 @@ class DogListingViewController: UIViewController {
             if instance.dogs.count == 0{
                 animationViewStart()
                 animationContainer.isHidden = false
+                emptyLbl.isHidden = false
             }else{
+                emptyLbl.removeFromSuperview()
+                emptyLbl.isHidden = true
                 animationView.removeFromSuperview()
                 animationContainer.isHidden = true
             }
@@ -109,6 +144,7 @@ class DogListingViewController: UIViewController {
             let cell = tableView.getCell() as PersonListingTableViewCell
             let items = instance.dogs[indexPath.row]
             self.animationView.isHidden = true
+           // self.emptyLbl.isHidden = true
             cell.nameTitle.text = DogConstantString.breedName
             cell.nickNameTitle.text = DogConstantString.dog
             cell.nickNameLbl.text = items.dogName
@@ -211,8 +247,23 @@ class DogListingViewController: UIViewController {
             animationView.loopMode = .loop
             animationView.animationSpeed = 1
             self.animationContainer.addSubview(animationView)
+            emptyLblMsg()
             animationView.play()
         }
         
+        func emptyLblMsg(){
+            emptyLbl.text = "This part of your pack is empty.\nAdd a dog"
+            emptyLbl.textColor = UIColor.gray
+            emptyLbl.numberOfLines = 2
+            emptyLbl.font = UIFont.systemFont(ofSize: 18)
+           // label.backgroundColor = .red
+            emptyLbl.textAlignment = .center
+            let centerX = view.bounds.width / 2.0
+            let centerY = view.bounds.height / 2.0
+            let viewWidth: CGFloat = 284
+            let viewHeight: CGFloat = 60
+            emptyLbl.frame = CGRect(x: centerX - viewWidth / 2.0, y: centerY - viewHeight / 2.0 - 120, width: viewWidth, height: viewHeight)
+            view.addSubview(emptyLbl)
+        }
         
     }

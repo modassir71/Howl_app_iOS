@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Example: Open specific view controller or perform an action based on the dynamic path
                 print("Dynamic Path: \(dynamicPath)")
             }
-            return true
         }
         return false
     }
