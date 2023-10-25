@@ -20,7 +20,8 @@ class DogDetailPopUp: UIViewController {
     @IBOutlet weak var uniqueNoLbl: UILabel!
     @IBOutlet weak var featureLbl: UILabel!
     
-//    MARK: - Variables
+    @IBOutlet weak var containerHeight: NSLayoutConstraint!
+    //    MARK: - Variables
     var dogName = String()
     var dogImages: Data?
     var dob = String()
@@ -43,6 +44,11 @@ class DogDetailPopUp: UIViewController {
         dogImage.layer.cornerRadius = dogImage.frame.width/2
         dogImage.clipsToBounds = true
         dogImage.contentMode = .scaleAspectFill
+        if isiPhoneSE(){
+            containerHeight.constant = 510
+        }else{
+            containerHeight.constant = 530
+        }
         setData()
     }
     
@@ -72,6 +78,32 @@ class DogDetailPopUp: UIViewController {
     @IBAction func backBtnPress(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
+    
+    
+    @IBAction func shareBtnPress(_ sender: UIButton) {
+        //  crateTxtFile()
+        let textFile = NSTemporaryDirectory().appending("/dog_info.txt")
+               let text = """
+               Feature: \(featureLbl.text!)
+               Unique No: \(uniqueNoLbl.text!)
+               Gender/Type: \(genderTpeLbl.text!)
+               Breed: \(breedLbl.text!)
+               Color: \(colorLbl.text!)
+               DOB: \(dobLbl.text!)
+               Dog Name: \(dogNameLbl.text!)
+               """
+               do {
+                   try text.write(toFile: textFile, atomically: true, encoding: .utf8)
+               } catch {
+                   print(error.localizedDescription)
+               }
+        let activityViewController = UIActivityViewController(activityItems: [URL(fileURLWithPath: textFile)], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [.postToFacebook, .postToTwitter, .mail, .copyToPasteboard]
+        
+        present(activityViewController, animated: true, completion: nil)
+    }
+
+
     
     
     

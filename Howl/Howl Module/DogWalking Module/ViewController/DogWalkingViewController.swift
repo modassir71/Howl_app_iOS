@@ -44,10 +44,13 @@ class DogWalkingViewController: UIViewController {
       private let locationManager = CLLocationManager()
     var tapsToHOWL: Int! = 0
     var tapTimer: Timer!
+   
+    
       //MARK: - Life Cycle
       
       override func viewDidLoad() {
           super.viewDidLoad()
+          
           locationManager.delegate = self
           locationManager.requestWhenInUseAuthorization()
           setUi()
@@ -155,6 +158,7 @@ class DogWalkingViewController: UIViewController {
           swipeSlider.sliderAnimationVelocity = 0.2
           swipeSlider.sliderViewTopDistance = 0.0
           swipeSlider.sliderImageViewTopDistance = 5
+         // UserDefaults.standard.set(swipeSlider.sliderPosition.rawValue, forKey: "sliderPosition")
           swipeSlider.sliderImageViewStartingDistance = 5
           swipeSlider.sliderTextLabelLeadingDistance = 0
           swipeSlider.sliderCornerRadius = swipeSlider.frame.height / 2
@@ -172,6 +176,24 @@ class DogWalkingViewController: UIViewController {
           swipeSlider.sliderTextFont = .appFont(.AileronBold, size: 25)
           swipeSlider.sliderBackgroundViewTextLabel.text = DogConstantString.startWalk
           swipeSlider.sliderDraggedViewTextLabel.text = DogConstantString.stopWalk
+          if let positionValue = UserDefaults.standard.value(forKey: "SliderPosition") as? Int {
+              var position: DSSliderPosition
+              if positionValue == 0 {
+                  position = .left
+                  print("1")
+                  swipeSlider.slideToEndLft()
+                  
+              } else {
+                  position = .rigth
+                  print("2")
+                  swipeSlider.slideToEnd()
+              }
+              print("Position: \(position)")
+          } else {
+              // Handle the case when the position is not found in UserDefaults
+              print("Position not found")
+          }
+
       }
       
       //MARK: - Button Action
@@ -185,29 +207,51 @@ class DogWalkingViewController: UIViewController {
       
     
     @IBAction func tap3TimesBtnPress(_ sender: UIButton) {
-        switch tapsToHOWL {
-            
-        case 0:
-            
-            tapsToHOWL += 1
-            startTapTimer()
-            tapLabel.text = "Tap 2 Times To"
-            
-        case 1:
-            tapsToHOWL += 1
-            tapLabel.text = "Tap 1 Times To"
-            
-        case 2:
-            
-            resetHOWLTap()
-           // let storyboard = AppStoryboard.Main.instance
-            let customViewController = RecordViewController()
-            kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL")
-            navigationController?.pushViewController(customViewController, animated: true)
-            resetHOWLTap()
-            
-        default:
-            ()
+        if kDataManager.monitorMeID != nil{
+            switch tapsToHOWL {
+                
+            case 0:
+                
+                tapsToHOWL += 1
+                startTapTimer()
+                tapLabel.text = "Tap 2 Times To"
+                
+            case 1:
+                tapsToHOWL += 1
+                tapLabel.text = "Tap 1 Times To"
+                
+            case 2:
+                let customViewController = RecordViewController()
+                customViewController.executeCodeBlock = { [weak self] in
+                    self?.resetHOWLTap()
+                    DispatchQueue.main.async {
+                        for subview in self!.dogAnimationView.subviews {
+                            subview.removeFromSuperview()
+                        }
+                        self!.dogAnimationView.isHidden = true
+                        self!.dogStopImg.isHidden = false
+                        self!.streetImg.isHidden = true
+                        self!.tabBarController?.tabBar.isHidden = false
+                        self!.shadowView.isHidden = true
+                        self!.redBtn.isHidden = true
+                        self!.concernBtn.isHidden = true
+                        
+                    }
+                    print("Slider position",self?.swipeSlider.sliderPosition)
+                    self?.swipeSlider.sliderPosition = .left
+                    self?.swipeSlider.slideToEndLft()
+                    print("Slider position",self?.swipeSlider.sliderPosition)
+                }
+                
+                kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL")
+                navigationController?.pushViewController(customViewController, animated: true)
+                resetHOWLTap()
+                
+            default:
+                ()
+            }
+        }else{
+//            AlertManager.sharedInstance.showAlert(title: DogConstantString.sessionInactive, message: DogConstantString.sessionInactiveMsg)
         }
         
     }
@@ -218,7 +262,9 @@ class DogWalkingViewController: UIViewController {
   //MARK: - Swipe Button
   extension DogWalkingViewController: DSSliderDelegate{
       func sliderDidFinishSliding(_ slider: DSSlider, at position: DSSliderPosition) {
+          var positionValue: Int = 0
           if position == .left{
+             print("position1", position)
               AlertManager.sharedInstance.triggerAlertTypeWarningWithAction(warningTitle: "Stop Walking", warningMessage: "Do You Want to Stop Walking", initialiser: self, okClosure: {
                   DispatchQueue.main.async {
                       for subview in self.dogAnimationView.subviews {
@@ -233,15 +279,21 @@ class DogWalkingViewController: UIViewController {
                   self.shadowView.isHidden = true
                   self.redBtn.isHidden = true
                   self.concernBtn.isHidden = true
+                  print("position2", position)
               }, cancelClosure: {
+                  print("position3", position)
                   self.swipeSlider.slideToEnd()
               })
+             // UserDefaults.standard.set(position, forKey: "SliderPosition")
+              positionValue = 0
           }else{
+              print("position4", position)
               if AddPeopleDataManager.sharedInstance.people.isEmpty{
                   let alert = UIAlertController(title: DogConstantString.noPeopleTitle, message: DogConstantString.noPeopleMsg, preferredStyle: .alert)
                   
                   let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                      self.swipeSlider.slideToEndLft()
+                      print("position5", position)
                          }
 
                          alert.addAction(okAction)
@@ -261,10 +313,14 @@ class DogWalkingViewController: UIViewController {
                       self.redBtn.isHidden = false
                       self.concernBtn.isHidden = false
                       self.startWalk(indexOfEmergencyContact: 0)
+                      print("position6", position)
                   }
                   
               }
+            //  UserDefaults.standard.set(position, forKey: "SliderPosition")
+              positionValue = 1
           }
+          UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
       }
       
       func startWalk(indexOfEmergencyContact: Int){

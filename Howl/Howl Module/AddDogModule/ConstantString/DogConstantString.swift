@@ -47,6 +47,9 @@ struct DogConstantString{
     static let incidentMsg = "Your video has been saved to the camera roll and your incident has been saved.  Swipe left on your dog on the pack menu to allocate this incident to the dog or dogs that this incident relates to"
     static let networkErrorTitle = "NETWORK ISSUE"
     static let networkErrorMsg = "Network connection is not available.  Please connect to a network and try again. See the system log for more information on the issue if required."
+    
+    static let sessionInactive = "SESSION INACTIVE"
+    static let sessionInactiveMsg = "An active walk session must be in place to use this function"
 }
 
 struct TxtFldColor{

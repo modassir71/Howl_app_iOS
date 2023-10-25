@@ -20,6 +20,7 @@ class RecordViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVC
     var videoOutput: AVCaptureMovieFileOutput!
     var videoURL: URL!
     var incidentSaved: Bool!
+    var executeCodeBlock: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -209,6 +210,7 @@ class RecordViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVC
            }
            let alert = UIAlertController(title: DogConstantString.incidentTitle, message: DogConstantString.incidentMsg, preferredStyle: .alert)
            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+               self.executeCodeBlock?()
                self.navigationController?.popViewController(animated: true)
            }
            alert.addAction(okAction)
