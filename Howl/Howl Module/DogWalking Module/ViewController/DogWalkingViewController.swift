@@ -181,12 +181,25 @@ class DogWalkingViewController: UIViewController {
               if positionValue == 0 {
                   position = .left
                   print("1")
+                    
                   swipeSlider.slideToEndLft()
                   
               } else {
                   position = .rigth
                   print("2")
+                  dogStopImg.isHidden = true
+                  streetImg.isHidden = false
                   swipeSlider.slideToEnd()
+                  DispatchQueue.main.async {
+                      self.animationView()
+                      self.dogAnimationView.isHidden = false
+                      self.tabBarController?.tabBar.isHidden = true
+                      self.shadowView.isHidden = false
+                      self.redBtn.isHidden = false
+                      self.concernBtn.isHidden = false
+                  }
+                  
+
               }
               print("Position: \(position)")
           } else {
@@ -251,7 +264,7 @@ class DogWalkingViewController: UIViewController {
                 ()
             }
         }else{
-//            AlertManager.sharedInstance.showAlert(title: DogConstantString.sessionInactive, message: DogConstantString.sessionInactiveMsg)
+       
         }
         
     }
@@ -292,17 +305,15 @@ class DogWalkingViewController: UIViewController {
                   let alert = UIAlertController(title: DogConstantString.noPeopleTitle, message: DogConstantString.noPeopleMsg, preferredStyle: .alert)
                   
                   let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                     self.swipeSlider.slideToEndLft()
+                      self.swipeSlider.slideToEndLft()
                       print("position5", position)
-                         }
-
-                         alert.addAction(okAction)
-
-                         present(alert, animated: true, completion: nil)
-
-              }else{
-              checkLocationPermission()
-             // if locationEnabled == true{
+                  }
+                  
+                  alert.addAction(okAction)
+                  
+                  present(alert, animated: true, completion: nil)
+              }else if AddPeopleDataManager.sharedInstance.people.count == 1{
+                  checkLocationPermission()
                   dogStopImg.isHidden = true
                   streetImg.isHidden = false
                   DispatchQueue.main.async {
@@ -315,9 +326,36 @@ class DogWalkingViewController: UIViewController {
                       self.startWalk(indexOfEmergencyContact: 0)
                       print("position6", position)
                   }
-                  
+
+              }else{
+              checkLocationPermission()
+               let alert = UIAlertController(title: "Choose Emergency Contact",
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+                  for (index, person) in AddPeopleDataManager.sharedInstance.people.enumerated() {
+                      
+                      alert.addAction(UIAlertAction(title: person.personName,
+                                                    style: .default,
+                                                    handler: { _ in
+                          self.dogStopImg.isHidden = true
+                          self.streetImg.isHidden = false
+                          DispatchQueue.main.async {
+                              self.animationView()
+                              self.dogAnimationView.isHidden = false
+                              self.tabBarController?.tabBar.isHidden = true
+                              self.shadowView.isHidden = false
+                              self.redBtn.isHidden = false
+                              self.concernBtn.isHidden = false
+                              print("position6", position)
+                          }
+                         print("indexxx", index)
+                          self.startWalk(indexOfEmergencyContact: index)
+                      }))
+                  }
+                  alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+                  self.present(alert, animated: true, completion: nil)
+             // if locationEnabled == true{
               }
-            //  UserDefaults.standard.set(position, forKey: "SliderPosition")
               positionValue = 1
           }
           UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
@@ -372,7 +410,12 @@ class DogWalkingViewController: UIViewController {
          }
       
       func sendWalkIDToEmergencyContact() {
-          let message = "Hello, please check out this link:"+base_url+kDataManager.monitorMeID
+          for person in AddPeopleDataManager.sharedInstance.people{
+              let messageType = person.personNotificationType
+              print(messageType)
+          }
+        let notificationType = ""
+          let message = "Hello, please follow my walk on HOWL:"+base_url+kDataManager.monitorMeID
           let personCode = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personCountryCode ?? ""
           let personMobileNumber = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
           let collapseMobile: String = personCode + personMobileNumber

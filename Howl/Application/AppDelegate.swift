@@ -10,6 +10,8 @@ import CoreData
 import IQKeyboardManagerSwift
 import GoogleMaps
 import Firebase
+import AVKit
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.0)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+           } catch {
+               print("AVAudioSessionCategoryPlayback not work")
+           }
         if #available(iOS 13.0, *) {
                     for windowScene in UIApplication.shared.connectedScenes {
                         if let windowScene = windowScene as? UIWindowScene {

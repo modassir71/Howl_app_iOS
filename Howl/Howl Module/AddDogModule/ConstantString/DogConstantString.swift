@@ -16,7 +16,7 @@ struct DogConstantString{
     static let microchipDatabase = "Microchip Database"
     static let microchipNumber = "MicrochipNumber"
     static let distrinctiveFeature = "Distrinctive Feature"
-    static let raiseConcern = "Raise a Cocern Related"
+    static let raiseConcern = "Raise a Cocern"
     static let peopleDeleteErrorTitle = "SAVE ERROR"
     static let peopleDeleteError = "Save data error.Please try again or contact the app developer to review"
     static let deleteTitle = "Delete"

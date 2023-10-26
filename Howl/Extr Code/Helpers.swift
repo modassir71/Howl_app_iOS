@@ -512,4 +512,116 @@ extension UIViewController {
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
+    
+  /*  func showToast(message: String) {
+        /*
+         Stop Keyboard Interactions
+         */
+        view.endEditing(true)
+        let windowRootView: UIView = appDelegate.topViewControllerNotIncludeSystemAlert()?.view ?? self.view
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: windowRootView.frame.size.height - 100, width: 300, height: 35))
+        messageLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        messageLabel.textColor = UIColor.white
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 12)
+        messageLabel.text = message
+        messageLabel.center.x = windowRootView.center.x
+        messageLabel.alpha = 1.0
+        messageLabel.layer.cornerRadius = 10
+        messageLabel.clipsToBounds = true
+        windowRootView.addSubview(messageLabel)
+        //addConstraint(toastLabel: messageLabel, windowRootView: windowRootView)
+        
+        //animate on removal
+        UIView.animate(withDuration: 4, delay: 1, options: .curveEaseOut, animations: {
+            messageLabel.alpha = 0.0
+        }) { completion in
+            messageLabel.removeFromSuperview()
+        }
+    }*/
+}
+extension AppDelegate {
+    var appDelegate: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    // MARK :- -
+    func topViewController(_ base: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
+        
+        if let nav = base as? UINavigationController {
+            return topViewController(nav.visibleViewController)
+        }
+        
+        if let tab = base as? UITabBarController {
+            let moreNavigationController = tab.moreNavigationController
+            
+            if let top = moreNavigationController.topViewController, top.view.window != nil {
+                return topViewController(top)
+            } else if let selected = tab.selectedViewController {
+                return topViewController(selected)
+            }
+        }
+        
+        if let presented = base?.presentedViewController {
+            return topViewController(presented)
+        }
+        
+        return base
+    }
+    
+    // MARK :- -
+    func topViewControllerNotIncludeSystemAlert(_ base: UIViewController? = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController) -> UIViewController? {
+        
+        if let nav = base as? UINavigationController {
+            return topViewController(nav.visibleViewController)
+        }
+        
+        if let tab = base as? UITabBarController {
+            let moreNavigationController = tab.moreNavigationController
+            
+            if let top = moreNavigationController.topViewController, top.view.window != nil {
+                return topViewController(top)
+            } else if let selected = tab.selectedViewController {
+                return topViewController(selected)
+            }
+        }
+        
+        if let presented = base?.presentedViewController {
+            if presented is UIAlertController {
+                return base
+            }
+            return topViewController(presented)
+        }
+        
+        return base
+    }
+    
+    public func changeRootViewController(_ rootViewController: UIViewController, animated: Bool = true, from: UIViewController? = nil, completion: ((Bool) -> Void)? = nil) {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        if let window = window, animated {
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = rootViewController
+                window.makeKeyAndVisible()
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: completion)
+        } else {
+            window?.rootViewController = rootViewController
+        }
+    }
+   
+    public func changeRootViewControllerAfterDismiss(_ from: UIViewController? = nil, to: UIViewController, completion: ((Bool) -> Void)? = nil) {
+        if let presenting = from?.presentingViewController {
+            presenting.view.alpha = 0
+            from?.dismiss(animated: false, completion: {
+                self.changeRootViewController(to, completion: completion)
+            })
+        } else {
+            changeRootViewController(to, completion: completion)
+        }
+    }
+    
+    
+    
+    
 }

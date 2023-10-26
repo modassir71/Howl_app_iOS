@@ -40,6 +40,7 @@ class AddNewPersonVc: UIViewController {
     var nickName: String?
     var contryCode: String?
     var phoneNumber: String?
+    var messageType: String?
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +150,21 @@ class AddNewPersonVc: UIViewController {
     }
     
     @IBAction func whatsappBtnPress(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if nameTxtFld.text == ""{
+            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your name")
+        }else if phoneNoTxtFld.text == ""{
+            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your phone number")
+        }else{
+            if sender.isSelected {
+                whatsAppBtn.backgroundColor = ColorConstant.greenColor
+                messageType = "WHATSAPP"
+            }else{
+                whatsAppBtn.backgroundColor = ColorConstant.pinkColor
+                messageType = "iMessage"
+            }
+            
+        }
     }
     
     
@@ -162,8 +178,11 @@ class AddNewPersonVc: UIViewController {
             } else {
                 personImageData = Data()
             }
-            print("PhoneNumber", phoneNoTxtFld.text!)
-            let newPerson = Person(name: nameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: "WHATSAPP", image: personImageData)
+            if messageType == nil{
+                messageType = "iMessage"
+            }
+            print("PhoneNumber", messageType!)
+            let newPerson = Person(name: nameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: messageType ?? "", image: personImageData)
             if isEdit == true {
                 //Update data
                 AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)

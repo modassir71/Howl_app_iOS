@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import AVFAudio
 
 class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 //MARK: - Outlet

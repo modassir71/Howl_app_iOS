@@ -176,11 +176,9 @@ class AddDogViewController: UIViewController {
        }else{
            createBtn.setTitle(DogConstantString.create, for: .normal)
        }
-//       if genderType == "FEMALE"{
-//           femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-//       }else{
-//           maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-//       }
+       colorTxtFld.placeholder = "Colour"
+       microchipNumberTxtFld.placeholder = "Microchip Number"
+       districtiveFeature.placeholder = "Districtive Features"
        
     }
 //    MARK: - Customize text field

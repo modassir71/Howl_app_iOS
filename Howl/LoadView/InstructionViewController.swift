@@ -58,6 +58,4 @@ class InstructionViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-
 }

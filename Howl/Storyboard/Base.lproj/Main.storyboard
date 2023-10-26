@@ -999,7 +999,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-hb-DM2">
-                                        <rect key="frame" x="85" y="42" width="95.666666666666686" height="32.666666666666657"/>
+                                        <rect key="frame" x="85" y="42" width="93" height="32.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Aileron-Light" family="Aileron" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1050,13 +1050,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title=" "/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap 3 Times To" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-Rw-d5t">
-                                        <rect key="frame" x="45" y="50" width="85" height="39.666666666666657"/>
+                                        <rect key="frame" x="45" y="49.333333333333258" width="85" height="41"/>
                                         <fontDescription key="fontDescription" name="Aileron-Light" family="Aileron" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOWL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-1f-BoK">
-                                        <rect key="frame" x="54.999999999999993" y="102.66666666666663" width="65.333333333333314" height="25.666666666666657"/>
+                                        <rect key="frame" x="52.666666666666657" y="102" width="70" height="26.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Aileron-Black" family="Aileron" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1229,13 +1229,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concern Related to" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-bw-8HA">
-                                        <rect key="frame" x="30" y="67" width="261.33333333333331" height="35"/>
+                                        <rect key="frame" x="30" y="67" width="273" height="36"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-mE-KaC">
-                                        <rect key="frame" x="0.0" y="116.99999999999997" width="375" height="402.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="117.99999999999997" width="375" height="401.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TI6-9g-37M">
@@ -2307,7 +2307,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select HOWL Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-19-v29">
-                                        <rect key="frame" x="93" y="90" width="189" height="23.333333333333329"/>
+                                        <rect key="frame" x="89.666666666666671" y="90" width="195.66666666666663" height="24.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2509,7 +2509,6 @@
                                                 <state key="normal" title="Camera"/>
                                                 <connections>
                                                     <action selector="cameraBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="6Lm-en-mo5"/>
-                                                    <action selector="microphoneBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="tDJ-fI-N1B"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbL-sj-yPB">
@@ -2523,7 +2522,6 @@
                                                 <state key="normal" title="Grant All Permission"/>
                                                 <connections>
                                                     <action selector="allPermissionBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="g4d-ld-7cl"/>
-                                                    <action selector="notificationsBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="0I6-q4-fRR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2945,7 +2943,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YY-g3-fBG">
                                                         <rect key="frame" x="0.0" y="410" width="374.66666666666669" height="44"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Districtive Feature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lD9-PH-q5Q">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Districtive Features" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lD9-PH-q5Q">
                                                                 <rect key="frame" x="20" y="0.0" width="334.66666666666669" height="44"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
