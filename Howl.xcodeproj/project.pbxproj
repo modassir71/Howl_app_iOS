@@ -126,6 +126,8 @@
 		18E02AA42A97671D007E2FF5 /* ConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E02AA22A97671D007E2FF5 /* ConcernCell.xib */; };
 		18E02AA72A977EED007E2FF5 /* ModelDogIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */; };
 		18EE75F62AE10FED00C1D7D8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */; };
+		18EF9D142AEBCDF5003EA7A0 /* MailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9D132AEBCDF5003EA7A0 /* MailController.swift */; };
+		18EF9D162AEBD0E4003EA7A0 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9D152AEBD0E4003EA7A0 /* CSVWriter.swift */; };
 		18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */; };
 		18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */; };
 		18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */; };
@@ -275,6 +277,8 @@
 		18E02AA22A97671D007E2FF5 /* ConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConcernCell.xib; sourceTree = "<group>"; };
 		18E02AA62A977EED007E2FF5 /* ModelDogIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDogIssues.swift; sourceTree = "<group>"; };
 		18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		18EF9D132AEBCDF5003EA7A0 /* MailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailController.swift; sourceTree = "<group>"; };
+		18EF9D152AEBD0E4003EA7A0 /* CSVWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGFlingActionButton.swift; sourceTree = "<group>"; };
 		18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchSliderAnimation.swift; sourceTree = "<group>"; };
 		18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_dogWalk.json; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 		18261DE22AD6AB6900E388C5 /* Extr Code */ = {
 			isa = PBXGroup;
 			children = (
+				18EF9D152AEBD0E4003EA7A0 /* CSVWriter.swift */,
+				18EF9D132AEBCDF5003EA7A0 /* MailController.swift */,
 				18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */,
 				188E77252AD928AD0066F117 /* NetworkManager.swift */,
 				18261DF32AD6D17C00E388C5 /* System Log.swift */,
@@ -1312,6 +1318,7 @@
 				18471E322AA5D1980046EA05 /* AddNewPersonVc.swift in Sources */,
 				1842E3082A9F2263007BAE33 /* AddNewDogVc.swift in Sources */,
 				18530A6C2AB2D11600C190D3 /* AddNewDogModel.swift in Sources */,
+				18EF9D142AEBCDF5003EA7A0 /* MailController.swift in Sources */,
 				18B3FA732AD5347100F40F56 /* NetworkManagers.swift in Sources */,
 				181C3A572A926A8A00B50DE7 /* DogWalkingViewController.swift in Sources */,
 				18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */,
@@ -1356,6 +1363,7 @@
 				18261DE62AD6CB2A00E388C5 /* MonitorMeLocationManager.swift in Sources */,
 				18A7436C2AE1177000BD7CED /* RecordViewController.swift in Sources */,
 				188BEB572AA9DDB6000C6DF4 /* WorkViewController.swift in Sources */,
+				18EF9D162AEBD0E4003EA7A0 /* CSVWriter.swift in Sources */,
 				18261DEC2AD6CD3A00E388C5 /* DataManager.swift in Sources */,
 				18B3FA6E2AD5235F00F40F56 /* MonitorLocationManager.swift in Sources */,
 				188E77262AD928AD0066F117 /* NetworkManager.swift in Sources */,
@@ -1560,6 +1568,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location for turn-by-turn directions even when the app is in the background.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide nearby recommendations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone for recording audio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo library to save photos and videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1571,7 +1580,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231025";
+				MARKETING_VERSION = "TV-1.0.0.20231027";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1599,6 +1608,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location for turn-by-turn directions even when the app is in the background.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide nearby recommendations.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to the microphone for recording audio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need access to your photo library to save photos and videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1610,7 +1620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231025";
+				MARKETING_VERSION = "TV-1.0.0.20231027";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

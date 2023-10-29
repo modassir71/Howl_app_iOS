@@ -62,6 +62,9 @@ class DogWalkingViewController: UIViewController {
       override func viewWillAppear(_ animated: Bool) {
           self.navigationController?.setNavigationBarHidden(true, animated: animated)
           self.tabBarController?.tabBar.isHidden = true
+//          DispatchQueue.main.async {
+//              self._setupSliderView()
+//          }
       }
       
       //MARK: - SetUi
@@ -257,7 +260,9 @@ class DogWalkingViewController: UIViewController {
                 }
                 
                 kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL")
+                UserDefaults.standard.set(0, forKey: "SliderPosition")
                 navigationController?.pushViewController(customViewController, animated: true)
+                
                 resetHOWLTap()
                 
             default:
@@ -410,23 +415,46 @@ class DogWalkingViewController: UIViewController {
          }
       
       func sendWalkIDToEmergencyContact() {
-          for person in AddPeopleDataManager.sharedInstance.people{
-              let messageType = person.personNotificationType
-              print(messageType)
-          }
-        let notificationType = ""
+          var notificationType = ""
+          var mobileNo = ""
           let message = "Hello, please follow my walk on HOWL:"+base_url+kDataManager.monitorMeID
-          let personCode = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personCountryCode ?? ""
-          let personMobileNumber = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
-          let collapseMobile: String = personCode + personMobileNumber
-          print(collapseMobile)
-          let untrimmedMobile: String = collapseMobile
-          print(untrimmedMobile)
-          let mobile = untrimmedMobile.replacingOccurrences(of: " ", with: "")
-          let shareItem = [message]
-          let activityViewController = UIActivityViewController(activityItems: shareItem, applicationActivities: nil)
-          activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
-          self.present(activityViewController, animated: true, completion: nil)
+          for person in AddPeopleDataManager.sharedInstance.people{
+              notificationType = person.personNotificationType
+              mobileNo = person.personCountryCode+person.personMobileNumber
+              print("MobileNo", mobileNo)
+              print("notifiiiii",notificationType)
+          }
+          if notificationType == "WHATSAPP"{
+              if let mobileNoEncoded = mobileNo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                 let messageEncoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                  let urlWhats = "whatsapp://send?phone=\(mobileNoEncoded)&text=\(messageEncoded)"
+                  
+                  if let whatsappURL = URL(string: urlWhats) {
+                      if UIApplication.shared.canOpenURL(whatsappURL) {
+                          UIApplication.shared.open(whatsappURL)
+                      } else {
+                          print("Install WhatsApp")
+                      }
+                  }
+              }
+              
+          }else{
+              let urlSMS = "sms://" + mobileNo + "&body=" + message
+              if let urlString = urlSMS.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+                  
+                  if let smsURL = URL(string: urlString) {
+                      
+                      if UIApplication.shared.canOpenURL(smsURL){
+                          
+                          UIApplication.shared.open(smsURL, options: [:], completionHandler: nil)
+                      } else {
+                          kAlertManager.triggerAlertTypeWarning(warningTitle: "INSTALL MESSAGES",
+                                                                warningMessage: "You do not have the messages app installed on your device",
+                                                                initialiser: self)
+                      }
+                  }
+              }
+          }
           
       }
       // MARK: - Animation View

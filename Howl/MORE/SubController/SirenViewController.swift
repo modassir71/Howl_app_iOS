@@ -116,11 +116,14 @@ class SirenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         if iscomeFromInstruction == true{
             let storyboard = AppStoryboard.Main.instance
             let permissiionVc = storyboard.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            SoundDataManager.sharedInstance.saveSiren(index: sirenPickerView.selectedRow(inComponent: 0))
+            SoundManager.sharedInstance.stopSiren()
             permissiionVc.iscomeFromInstruction = iscomeFromInstruction
             self.navigationController?.pushViewController(permissiionVc, animated: true)
             
         }else{
             SoundDataManager.sharedInstance.saveSiren(index: sirenPickerView.selectedRow(inComponent: 0))
+            SoundManager.sharedInstance.stopSiren()
             self.navigationController?.popViewController(animated: true)
         }
     }

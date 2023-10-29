@@ -76,6 +76,19 @@ class MyPackVc: UIViewController  {
         let addNewDogVc = storyboard.instantiateViewController(withIdentifier: "PersonListingVC") as! PersonListingVC
         self.navigationController?.pushViewController(addNewDogVc, animated: true)
     }
+    
+    @IBAction func shopBtnPress(_ sender: Any) {
+        let newViewController = ShopVc(nibName: "ShopVc", bundle: nil)
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    
+    @IBAction func tipsBtnPress(_ sender: UIButton) {
+        let newViewController = TipsViewController(nibName: "TipsViewController", bundle: nil)
+               self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    
 }
 
 //MARK: - Delegate and DataSource Method

@@ -22,6 +22,8 @@ class AddNewPersonVc: UIViewController {
     @IBOutlet weak var profilePicImg: UIImageView!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var whatsAppBtn: UIButton!
+    
+    @IBOutlet weak var txtMsgBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var contactsBtn: UIButton!
     @IBOutlet weak var phoneNoTxtFld: UITextField!
@@ -41,6 +43,8 @@ class AddNewPersonVc: UIViewController {
     var contryCode: String?
     var phoneNumber: String?
     var messageType: String?
+    var senderType: String?
+    var type: Bool?
     //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +55,19 @@ class AddNewPersonVc: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        if type == true{
+            if senderType == "WHATSAPP"{
+                whatsAppBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+                txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            }else{
+                whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+                txtMsgBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            }
+        }
         //_SetData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,11 +127,11 @@ class AddNewPersonVc: UIViewController {
 //        nickNameTxtFld.layer.borderColor = color.cgColor
         contactsBtn.layer.cornerRadius = 10.0
         contactsBtn.backgroundColor = TxtFldColor.greenColor
-        whatsAppBtn.layer.cornerRadius = 10.0
+      //  whatsAppBtn.layer.cornerRadius = 10.0
         createBtn.layer.cornerRadius = 10.0
         contactsBtn.clipsToBounds = true
         createBtn.backgroundColor = TxtFldColor.greenColor
-        whatsAppBtn.clipsToBounds = true
+//      whatsAppBtn.clipsToBounds = true
         createBtn.clipsToBounds = true
         phoneNoTxtFld.keyboardType = .numberPad
         if isEdit == true{
@@ -150,26 +166,36 @@ class AddNewPersonVc: UIViewController {
     }
     
     @IBAction func whatsappBtnPress(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if nameTxtFld.text == ""{
-            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your name")
-        }else if phoneNoTxtFld.text == ""{
-            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your phone number")
-        }else{
-            if sender.isSelected {
-                whatsAppBtn.backgroundColor = ColorConstant.greenColor
-                messageType = "WHATSAPP"
-            }else{
-                whatsAppBtn.backgroundColor = ColorConstant.pinkColor
-                messageType = "iMessage"
-            }
-            
-        }
+        messageType = "WHATSAPP"
+        whatsAppBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+//        sender.isSelected = !sender.isSelected
+//        if nameTxtFld.text == ""{
+//            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your name")
+//        }else if phoneNoTxtFld.text == ""{
+//            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your phone number")
+//        }else{
+//            if sender.isSelected {
+//                whatsAppBtn.backgroundColor = ColorConstant.greenColor
+//                messageType = "WHATSAPP"
+//            }else{
+//                whatsAppBtn.backgroundColor = ColorConstant.pinkColor
+//                messageType = "iMessage"
+//            }
+//
+//        }
+    }
+    
+    
+    @IBAction func textBtnPress(_ sender: UIButton) {
+        messageType = "iMessage"
+        whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        txtMsgBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
     }
     
     
     @IBAction func createBtnPress(_ sender: UIButton) {
-        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "")
+        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: messageType ?? "")
         let status = validationResult.0
         let message = validationResult.1
         if status == true{

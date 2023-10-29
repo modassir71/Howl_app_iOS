@@ -134,64 +134,56 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         return 110
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var delete: UIContextualAction!
-        var swipeActions = [UIContextualAction]()
-        var edit: UIContextualAction!
-        //var status: UIContextualAction!
-        delete = UIContextualAction(style: .normal, title: DogConstantString.deleteTitle) {  (contextualAction, view, boolValue) in
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = self.peopleDataManager.people[indexPath.row]
+        
+        let alert = UIAlertController(title: DogConstantString.warningTitle,
+                                      message: DogConstantString.editMsg,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle, style: .default, handler: { _ in
+            let storyBoard = AppStoryboard.Main.instance
+            let addNewVc = storyBoard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
+            addNewVc.isEdit = true
+            addNewVc.name = selectedItem.personName
+            addNewVc.profileImge = selectedItem.personImage
+            addNewVc.contryCode = selectedItem.personCountryCode
+            addNewVc.type = true
+            addNewVc.senderType = selectedItem.personNotificationType
+            addNewVc.phoneNumber = selectedItem.personMobileNumber
             
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(addNewVc, animated: true)
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: DogConstantString.deleteTitle) { (contextualAction, view, boolValue) in
             let alert = UIAlertController(title: DogConstantString.warningTitle,
                                           message: DogConstantString.warningMsg,
                                           preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
-            alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle,
-                                          style: .default,
-                                          handler: { _ in
-                
+            alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle, style: .default, handler: { _ in
                 self.deletePeople(index: indexPath.row)
             }))
+            
             self.present(alert, animated: true, completion: nil)
-            
         }
-        edit = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
-            
-            let alert = UIAlertController(title: DogConstantString.warningTitle,
-                                          message: DogConstantString.editMsg,
-                                          preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-            
-            alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle,
-                                          style: .default,
-                                          handler: { _ in
-                let storyBoard = AppStoryboard.Main.instance
-                let addNewVc = storyBoard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
-                let items = self.peopleDataManager.people[indexPath.row]
-                self.peopleDataManager.selectedIndex = indexPath.row
-                addNewVc.isEdit = true
-                addNewVc.name = items.personName
-                addNewVc.profileImge =  items.personImage
-               // addNewVc.nickName = items.personNickname
-                addNewVc.contryCode = items.personCountryCode
-                addNewVc.phoneNumber = items.personMobileNumber
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(addNewVc, animated: true)
-                }
-            }))
-            self.present(alert, animated: true, completion: nil)
-         //   edit.backgroundColor = UIColor.lightGray
-        }
+        
         delete.backgroundColor = UIColor.red
-        edit.backgroundColor = UIColor.lightGray
         
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete])
         
-        swipeActions = [delete, edit]
-        
-        return UISwipeActionsConfiguration(actions: swipeActions)
+        return swipeActions
     }
+
     
 //    MARK: - Delete People method
     func deletePeople(index: Int!){

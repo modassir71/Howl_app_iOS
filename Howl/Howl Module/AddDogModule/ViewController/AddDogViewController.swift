@@ -42,6 +42,7 @@ class AddDogViewController: UIViewController {
     var genderType: String?
     var dogType: String?
     let datePicker = UIDatePicker()
+    var type: Bool?
 //    MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,19 +56,21 @@ class AddDogViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
-        if genderType == "MALE"{
-            maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-            femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        }else{
-            maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-            femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-        }
-        if dogType == "INTACT"{
-            inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-            neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        }else{
-            inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-            neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        if type == true{
+            if genderType == "MALE"{
+                maleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+                femaleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            }else{
+                maleBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+                femaleBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            }
+            if dogType == "INTACT"{
+                inatactBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+                neuteredBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            }else{
+                inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+                neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            }
         }
     }
     
@@ -236,7 +239,7 @@ class AddDogViewController: UIViewController {
     
     @IBAction func createdBtnOPress(_ sender: UIButton) {
        
-        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", microchipDb: microchipDatabaseTxtFld.text ?? "", microchipNo: microchipNumberTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "")
+        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", microchipDb: microchipDatabaseTxtFld.text ?? "", microchipNo: microchipNumberTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "", gender: genderType ?? "", type: dogType ?? "")
         let status = validationResult.0
         let message = validationResult.1
             if status == true{

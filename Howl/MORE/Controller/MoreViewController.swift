@@ -13,9 +13,9 @@ class MoreViewController: UIViewController {
     
     @IBOutlet weak var privacyBtn: UIButton!
     @IBOutlet weak var eulaBtn: UIButton!
-    @IBOutlet weak var tipsBtn: UIButton!
+    //@IBOutlet weak var tipsBtn: UIButton!
     
-    @IBOutlet weak var shopBtn: UIButton!
+   // @IBOutlet weak var shopBtn: UIButton!
     @IBOutlet weak var unarchiveBtn: UIButton!
     @IBOutlet weak var configureBtn: UIButton!
     @IBOutlet weak var permissionBtn: UIButton!
@@ -42,7 +42,7 @@ class MoreViewController: UIViewController {
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
         infoTxtView.isEditable = false
-        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn, tipsBtn, shopBtn]
+        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn]
         for button in buttons {
             button.layer.cornerRadius = 10.0
             button.layer.shadowColor = UIColor.black.cgColor

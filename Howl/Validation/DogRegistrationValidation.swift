@@ -13,9 +13,13 @@ final class RegistrationValidation {
     
 //    MARK: - User Validation
     
-    func validationBasicInfo(name: String?, mobileNumber: String?) -> (Bool, String) {
+    func validationBasicInfo(name: String?, mobileNumber: String?, notificationType: String?) -> (Bool, String) {
         guard name != "" && mobileNumber != "" else {
             return (false, "Please fill the required fields")
+        }
+        
+        guard notificationType != "" else{
+            return (false, "Please select Sender Type")
         }
         
 //        guard name!.count >= 3 && containsOnlyCharacters(name!) == true else {
@@ -36,9 +40,15 @@ final class RegistrationValidation {
     
 //    MARK: - Dog Validation
     
-    func validationDogInfo(dogName: String?, breed: String?, color: String?, dob: String?, microchipDb: String?, microchipNo: String?, districtiveFeature: String?) ->(Bool, String){
+    func validationDogInfo(dogName: String?, breed: String?, color: String?, dob: String?, microchipDb: String?, microchipNo: String?, districtiveFeature: String?, gender: String, type: String) ->(Bool, String){
         guard dogName != "" && breed != "" && color !=  "" && dob != "" && microchipDb != "" && microchipNo != "" && districtiveFeature != "" else{
             return (false, "Please fill the required fields")
+        }
+        guard gender != "" else{
+            return(false, "Please select your dog gender")
+        }
+        guard type != "" else{
+            return(false, "Please select your dog type")
         }
         return (true, "Validation successfull")
     }

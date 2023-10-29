@@ -7,13 +7,13 @@
 
 import Foundation
 protocol InitialDogInfoDelegate{
-    func initialDogInfoVlaidate(dogName: String, breed: String, color: String, dob: String, microchipDb: String, microchipNo: String, districtiveFeature: String) -> (Bool, String)
+    func initialDogInfoVlaidate(dogName: String, breed: String, color: String, dob: String, microchipDb: String, microchipNo: String, districtiveFeature: String, gender: String, type: String) -> (Bool, String)
 }
 
 
 class AddDogVm: InitialDogInfoDelegate{
-    func initialDogInfoVlaidate(dogName: String, breed: String, color: String, dob: String, microchipDb: String, microchipNo: String, districtiveFeature: String) -> (Bool, String){
-        let response = RegistrationValidation.shared.validationDogInfo(dogName: dogName, breed: breed, color: color, dob: dob, microchipDb: microchipDb, microchipNo: microchipNo, districtiveFeature: districtiveFeature)
+    func initialDogInfoVlaidate(dogName: String, breed: String, color: String, dob: String, microchipDb: String, microchipNo: String, districtiveFeature: String, gender: String, type: String) -> (Bool, String){
+        let response = RegistrationValidation.shared.validationDogInfo(dogName: dogName, breed: breed, color: color, dob: dob, microchipDb: microchipDb, microchipNo: microchipNo, districtiveFeature: districtiveFeature, gender: gender, type: type)
         return response
     }
 }

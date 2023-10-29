@@ -7,8 +7,13 @@
 
 import UIKit
 import Lottie
+import Social
+import CoreAudio
+import FBSDKShareKit
 
-class DogListingViewController: UIViewController {
+class DogListingViewController: UIViewController, SharingDelegate {
+   
+    
 
 //  MARK:- Outlet
     @IBOutlet weak var importBtn: UIButton!
@@ -20,6 +25,7 @@ class DogListingViewController: UIViewController {
         var animationView = LottieAnimationView()
         var instance  = DogDataManager.shared
          let emptyLbl = UILabel()
+    var emailController: MailController!
     //    MARK: - Life cycle
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -156,69 +162,234 @@ class DogListingViewController: UIViewController {
             }
             return cell
         }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let items = self.instance.dogs[indexPath.row]
+
+            // Present an alert to confirm the edit action
+            let alert = UIAlertController(title: DogConstantString.warningTitle,
+                                          message: DogConstantString.editMsg,
+                                          preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle, style: .default) { [weak self] _ in
+                guard let self = self else { return }
+
+                let storyBoard = AppStoryboard.Main.instance
+                let editDogVc = storyBoard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
+                self.instance.selectedIndex = indexPath.row
+                editDogVc.isUpdate = true
+                editDogVc.dogName = items.dogName
+                editDogVc.profileImage = items.dogImage
+                editDogVc.breed = items.dogBreed
+                editDogVc.color = items.dogColour
+                editDogVc.dob = items.dogDOB
+                editDogVc.microchipDb = items.dogMicrochipSupplier
+                editDogVc.microchipNumber = items.dogMicrochipNumber
+                editDogVc.feature = items.dogDistinctiveFeatures
+                editDogVc.genderType = items.dogSex
+                editDogVc.type = true
+                editDogVc.dogType = items.dogNeuteredOrSpayed
+
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(editDogVc, animated: true)
+                }
+            })
+
+            self.present(alert, animated: true, completion: nil)
+        }
 
         
         func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            var delete: UIContextualAction!
+           // var delete: UIContextualAction!
             var swipeActions = [UIContextualAction]()
-            var edit: UIContextualAction!
+            var status: UIContextualAction!
             //var status: UIContextualAction!
-            delete = UIContextualAction(style: .normal, title: DogConstantString.deleteTitle) {  (contextualAction, view, boolValue) in
+            if let dogStolen = instance.dogs[indexPath.row].dogStolen {
                 
-                let alert = UIAlertController(title: DogConstantString.warningTitle,
-                                              message: DogConstantString.warningMsg,
+                switch dogStolen {
+                    
+                case true:
+                    
+                    status = UIContextualAction(style: .normal, title: "Safe") {  (contextualAction, view, boolValue) in
+                        
+                        self.instance.dogs[indexPath.row].dogStolen = false
+                        _ = self.instance.saveDogs()
+                        self.dogTblView.setEditing(false, animated: true)
+                    }
+                    status.backgroundColor = ColorConstant.greenColor//buttonGreen.colorWithHexString()
+                case false:
+                    
+                    status = UIContextualAction(style: .normal, title: "Incident") {  (contextualAction, view, boolValue) in
+                        
+                        // Choose who should monitor you
+                        let alert = UIAlertController(title: "SET INCIDENT",
+                                                      message: "Select an incident that relates to this theft",
+                                                      preferredStyle: .actionSheet)
+                        
+                        for (index, walk) in kDataManager.monitorMeLocalHistoric.enumerated() {
+                            
+                            print(String(describing: walk))
+                            
+                            alert.addAction(UIAlertAction(title: walk[0].date + "-" + walk[0].time,
+                                                          style: .default,
+                                                          handler: { _ in
+                                
+                                self.setStolen(indexOfDog: indexPath.row, indexOfIncident: index)
+                            }))
+                        }
+                        
+                        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    status.backgroundColor = .black
+                }
+            }
+            
+            // If the dog is stolen allow email of incident data
+            var email: UIContextualAction!
+            
+            if instance.dogs[indexPath.row].dogStolen == true {
+                
+                email = UIContextualAction(style: .normal, title: "Email") {  (contextualAction, view, boolValue) in
+                    
+                    self.emailController = MailController()
+                    self.emailController.sendIncident(initialiser: self, dogIndex: indexPath.row)
+                    self.dogTblView.setEditing(false, animated: true)
+                }
+                
+                email.backgroundColor = .cyan//buttonTurqoise.colorWithHexString()
+            }
+            
+//            // If the dog is stolen allow archiving
+//            var archive: UIContextualAction!
+//
+//            if instance.dogs[indexPath.row].dogStolen == true {
+//
+//                archive = UIContextualAction(style: .normal, title: "Archive") {  (contextualAction, view, boolValue) in
+//
+//                    self.dogTblView.setEditing(false, animated: true)
+//
+//                    // Copy the dog to the archive
+//                    self.instance.dogsArchive.append(self.instance.dogs[indexPath.row])
+//
+//                    if self.instance.saveDogsArchive() == true {
+//
+//                        self.instance.dogs.remove(at: indexPath.row)
+//                        _ = self.instance.saveDogs()
+//
+//                        kAlertManager.triggerAlertTypeWarning(warningTitle: "SUCCESS",
+//                                                              warningMessage: "Dog archived - see the info menu to unarchive if required",
+//                                                              initialiser: self)
+//
+//                        self.dogTblView.reloadData()
+//
+//                    } else {
+//
+//                        kAlertManager.triggerAlertTypeWarning(warningTitle: "ARCHIVE ERROR",
+//                                                              warningMessage: "System error - please try again or contact support to review",
+//                                                              initialiser: self)
+//                    }
+//                }
+//
+//                archive.backgroundColor = .darkGray
+//            }
+            
+            // if the dog is stolen allow social posting
+            var social: UIContextualAction!
+            
+            if instance.dogs[indexPath.row].dogStolen == true {
+                
+                social = UIContextualAction(style: .normal, title: "Social") {  (contextualAction, view, boolValue) in
+                    
+                    self.dogTblView.setEditing(false, animated: true)
+                    self.createAndShareCSV(dogIndex: indexPath.row)
+                }
+                
+                social.backgroundColor = .lightGray
+            }
+            
+            
+            var delete: UIContextualAction!
+            
+            delete = UIContextualAction(style: .normal, title: "Delete") {  (contextualAction, view, boolValue) in
+                
+                let alert = UIAlertController(title: "Warning",
+                                              message: "You are about to delete from your pack.  Do you wish to proceed?",
                                               preferredStyle: .alert)
+                
                 alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle,
+                
+                alert.addAction(UIAlertAction(title: "Proceed",
                                               style: .default,
                                               handler: { _ in
+                    
+                   // self.deleteFromPack(type: "dogs", index: indexPath.row)
                     self.deleteDog(index: indexPath.row)
                 }))
                 self.present(alert, animated: true, completion: nil)
-                
             }
-            edit = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
+            
+            delete.backgroundColor = .red//buttonRed.colorWithHexString()
+            
+            if instance.dogs[indexPath.row].dogStolen == true {
                 
-                let alert = UIAlertController(title: DogConstantString.warningTitle,
-                                              message: DogConstantString.editMsg,
-                                              preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-                
-                alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle,
-                                              style: .default,
-                                              handler: { _ in
-                    let storyBoard = AppStoryboard.Main.instance
-                    let editDogVc = storyBoard.instantiateViewController(withIdentifier: "AddDogViewController") as! AddDogViewController
-                    let items = self.instance.dogs[indexPath.row]
-                    self.instance.selectedIndex = indexPath.row
-                    editDogVc.isUpdate = true
-                    editDogVc.dogName = items.dogName
-                    editDogVc.profileImage =  items.dogImage
-                    editDogVc.breed = items.dogBreed
-                    editDogVc.color = items.dogColour
-                    editDogVc.dob = items.dogDOB
-                    editDogVc.microchipDb = items.dogMicrochipSupplier
-                    editDogVc.microchipNumber = items.dogMicrochipNumber
-                    editDogVc.feature = items.dogDistinctiveFeatures
-                    editDogVc.genderType = items.dogSex
-                    editDogVc.dogType = items.dogNeuteredOrSpayed
-                    print(items.dogSex ?? "")
-                    print(items.dogNeuteredOrSpayed ?? "")
-                    DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(editDogVc, animated: true)
-                    }
-                }))
-                self.present(alert, animated: true, completion: nil)
-             //   edit.backgroundColor = UIColor.lightGray
+                swipeActions = [delete, status, email, social]
+            } else {
+                swipeActions = [delete, status]
             }
-            delete.backgroundColor = UIColor.red
-            edit.backgroundColor = UIColor.lightGray
-            
-            
-            swipeActions = [delete, edit]
-            
             return UISwipeActionsConfiguration(actions: swipeActions)
+        }
+        
+        func createAndShareCSV(dogIndex: Int) {
+            // Create the CSV data
+            var csvString = "ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL\n"
+            
+            for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
+                let row = "\(walk.id ?? ""),\(walk.date ?? ""),\(walk.time ?? ""),\(walk.longitude ?? ""),\(walk.latitude ?? ""),\(walk.speed ?? ""),\(walk.course ?? ""),\(walk.battery ?? ""),\(walk.status ?? ""),\(walk.w3wWords ?? ""),\(walk.w3wURL ?? "N/A")\n"
+                csvString += row
+            }
+            
+            if let data = csvString.data(using: .utf8) {
+                let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("incident.csv")
+                
+                do {
+                    try data.write(to: fileURL)
+                } catch {
+                    print("Error writing CSV file: \(error)")
+                    return
+                }
+                
+                // Share the CSV file
+                let activityViewController = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+                activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
+                
+                // Find the most appropriate view controller to present the activity view controller
+                if let presentingViewController = UIApplication.shared.windows.first?.rootViewController {
+                    presentingViewController.present(activityViewController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+            // print("Conmpleted: \(results)")
+        }
+        
+        func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+            // print("Error: \(error)")
+        }
+        
+        func sharerDidCancel(_ sharer: Sharing) {
+            // print("Cancelled: \(sharer)")
+        }
+        
+        func setStolen(indexOfDog: Int, indexOfIncident: Int) {
+            
+            instance.dogs[indexOfDog].dogStolen = true
+            instance.dogs[indexOfDog].dogIncident = kDataManager.monitorMeLocalHistoric[indexOfIncident]
+            _ = instance.saveDogs()
+            self.dogTblView.setEditing(false, animated: true)
         }
         
         func deleteDog(index: Int!){

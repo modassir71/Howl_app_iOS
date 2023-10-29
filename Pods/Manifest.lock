@@ -1,6 +1,22 @@
 PODS:
   - Alamofire (5.7.1)
   - CarbonKit (2.3.1)
+  - FacebookCore (0.9.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookShare (0.9.0):
+    - FacebookCore (~> 0.9.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKShareKit (~> 5.0)
+  - FBSDKCoreKit (5.15.1):
+    - FBSDKCoreKit/Basics (= 5.15.1)
+    - FBSDKCoreKit/Core (= 5.15.1)
+  - FBSDKCoreKit/Basics (5.15.1)
+  - FBSDKCoreKit/Core (5.15.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKShareKit (5.15.1):
+    - FBSDKShareKit/Share (= 5.15.1)
+  - FBSDKShareKit/Share (5.15.1):
+    - FBSDKCoreKit (~> 5.0)
   - Firebase/Core (10.16.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (~> 10.16.0)
@@ -105,6 +121,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CarbonKit
+  - FacebookShare
   - Firebase/Core
   - Firebase/Database
   - GoogleMaps
@@ -120,6 +137,10 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - CarbonKit
+    - FacebookCore
+    - FacebookShare
+    - FBSDKCoreKit
+    - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
@@ -144,6 +165,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   CarbonKit: b60e24dbdb47179990d5e074efa87ab819c8de98
+  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
+  FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
+  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
+  FBSDKShareKit: 259737eab3cc807087374553abdf588b3096ba55
   Firebase: 25899099b77d255a636e3579c3d9dce10ec150d5
   FirebaseAnalytics: 7b41efc4eba5ff841cc94d5994b5f339361258f4
   FirebaseAppCheckInterop: 82358cff9f33452dd44259e88eea5e562500b1cb
@@ -165,6 +190,6 @@ SPEC CHECKSUMS:
   W3WSwiftApi: 59efd8528755afc26ce91a48dad8d128f2922718
   what3words: af6d77b4fa2044fdfc2a5de3382c52b40514443f
 
-PODFILE CHECKSUM: 068e51715dfeaa844acbbe04e5dde86e5d703466
+PODFILE CHECKSUM: 4b5e727964e7ff85266cd8d66a8426397bdd2a22
 
 COCOAPODS: 1.12.1
