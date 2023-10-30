@@ -11,6 +11,7 @@ class MyPackVc: UIViewController  {
     
     //MARK: - OUTLET
     
+    @IBOutlet weak var viewUpdate: UIButton!
     @IBOutlet weak var profileButtonView: UIView!
     @IBOutlet weak var notificationBtn: UIView!
     @IBOutlet weak var dogCollectionView: UICollectionView!
@@ -68,6 +69,8 @@ class MyPackVc: UIViewController  {
         dogCollectionView.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         dogCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        viewUpdate.layer.cornerRadius = 5.0
+        viewUpdate.clipsToBounds = true
     }
     
     

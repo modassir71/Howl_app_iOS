@@ -44,19 +44,24 @@ class DogWalkingViewController: UIViewController {
       private let locationManager = CLLocationManager()
     var tapsToHOWL: Int! = 0
     var tapTimer: Timer!
-   
+    var lat: String?
+    var long: String?
     
       //MARK: - Life Cycle
       
       override func viewDidLoad() {
           super.viewDidLoad()
           
-          locationManager.delegate = self
-          locationManager.requestWhenInUseAuthorization()
+//          locationManager.delegate = self
+//          locationManager.requestWhenInUseAuthorization()
           setUi()
           DispatchQueue.main.async {
               self._setupSliderView()
           }
+          locationManager.delegate = self
+          locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+          locationManager.requestWhenInUseAuthorization()
+          locationManager.startUpdatingLocation()
       }
       
       override func viewWillAppear(_ animated: Bool) {
@@ -259,7 +264,7 @@ class DogWalkingViewController: UIViewController {
                     print("Slider position",self?.swipeSlider.sliderPosition)
                 }
                 
-                kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL")
+                kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL", latitude: lat ?? "", longitude: long ?? "")
                 UserDefaults.standard.set(0, forKey: "SliderPosition")
                 navigationController?.pushViewController(customViewController, animated: true)
                 
@@ -372,11 +377,12 @@ class DogWalkingViewController: UIViewController {
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
           sendWalkIDToEmergencyContact()
-         // kMonitorMeLocationManager.forceUpdateToMonitorMeServer(with: kDataManager.monitorMeID)
-          updateFirebaseWithModelAndID()
+          print("lattt",lat ?? "")
+          print("lngg",long ?? "")
+          kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL", latitude: lat ?? "", longitude: long ?? "")
       }
       
-      func updateFirebaseWithModelAndID() {
+     /* func updateFirebaseWithModelAndID() {
           let monitorID = kDataManager.monitorMeID//"your_monitor_id" // Replace with the actual monitor ID
              let yourModel = WalkModel(
                 battery: "0",
@@ -412,7 +418,7 @@ class DogWalkingViewController: UIViewController {
                      }
                  }
              }
-         }
+         }*/
       
       func sendWalkIDToEmergencyContact() {
           var notificationType = ""
@@ -503,5 +509,22 @@ extension DogWalkingViewController: CLLocationManagerDelegate {
                 print("error")
             }
         }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+                let latitude = String(location.coordinate.latitude)
+                let longitude = String(location.coordinate.longitude)
+                print("Latitude: \(latitude), Longitude: \(longitude)")
+                lat = latitude
+                long = longitude
+                // Now, you have latitude and longitude as strings in the "latitude" and "longitude" variables.
+                // You can use them as needed.
+            }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location error: \(error.localizedDescription)")
+    }
+
 }
 

@@ -42,6 +42,9 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     var w3wAPI: What3WordsV3!
     var w3wWords: String! = "NOT SET"
     var w3wURL: String! = "NOT SET"
+    var lat: String?
+    var lng: String?
+    
     
     static let sharedInstance: MonitorMeLocationManager = {
         
@@ -195,6 +198,8 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             latitude = String(describing: coord.latitude)
             speed = String(describing: locationObj.speed)
             course = String(describing: locationObj.course)
+            lat = latitude
+            lng = longitude
             
             if firstOutput == true {
                 
@@ -216,7 +221,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                 
                 // First load confirm safe
                 firstOutput = false
-                forceUpdateToMonitorMeServerWithState(state: "Start Session")
+                forceUpdateToMonitorMeServerWithState(state: "Start Session", latitude: latitude, longitude: longitude)
             }
             
             // Set the start date and compare to current location update pinging data to the server at a given period
@@ -244,7 +249,8 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                         }
                     }
                     
-                    forceUpdateToMonitorMeServerWithState(state: "Auto-Update")
+                   // forceUpdateToMonitorMeServerWithState(state: "Auto-Update")
+                    forceUpdateToMonitorMeServerWithState(state: "Auto-Update", latitude: latitude, longitude: longitude)
                     startDateSet = false
                 }
                 
@@ -259,7 +265,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func forceUpdateToMonitorMeServerWithState(state: String!) {
+ /*func forceUpdateToMonitorMeServerWithState(state: String!) {
         
         if Reachability.isConnectedToNetwork() {
             
@@ -302,25 +308,102 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                                                          request: "monitorme")
             }
         }
-    }
+    }*/
     
+    func forceUpdateToMonitorMeServerWithState(state: String, latitude: String, longitude: String) {
+        if Reachability.isConnectedToNetwork() {
+            // Check for nil on first load
+            if let monitorMeID = kDataManager.monitorMeID {
+                let databaseReference = Database.database().reference()
+
+                // Prepare the data to be stored in Firebase
+                var monitorUpdateDictionary: [String: Any] = [
+                    "walkID": monitorMeID,
+                    "walkLongitude": longitude,
+                    "walkLatitude": latitude,
+                    "walkSpeed": speed ?? "",
+                    "walkCourse": course ?? "",
+                    "walkDate": Helpers().returnTodaysDate(),
+                    "walkTime": Helpers().returnTheTimeNow(),
+                    "walkBattery": String(format: "%.2f", UIDevice.current.batteryLevel * 100),
+                    "walkStatus": state,
+                    "walkW3WWords": "", // Set default value to an empty string
+                    "walkW3WURL": "", // Set default value to an empty string
+                    "State": state,
+                    "Device": "iOS"
+                ]
+
+                // Assuming 'monitorMeData' is the database node where you want to store this data
+                let newChildRef = databaseReference.child("monitorMeData").childByAutoId()
+
+                // Conditionally update walkW3WWords and walkW3WURL if they are not nil
+                if let w3wWords = w3wWords, let w3wURL = w3wURL {
+                    monitorUpdateDictionary["walkW3WWords"] = w3wWords
+                    monitorUpdateDictionary["walkW3WURL"] = w3wURL
+                }
+
+                // Store the data in Firebase
+                newChildRef.setValue(monitorUpdateDictionary) { (error, _) in
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    } else {
+                        print("Data Inserted", monitorUpdateDictionary)
+                        // Data inserted successfully
+                        // You can add any handling or notifications you need here
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+    
+//    func stopMonitoringMe() {
+//
+//        //forceUpdateToMonitorMeServerWithState(state: "End Session")
+//        forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
+//
+//        // Confirm you will stop being monitored
+//        kDataManager.setMonitorMeStatus(status: false)
+//
+//        locationManager.stopUpdatingLocation()
+//
+//        kDataManager.monitorMeLocal.removeAll()
+//    }
     func stopMonitoringMe() {
+        if let monitorMeID = kDataManager.monitorMeID {
+            // Delete the user's data from Firebase
+            let databaseReference = Database.database().reference()
+            let userReference = databaseReference.child("monitorMeData").child(monitorMeID)
+
+            userReference.removeValue { error, _ in
+                if let error = error {
+                    print("Error deleting user data from Firebase: \(error.localizedDescription)")
+                } else {
+                    print("User data deleted from Firebase")
+                }
+            }
+        }
         
-        forceUpdateToMonitorMeServerWithState(state: "End Session")
-        
+        //forceUpdateToMonitorMeServerWithState(state: "End Session")
+        forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
+
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)
-        
+
         locationManager.stopUpdatingLocation()
-        
+
         kDataManager.monitorMeLocal.removeAll()
     }
+    
     
     func stopMonitoringMeWithIncident() {
         
         // Confirm session ended
-        forceUpdateToMonitorMeServerWithState(state: "End Session")
-        
+     //   forceUpdateToMonitorMeServerWithState(state: "End Session")
+        forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)
         

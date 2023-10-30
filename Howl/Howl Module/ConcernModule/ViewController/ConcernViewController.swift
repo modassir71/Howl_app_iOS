@@ -43,15 +43,15 @@ class ConcernViewController: UIViewController {
     func _setUI(){
         dragView.layer.cornerRadius = 5.0
         dragView.clipsToBounds = true
-        archiveBtn.setTitle("ARCHIVE", for: .normal)
-        archiveBtn.titleLabel?.font = .appFont(.AileronBold, size: 15.0)
-        shareBtn.setTitle("SHARE", for: .normal)
-        shareBtn.titleLabel?.font = .appFont(.AileronBold, size: 15.0)
-        emailBtn.setTitle("EMAIL", for: .normal)
+       // archiveBtn.setTitle("ARCHIVE", for: .normal)
+       // archiveBtn.titleLabel?.font = .appFont(.AileronBold, size: 15.0)
+       // shareBtn.setTitle("SHARE", for: .normal)
+      //  shareBtn.titleLabel?.font = .appFont(.AileronBold, size: 15.0)
+        emailBtn.setTitle("Done", for: .normal)
         emailBtn.titleLabel?.font = .appFont(.AileronBold, size: 15.0)
-        shareBtn.backgroundColor = UIColor(displayP3Red: 230/255, green: 8/255, blue: 82/255, alpha: 1.0)
-        emailBtn.backgroundColor = UIColor(displayP3Red: 255/255, green: 235/255, blue: 235/255, alpha: 1.0)
-        archiveBtn.backgroundColor = UIColor(displayP3Red: 216/255, green: 216/255, blue: 216/255, alpha: 1.0)
+        shareBtn.backgroundColor = .white
+        emailBtn.backgroundColor = .lightGray
+      //  archiveBtn.backgroundColor = .white
     }
     
 //MARK: - Button Action
@@ -60,6 +60,7 @@ class ConcernViewController: UIViewController {
     }
     
     @IBAction func emailBtnPress(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
     
     

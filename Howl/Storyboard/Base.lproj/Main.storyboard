@@ -86,14 +86,11 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgN-qi-aI0">
                                                                         <rect key="frame" x="15" y="13" width="44" height="44"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-83-i1n">
+                                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-83-i1n">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="profile_Icon"/>
-                                                                                <connections>
-                                                                                    <action selector="addProfileBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D8t-wG-bw7"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -148,9 +145,25 @@
                                                                     <constraint firstItem="c6F-Me-GeW" firstAttribute="centerY" secondItem="g7r-Ni-l1Z" secondAttribute="centerY" id="qhJ-Ci-B6q"/>
                                                                 </constraints>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lia-34-vOl">
+                                                                <rect key="frame" x="112.66666666666669" y="295" width="150" height="35"/>
+                                                                <color key="backgroundColor" red="0.94509803920000002" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="150" id="EAF-A6-OCc"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="H9n-8v-FJP"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="18"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                                <state key="normal" title="View/Update" image="person.badge.plus" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="addProfileBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="74j-yq-DT6"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="lia-34-vOl" firstAttribute="centerX" secondItem="ByC-Sg-ISA" secondAttribute="centerX" id="04J-oD-meg"/>
                                                             <constraint firstAttribute="trailing" secondItem="kal-ZZ-vXm" secondAttribute="trailing" id="1Yk-l4-pED"/>
                                                             <constraint firstAttribute="trailing" secondItem="5d4-sq-M4G" secondAttribute="trailing" id="9Wu-bb-xTF"/>
                                                             <constraint firstItem="kal-ZZ-vXm" firstAttribute="top" secondItem="a2a-eL-3yL" secondAttribute="bottom" constant="10" id="Lt4-fh-8W1"/>
@@ -163,6 +176,7 @@
                                                             <constraint firstItem="g7r-Ni-l1Z" firstAttribute="leading" secondItem="ByC-Sg-ISA" secondAttribute="leading" id="ZHt-EP-Gcl"/>
                                                             <constraint firstItem="5d4-sq-M4G" firstAttribute="leading" secondItem="ByC-Sg-ISA" secondAttribute="leading" id="ici-hi-fTW"/>
                                                             <constraint firstItem="kal-ZZ-vXm" firstAttribute="leading" secondItem="ByC-Sg-ISA" secondAttribute="leading" id="kvF-05-0RU"/>
+                                                            <constraint firstItem="lia-34-vOl" firstAttribute="centerY" secondItem="ByC-Sg-ISA" secondAttribute="centerY" multiplier="0.82" id="s6z-Qq-7EG"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -211,11 +225,12 @@
                         <outlet property="navigationView" destination="g7r-Ni-l1Z" id="hsd-rc-egm"/>
                         <outlet property="profileButtonView" destination="YgN-qi-aI0" id="Lio-rY-P0N"/>
                         <outlet property="titleLbl" destination="a2a-eL-3yL" id="pXX-Np-HU4"/>
+                        <outlet property="viewUpdate" destination="lia-34-vOl" id="TZS-Qq-O9a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="-2"/>
+            <point key="canvasLocation" x="-586.39999999999998" y="-2.2167487684729066"/>
         </scene>
         <!--Main Tab Bar-->
         <scene sceneID="L50-qQ-MRn">
@@ -1240,7 +1255,7 @@
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6Q-Ir-cIy">
-                                <rect key="frame" x="0.0" y="211" width="375" height="601"/>
+                                <rect key="frame" x="0.0" y="446.66666666666674" width="375" height="365.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-F7-6v3">
                                         <rect key="frame" x="107.66666666666669" y="20" width="160" height="10"/>
@@ -1251,48 +1266,30 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concern Related to" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-bw-8HA">
-                                        <rect key="frame" x="30" y="67" width="273" height="36"/>
+                                        <rect key="frame" x="30" y="66.999999999999943" width="273" height="36"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-mE-KaC">
-                                        <rect key="frame" x="0.0" y="117.99999999999997" width="375" height="401.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="117.99999999999993" width="375" height="165.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TI6-9g-37M">
-                                        <rect key="frame" x="0.0" y="519.33333333333337" width="375" height="81.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="283.66666666666669" width="375" height="81.666666666666686"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ju-AE-CgL">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="81.666666666666671"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8O-nw-Yvj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="81.666666666666671"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Archive">
-                                                            <color key="titleColor" systemColor="labelColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="archiveBtnPress:" destination="iop-wT-o7L" eventType="touchUpInside" id="t39-cR-S8J"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Q8O-nw-Yvj" secondAttribute="bottom" id="6Zz-dq-6Ow"/>
-                                                    <constraint firstItem="Q8O-nw-Yvj" firstAttribute="leading" secondItem="2Ju-AE-CgL" secondAttribute="leading" id="KzL-f8-adJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Q8O-nw-Yvj" secondAttribute="trailing" id="UnV-Nm-7V3"/>
-                                                    <constraint firstItem="Q8O-nw-Yvj" firstAttribute="top" secondItem="2Ju-AE-CgL" secondAttribute="top" id="vUu-oq-D9n"/>
-                                                </constraints>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYX-Tj-r1v">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="81.666666666666671"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eg-oL-ZMQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="81.666666666666671"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="EMAIL">
+                                                        <state key="normal" title="DONE">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
@@ -1311,7 +1308,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1E-TS-hmo">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="81.666666666666671"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9M-qz-Ywo">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9M-qz-Ywo">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="81.666666666666671"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="SHARE">
@@ -1322,7 +1319,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="K9M-qz-Ywo" secondAttribute="trailing" id="AGE-5M-c7v"/>
                                                     <constraint firstItem="K9M-qz-Ywo" firstAttribute="leading" secondItem="X1E-TS-hmo" secondAttribute="leading" id="Zgg-f3-Ntn"/>
@@ -1355,7 +1352,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CG4-oW-Vsq" secondAttribute="trailing" id="9D7-eq-nP5"/>
                             <constraint firstItem="X6Q-Ir-cIy" firstAttribute="leading" secondItem="pTx-7Z-FLh" secondAttribute="leading" id="N8d-hT-qM4"/>
-                            <constraint firstItem="X6Q-Ir-cIy" firstAttribute="height" secondItem="daQ-yd-nXl" secondAttribute="height" multiplier="0.74" id="VzH-vo-K4J"/>
+                            <constraint firstItem="X6Q-Ir-cIy" firstAttribute="height" secondItem="daQ-yd-nXl" secondAttribute="height" multiplier="0.45" id="VzH-vo-K4J"/>
                             <constraint firstItem="TI6-9g-37M" firstAttribute="height" secondItem="CG4-oW-Vsq" secondAttribute="height" multiplier="0.100446" id="Z4I-cS-mp9"/>
                             <constraint firstAttribute="bottom" secondItem="X6Q-Ir-cIy" secondAttribute="bottom" id="b2K-oW-h3C"/>
                             <constraint firstItem="CG4-oW-Vsq" firstAttribute="leading" secondItem="daQ-yd-nXl" secondAttribute="leading" id="gkj-t6-rgx"/>
@@ -1365,7 +1362,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="archiveBtn" destination="Q8O-nw-Yvj" id="mpv-f6-QXf"/>
                         <outlet property="baseView" destination="X6Q-Ir-cIy" id="7rD-fo-XYQ"/>
                         <outlet property="concernTblView" destination="gIE-mE-KaC" id="ezW-U5-ifH"/>
                         <outlet property="dragView" destination="HRF-F7-6v3" id="H4r-Jz-g8b"/>
@@ -3765,6 +3761,7 @@
         <image name="notification_Img" width="256" height="256"/>
         <image name="pencil_img" width="54.666667938232422" height="57.333332061767578"/>
         <image name="permission_Img" width="35" height="35"/>
+        <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
         <image name="policy_Img" width="35" height="35"/>
         <image name="profile_Icon" width="256" height="256"/>
@@ -3788,17 +3785,11 @@
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

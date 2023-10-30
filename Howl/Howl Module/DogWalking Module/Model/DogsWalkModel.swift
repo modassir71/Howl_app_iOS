@@ -23,6 +23,8 @@ struct WalkUpdate: Codable {
     var status: String!
     var w3wWords: String!
     var w3wURL: String!
+    var state: String!
+    var device: String!
     
     enum CodingKeys: String, CodingKey {
         
@@ -30,6 +32,7 @@ struct WalkUpdate: Codable {
         case longitude
         case latitude
         case speed
+        case device
         case course
         case date
         case time
@@ -37,6 +40,7 @@ struct WalkUpdate: Codable {
         case status
         case w3wWords
         case w3wURL
+        case state
     }
     
     init(
@@ -50,7 +54,9 @@ struct WalkUpdate: Codable {
         walkBattery: String,
         walkStatus: String,
         walkW3WWords: String,
-        walkW3WURL: String
+        walkW3WURL: String,
+        states: String,
+        devices: String
     ) {
         
         id = walkID
@@ -64,6 +70,8 @@ struct WalkUpdate: Codable {
         status = walkStatus
         w3wWords = walkW3WWords
         w3wURL = walkW3WURL
+        state = states
+        device = devices
     }
     
     func encode(to encoder: Encoder) throws {
@@ -81,6 +89,8 @@ struct WalkUpdate: Codable {
         try container.encode(status, forKey: .status)
         try container.encode(w3wWords, forKey: .w3wWords)
         try container.encode(w3wURL, forKey: .w3wURL)
+        try container.encode(w3wURL, forKey: .state)
+        try container.encode(w3wURL, forKey: .device)
     }
     
     init(from decoder: Decoder) throws {
@@ -98,5 +108,7 @@ struct WalkUpdate: Codable {
         status = try container.decode(String.self, forKey: .status)
         w3wWords = try container.decode(String.self, forKey: .w3wWords)
         w3wURL = try container.decode(String.self, forKey: .w3wURL)
+        state = try container.decode(String.self, forKey: .state)
+        device = try container.decode(String.self, forKey: .device)
     }
 }

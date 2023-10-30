@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             if let webpageURL = userActivity.webpageURL {
+                print(kDataManager.monitorMeID)
                 // Handle the Universal Link, for example, by navigating to a specific view in your app.
                 // You can use URL components to extract information from the URL if needed.
                 // Example: if webpageURL.host == "yourwebsite.com" { /* Handle the URL */ }
