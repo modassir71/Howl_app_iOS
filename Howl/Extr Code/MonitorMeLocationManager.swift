@@ -44,6 +44,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     var w3wURL: String! = "NOT SET"
     var lat: String?
     var lng: String?
+    var flag: String?
     
     
     static let sharedInstance: MonitorMeLocationManager = {
@@ -98,7 +99,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func forceUpdateToMonitorMeServer(with monitorID: String) {
         let databaseReference = Database.database().reference()
 
-        databaseReference.child(monitorID).setValue(true) { (error, _) in
+        databaseReference.child("your_data_node").setValue(true) { (error, _) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 // Handle the error, you might want to show a message to the user
@@ -313,7 +314,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func forceUpdateToMonitorMeServerWithState(state: String, latitude: String, longitude: String) {
         if Reachability.isConnectedToNetwork() {
             // Check for nil on first load
-            if let monitorMeID = kDataManager.monitorMeID {
+            if let monitorMeID = kDataManager.monitorId {
                 let databaseReference = Database.database().reference()
 
                 // Prepare the data to be stored in Firebase
@@ -330,11 +331,12 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                     "walkW3WWords": "", // Set default value to an empty string
                     "walkW3WURL": "", // Set default value to an empty string
                     "State": state,
-                    "Device": "iOS"
+                    "Device": "iOS",
+                    "flag": "0"
                 ]
 
                 // Assuming 'monitorMeData' is the database node where you want to store this data
-                let newChildRef = databaseReference.child("monitorMeData").childByAutoId()
+                let newChildRef = databaseReference.child("your_data_node").childByAutoId()
 
                 // Conditionally update walkW3WWords and walkW3WURL if they are not nil
                 if let w3wWords = w3wWords, let w3wURL = w3wURL {
@@ -356,6 +358,55 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
+    func fetchWalkUpdatesFromFirebase(completion: @escaping ([WalkFetch]?) -> Void) {
+        let databaseReference = Database.database().reference()
+        let monitorMeID = kDataManager.monitorId ?? ""
+        
+        databaseReference.child("your_data_node").observeSingleEvent(of: .value) { snapshot,ee  in
+            guard let dataDict = snapshot.value as? [String: [String: Any]] else {
+                completion(nil)
+                return
+            }
+            
+            var walkUpdates = [WalkFetch]()
+            
+            for (_, value) in dataDict {
+                if let walkID = value["walkID"] as? String,
+                   let walkLongitude = value["walkLongitude"] as? String,
+                   let walkLatitude = value["walkLatitude"] as? String,
+                   let walkSpeed = value["walkSpeed"] as? String,
+                   let walkCourse = value["walkCourse"] as? String,
+                   let walkDate = value["walkDate"] as? String,
+                   let walkTime = value["walkTime"] as? String,
+                   let walkBattery = value["walkBattery"] as? String,
+                   let walkStatus = value["walkStatus"] as? String,
+                   let walkW3WWords = value["walkW3WWords"] as? String,
+                   let walkW3WURL = value["walkW3WURL"] as? String,
+                   let flag = value["flag"] as? String  {
+                    let walkUpdate = WalkFetch(
+                        walkID: walkID,
+                        walkLongitude: walkLongitude,
+                        walkLatitude: walkLatitude,
+                        walkSpeed: walkSpeed,
+                        walkCourse: walkCourse,
+                        walkDate: walkDate,
+                        walkTime: walkTime,
+                        walkBattery: walkBattery,
+                        walkStatus: walkStatus,
+                        walkW3WWords: walkW3WWords,
+                        walkW3WURL: walkW3WURL, flag: flag
+                    )
+                    walkUpdates.append(walkUpdate)
+                }
+            }
+            
+            completion(walkUpdates)
+        }
+    }
+
+
+
+
 
 
 
@@ -373,10 +424,10 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 //        kDataManager.monitorMeLocal.removeAll()
 //    }
     func stopMonitoringMe() {
-        if let monitorMeID = kDataManager.monitorMeID {
+        if let monitorMeID = kDataManager.monitorId {
             // Delete the user's data from Firebase
             let databaseReference = Database.database().reference()
-            let userReference = databaseReference.child("monitorMeData").child(monitorMeID)
+            let userReference = databaseReference.child("your_data_node").child(monitorMeID)
 
             userReference.removeValue { error, _ in
                 if let error = error {

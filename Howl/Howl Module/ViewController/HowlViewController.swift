@@ -121,9 +121,13 @@ class HowlViewController: UIViewController {
     //MARK: -Button Action
     
     @IBAction func trackDogBtn(_ sender: UIButton) {
-        let storyboard = AppStoryboard.Main.instance
-        let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
-        self.navigationController?.pushViewController(trackerVc, animated: true)
+        if kDataManager.walkId != nil{
+            let storyboard = AppStoryboard.Main.instance
+            let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
+            self.navigationController?.pushViewController(trackerVc, animated: true)
+        }else{
+            AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
+        }
     }
     
     

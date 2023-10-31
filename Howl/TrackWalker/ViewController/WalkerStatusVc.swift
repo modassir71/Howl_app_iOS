@@ -17,9 +17,17 @@ class WalkerStatusVc: UIViewController {
     var liveIDSet = true
     var idLabel = String()
     var processLabel = String()
+    var walkUpdates = [WalkFetch]()
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+                    if let walkUpdates = walkUpdates {
+                        self?.walkUpdates = walkUpdates
+                        print(walkUpdates)
+                        self?.walkerListTbLview.reloadData()
+                    }
+                }
         liveIDSet = true
         _delegatesMethod()
         _registerCell()
@@ -109,58 +117,18 @@ class WalkerStatusVc: UIViewController {
 
 extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Count",kDataManager.monitorYouOutput.count)
-        return kDataManager.monitorYouOutput.count
+      //  print("Count",kDataManager.monitorYouOutput.count)
+        //return kDataManager.monitorYouOutput.count
+        return walkUpdates.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell() as WalkerStatusCell
-        let data: [String:String] = kDataManager.monitorYouOutput[indexPath.row]
-        
-        // Available Data
-        /*
-        [
-         "course": "-1.0",
-         "date": "17/03/2021",
-         "battery": "39.0",
-         "speed": "0.0",
-         "time": "13:18:24",
-         "longitude": "-1.6085460479354947",
-         "output": "1",
-         "id": "",
-         "latitude": "52.27189386945288",
-         "status": "Auto-Update"
-         ]
-        */
-        
-        cell.statusLbl.text = data["status"]!
-        cell.dateLbl.text = data["date"]!
-        cell.timeLbl.text = data["time"]!
-        cell.batteryLbl.text = data["battery"]! + "%"
-        
-        //What 3 Words
-        let w3wText = "W3W:"
-        let w3w = data["w3w"]!
-        cell.w3wLbl.text = w3wText + " " + w3w
-        
-        switch data["status"]! {
-        
-        case "Start Session":
-            cell.backgroundColor = .white
-        case "Auto-Update":
-            cell.backgroundColor = .lightGray
-        case "Im Safe":
-            cell.backgroundColor = ColorConstant.greenColor
-        case "Concerned":
-            cell.backgroundColor = ColorConstant.amberColor
-        case "HOWL":
-            cell.backgroundColor = ColorConstant.pinkColor
-        case "End Session":
-            cell.backgroundColor = .white
-            kMonitorYouLocationManager.stopMonitoringYou()
-        default:
-            cell.backgroundColor = .lightGray
-        }
+        cell.batteryLbl.text = walkUpdates[indexPath.row].walkBattery
+        cell.timeLbl.text = walkUpdates[indexPath.row].walkTime
+        cell.dateLbl.text = walkUpdates[indexPath.row].walkDate
+        cell.w3wLbl.text = walkUpdates[indexPath.row].walkW3WURL
+        cell.statusLbl.text = walkUpdates[indexPath.row].walkStatus
         return cell
     }
     
@@ -170,28 +138,28 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if kDataManager.monitorYouOutput.count > 0 {
-            
-            // Hyperlink to W3W
-            let data: [String:String] = kDataManager.monitorYouOutput[indexPath.row]
-            let w3wLoc = data["w3w"]!
-            
-            // Set the W3W url if set
-            if w3wLoc != "NOT SET" {
-                
-                if let url = URL(string: "w3w://show?threewords=" + w3wLoc) {
-                    // Attempt to open the W3W app via URL scheme
-                    UIApplication.shared.open(url, options: [:]) {(success) in
-                        // Or open locally to the app in the web viewer
-                        if success != true {
-                            kDataManager.webURL = WebURLs.what3wordsURL + w3wLoc
-                            self.performSegue(withIdentifier: "ToW3W", sender: self)
-                            
-                        }
-                    }
-                }
-            }
-        }
+//        if kDataManager.monitorYouOutput.count > 0 {
+//            
+//            // Hyperlink to W3W
+//            let data: [String:String] = kDataManager.monitorYouOutput[indexPath.row]
+//            let w3wLoc = data["w3w"]!
+//            
+//            // Set the W3W url if set
+//            if w3wLoc != "NOT SET" {
+//                
+//                if let url = URL(string: "w3w://show?threewords=" + w3wLoc) {
+//                    // Attempt to open the W3W app via URL scheme
+//                    UIApplication.shared.open(url, options: [:]) {(success) in
+//                        // Or open locally to the app in the web viewer
+//                        if success != true {
+//                            kDataManager.webURL = WebURLs.what3wordsURL + w3wLoc
+//                            self.performSegue(withIdentifier: "ToW3W", sender: self)
+//                            
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     
    

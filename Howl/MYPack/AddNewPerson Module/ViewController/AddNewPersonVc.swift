@@ -58,6 +58,7 @@ class AddNewPersonVc: UIViewController {
         whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         if type == true{
+            messageType = senderType
             if senderType == "WHATSAPP"{
                 whatsAppBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
                 txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)

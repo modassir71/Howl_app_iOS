@@ -36,6 +36,8 @@ class DataManager {
     // MARK: VARIABLES - MONITORING
     var monitorMeStatus: Bool! = false // to hold the statur or your walk / monitoring request
     var monitorMeID: String! // to hold the unique monitor me ID for the monitoring session
+    var monitorId: String!
+    var walkId: String!
     var monitorYouStatus: Bool! = false // to confirm if you have monitored someone
     var monitorYouID: String! // to hold the unique monitor me ID of someone you may monitor
     var monitorYouNullDataCounter: Int! = 0 // to vlidate if an old ID is used by counting the number of times no data is returned
@@ -84,7 +86,7 @@ class DataManager {
             
             if let secondLoad = UserDefaults.standard.value(forKey: "monitormeid") as? String {
                 
-                monitorMeID = "A5BI4CG4QIF24RUCADCPXMA62MC8M2"//secondLoad
+                monitorMeID = secondLoad//"A5BI4CG4QIF24RUCADCPXMA62MC8M2"//secondLoad
             } else {
                 monitorMeID = "X"
             }

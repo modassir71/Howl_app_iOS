@@ -49,32 +49,32 @@
                                                 <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="xb9-z3-mcN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRd-KF-KTm">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRd-KF-KTm">
                                             <rect key="frame" x="97.333333333333343" y="0.0" width="81.333333333333343" height="55"/>
                                             <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="arrow.forward" catalog="system"/>
                                             <connections>
                                                 <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="fuU-HM-Rkw"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-Xg-kgk">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-Xg-kgk">
                                             <rect key="frame" x="194.66666666666666" y="0.0" width="80.999999999999972" height="55"/>
                                             <color key="backgroundColor" red="0.94901961089999998" green="0.78431373829999995" blue="0.31764706970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="arrow.clockwise" catalog="system"/>
                                             <connections>
                                                 <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="lnL-bp-zuS"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-tj-Hli">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-tj-Hli">
                                             <rect key="frame" x="291.66666666666669" y="0.0" width="81.333333333333314" height="55"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="house" catalog="system"/>
                                             <connections>
                                                 <action selector="navigateManuallyBtnPress:" destination="-1" eventType="touchUpInside" id="lpc-fo-WeD"/>
                                             </connections>

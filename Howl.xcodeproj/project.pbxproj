@@ -47,6 +47,7 @@
 		18530A742AB2EAE500C190D3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A732AB2EAE500C190D3 /* UIViewController.swift */; };
 		18530A772AB30AE400C190D3 /* AddDogVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A762AB30AE400C190D3 /* AddDogVm.swift */; };
 		18530A7A2AB3338100C190D3 /* AddNewPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18530A792AB3338100C190D3 /* AddNewPersonModel.swift */; };
+		18561C992AF0D46700001418 /* WalkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18561C982AF0D46700001418 /* WalkerViewController.swift */; };
 		185B7CC92ADBC25A00C1C9EB /* WalkerStatusVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */; };
 		1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */; };
 		1872D2FF2A9DC3650094B522 /* AddDogVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872D2FE2A9DC3650094B522 /* AddDogVc.swift */; };
@@ -193,6 +194,7 @@
 		18530A732AB2EAE500C190D3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		18530A762AB30AE400C190D3 /* AddDogVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVm.swift; sourceTree = "<group>"; };
 		18530A792AB3338100C190D3 /* AddNewPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPersonModel.swift; sourceTree = "<group>"; };
+		18561C982AF0D46700001418 /* WalkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerViewController.swift; sourceTree = "<group>"; };
 		185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkerStatusVc.swift; sourceTree = "<group>"; };
 		1872D2FC2A9DBFDF0094B522 /* ViewConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstant.swift; sourceTree = "<group>"; };
 		1872D2FE2A9DC3650094B522 /* AddDogVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogVc.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 			children = (
 				185B7CC82ADBC25A00C1C9EB /* WalkerStatusVc.swift */,
 				18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */,
+				18561C982AF0D46700001418 /* WalkerViewController.swift */,
 				18A7CFA92ACBFA34009DFA71 /* WalkerMapVc.swift */,
 			);
 			path = ViewController;
@@ -1306,6 +1309,7 @@
 			files = (
 				180254D42A8DECFA00C744CE /* UICollectionView+Extension.swift in Sources */,
 				18C86C242A8CABA800A1F937 /* MyPackVc.swift in Sources */,
+				18561C992AF0D46700001418 /* WalkerViewController.swift in Sources */,
 				180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */,
 				18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */,
 				18261DF22AD6D00100E388C5 /* Helpers.swift in Sources */,
@@ -1575,12 +1579,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231027";
+				MARKETING_VERSION = "TV-1.0.0.20231031";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1615,12 +1619,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231027";
+				MARKETING_VERSION = "TV-1.0.0.20231031";
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

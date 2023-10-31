@@ -17,6 +17,7 @@ import AVKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var databaseRef: DatabaseReference!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.0)
@@ -39,6 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
         FirebaseApp.configure()
+        databaseRef = Database.database().reference().child("your_data_node")
+        databaseRef.observe(.childAdded) { snapshot in
+                    if let data = snapshot.value as? [String: Any],
+                       let walkID = data["walkID"] as? String {
+                        // Handle the "walkID" you fetched from Firebase
+                        // You can use 'walkID' in your app as needed
+                        print("Walk ID: \(walkID)")
+                        kDataManager.walkId = walkID
+                    }
+                }
         return true
     }
 
@@ -52,8 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            if let webpageURL = userActivity.webpageURL {
-                print(kDataManager.monitorMeID)
+            if userActivity.webpageURL != nil {
+                print(kDataManager.monitorId ?? "")
+                FirebaseApp.configure()
+                databaseRef = Database.database().reference().child(kDataManager.monitorId)
+                databaseRef.observe(.childAdded) { snapshot in
+                            if let data = snapshot.value as? [String: Any],
+                               let walkID = data["walkID"] as? String {
+                                // Handle the "walkID" you fetched from Firebase
+                                // You can use 'walkID' in your app as needed
+                                print("Walk ID: \(walkID)")
+                            }
+                        }
                 // Handle the Universal Link, for example, by navigating to a specific view in your app.
                 // You can use URL components to extract information from the URL if needed.
                 // Example: if webpageURL.host == "yourwebsite.com" { /* Handle the URL */ }

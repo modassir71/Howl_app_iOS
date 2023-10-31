@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -83,7 +84,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-Ni-l1Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgN-qi-aI0">
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgN-qi-aI0">
                                                                         <rect key="frame" x="15" y="13" width="44" height="44"/>
                                                                         <subviews>
                                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-83-i1n">
@@ -145,17 +146,16 @@
                                                                     <constraint firstItem="c6F-Me-GeW" firstAttribute="centerY" secondItem="g7r-Ni-l1Z" secondAttribute="centerY" id="qhJ-Ci-B6q"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lia-34-vOl">
-                                                                <rect key="frame" x="112.66666666666669" y="295" width="150" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lia-34-vOl">
+                                                                <rect key="frame" x="95" y="295" width="185" height="35"/>
                                                                 <color key="backgroundColor" red="0.94509803920000002" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="150" id="EAF-A6-OCc"/>
+                                                                    <constraint firstAttribute="width" constant="185" id="EAF-A6-OCc"/>
                                                                     <constraint firstAttribute="height" constant="35" id="H9n-8v-FJP"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="18"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                                <state key="normal" title="View/Update" image="person.badge.plus" catalog="system"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="20" maxY="0.0"/>
+                                                                <state key="normal" title="Add/View Contact" image="person.badge.plus" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="addProfileBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="74j-yq-DT6"/>
                                                                 </connections>
@@ -872,7 +872,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FdH-wN-eGb">
                                                 <rect key="frame" x="10" y="0.0" width="355" height="55"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtA-yo-4wf">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtA-yo-4wf">
                                                         <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="55"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -882,12 +882,12 @@
                                                             <action selector="navigateManuallyBtnPress:" destination="U9M-Xi-soe" eventType="touchUpInside" id="qH3-yx-prF"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNu-Vh-ukg">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNu-Vh-ukg">
                                                         <rect key="frame" x="92.666666666666686" y="0.0" width="77" height="55"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.forward" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="U9M-Xi-soe" eventType="touchUpInside" id="7NK-ze-JGh"/>
                                                         </connections>
@@ -896,8 +896,8 @@
                                                         <rect key="frame" x="185.66666666666666" y="0.0" width="76.666666666666657" height="55"/>
                                                         <color key="backgroundColor" red="0.94901961089999998" green="0.78431373829999995" blue="0.31764706970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="U9M-Xi-soe" eventType="touchUpInside" id="d9l-o1-YlK"/>
                                                         </connections>
@@ -906,8 +906,8 @@
                                                         <rect key="frame" x="278.33333333333331" y="0.0" width="76.666666666666686" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="house" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="U9M-Xi-soe" eventType="touchUpInside" id="fZ7-sA-EZm"/>
                                                         </connections>
@@ -1098,10 +1098,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c19-zV-3cK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c19-zV-3cK">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="tap3TimesBtnPress:" destination="Bdg-1c-EKC" eventType="touchUpInside" id="UzS-Rz-Q7v"/>
                                         </connections>
@@ -1900,7 +1899,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W0f-cO-ui2">
                                                 <rect key="frame" x="10" y="0.0" width="355" height="55"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d8-Df-25Y">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d8-Df-25Y">
                                                         <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="55"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1914,8 +1913,8 @@
                                                         <rect key="frame" x="92.666666666666686" y="0.0" width="77" height="55"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.forward" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="a6v-Rr-Qdv"/>
                                                         </connections>
@@ -1924,8 +1923,8 @@
                                                         <rect key="frame" x="185.66666666666666" y="0.0" width="76.666666666666657" height="55"/>
                                                         <color key="backgroundColor" red="0.94901961089999998" green="0.78431373829999995" blue="0.31764706970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="enM-lh-gYE"/>
                                                         </connections>
@@ -1934,8 +1933,8 @@
                                                         <rect key="frame" x="278.33333333333331" y="0.0" width="76.666666666666686" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="house" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="do5-nx-o27"/>
                                                         </connections>
@@ -2163,8 +2162,8 @@
                                                         <rect key="frame" x="92.666666666666686" y="0.0" width="77" height="55"/>
                                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.forward" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="E30-Wh-5Ds" eventType="touchUpInside" id="9ud-ld-fKn"/>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="o8E-kd-Ytb"/>
@@ -2174,8 +2173,8 @@
                                                         <rect key="frame" x="185.66666666666666" y="0.0" width="76.666666666666657" height="55"/>
                                                         <color key="backgroundColor" red="0.94901961089999998" green="0.78431373829999995" blue="0.31764706970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="FSx-TJ-Xm3"/>
                                                             <action selector="navigateManuallyBtnPress:" destination="E30-Wh-5Ds" eventType="touchUpInside" id="b3i-Fa-1Pc"/>
@@ -2185,8 +2184,8 @@
                                                         <rect key="frame" x="278.33333333333331" y="0.0" width="76.666666666666686" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="house" catalog="system"/>
                                                         <connections>
                                                             <action selector="navigateManuallyBtnPress:" destination="E30-Wh-5Ds" eventType="touchUpInside" id="2vW-BB-GbM"/>
                                                             <action selector="navigateManuallyBtnPress:" destination="tMv-aj-rQN" eventType="touchUpInside" id="wMP-Uk-Hmi"/>
@@ -2305,9 +2304,9 @@
                                                 <state key="normal" image="notification_Img"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6r-ON-Wuq">
-                                                <rect key="frame" x="15.000000000000004" y="21" width="43.333333333333343" height="28.333333333333329"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                                <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="back_icon"/>
                                                 <connections>
                                                     <action selector="backBtnPress:" destination="JRL-oN-NKv" eventType="touchUpInside" id="k6M-I7-0DR"/>
                                                 </connections>
@@ -2427,9 +2426,9 @@
                                                 <state key="normal" image="notification_Img"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Pw-Jhc">
-                                                <rect key="frame" x="14.999999999999996" y="11" width="43.666666666666657" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                                <rect key="frame" x="14.999999999999998" y="16" width="19.333333333333329" height="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="back_icon"/>
                                                 <connections>
                                                     <action selector="backBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="1WQ-JR-Stg"/>
                                                     <action selector="backBtnPress:" destination="JRL-oN-NKv" eventType="touchUpInside" id="TRJ-yi-5MY"/>
@@ -2676,9 +2675,10 @@
                                         <state key="normal" image="notification_Img"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-wk-tf6">
-                                        <rect key="frame" x="15.000000000000004" y="21" width="43.333333333333343" height="28.333333333333329"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                        <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back_icon"/>
                                         <connections>
                                             <action selector="backBtnPress:" destination="i3I-FU-6D9" eventType="touchUpInside" id="8Gi-4j-rqH"/>
                                         </connections>
@@ -3098,9 +3098,10 @@
                                         <state key="normal" image="notification_Img"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-XC-DkS">
-                                        <rect key="frame" x="20.000000000000004" y="21" width="43.333333333333343" height="28"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                        <rect key="frame" x="20" y="21" width="19.333333333333329" height="28"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back_icon"/>
                                         <connections>
                                             <action selector="backBtnPress:" destination="c7a-CL-Iqj" eventType="touchUpInside" id="AzF-y9-a8f"/>
                                         </connections>
@@ -3393,13 +3394,13 @@
                                                     <constraint firstAttribute="width" constant="94" id="emz-MX-atI"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-1c-Rwx">
-                                                <rect key="frame" x="19.999999999999996" y="21" width="43.666666666666657" height="28"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-1c-Rwx">
+                                                <rect key="frame" x="20" y="24" width="19.333333333333329" height="22"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="back_icon"/>
                                                 <connections>
-                                                    <action selector="backBtnPress:" destination="c7a-CL-Iqj" eventType="touchUpInside" id="2bE-4J-pGA"/>
-                                                    <action selector="backBtnPress:" destination="5Im-n4-lZM" eventType="touchUpInside" id="fDN-gz-HcZ"/>
+                                                    <action selector="backBtnPress:" destination="5Im-n4-lZM" eventType="touchUpInside" id="8kI-AN-LyJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC0-Hv-lkF">
@@ -3517,14 +3518,12 @@
                                             <constraint firstAttribute="width" constant="94" id="qJC-re-1G0"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK2-6P-76Q">
-                                        <rect key="frame" x="14.999999999999996" y="21" width="43.666666666666657" height="28"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK2-6P-76Q">
+                                        <rect key="frame" x="14.999999999999998" y="24" width="19.333333333333329" height="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back_icon"/>
                                         <connections>
-                                            <action selector="backBtnPress:" destination="UVK-ab-4JP" eventType="touchUpInside" id="B9q-Dm-ayQ"/>
-                                            <action selector="backBtnPress:" destination="5Im-n4-lZM" eventType="touchUpInside" id="aK0-5N-g5T"/>
-                                            <action selector="backBtnPress:" destination="c7a-CL-Iqj" eventType="touchUpInside" id="ems-QD-fd8"/>
+                                            <action selector="backBtnPress:" destination="UVK-ab-4JP" eventType="touchUpInside" id="Xv4-Dx-55G"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-Wv-cE4">
@@ -3602,9 +3601,9 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-9O-Xvj">
-                                        <rect key="frame" x="14.999999999999996" y="21" width="43.666666666666657" height="28"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                        <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back_icon"/>
                                         <connections>
                                             <action selector="backBtnPress:" destination="5Im-n4-lZM" eventType="touchUpInside" id="T47-Yf-GJG"/>
                                             <action selector="backBtnPress:" destination="c7a-CL-Iqj" eventType="touchUpInside" id="X9l-5d-o68"/>
@@ -3675,16 +3674,31 @@
             </objects>
             <point key="canvasLocation" x="4902" y="757"/>
         </scene>
-        <!--Walker Map Vc-->
+        <!--Walker View Controller-->
         <scene sceneID="oQy-Cp-nWI">
             <objects>
-                <viewController storyboardIdentifier="WalkerMapVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOU-ZA-RbC" customClass="WalkerMapVc" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOU-ZA-RbC" customClass="WalkerViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zUn-6T-eVU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7U-WQ-Oq7">
+                                <rect key="frame" x="0.0" y="70" width="375" height="688"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZHZ-Ow-4VE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZHZ-Ow-4VE" firstAttribute="trailing" secondItem="I7U-WQ-Oq7" secondAttribute="trailing" id="FTc-Lk-By5"/>
+                            <constraint firstItem="ZHZ-Ow-4VE" firstAttribute="bottom" secondItem="I7U-WQ-Oq7" secondAttribute="bottom" constant="20" id="Qsj-NH-eM7"/>
+                            <constraint firstItem="I7U-WQ-Oq7" firstAttribute="top" secondItem="ZHZ-Ow-4VE" secondAttribute="top" constant="20" id="tLP-Y6-tkv"/>
+                            <constraint firstItem="I7U-WQ-Oq7" firstAttribute="leading" secondItem="ZHZ-Ow-4VE" secondAttribute="leading" id="uPK-Pd-edC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="monitorYouMap" destination="I7U-WQ-Oq7" id="EwA-fS-d3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9X-D8-S2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

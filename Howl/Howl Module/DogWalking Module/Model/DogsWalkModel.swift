@@ -25,6 +25,7 @@ struct WalkUpdate: Codable {
     var w3wURL: String!
     var state: String!
     var device: String!
+    var flag: String!
     
     enum CodingKeys: String, CodingKey {
         
@@ -41,6 +42,7 @@ struct WalkUpdate: Codable {
         case w3wWords
         case w3wURL
         case state
+        case flag
     }
     
     init(
@@ -56,7 +58,8 @@ struct WalkUpdate: Codable {
         walkW3WWords: String,
         walkW3WURL: String,
         states: String,
-        devices: String
+        devices: String,
+        flags: String
     ) {
         
         id = walkID
@@ -72,6 +75,7 @@ struct WalkUpdate: Codable {
         w3wURL = walkW3WURL
         state = states
         device = devices
+        flag = flags
     }
     
     func encode(to encoder: Encoder) throws {
@@ -89,8 +93,9 @@ struct WalkUpdate: Codable {
         try container.encode(status, forKey: .status)
         try container.encode(w3wWords, forKey: .w3wWords)
         try container.encode(w3wURL, forKey: .w3wURL)
-        try container.encode(w3wURL, forKey: .state)
-        try container.encode(w3wURL, forKey: .device)
+        try container.encode(state, forKey: .state)
+        try container.encode(device, forKey: .device)
+        try container.encode(flag, forKey: .flag)
     }
     
     init(from decoder: Decoder) throws {
@@ -110,5 +115,20 @@ struct WalkUpdate: Codable {
         w3wURL = try container.decode(String.self, forKey: .w3wURL)
         state = try container.decode(String.self, forKey: .state)
         device = try container.decode(String.self, forKey: .device)
+        flag = try container.decode(String.self, forKey: .flag)
     }
+}
+struct WalkFetch {
+    var walkID: String
+    var walkLongitude: String
+    var walkLatitude: String
+    var walkSpeed: String
+    var walkCourse: String
+    var walkDate: String
+    var walkTime: String
+    var walkBattery: String
+    var walkStatus: String
+    var walkW3WWords: String
+    var walkW3WURL: String
+    var flag: String
 }
