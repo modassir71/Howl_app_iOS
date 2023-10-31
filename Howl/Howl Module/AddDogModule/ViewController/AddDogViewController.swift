@@ -181,7 +181,7 @@ class AddDogViewController: UIViewController {
        }
        colorTxtFld.placeholder = "Colour"
        microchipNumberTxtFld.placeholder = "Microchip Number"
-       districtiveFeature.placeholder = "Districtive Features"
+       districtiveFeature.placeholder = "Distinctive Features"
        
     }
 //    MARK: - Customize text field
