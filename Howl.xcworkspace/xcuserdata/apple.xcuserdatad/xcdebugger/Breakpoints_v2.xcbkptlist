@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C78D52AA-AA57-4A78-BCFC-89A4BF544E82"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/TrackWalker/ViewController/ViewModels.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D4C886F3-20E1-445C-8495-90040AA0FAB3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/TrackWalker/ViewController/ViewModels.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0B58F94B-95D8-47B0-8CFA-8A0A4CC762FC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
@@ -54,7 +54,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4BE124B3-2141-42CC-A357-76AE9CEF28F5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MYPack/Dog Details Dialouge/DogDetailPopUp.swift"
@@ -70,7 +70,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4373CB7E-55F8-47CA-8C53-CE19F95CE11F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
@@ -86,7 +86,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F0FD2B5C-6182-44B0-A097-C671CB672C53"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
@@ -102,7 +102,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8FE73830-05E3-4ED9-90B0-42FC9BDA07AD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MORE/SubController/PermissionViewController.swift"
@@ -118,7 +118,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "31DCF410-5568-4570-84D8-2E3E579C509D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MYPack/AddNewPerson Module/ViewController/AddNewPersonVc.swift"
@@ -354,6 +354,21 @@
                   endingLineNumber = "212"
                   offsetFromSymbolStart = "3528">
                </Location>
+               <Location
+                  uuid = "31DCF410-5568-4570-84D8-2E3E579C509D - 589cbd3992ca5b99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.AddNewPersonVc.createBtnPress(__C.UIButton) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MYPack/AddNewPerson%20Module/ViewController/AddNewPersonVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "6068">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -361,7 +376,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D00C63C2-9FC2-49A4-A82E-AE2C18ED7059"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MYPack/AddNewPerson Module/ViewController/AddNewPersonVc.swift"
@@ -447,6 +462,21 @@
                   endingLineNumber = "211"
                   offsetFromSymbolStart = "2112">
                </Location>
+               <Location
+                  uuid = "D00C63C2-9FC2-49A4-A82E-AE2C18ED7059 - 589cbd3992ca5b99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.AddNewPersonVc.createBtnPress(__C.UIButton) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MYPack/AddNewPerson%20Module/ViewController/AddNewPersonVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "6068">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -460,8 +490,8 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "sendWalkIDToEmergencyContact()"
             landmarkType = "7">
             <Locations>
@@ -502,7 +532,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5EC46EE7-30F9-4B5D-9794-B2B452D7A384"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Howl/MYPack/AddNewPerson Module/ViewController/AddNewPersonVc.swift"
@@ -512,6 +542,38 @@
             endingLineNumber = "208"
             landmarkName = "createBtnPress(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EC46EE7-30F9-4B5D-9794-B2B452D7A384 - 589cbd3992ca5b99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.AddNewPersonVc.createBtnPress(__C.UIButton) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MYPack/AddNewPerson%20Module/ViewController/AddNewPersonVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "6068">
+               </Location>
+               <Location
+                  uuid = "5EC46EE7-30F9-4B5D-9794-B2B452D7A384 - 589cbd3992ca58d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.AddNewPersonVc.createBtnPress(__C.UIButton) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/MYPack/AddNewPerson%20Module/ViewController/AddNewPersonVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "1900">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -524,8 +586,8 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "sendWalkIDToEmergencyContact()"
             landmarkType = "7">
             <Locations>
@@ -572,10 +634,57 @@
             filePath = "Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "31F48A6F-E4F5-4B63-BB0D-C65CCE253E5F - e184e3c888bc2044"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "31F48A6F-E4F5-4B63-BB0D-C65CCE253E5F - 30d8f2c1a3738cf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Howl.WalkFetch&gt;&gt;) -&gt; () in Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "31F48A6F-E4F5-4B63-BB0D-C65CCE253E5F - 30d8f2c1a3738d1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Howl.WalkFetch&gt;&gt;) -&gt; () in Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -588,8 +697,8 @@
             filePath = "Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -623,98 +732,50 @@
                   endingLineNumber = "24"
                   offsetFromSymbolStart = "88">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Application/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "application(_:continue:restorationHandler:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F - 1d2f4f7472dce3da"
+                  uuid = "C53048B9-B2DF-41A2-86B6-1B9520CC5D0E - e184e3c888bc2027"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
+                  symbolName = "Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
                   moduleName = "Howl"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1812">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "140">
                </Location>
                <Location
-                  uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F - 3c5f228efc42b759"
+                  uuid = "C53048B9-B2DF-41A2-86B6-1B9520CC5D0E - e184e3c888bc2006"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
+                  symbolName = "Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
                   moduleName = "Howl"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "80">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "140">
                </Location>
                <Location
-                  uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F - 1d2f4f7472dce3da"
+                  uuid = "C53048B9-B2DF-41A2-86B6-1B9520CC5D0E - 30d8f2c1a3738cbb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Howl.WalkFetch&gt;&gt;) -&gt; () in Howl.WalkerStatusVc.viewDidLoad() -&gt; ()"
                   moduleName = "Howl"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1688">
-               </Location>
-               <Location
-                  uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F - 1d2f4f7472dce3bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "1816">
-               </Location>
-               <Location
-                  uuid = "EEF7BCB8-2BB4-4963-835B-A4C2B8C24E1F - 3c5f228efc42b77e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "80">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "88">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -729,13 +790,13 @@
             filePath = "Howl/Application/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "application(_:continue:restorationHandler:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc42b77e"
+                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc4288bc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -745,12 +806,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
                   offsetFromSymbolStart = "408">
                </Location>
                <Location
-                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc42b77e"
+                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc4288bc"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -760,38 +821,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "684">
-               </Location>
-               <Location
-                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc42889f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "EB3B87A6-5454-49F0-B17A-482C9AD6B5D6 - 3c5f228efc42889f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Howl.AppDelegate.application(_: __C.UIApplication, continue: __C.NSUserActivity, restorationHandler: (Swift.Optional&lt;Swift.Array&lt;__C.UIUserActivityRestoring&gt;&gt;) -&gt; ()) -&gt; Swift.Bool"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
                   offsetFromSymbolStart = "684">
                </Location>
             </Locations>
@@ -807,58 +838,10 @@
             filePath = "Howl/Howl Module/ViewController/HowlViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "trackDogBtn(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8DB37691-2288-41EE-872C-204F3068E098"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
-            landmarkName = "stopMonitoringMe()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8DB37691-2288-41EE-872C-204F3068E098 - d7de4a8ed93aca2d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "427"
-                  endingLineNumber = "427"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "8DB37691-2288-41EE-872C-204F3068E098 - d7de4a8ed93aca2d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "427"
-                  endingLineNumber = "427"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -871,8 +854,8 @@
             filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
             landmarkName = "stopMonitoringMe()"
             landmarkType = "7">
             <Locations>
@@ -912,164 +895,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6499F28-5DBC-4733-B17C-6C058DFB39FD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
-            landmarkName = "stopMonitoringMe()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F6499F28-5DBC-4733-B17C-6C058DFB39FD - 4e6b9b44e46f7450"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDatabaseReference) -&gt; () in Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "436"
-                  endingLineNumber = "436"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "F6499F28-5DBC-4733-B17C-6C058DFB39FD - d7de4a8ed93acc78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "440"
-                  endingLineNumber = "440"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  uuid = "F6499F28-5DBC-4733-B17C-6C058DFB39FD - d7de4a8ed93acc1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "441"
-                  endingLineNumber = "441"
-                  offsetFromSymbolStart = "196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4D251796-12F7-4F23-93D6-C3C81B9B6C03"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
-            landmarkName = "stopMonitoringMe()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4D251796-12F7-4F23-93D6-C3C81B9B6C03 - 4e6b9b44e46f7392"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDatabaseReference) -&gt; () in Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "434"
-                  endingLineNumber = "434"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "4D251796-12F7-4F23-93D6-C3C81B9B6C03 - d7de4a8ed93acc78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "440"
-                  endingLineNumber = "440"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  uuid = "4D251796-12F7-4F23-93D6-C3C81B9B6C03 - d7de4a8ed93acc1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.MonitorMeLocationManager.stopMonitoringMe() -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "441"
-                  endingLineNumber = "441"
-                  offsetFromSymbolStart = "196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32DD50F3-2156-4EF3-AE48-2DA39962D4A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Application/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "287F5386-BC3F-4A37-86E2-0BBF34348A50"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Application/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8D140E56-D8FF-4455-96F9-2E40BB27F468"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1077,10 +902,10 @@
             filePath = "Howl/TrackWalker/ViewController/WalkerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "loadAgedAllocations()"
-            landmarkType = "7">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "WalkerViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1096,6 +921,166 @@
             startingLineNumber = "231"
             endingLineNumber = "231"
             landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EBFFB575-9B0A-4B2A-8883-EDF4FF0E7941 - d53a144d2abcfe37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.DogListingViewController.deleteDog(index: Swift.Optional&lt;Swift.Int&gt;) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogListing/ViewController/DogListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "980">
+               </Location>
+               <Location
+                  uuid = "EBFFB575-9B0A-4B2A-8883-EDF4FF0E7941 - 29c4f36c03825afe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIContextualAction, __C.UIView, (Swift.Bool) -&gt; ()) -&gt; () in Howl.DogListingViewController.tableView(_: __C.UITableView, trailingSwipeActionsConfigurationForRowAt: Foundation.IndexPath) -&gt; Swift.Optional&lt;__C.UISwipeActionsConfiguration&gt;"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogListing/ViewController/DogListingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "404">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61F7DA18-1893-44FE-B5FF-1584B16F2DCB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
+            landmarkName = "stopMonitoringMeWithIncident()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D065673-EB76-4ABC-9218-264B234DFDE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D065673-EB76-4ABC-9218-264B234DFDE8 - 9555c30656ce38e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.MonitorMeLocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "2188">
+               </Location>
+               <Location
+                  uuid = "4D065673-EB76-4ABC-9218-264B234DFDE8 - d92ddf29716119ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;W3WSwiftApi.W3WSquare&gt;, Swift.Optional&lt;W3WSwiftApi.W3WError&gt;) -&gt; () in Howl.MonitorMeLocationManager.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Extr%20Code/MonitorMeLocationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA0638CD-CCF7-4EF5-B322-0AA8B2603A3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Extr Code/MonitorMeLocationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "locationManager(_:didChangeAuthorization:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6034DB90-FAD1-4B10-A1CA-1611C94DE5E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "startWalk(indexOfEmergencyContact:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D67D1910-FDB5-4F58-9497-9B4933ECF618"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Howl Module/ViewController/HowlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "trackDogBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21B08F6E-7419-4586-AE3A-7B5EBC2ADF87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Howl Module/ViewController/HowlViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

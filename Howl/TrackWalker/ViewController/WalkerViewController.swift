@@ -9,43 +9,81 @@ import UIKit
 import Foundation
 import MapKit
 
-class WalkerViewController: UIViewController, MKMapViewDelegate {
+class WalkerViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var monitorYouMap: MKMapView!
+    var lastLocation: CLLocationCoordinate2D?
+    var currentLocation: CLLocationCoordinate2D?
+    
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(addAnnotations(_:)),
+//                                               name: NSNotification.Name(rawValue: "mapupdate"),
+//                                               object: nil)
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        if kDataManager.monitorYouOutput.count <= 0 {
+//
+//            monitorYouMap.removeAnnotations(monitorYouMap.annotations)
+//            monitorYouMap.reloadInputViews()
+//        }
+//    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//       let retrievedValue = UserDefaults.standard.string(forKey: "DogMonitorId") ?? ""
+//        if retrievedValue.count <= 0 {
+//
+//            kAlertManager.triggerAlertTypeWarning(warningTitle: "NO OUTPUT",
+//                                                  warningMessage: "Location data will output when you are monitoring and data is available",
+//                                                  initialiser: self)
+//        } else {
+//
+//            loadAgedAllocations()
+//        }
+//    }
+    
+    
+    func calculateMidpoint(lastLocation: CLLocationCoordinate2D, currentLocation: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        let midLat = (lastLocation.latitude + currentLocation.latitude) / 2
+        let midLon = (lastLocation.longitude + currentLocation.longitude) / 2
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(addAnnotations(_:)),
-                                               name: NSNotification.Name(rawValue: "mapupdate"),
-                                               object: nil)
+        return CLLocationCoordinate2D(latitude: midLat, longitude: midLon)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if kDataManager.monitorYouOutput.count <= 0 {
+    func updateMarkerOnMap() {
+        if let lastLocation = lastLocation, let currentLocation = currentLocation {
+            let midpoint = calculateMidpoint(lastLocation: lastLocation, currentLocation: currentLocation)
             
+            // Remove any existing annotations and create a new one at the midpoint
             monitorYouMap.removeAnnotations(monitorYouMap.annotations)
-            monitorYouMap.reloadInputViews()
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = midpoint
+            monitorYouMap.addAnnotation(annotation)
+            
+            // Update the last known location
+            self.lastLocation = currentLocation
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        if kDataManager.monitorId.count <= 0 {
-            
-            kAlertManager.triggerAlertTypeWarning(warningTitle: "NO OUTPUT",
-                                                  warningMessage: "Location data will output when you are monitoring and data is available",
-                                                  initialiser: self)
-        } else {
-            
-            loadAgedAllocations()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let newLocation = locations.last?.coordinate {
+            currentLocation = newLocation
+            updateMarkerOnMap()
         }
     }
     
-    func loadAgedAllocations() {
+  /*  func loadAgedAllocations() {
         
         monitorYouMap.removeAnnotations(monitorYouMap.annotations)
-        
-        if kDataManager.monitorId.count > 0 {
+        let retrievedValue = UserDefaults.standard.string(forKey: "DogMonitorId") ?? ""
+        if retrievedValue.count > 0 {
             
             // add initial annotations
             for location in kDataManager.monitorYouOutput {
@@ -139,6 +177,6 @@ class WalkerViewController: UIViewController, MKMapViewDelegate {
     }
     deinit {
         NotificationCenter.default.removeObserver("mapupdate")
-    }
+    }*/
 
 }

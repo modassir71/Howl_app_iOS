@@ -18,6 +18,7 @@ class WalkerStatusVc: UIViewController {
     var idLabel = String()
     var processLabel = String()
     var walkUpdates = [WalkFetch]()
+    var refreshTimer: Timer?
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,31 @@ class WalkerStatusVc: UIViewController {
                         self?.walkerListTbLview.reloadData()
                     }
                 }
+        
+        let refreshControl = UIRefreshControl()
+           refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+           
+           // Add the refresh control to your table view
+           walkerListTbLview.refreshControl = refreshControl
         liveIDSet = true
         _delegatesMethod()
         _registerCell()
         _setUI()
+    }
+    
+    @objc func handleRefresh(_ sender: UIRefreshControl) {
+        fetchAndReloadData()
+        sender.endRefreshing() // End the refresh animation when done
+    }
+    
+    func fetchAndReloadData() {
+        kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+            if let walkUpdates = walkUpdates {
+                self?.walkUpdates = walkUpdates
+                print(walkUpdates)
+                self?.walkerListTbLview.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,13 +149,15 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
         cell.batteryLbl.text = walkUpdates[indexPath.row].walkBattery
         cell.timeLbl.text = walkUpdates[indexPath.row].walkTime
         cell.dateLbl.text = walkUpdates[indexPath.row].walkDate
-        cell.w3wLbl.text = walkUpdates[indexPath.row].walkW3WURL
+        let fullURL = walkUpdates[indexPath.row].walkW3WURL
+        let desiredPart = fullURL.replacingOccurrences(of: "https://what3words.com/", with: "")
+        cell.w3wLbl.text = desiredPart
         cell.statusLbl.text = walkUpdates[indexPath.row].walkStatus
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 118
+        return 125
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

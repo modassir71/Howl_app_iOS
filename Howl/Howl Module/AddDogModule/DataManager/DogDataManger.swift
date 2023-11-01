@@ -13,6 +13,7 @@ class DogDataManager{
         return instance
     }()
 //    MARK: - Variable
+    var walkMonitor = ""
     var dogsArchive: [Dog]! = []
     var dogs: [Dog]! = []
     var selectedIndex: Int! = 0

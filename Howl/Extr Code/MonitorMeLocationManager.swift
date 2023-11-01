@@ -99,7 +99,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func forceUpdateToMonitorMeServer(with monitorID: String) {
         let databaseReference = Database.database().reference()
 
-        databaseReference.child("your_data_node").setValue(true) { (error, _) in
+        databaseReference.child(kDataManager.monitorId).setValue(true) { (error, _) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 // Handle the error, you might want to show a message to the user
@@ -192,11 +192,14 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let locationObj = locations.last {
-            
+//            delegate?.didUpdateLocations(locations)
+//            didUpdateLocationsCallback?(locationObj)
             let coord = locationObj.coordinate
             
             longitude = String(describing: coord.longitude)
             latitude = String(describing: coord.latitude)
+            print("Lattituderr", latitude ?? "")
+            print("Longituddde", longitude ?? "")
             speed = String(describing: locationObj.speed)
             course = String(describing: locationObj.course)
             lat = latitude

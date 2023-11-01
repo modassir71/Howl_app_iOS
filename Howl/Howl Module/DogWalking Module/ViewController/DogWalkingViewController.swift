@@ -296,6 +296,8 @@ class DogWalkingViewController: UIViewController {
                       self.dogAnimationView.isHidden = true
                   }
                   kMonitorMeLocationManager.stopMonitoringMe()
+                  DogDataManager.shared.walkMonitor = ""
+                  UserDefaults.standard.removeObject(forKey: "DogMonitorId")
                   self.dogStopImg.isHidden = false
                   self.streetImg.isHidden = true
                   self.tabBarController?.tabBar.isHidden = false
@@ -374,6 +376,7 @@ class DogWalkingViewController: UIViewController {
       func startWalk(indexOfEmergencyContact: Int){
           kDataManager.monitorId = generateRandomString(length: 30)//String().randomString(length: 30)
           print("Monitor ID", kDataManager.monitorId!)
+          UserDefaults.standard.set(kDataManager.monitorId, forKey: "DogMonitorId")
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
           sendWalkIDToEmergencyContact()
@@ -382,44 +385,7 @@ class DogWalkingViewController: UIViewController {
           kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL", latitude: lat ?? "", longitude: long ?? "")
       }
       
-     /* func updateFirebaseWithModelAndID() {
-          let monitorID = kDataManager.monitorMeID//"your_monitor_id" // Replace with the actual monitor ID
-             let yourModel = WalkModel(
-                battery: "0",
-                 course: "0",
-                 date: "",
-                 flag: "1",
-                 id: 0,
-                 lat: "0",
-                 lon: "0",
-                 randomId: monitorID ?? "",
-                 speed: "0",
-                 state: "End Session",
-                 time: "",
-                 w3w: "NA",
-                 w3wurl: "NA"
-             )
-
-             // Initialize Firebase database reference
-             let databaseReference = Database.database().reference()
-
-             // Encode the model to a dictionary
-             let encoder = JSONEncoder()
-             if let modelData = try? encoder.encode(yourModel),
-                let modelDict = try? JSONSerialization.jsonObject(with: modelData, options: .allowFragments) as? [String: Any] {
-                 // Set the values in the Firebase Realtime Database
-                 databaseReference.child(monitorID ?? "").setValue(modelDict) { (error, _) in
-                     if let error = error {
-                         print("Error: \(error.localizedDescription)")
-                         // Handle the error, you might want to show a message to the user
-                     } else {
-                         print("Monitor ID Updated Successfully")
-                         // You can put any code here that you want to execute on a successful update
-                     }
-                 }
-             }
-         }*/
-      
+    
       func sendWalkIDToEmergencyContact() {
           var notificationType = ""
           var mobileNo = ""

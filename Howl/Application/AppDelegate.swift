@@ -23,33 +23,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 1.0)
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-           } catch {
-               print("AVAudioSessionCategoryPlayback not work")
-           }
+        } catch {
+            print("AVAudioSessionCategoryPlayback not work")
+        }
+        
         if #available(iOS 13.0, *) {
-                    for windowScene in UIApplication.shared.connectedScenes {
-                        if let windowScene = windowScene as? UIWindowScene {
-                            for window in windowScene.windows {
-                                window.overrideUserInterfaceStyle = .light
-                            }
-                        }
+            for windowScene in UIApplication.shared.connectedScenes {
+                if let windowScene = windowScene as? UIWindowScene {
+                    for window in windowScene.windows {
+                        window.overrideUserInterfaceStyle = .light
                     }
                 }
+            }
+        }
         _ = DataManager.sharedInstance
         UIDevice.current.isBatteryMonitoringEnabled = true
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
         FirebaseApp.configure()
-        databaseRef = Database.database().reference().child("your_data_node")
-        databaseRef.observe(.childAdded) { snapshot in
-                    if let data = snapshot.value as? [String: Any],
-                       let walkID = data["walkID"] as? String {
-                        // Handle the "walkID" you fetched from Firebase
-                        // You can use 'walkID' in your app as needed
-                        print("Walk ID: \(walkID)")
-                        kDataManager.walkId = walkID
-                    }
-                }
+//        databaseRef = Database.database().reference().child("your_data_node")
+//        databaseRef.observe(.childAdded) { snapshot in
+//                    if let data = snapshot.value as? [String: Any],
+//                       let walkID = data["walkID"] as? String {
+//                        // Handle the "walkID" you fetched from Firebase
+//                        // You can use 'walkID' in your app as needed
+//                        print("Walk ID: \(walkID)")
+//                        kDataManager.walkId = walkID
+//                    }
+//                }
         return true
     }
 
@@ -66,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if userActivity.webpageURL != nil {
                 print(kDataManager.monitorId ?? "")
                 FirebaseApp.configure()
-                databaseRef = Database.database().reference().child(kDataManager.monitorId)
+                databaseRef = Database.database().reference().child("node_data")
                 databaseRef.observe(.childAdded) { snapshot in
                             if let data = snapshot.value as? [String: Any],
                                let walkID = data["walkID"] as? String {

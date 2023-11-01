@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 
 class HowlViewController: UIViewController {
 //MARK: - Outlet
@@ -22,7 +23,7 @@ class HowlViewController: UIViewController {
     //MARK: - Variable
     let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
-    
+//   var walkMonitor = ""
     
    
     
@@ -34,6 +35,17 @@ class HowlViewController: UIViewController {
         registerCollectionView()
         delegateMethod()
         _SetUpUi()
+        let databaseRef = Database.database().reference().child("your_data_node")
+
+        databaseRef.observe(.childAdded) { snapshot in
+            if let data = snapshot.value as? [String: Any],
+               let walkID = data["walkID"] as? String {
+                print("Walk ID: \(walkID)")
+                self.dataManager.walkMonitor = walkID
+//                self.walkMonitor = walkID
+                //kDataManager.walkId = walkID
+            }
+        }
   }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,13 +133,19 @@ class HowlViewController: UIViewController {
     //MARK: -Button Action
     
     @IBAction func trackDogBtn(_ sender: UIButton) {
-        if kDataManager.walkId != nil{
+       // let retrive = UserDefaults.standard.string(forKey: "WalkIDs")
+        
+//        if retrive != nil{
+        if dataManager.walkMonitor != ""{
             let storyboard = AppStoryboard.Main.instance
             let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
             self.navigationController?.pushViewController(trackerVc, animated: true)
         }else{
             AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
         }
+//        }else{
+//            AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
+//        }
     }
     
     
