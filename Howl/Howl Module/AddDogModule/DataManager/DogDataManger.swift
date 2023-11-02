@@ -16,6 +16,7 @@ class DogDataManager{
     var walkMonitor = ""
     var dogsArchive: [Dog]! = []
     var dogs: [Dog]! = []
+    var walkUpdates: [WalkFetch] = []
     var selectedIndex: Int! = 0
     let kDocumentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     

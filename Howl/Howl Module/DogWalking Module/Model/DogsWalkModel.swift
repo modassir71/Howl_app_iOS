@@ -118,7 +118,22 @@ struct WalkUpdate: Codable {
         flag = try container.decode(String.self, forKey: .flag)
     }
 }
-struct WalkFetch {
+struct WalkFetch: Codable {
+    var walkID: String
+    var walkLongitude: String
+    var walkLatitude: String
+    var walkSpeed: String
+    var walkCourse: String
+    var walkDate: String
+    var walkTime: String
+    var walkBattery: String
+    var walkStatus: String
+    var walkW3WWords: String
+    var walkW3WURL: String
+    var flag: String
+}
+
+struct WalkHistory: Codable {
     var walkID: String
     var walkLongitude: String
     var walkLatitude: String

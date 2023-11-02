@@ -45,6 +45,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     var lat: String?
     var lng: String?
     var flag: String?
+    var lastUpdatesArray: [WalkFetch] = []
     
     
     static let sharedInstance: MonitorMeLocationManager = {
@@ -427,37 +428,41 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 //        kDataManager.monitorMeLocal.removeAll()
 //    }
     func stopMonitoringMe() {
-        if let monitorMeID = kDataManager.monitorId {
-            // Delete the user's data from Firebase
-            let databaseReference = Database.database().reference()
-            let userReference = databaseReference.child("your_data_node").child(monitorMeID)
-
-            userReference.removeValue { error, _ in
-                if let error = error {
-                    print("Error deleting user data from Firebase: \(error.localizedDescription)")
-                } else {
-                    print("User data deleted from Firebase")
-                }
-            }
-        }
-        
         //forceUpdateToMonitorMeServerWithState(state: "End Session")
         forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
 
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)
-
+        removeAllDataFromFirebase()
+        DogDataManager.shared.walkMonitor = ""
         locationManager.stopUpdatingLocation()
 
         kDataManager.monitorMeLocal.removeAll()
     }
     
+    func removeAllDataFromFirebase() {
+        if Reachability.isConnectedToNetwork() {
+            let databaseReference = Database.database().reference()
+            let dataNodeReference = databaseReference.child("your_data_node")
+
+            dataNodeReference.removeValue { error, _ in
+                if let error = error {
+                    print("Error removing data: \(error.localizedDescription)")
+                } else {
+                    print("All data removed successfully")
+                }
+            }
+        }
+        DogDataManager.shared.walkMonitor = ""
+    }
+    
     
     func stopMonitoringMeWithIncident() {
-        
+      //  lastUpdatesArray = []
         // Confirm session ended
      //   forceUpdateToMonitorMeServerWithState(state: "End Session")
         forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
+        
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)
         
@@ -471,11 +476,37 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             kDataManager.monitorMeLocal.removeAll()
             
         } else {
-            
-            kDataManager.monitorMeLocalHistoric.insert(kDataManager.monitorMeLocal, at: 0)
-            kDataManager.monitorMeLocal.removeAll()
+            fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+                if let walkUpdates = walkUpdates {
+                    if let lastData = walkUpdates.last {
+                        // Create a variable to hold the last object
+                        let newWalkUpdate = WalkFetch(
+                            walkID: lastData.walkID,
+                            walkLongitude: lastData.walkLongitude,
+                            walkLatitude: lastData.walkLatitude,
+                            walkSpeed: lastData.walkSpeed,
+                            walkCourse: lastData.walkCourse,
+                            walkDate: lastData.walkDate,
+                            walkTime: lastData.walkTime,
+                            walkBattery: lastData.walkBattery,
+                            walkStatus: lastData.walkStatus,
+                            walkW3WWords: lastData.walkW3WWords,
+                            walkW3WURL: lastData.walkW3WURL,
+                            flag: lastData.flag
+                        )
+
+                        // Append the last object to lastUpdatesArray
+                        self?.lastUpdatesArray.append(newWalkUpdate)
+                        print("lasttt", self?.lastUpdatesArray ?? [])
+                    }
+                }
+            }
+
+//            kDataManager.monitorMeLocalHistoric.insert(kDataManager.monitorMeLocal, at: 0)
+//            kDataManager.monitorMeLocal.removeAll()
         }
         _ = kDataManager.saveMonitorMeLocalHistoric()
+        removeAllDataFromFirebase()
     }
     
     deinit {

@@ -2304,7 +2304,11 @@
                                                 <state key="normal" image="notification_Img"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6r-ON-Wuq">
-                                                <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                                <rect key="frame" x="15" y="17.666666666666671" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="YsC-Qx-ZgA"/>
+                                                    <constraint firstAttribute="height" constant="35" id="ogw-RO-cCP"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="back_icon"/>
                                                 <connections>
@@ -2426,7 +2430,11 @@
                                                 <state key="normal" image="notification_Img"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Pw-Jhc">
-                                                <rect key="frame" x="14.999999999999998" y="16" width="19.333333333333329" height="18"/>
+                                                <rect key="frame" x="15" y="7.6666666666666643" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="5ec-T1-FGz"/>
+                                                    <constraint firstAttribute="width" constant="35" id="hEG-5o-x0w"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="back_icon"/>
                                                 <connections>
@@ -2675,7 +2683,11 @@
                                         <state key="normal" image="notification_Img"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-wk-tf6">
-                                        <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                        <rect key="frame" x="15" y="17.666666666666671" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="pwc-SH-mSX"/>
+                                            <constraint firstAttribute="width" constant="35" id="vAd-ew-v3F"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back_icon"/>
@@ -3082,10 +3094,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nt4-XH-TX2">
-                                <rect key="frame" x="0.0" y="50" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="77"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Howl_Icons" translatesAutoresizingMaskIntoConstraints="NO" id="vgz-sj-W2D">
-                                        <rect key="frame" x="119.66666666666669" y="5" width="136" height="60"/>
+                                        <rect key="frame" x="119.66666666666669" y="8.6666666666666643" width="136" height="59.999999999999993"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="WIQ-Ro-9sx"/>
                                             <constraint firstAttribute="width" constant="136" id="baD-AK-VPL"/>
@@ -3098,7 +3110,11 @@
                                         <state key="normal" image="notification_Img"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-XC-DkS">
-                                        <rect key="frame" x="20" y="21" width="19.333333333333329" height="28"/>
+                                        <rect key="frame" x="20" y="21" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="5nt-sl-Lc0"/>
+                                            <constraint firstAttribute="width" constant="35" id="uVq-Dd-2x2"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back_icon"/>
@@ -3118,7 +3134,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2D-Sv-PEE">
-                                <rect key="frame" x="127.66666666666669" y="145" width="120" height="120"/>
+                                <rect key="frame" x="127.66666666666669" y="152" width="120" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-JQ-PG7">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -3152,7 +3168,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-1e-FH9">
-                                <rect key="frame" x="20" y="309" width="335" height="44"/>
+                                <rect key="frame" x="20" y="316" width="335" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="AaR-yr-sni"/>
                                 </constraints>
@@ -3160,7 +3176,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwP-Y1-0F2">
-                                <rect key="frame" x="120" y="449.33333333333331" width="135" height="46"/>
+                                <rect key="frame" x="120" y="456.33333333333331" width="135" height="46"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.0" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="0xL-Us-Pt9"/>
@@ -3176,7 +3192,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m9a-3Y-OYw">
-                                <rect key="frame" x="115" y="555.33333333333337" width="145" height="46"/>
+                                <rect key="frame" x="115" y="562.33333333333337" width="145" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-nJ-FCn">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="46"/>
@@ -3194,7 +3210,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhD-E9-mJj">
-                                <rect key="frame" x="20" y="368" width="335" height="50"/>
+                                <rect key="frame" x="20" y="375" width="335" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-3l-JST">
                                         <rect key="frame" x="9.9999999999999982" y="15" width="28.333333333333329" height="20"/>
@@ -3244,7 +3260,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25Z-NW-6un">
-                                <rect key="frame" x="25" y="507" width="310" height="40"/>
+                                <rect key="frame" x="25" y="514" width="310" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCs-vc-iMF">
                                         <rect key="frame" x="0.0" y="2" width="30" height="24"/>
@@ -3395,7 +3411,11 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-1c-Rwx">
-                                                <rect key="frame" x="20" y="24" width="19.333333333333329" height="22"/>
+                                                <rect key="frame" x="20" y="17.666666666666671" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="cAZ-ub-1TN"/>
+                                                    <constraint firstAttribute="width" constant="35" id="yzn-qC-6I9"/>
+                                                </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="back_icon"/>
@@ -3519,7 +3539,11 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK2-6P-76Q">
-                                        <rect key="frame" x="14.999999999999998" y="24" width="19.333333333333329" height="22"/>
+                                        <rect key="frame" x="15" y="17.666666666666671" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Mxd-aN-FN3"/>
+                                            <constraint firstAttribute="width" constant="35" id="Y42-cA-x6e"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back_icon"/>
                                         <connections>
@@ -3601,7 +3625,11 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsC-9O-Xvj">
-                                        <rect key="frame" x="14.999999999999998" y="26" width="19.333333333333329" height="18"/>
+                                        <rect key="frame" x="15" y="17.666666666666671" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6Q3-P7-HiG"/>
+                                            <constraint firstAttribute="width" constant="35" id="zEj-GM-W5T"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back_icon"/>

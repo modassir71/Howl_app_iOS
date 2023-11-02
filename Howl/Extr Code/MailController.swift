@@ -183,10 +183,11 @@ class MailController: NSObject, MFMailComposeViewControllerDelegate {
             var csvArray = ["ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL"]
             
             for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
-                let row = "\(walk.id ?? ""),\(walk.date ?? ""),\(walk.time ?? ""),\(walk.longitude ?? ""),\(walk.latitude ?? ""),\(walk.speed ?? ""),\(walk.course ?? ""),\(walk.battery ?? ""),\(walk.status ?? ""),\(walk.w3wWords ?? ""),\(walk.w3wURL ?? "")"
+                let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
                 csvArray.append(row)
             }
-            
+            print("csvArray", csvArray)
+           
             let csvString = csvArray.joined(separator: "\n")
             if let csvData = csvString.data(using: .utf8) {
                 mailComposer.addAttachmentData(csvData, mimeType: "text/csv", fileName: "incident.csv")

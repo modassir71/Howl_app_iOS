@@ -20,7 +20,7 @@ struct Dog: Codable {
     var dogMicrochipSupplier: String!
     var dogStolen: Bool!
     var dogImage: Data!
-    var dogIncident: [WalkUpdate]!
+    var dogIncident: [WalkFetch]!
     
     enum CodingKeys: String, CodingKey {
         
@@ -50,7 +50,7 @@ struct Dog: Codable {
         microchipSupplier: String,
         stolen: Bool,
         image: Data,
-        incident: [WalkUpdate]
+        incident: [WalkFetch]
     ) {
         dogName = name
         dogSex = sex
@@ -99,6 +99,6 @@ struct Dog: Codable {
         dogMicrochipSupplier = try container.decode(String.self, forKey: .dogMicrochipSupplier)
         dogStolen = try container.decode(Bool.self, forKey: .dogStolen)
         dogImage = try container.decode(Data.self, forKey: .dogImage)
-        dogIncident = try container.decode([WalkUpdate].self, forKey: .dogIncident)
+        dogIncident = try container.decode([WalkFetch].self, forKey: .dogIncident)
     }
 }

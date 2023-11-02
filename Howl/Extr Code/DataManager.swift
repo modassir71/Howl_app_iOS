@@ -43,8 +43,8 @@ class DataManager {
     var monitorYouNullDataCounter: Int! = 0 // to vlidate if an old ID is used by counting the number of times no data is returned
     var indexOfPersonMonitoring: Int = 0 // to hold the position in people of who you wis hto monitor you
     var monitorYouOutput: [[String:String]]! = []
-    var monitorMeLocal: [WalkUpdate]! = [] // to hold the walk you are currently on
-    var monitorMeLocalHistoric: [[WalkUpdate]]! = [] // to save walk from previous so they can be applied to missing dogs as evidence
+    var monitorMeLocal: [WalkFetch]! = [] // to hold the walk you are currently on
+    var monitorMeLocalHistoric: [[WalkFetch]]! = [] // to save walk from previous so they can be applied to missing dogs as evidence
     
     init() {
         
@@ -171,10 +171,10 @@ class DataManager {
         // If a new session started ensure you also save the monitor me ID
         if status == true {
             
-            UserDefaults.standard.set(monitorMeID, forKey: "monitormeid")
+            UserDefaults.standard.set(DogDataManager.shared.walkMonitor, forKey: "monitormeid")
         } else {
             monitorMeID = "X"
-            UserDefaults.standard.set(monitorMeID, forKey: "monitormeid")
+            UserDefaults.standard.set(DogDataManager.shared.walkMonitor, forKey: "monitormeid")
         }
     }
     
@@ -498,7 +498,7 @@ class DataManager {
         }
     }
     
-    func loadMonitorMeLocal() -> [WalkUpdate]? {
+    func loadMonitorMeLocal() -> [WalkFetch]? {
         
         var filePath = kDocumentsDirectory
         filePath = kDocumentsDirectory + "/howlmonitormelocal"
@@ -507,7 +507,7 @@ class DataManager {
             let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
             if let loadedInfo = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data? {
 
-                let loadedMonitorMeLocal = try PropertyListDecoder().decode([WalkUpdate].self, from: loadedInfo!)
+                let loadedMonitorMeLocal = try PropertyListDecoder().decode([WalkFetch].self, from: loadedInfo!)
                 return loadedMonitorMeLocal
             } else {
                 return nil
@@ -537,7 +537,7 @@ class DataManager {
         }
     }
     
-    func loadMonitorMeLocalHistoric() -> [[WalkUpdate]]? {
+    func loadMonitorMeLocalHistoric() -> [[WalkFetch]]? {
         
         var filePath = kDocumentsDirectory
         filePath = kDocumentsDirectory + "/howlmonitormelocalhistoric"
@@ -546,7 +546,7 @@ class DataManager {
             let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
             if let loadedInfo = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Data? {
 
-                let loadedMonitorMeLocalSaved = try PropertyListDecoder().decode([[WalkUpdate]].self, from: loadedInfo!)
+                let loadedMonitorMeLocalSaved = try PropertyListDecoder().decode([[WalkFetch]].self, from: loadedInfo!)
                 return loadedMonitorMeLocalSaved
             } else {
                 return nil

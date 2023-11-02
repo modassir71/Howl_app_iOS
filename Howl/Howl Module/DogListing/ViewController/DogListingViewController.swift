@@ -26,12 +26,18 @@ class DogListingViewController: UIViewController, SharingDelegate {
         var instance  = DogDataManager.shared
          let emptyLbl = UILabel()
     var emailController: MailController!
+    var walkUpdates = [WalkFetch]()
     //    MARK: - Life cycle
         override func viewDidLoad() {
             super.viewDidLoad()
             _setUI()
             _delegateMethod()
             registerCell()
+            print(kMonitorMeLocationManager.lastUpdatesArray)
+//            for i in walkUpdates{
+//               print("dddddd",i.flag)
+//            }
+//            print(walkUpdates)
         }
         
         override func viewWillAppear(_ animated: Bool) {
@@ -228,16 +234,26 @@ class DogListingViewController: UIViewController, SharingDelegate {
                                                       message: "Select an incident that relates to this theft",
                                                       preferredStyle: .actionSheet)
                         
-                        for (index, walk) in kDataManager.monitorMeLocalHistoric.enumerated() {
-                            
-                            print(String(describing: walk))
-                            
-                            alert.addAction(UIAlertAction(title: walk[0].date + "-" + walk[0].time,
+//                        for (index, walk) in kDataManager.monitorMeLocalHistoric.enumerated() {
+//
+//                            print(String(describing: walk))
+//
+//                            alert.addAction(UIAlertAction(title: walk[0].date + "-" + walk[0].time,
+//                                                          style: .default,
+//                                                          handler: { _ in
+//
+//                                self.setStolen(indexOfDog: indexPath.row, indexOfIncident: index)
+//                            }))
+//                        }
+                        
+                        for (index, walk) in kMonitorMeLocationManager.lastUpdatesArray.enumerated(){
+                            alert.addAction(UIAlertAction(title: walk.walkDate + "-" + walk.walkTime,
                                                           style: .default,
                                                           handler: { _ in
-                                
+
                                 self.setStolen(indexOfDog: indexPath.row, indexOfIncident: index)
                             }))
+                            
                         }
                         
                         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
@@ -346,8 +362,13 @@ class DogListingViewController: UIViewController, SharingDelegate {
             // Create the CSV data
             var csvString = "ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL\n"
             
-            for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
-                let row = "\(walk.id ?? ""),\(walk.date ?? ""),\(walk.time ?? ""),\(walk.longitude ?? ""),\(walk.latitude ?? ""),\(walk.speed ?? ""),\(walk.course ?? ""),\(walk.battery ?? ""),\(walk.status ?? ""),\(walk.w3wWords ?? ""),\(walk.w3wURL ?? "N/A")\n"
+//            for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
+//                let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
+//                csvString += row
+//            }
+            print("CSV string", csvString)
+            for walk in kMonitorMeLocationManager.lastUpdatesArray{
+                let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
                 csvString += row
             }
             

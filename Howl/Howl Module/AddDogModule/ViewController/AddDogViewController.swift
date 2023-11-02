@@ -258,7 +258,7 @@ class AddDogViewController: UIViewController {
         } else {
             dogImageData = Data()
         }
-        let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: genderType ?? "" , breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: dogType ?? "" , distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkUpdate]())
+        let newDog = Dog(name: dogNameTxtFld.text ?? "", sex: genderType ?? "" , breed: bredextFld.text ?? "", colour: colorTxtFld.text ?? "", dob: dateOfBirthTxtFld.text ?? "", neuteredOrSpayed: dogType ?? "" , distinctiveFeatures: districtiveFeature.text ?? "", microchipNumber: microchipNumberTxtFld.text ?? "", microchipSupplier: microchipDatabaseTxtFld.text ?? "", stolen: false, image: dogImageData, incident: [WalkFetch]())
         if isUpdate == true{
             DogDataManager.shared.dogs.remove(at: DogDataManager.shared.selectedIndex)
             DogDataManager.shared.dogs.insert(newDog, at: DogDataManager.shared.selectedIndex)
