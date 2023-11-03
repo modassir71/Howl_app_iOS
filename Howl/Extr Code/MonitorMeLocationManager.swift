@@ -323,19 +323,19 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 
                 // Prepare the data to be stored in Firebase
                 var monitorUpdateDictionary: [String: Any] = [
-                    "walkID": monitorMeID,
-                    "walkLongitude": longitude,
-                    "walkLatitude": latitude,
-                    "walkSpeed": speed ?? "",
-                    "walkCourse": course ?? "",
-                    "walkDate": Helpers().returnTodaysDate(),
-                    "walkTime": Helpers().returnTheTimeNow(),
-                    "walkBattery": String(format: "%.2f", UIDevice.current.batteryLevel * 100),
-                    "walkStatus": state,
-                    "walkW3WWords": "", // Set default value to an empty string
-                    "walkW3WURL": "", // Set default value to an empty string
-                    "State": state,
-                    "Device": "iOS",
+                    "randomId": monitorMeID,
+                    "lon": longitude,
+                    "lat": latitude,
+                    "speed": speed ?? "",
+                    "course": course ?? "",
+                    "date": Helpers().returnTodaysDate(),
+                    "time": Helpers().returnTheTimeNow(),
+                    "battery": String(format: "%.2f", UIDevice.current.batteryLevel * 100),
+                    "state": state,
+                    "w3w": "", // Set default value to an empty string
+                    "w3wurl": "", // Set default value to an empty string
+                   // "state": state,
+                    "device": "iOS",
                     "flag": "0"
                 ]
 
@@ -344,8 +344,8 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 
                 // Conditionally update walkW3WWords and walkW3WURL if they are not nil
                 if let w3wWords = w3wWords, let w3wURL = w3wURL {
-                    monitorUpdateDictionary["walkW3WWords"] = w3wWords
-                    monitorUpdateDictionary["walkW3WURL"] = w3wURL
+                    monitorUpdateDictionary["w3w"] = w3wWords
+                    monitorUpdateDictionary["w3wurl"] = w3wURL
                 }
 
                 // Store the data in Firebase
@@ -375,18 +375,19 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             var walkUpdates = [WalkFetch]()
             
             for (_, value) in dataDict {
-                if let walkID = value["walkID"] as? String,
-                   let walkLongitude = value["walkLongitude"] as? String,
-                   let walkLatitude = value["walkLatitude"] as? String,
-                   let walkSpeed = value["walkSpeed"] as? String,
-                   let walkCourse = value["walkCourse"] as? String,
-                   let walkDate = value["walkDate"] as? String,
-                   let walkTime = value["walkTime"] as? String,
-                   let walkBattery = value["walkBattery"] as? String,
-                   let walkStatus = value["walkStatus"] as? String,
-                   let walkW3WWords = value["walkW3WWords"] as? String,
-                   let walkW3WURL = value["walkW3WURL"] as? String,
-                   let flag = value["flag"] as? String  {
+                if let walkID = value["randomId"] as? String,
+                   let walkLongitude = value["lon"] as? String,
+                   let walkLatitude = value["lat"] as? String,
+                   let walkSpeed = value["speed"] as? String,
+                   let walkCourse = value["course"] as? String,
+                   let walkDate = value["date"] as? String,
+                   let walkTime = value["time"] as? String,
+                   let walkBattery = value["battery"] as? String,
+                   let walkStatus = value["state"] as? String,
+                   let walkW3WWords = value["w3w"] as? String,
+                   let walkW3WURL = value["w3wurl"] as? String,
+                   let flag = value["flag"] as? String,
+                   let device = value["device"] as? String{
                     let walkUpdate = WalkFetch(
                         walkID: walkID,
                         walkLongitude: walkLongitude,
@@ -398,7 +399,8 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                         walkBattery: walkBattery,
                         walkStatus: walkStatus,
                         walkW3WWords: walkW3WWords,
-                        walkW3WURL: walkW3WURL, flag: flag
+                        walkW3WURL: walkW3WURL, flag: flag,
+                        device: device
                     )
                     walkUpdates.append(walkUpdate)
                 }
@@ -458,9 +460,6 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     
     
     func stopMonitoringMeWithIncident() {
-      //  lastUpdatesArray = []
-        // Confirm session ended
-     //   forceUpdateToMonitorMeServerWithState(state: "End Session")
         forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
         
         // Confirm you will stop being monitored
@@ -479,6 +478,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
                 if let walkUpdates = walkUpdates {
                     if let lastData = walkUpdates.last {
+                        // if lastData.walkStatus == "End Session"{
                         // Create a variable to hold the last object
                         let newWalkUpdate = WalkFetch(
                             walkID: lastData.walkID,
@@ -492,18 +492,22 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                             walkStatus: lastData.walkStatus,
                             walkW3WWords: lastData.walkW3WWords,
                             walkW3WURL: lastData.walkW3WURL,
-                            flag: lastData.flag
+                            flag: lastData.flag, device: lastData.device
                         )
-
+                        
                         // Append the last object to lastUpdatesArray
                         self?.lastUpdatesArray.append(newWalkUpdate)
-                        print("lasttt", self?.lastUpdatesArray ?? [])
+//                        print("lasttt", self?.lastUpdatesArray ?? [])
+//                        if let encodedData = try? JSONEncoder().encode(self?.lastUpdatesArray) {
+//                            UserDefaults.standard.set(encodedData, forKey: "lastWalkUpdates")
+//                            UserDefaults.standard.synchronize()
+//                        }
                     }
                 }
             }
 
-//            kDataManager.monitorMeLocalHistoric.insert(kDataManager.monitorMeLocal, at: 0)
-//            kDataManager.monitorMeLocal.removeAll()
+            kDataManager.monitorMeLocalHistoric.insert(kDataManager.monitorMeLocal, at: 0)
+            kDataManager.monitorMeLocal.removeAll()
         }
         _ = kDataManager.saveMonitorMeLocalHistoric()
         removeAllDataFromFirebase()

@@ -175,17 +175,19 @@ class MailController: NSObject, MFMailComposeViewControllerDelegate {
 //        controller.dismiss(animated: true, completion: nil)
 //    }
     
-    func sendIncident(initialiser: UIViewController, dogIndex: Int) {
+    func sendIncident(initialiser: UIViewController, dogIndex: Int, dogCSV: [String]) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
             
-            var csvArray = ["ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL"]
+            var csvArray = dogCSV
+            print(csvArray)
+            //["ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL"]
             
-            for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
-                let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
-                csvArray.append(row)
-            }
+//            for walk in DogDataManager.shared.dogs[dogIndex].dogIncident {
+//                let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
+//                csvArray.append(row)
+//            }
             print("csvArray", csvArray)
            
             let csvString = csvArray.joined(separator: "\n")

@@ -20,7 +20,10 @@ class TrackWalkerVc: UIViewController, CarbonTabSwipeNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLayoutOfTopSegmentBar()
+        DispatchQueue.main.async {
+            self.setLayoutOfTopSegmentBar()
+        }
+        
     }
     
     fileprivate func setLayoutOfTopSegmentBar(){

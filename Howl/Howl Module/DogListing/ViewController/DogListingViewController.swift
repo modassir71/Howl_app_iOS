@@ -33,11 +33,14 @@ class DogListingViewController: UIViewController, SharingDelegate {
             _setUI()
             _delegateMethod()
             registerCell()
-            print(kMonitorMeLocationManager.lastUpdatesArray)
-//            for i in walkUpdates{
-//               print("dddddd",i.flag)
+          //  print(kMonitorMeLocationManager.lastUpdatesArray)
+//            if let encodedData = UserDefaults.standard.data(forKey: "lastWalkUpdates") {
+//                if let lastUpdates = try? JSONDecoder().decode([WalkFetch].self, from: encodedData) {
+//                    kMonitorMeLocationManager.lastUpdatesArray = lastUpdates
+//                    print(kMonitorMeLocationManager.lastUpdatesArray)
+//                    print(kMonitorMeLocationManager.lastUpdatesArray)
+//                }
 //            }
-//            print(walkUpdates)
         }
         
         override func viewWillAppear(_ animated: Bool) {
@@ -271,47 +274,19 @@ class DogListingViewController: UIViewController, SharingDelegate {
                 email = UIContextualAction(style: .normal, title: "Email") {  (contextualAction, view, boolValue) in
                     
                     self.emailController = MailController()
-                    self.emailController.sendIncident(initialiser: self, dogIndex: indexPath.row)
+                    var csvString = "ID,DATE,TIME,LONGITUDE,LATITUDE,SPEED,COURSE,BATTERY,STATUS,W3W,W3WURL\n"
+                    for walk in kMonitorMeLocationManager.lastUpdatesArray{
+                        let row = "\(walk.walkID ),\(walk.walkDate ),\(walk.walkTime ),\(walk.walkLongitude ),\(walk.walkLatitude ),\(walk.walkSpeed ),\(walk.walkCourse ),\(walk.walkBattery ),\(walk.walkStatus ),\(walk.walkW3WWords ),\(walk.walkW3WURL )\n"
+                        csvString += row
+                    }
+                    self.emailController.sendIncident(initialiser: self, dogIndex: indexPath.row, dogCSV: [csvString])
                     self.dogTblView.setEditing(false, animated: true)
                 }
                 
                 email.backgroundColor = .cyan//buttonTurqoise.colorWithHexString()
             }
             
-//            // If the dog is stolen allow archiving
-//            var archive: UIContextualAction!
-//
-//            if instance.dogs[indexPath.row].dogStolen == true {
-//
-//                archive = UIContextualAction(style: .normal, title: "Archive") {  (contextualAction, view, boolValue) in
-//
-//                    self.dogTblView.setEditing(false, animated: true)
-//
-//                    // Copy the dog to the archive
-//                    self.instance.dogsArchive.append(self.instance.dogs[indexPath.row])
-//
-//                    if self.instance.saveDogsArchive() == true {
-//
-//                        self.instance.dogs.remove(at: indexPath.row)
-//                        _ = self.instance.saveDogs()
-//
-//                        kAlertManager.triggerAlertTypeWarning(warningTitle: "SUCCESS",
-//                                                              warningMessage: "Dog archived - see the info menu to unarchive if required",
-//                                                              initialiser: self)
-//
-//                        self.dogTblView.reloadData()
-//
-//                    } else {
-//
-//                        kAlertManager.triggerAlertTypeWarning(warningTitle: "ARCHIVE ERROR",
-//                                                              warningMessage: "System error - please try again or contact support to review",
-//                                                              initialiser: self)
-//                    }
-//                }
-//
-//                archive.backgroundColor = .darkGray
-//            }
-            
+
             // if the dog is stolen allow social posting
             var social: UIContextualAction!
             
@@ -343,6 +318,7 @@ class DogListingViewController: UIViewController, SharingDelegate {
                     
                    // self.deleteFromPack(type: "dogs", index: indexPath.row)
                     self.deleteDog(index: indexPath.row)
+                    UserDefaults.standard.removeObject(forKey: "lastWalkUpdates")
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -423,6 +399,7 @@ class DogListingViewController: UIViewController, SharingDelegate {
                 self.present(alert, animated: true, completion: nil)
             }
             dogTblView.reloadData()
+            UserDefaults.standard.removeObject(forKey: "lastWalkUpdates")
         }
         
         func animationViewStart(){

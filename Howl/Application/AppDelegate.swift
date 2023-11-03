@@ -14,7 +14,7 @@ import AVKit
 
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
 
     var window: UIWindow?
     var databaseRef: DatabaseReference!
@@ -41,19 +41,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey("AIzaSyAA7uG3pNZSYY5-nW3pa9QqO4SXelAGSoE")
         FirebaseApp.configure()
-//        databaseRef = Database.database().reference().child("your_data_node")
-//        databaseRef.observe(.childAdded) { snapshot in
-//                    if let data = snapshot.value as? [String: Any],
-//                       let walkID = data["walkID"] as? String {
-//                        // Handle the "walkID" you fetched from Firebase
-//                        // You can use 'walkID' in your app as needed
-//                        print("Walk ID: \(walkID)")
-//                        kDataManager.walkId = walkID
-//                    }
-//                }
+        databaseRef = Database.database().reference().child("your_data_node")
+        databaseRef.observe(.childAdded) { snapshot in
+                    if let data = snapshot.value as? [String: Any],
+                       let walkID = data["walkID"] as? String {
+                        // Handle the "walkID" you fetched from Firebase
+                        // You can use 'walkID' in your app as needed
+                        print("Walk ID: \(walkID)")
+                        kDataManager.walkId = walkID
+                    }
+                }
         return true
     }
 
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+            // Handle the URL here
+            print("Received URL: \(url)")
+            return true
+        }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -65,20 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             if userActivity.webpageURL != nil {
-                print(kDataManager.monitorId ?? "")
-                FirebaseApp.configure()
-                databaseRef = Database.database().reference().child("node_data")
-                databaseRef.observe(.childAdded) { snapshot in
-                            if let data = snapshot.value as? [String: Any],
-                               let walkID = data["walkID"] as? String {
-                                // Handle the "walkID" you fetched from Firebase
-                                // You can use 'walkID' in your app as needed
-                                print("Walk ID: \(walkID)")
-                            }
-                        }
-                // Handle the Universal Link, for example, by navigating to a specific view in your app.
-                // You can use URL components to extract information from the URL if needed.
-                // Example: if webpageURL.host == "yourwebsite.com" { /* Handle the URL */ }
+                let soryboard = AppStoryboard.Main.instance
+                let trackViewController = soryboard.instantiateViewController(withIdentifier: "WalkerStatusVc") as! WalkerStatusVc
+                window?.rootViewController = trackViewController
                 return true
             }
         }

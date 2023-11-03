@@ -131,6 +131,7 @@ struct WalkFetch: Codable {
     var walkW3WWords: String
     var walkW3WURL: String
     var flag: String
+    var device: String
 }
 
 struct WalkHistory: Codable {
