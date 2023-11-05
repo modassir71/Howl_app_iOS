@@ -30,6 +30,7 @@ class HowlViewController: UIViewController {
     //MARK: - LIfeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
        instructionVc()
         animationView()
         registerCollectionView()
@@ -136,16 +137,13 @@ class HowlViewController: UIViewController {
        // let retrive = UserDefaults.standard.string(forKey: "WalkIDs")
         
 //        if retrive != nil{
-        if dataManager.walkMonitor != ""{
+        if kDataManager.walkId != "" && kDataManager.walkId != nil{
             let storyboard = AppStoryboard.Main.instance
             let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
             self.navigationController?.pushViewController(trackerVc, animated: true)
         }else{
             AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
         }
-//        }else{
-//            AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
-//        }
     }
     
     

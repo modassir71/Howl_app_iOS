@@ -120,8 +120,8 @@ struct WalkUpdate: Codable {
 }
 struct WalkFetch: Codable {
     var walkID: String
-    var walkLongitude: String
-    var walkLatitude: String
+    var walkLatitude: String?
+    var walkLongitude: String?
     var walkSpeed: String
     var walkCourse: String
     var walkDate: String

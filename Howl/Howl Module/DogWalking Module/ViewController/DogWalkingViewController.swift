@@ -228,7 +228,7 @@ class DogWalkingViewController: UIViewController {
       
     
     @IBAction func tap3TimesBtnPress(_ sender: UIButton) {
-        if kDataManager.monitorId != nil{
+        if kDataManager.walkId != nil{
             switch tapsToHOWL {
                 
             case 0:
@@ -274,7 +274,7 @@ class DogWalkingViewController: UIViewController {
                 ()
             }
         }else{
-       
+
         }
         
     }
@@ -295,8 +295,7 @@ class DogWalkingViewController: UIViewController {
                       }
                       self.dogAnimationView.isHidden = true
                   }
-                  kMonitorMeLocationManager.stopMonitoringMe()
-                  DogDataManager.shared.walkMonitor = ""
+                 
                   UserDefaults.standard.removeObject(forKey: "DogMonitorId")
                   self.dogStopImg.isHidden = false
                   self.streetImg.isHidden = true
@@ -305,6 +304,8 @@ class DogWalkingViewController: UIViewController {
                   self.redBtn.isHidden = true
                   self.concernBtn.isHidden = true
                   print("position2", position)
+                  kMonitorMeLocationManager.stopMonitoringMe()
+                  DogDataManager.shared.walkMonitor = ""
               }, cancelClosure: {
                   print("position3", position)
                   self.swipeSlider.slideToEnd()
@@ -364,7 +365,10 @@ class DogWalkingViewController: UIViewController {
                           self.startWalk(indexOfEmergencyContact: index)
                       }))
                   }
-                  alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+//                  alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+                  alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
+                      self.swipeSlider.slideToEndLft()
+                  }))
                   self.present(alert, animated: true, completion: nil)
              // if locationEnabled == true{
               }
@@ -374,8 +378,8 @@ class DogWalkingViewController: UIViewController {
       }
       
       func startWalk(indexOfEmergencyContact: Int){
-          kDataManager.monitorId = generateRandomString(length: 30)//String().randomString(length: 30)
-          print("Monitor ID", kDataManager.monitorId!)
+          kDataManager.walkId = generateRandomString(length: 30)//String().randomString(length: 30)
+          print("Monitor ID", kDataManager.walkId!)
           UserDefaults.standard.set(kDataManager.monitorId, forKey: "DogMonitorId")
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
@@ -389,7 +393,7 @@ class DogWalkingViewController: UIViewController {
       func sendWalkIDToEmergencyContact() {
           var notificationType = ""
           var mobileNo = ""
-          let message = "Hello, please follow my walk on HOWL:"+base_url+kDataManager.monitorId
+          let message = "Hello, please follow my walk on HOWL:"+base_url+kDataManager.walkId
           for person in AddPeopleDataManager.sharedInstance.people{
               notificationType = person.personNotificationType
               mobileNo = person.personCountryCode+person.personMobileNumber

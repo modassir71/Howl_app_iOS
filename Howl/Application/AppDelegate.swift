@@ -15,10 +15,10 @@ import AVKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
-
+    
     var window: UIWindow?
     var databaseRef: DatabaseReference!
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.0)
         do {
@@ -43,41 +43,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
         FirebaseApp.configure()
         databaseRef = Database.database().reference().child("your_data_node")
         databaseRef.observe(.childAdded) { snapshot in
-                    if let data = snapshot.value as? [String: Any],
-                       let walkID = data["walkID"] as? String {
-                        // Handle the "walkID" you fetched from Firebase
-                        // You can use 'walkID' in your app as needed
-                        print("Walk ID: \(walkID)")
-                        kDataManager.walkId = walkID
-                    }
-                }
+            if let data = snapshot.value as? [String: Any],
+               let walkID = data["walkID"] as? String {
+                // Handle the "walkID" you fetched from Firebase
+                // You can use 'walkID' in your app as needed
+                print("Walk ID: \(walkID)")
+                kDataManager.walkId = walkID
+            }
+        }
         return true
     }
-
+    
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-            // Handle the URL here
-            print("Received URL: \(url)")
-            return true
-        }
+        // Handle the URL here
+        print("Received URL: \(url)")
+        return true
+    }
     // MARK: UISceneSession Lifecycle
-
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            if userActivity.webpageURL != nil {
-                let soryboard = AppStoryboard.Main.instance
-                let trackViewController = soryboard.instantiateViewController(withIdentifier: "WalkerStatusVc") as! WalkerStatusVc
-                window?.rootViewController = trackViewController
-                return true
-            }
-        }
-        return false
-    }
+   
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.

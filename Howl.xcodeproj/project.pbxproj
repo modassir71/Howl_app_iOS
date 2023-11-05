@@ -1563,7 +1563,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1584,7 +1584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231031";
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1603,7 +1603,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1624,7 +1624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "TV-1.0.0.20231031";
+				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.howl.barkside;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
