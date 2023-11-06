@@ -19,6 +19,7 @@ class WalkerStatusVc: UIViewController {
     var processLabel = String()
     var walkUpdates = [WalkFetch]()
     var refreshTimer: Timer?
+    var endsession = String()
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,15 @@ class WalkerStatusVc: UIViewController {
     
     @objc func handleRefresh(_ sender: UIRefreshControl) {
         fetchAndReloadData()
+        if endsession == "End Session"{
+            let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.navigationController?.popViewController(animated: true)
+                    })
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+
+        }
         sender.endRefreshing() // End the refresh animation when done
     }
     
@@ -51,6 +61,9 @@ class WalkerStatusVc: UIViewController {
             if let walkUpdates = walkUpdates {
                 self?.walkUpdates = walkUpdates
                 print(walkUpdates)
+                for i in walkUpdates{
+                    self?.endsession = i.walkStatus
+                }
                 self?.walkerListTbLview.reloadData()
             }
         }

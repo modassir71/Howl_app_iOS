@@ -313,20 +313,22 @@ class DataManager {
         
         do {
             let data = try Data(contentsOf: sharedDogURL)
-            
+            print("SharedUrl", sharedDogURL ?? "")
             if let dataToString = String(data: data, encoding: .utf8) {
                 
                 if let base64ToData = Data(base64Encoded: dataToString) {
                     
                     let dog = try PropertyListDecoder().decode(Dog.self, from: base64ToData)
                     
-                    kDataManager.dogs.append(dog)
+                  //  kDataManager.dogs.append(dog)
+                    DogDataManager.shared.dogs.append(dog)
                     
-                    if kDataManager.saveDogs() == true {
+                    if DogDataManager.shared.saveDogs() == true {
                         
-                        kAlertManager.triggerAlertTypeWarning(warningTitle: "IMPORT SUCCESS",
-                                                              warningMessage: "The dog has been imported to your pack",
-                                                              initialiser: onScreenViewController)
+//                        kAlertManager.triggerAlertTypeWarning(warningTitle: "IMPORT SUCCESS",
+//                                                              warningMessage: "The dog has been imported to your pack",
+//                                                              initialiser: onScreenViewController)
+                        kAlertManager.showAlert(title: "IMPORT SUCCESS", message: "The dog has been imported to your pack")
                         
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dogimported"), object: nil)
                     
@@ -342,15 +344,14 @@ class DataManager {
             }
         } catch {
             
-            kAlertManager.triggerAlertTypeWarning(warningTitle: "IMPORT ERROR",
-                                                  warningMessage: "There was an error importing the shared dog.  Please try again or contat the developer to review",
-                                                  initialiser: onScreenViewController)
+//            kAlertManager.triggerAlertTypeWarning(warningTitle: "IMPORT ERROR",
+//                                                  warningMessage: "There was an error importing the shared dog.  Please try again or contat the developer to review",
+//                                                  initialiser: onScreenViewController)
+            kAlertManager.showAlert(title: "IMPORT ERROR", message: "There was an error importing the shared dog.  Please try again or contat the developer to review")
         }
         
         if outputError == true {
-            kAlertManager.triggerAlertTypeWarning(warningTitle: "IMPORT ERROR",
-                                                  warningMessage: "There was an error importing the shared dog.  Please try again or contat the developer to review",
-                                                  initialiser: onScreenViewController)
+            kAlertManager.showAlert(title: "IMPORT ERROR", message: "There was an error importing the shared dog.  Please try again or contat the developer to review")
         }
     }
     

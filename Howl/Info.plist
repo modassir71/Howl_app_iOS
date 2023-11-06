@@ -2,24 +2,71 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLName</key>
-            <string>howl</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>com.howl.barkside</string> <!-- Replace with your actual custom scheme (bundle ID) -->
-            </array>
-        </dict>
-    </array>
-
-     <key>LSApplicationQueriesSchemes</key>
-      <array>
-        <string>whatsapp</string>
-      </array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>HOWL Share</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>Howl_select.png</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.howl.barkside</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>howlshare</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>text</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.howl.barkside</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeName</key>
+			<string>HOWL Share</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
+		<dict/>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>howl</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.howl.barkside</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>whatsapp</string>
+	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>NSUserActivityTypeBrowsingWeb</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Aileron-Black.otf</string>
@@ -62,15 +109,9 @@
 	<array>
 		<string>location</string>
 	</array>
-    <key>NSUserActivityTypes</key>
-     <array>
-       <string>NSUserActivityTypeBrowsingWeb</string>
-     </array>
-
-     <!-- Define associated domains for Universal Links -->
-     <key>com.apple.developer.associated-domains</key>
-     <array>
-       <string>applinks:howlforhelp.com</string> <!-- Replace with your actual associated domain -->
-     </array>
-   </dict>
-   </plist>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:howlforhelp.com</string>
+	</array>
+</dict>
+</plist>

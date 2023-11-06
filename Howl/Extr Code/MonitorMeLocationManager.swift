@@ -365,7 +365,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func fetchWalkUpdatesFromFirebase(completion: @escaping ([WalkFetch]?) -> Void) {
         let databaseReference = Database.database().reference()
         let monitorMeID = kDataManager.walkId ?? ""
-        
+        print("monitorIds", monitorMeID)
         databaseReference.child(monitorMeID).observeSingleEvent(of: .value) { snapshot,ee  in
             guard let dataDict = snapshot.value as? [String: [String: Any]] else {
                 completion(nil)
@@ -434,7 +434,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)
-        removeAllDataFromFirebase()
+//        removeAllDataFromFirebase()
         DogDataManager.shared.walkMonitor = ""
         locationManager.stopUpdatingLocation()
 
@@ -444,8 +444,9 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     
     func removeAllDataFromFirebase() {
         if Reachability.isConnectedToNetwork() {
+            let retriveVale =  UserDefaults.standard.string(forKey: "MonitorIds") ?? ""
             let databaseReference = Database.database().reference()
-            let dataNodeReference = databaseReference.child(kDataManager.walkId)
+            let dataNodeReference = databaseReference.child(retriveVale)
 
             dataNodeReference.removeValue { error, _ in
                 if let error = error {
@@ -456,6 +457,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             }
         }
         DogDataManager.shared.walkMonitor = ""
+        UserDefaults.standard.removeObject(forKey: "MonitorIds")
     }
     
     
@@ -509,8 +511,9 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             kDataManager.monitorMeLocal.removeAll()
         }
         _ = kDataManager.saveMonitorMeLocalHistoric()
-        removeAllDataFromFirebase()
+//        removeAllDataFromFirebase()
         kDataManager.walkId = ""
+        UserDefaults.standard.removeObject(forKey: "MonitorIds")
     }
     
     deinit {

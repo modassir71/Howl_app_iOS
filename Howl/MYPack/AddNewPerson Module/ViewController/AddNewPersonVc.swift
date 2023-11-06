@@ -212,6 +212,7 @@ class AddNewPersonVc: UIViewController {
             let newPerson = Person(name: nameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: messageType ?? "", image: personImageData)
             if isEdit == true {
                 //Update data
+                print(AddPeopleDataManager.sharedInstance.selectedIndex!)
                 AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)
                 AddPeopleDataManager.sharedInstance.people.insert(newPerson, at: AddPeopleDataManager.sharedInstance.selectedIndex)
             }else{

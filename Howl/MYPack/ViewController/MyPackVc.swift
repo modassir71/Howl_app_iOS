@@ -60,10 +60,10 @@ class MyPackVc: UIViewController  {
     
     //MARK: - SetupUI
     func setUpUI(){
-        profileButtonView.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
-        profileButtonView.layer.borderWidth = 2.0
-        profileButtonView.layer.cornerRadius = profileButtonView.frame.width/2
-        profileButtonView.clipsToBounds = true
+//        profileButtonView.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
+//        profileButtonView.layer.borderWidth = 2.0
+//        profileButtonView.layer.cornerRadius = profileButtonView.frame.width/2
+//        profileButtonView.clipsToBounds = true
         let layout = UICollectionViewFlowLayout()
         dogCollectionView.collectionViewLayout = layout
         dogCollectionView.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
@@ -71,6 +71,17 @@ class MyPackVc: UIViewController  {
         dogCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         viewUpdate.layer.cornerRadius = 5.0
         viewUpdate.clipsToBounds = true
+    }
+    
+    
+    @IBAction func monitorLocationBtnPress(_ sender: UIButton) {
+        if kDataManager.walkId != "" && kDataManager.walkId != nil{
+            let storyboard = AppStoryboard.Main.instance
+            let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
+            self.navigationController?.pushViewController(trackerVc, animated: true)
+        }else{
+            AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
+        }
     }
     
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class DogDetailPopUp: UIViewController {
 //    MARK: - Outlet
     @IBOutlet weak var popupView: UIView!
@@ -31,7 +32,7 @@ class DogDetailPopUp: UIViewController {
     var type = String()
     var uniqueNo = String()
     var feature = String()
-    
+    var emailController: MailController!
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,26 +82,28 @@ class DogDetailPopUp: UIViewController {
     
     
     @IBAction func shareBtnPress(_ sender: UIButton) {
+        self.emailController = MailController()
+        self.emailController.shareDog(initialiser: self, dogIndex: DogDataManager.shared.selectedIndex)
         //  crateTxtFile()
-        let textFile = NSTemporaryDirectory().appending("/dog_info.txt")
-               let text = """
-               Feature: \(featureLbl.text!)
-               Unique No: \(uniqueNoLbl.text!)
-               Gender/Type: \(genderTpeLbl.text!)
-               Breed: \(breedLbl.text!)
-               Color: \(colorLbl.text!)
-               DOB: \(dobLbl.text!)
-               Dog Name: \(dogNameLbl.text!)
-               """
-               do {
-                   try text.write(toFile: textFile, atomically: true, encoding: .utf8)
-               } catch {
-                   print(error.localizedDescription)
-               }
-        let activityViewController = UIActivityViewController(activityItems: [URL(fileURLWithPath: textFile)], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [.postToFacebook, .postToTwitter, .mail, .copyToPasteboard]
-        
-        present(activityViewController, animated: true, completion: nil)
+//        let textFile = NSTemporaryDirectory().appending("/dog_info.txt")
+//               let text = """
+//               Feature: \(featureLbl.text!)
+//               Unique No: \(uniqueNoLbl.text!)
+//               Gender/Type: \(genderTpeLbl.text!)
+//               Breed: \(breedLbl.text!)
+//               Color: \(colorLbl.text!)
+//               DOB: \(dobLbl.text!)
+//               Dog Name: \(dogNameLbl.text!)
+//               """
+//               do {
+//                   try text.write(toFile: textFile, atomically: true, encoding: .utf8)
+//               } catch {
+//                   print(error.localizedDescription)
+//               }
+//        let activityViewController = UIActivityViewController(activityItems: [URL(fileURLWithPath: textFile)], applicationActivities: nil)
+//        activityViewController.excludedActivityTypes = [.postToFacebook, .postToTwitter, .mail, .copyToPasteboard]
+//
+//        present(activityViewController, animated: true, completion: nil)
     }
 
 

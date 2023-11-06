@@ -115,4 +115,15 @@ class MoreViewController: UIViewController {
         let workVc = storyboard.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
         self.navigationController?.pushViewController(workVc, animated: true)
     }
+    
+    
+    @IBAction func monitorLocationBtnPress(_ sender: UIButton) {
+        if kDataManager.walkId != "" && kDataManager.walkId != nil{
+            let storyboard = AppStoryboard.Main.instance
+            let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
+            self.navigationController?.pushViewController(trackerVc, animated: true)
+        }else{
+            AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
+        }
+    }
 }

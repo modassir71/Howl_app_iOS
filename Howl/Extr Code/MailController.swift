@@ -17,7 +17,7 @@ class MailController: NSObject, MFMailComposeViewControllerDelegate {
         // Set dog to data
         do {
             
-            let dogData = try PropertyListEncoder().encode(DogDataManager.shared.dogs[kDataManager.selectedIndex])
+            let dogData = try PropertyListEncoder().encode(DogDataManager.shared.dogs[DogDataManager.shared.selectedIndex])
             let dogString = dogData.base64EncodedString()
             let fileName = "dogshare.txt"
             

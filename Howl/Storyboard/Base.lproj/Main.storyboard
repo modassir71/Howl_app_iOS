@@ -84,14 +84,17 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-Ni-l1Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgN-qi-aI0">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgN-qi-aI0">
                                                                         <rect key="frame" x="15" y="13" width="44" height="44"/>
                                                                         <subviews>
-                                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-83-i1n">
+                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-83-i1n">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="profile_Icon"/>
+                                                                                <state key="normal" image="location"/>
+                                                                                <connections>
+                                                                                    <action selector="monitorLocationBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Om2-ZF-Y3A"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -619,6 +622,19 @@
                                     <constraint firstItem="KQH-QB-6LC" firstAttribute="centerY" secondItem="yah-kJ-nRj" secondAttribute="centerY" id="s84-4p-sri"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ3-qI-P3V">
+                                <rect key="frame" x="20" y="60" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="8ZK-uD-ZUp"/>
+                                    <constraint firstAttribute="height" constant="44" id="hUi-pc-jzu"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="monitorLocationBtnPress:" destination="6ps-01-jMU" eventType="touchUpInside" id="dFn-8m-4DE"/>
+                                    <action selector="trackDogBtn:" destination="cqq-Us-DI0" eventType="touchUpInside" id="Qny-Jw-I1i"/>
+                                </connections>
+                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0T7-A3-m6I">
                                 <rect key="frame" x="0.0" y="130" width="375" height="682"/>
                                 <subviews>
@@ -830,7 +846,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yah-kJ-nRj" firstAttribute="leading" secondItem="cDH-Ky-sfO" secondAttribute="leading" id="0Kg-4E-Jhq"/>
+                            <constraint firstItem="gQ3-qI-P3V" firstAttribute="leading" secondItem="5Bl-lm-hPZ" secondAttribute="leading" constant="20" id="2c4-US-U0z"/>
                             <constraint firstItem="0T7-A3-m6I" firstAttribute="top" secondItem="yah-kJ-nRj" secondAttribute="bottom" constant="10" id="9fx-Gn-R9R"/>
+                            <constraint firstItem="gQ3-qI-P3V" firstAttribute="top" secondItem="5Bl-lm-hPZ" secondAttribute="top" constant="10" id="Isn-5f-voi"/>
                             <constraint firstAttribute="bottom" secondItem="0T7-A3-m6I" secondAttribute="bottom" id="KrR-FB-ZJz"/>
                             <constraint firstItem="yah-kJ-nRj" firstAttribute="top" secondItem="5Bl-lm-hPZ" secondAttribute="top" id="L4p-AH-lCN"/>
                             <constraint firstItem="5Bl-lm-hPZ" firstAttribute="trailing" secondItem="yah-kJ-nRj" secondAttribute="trailing" id="Pvs-xn-DeV"/>
@@ -3634,10 +3652,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back_icon"/>
                                         <connections>
-                                            <action selector="backBtnPress:" destination="5Im-n4-lZM" eventType="touchUpInside" id="T47-Yf-GJG"/>
-                                            <action selector="backBtnPress:" destination="c7a-CL-Iqj" eventType="touchUpInside" id="X9l-5d-o68"/>
-                                            <action selector="backBtnPress:" destination="c2T-VZ-ceI" eventType="touchUpInside" id="YZP-Ch-vvP"/>
-                                            <action selector="backBtnPress:" destination="UVK-ab-4JP" eventType="touchUpInside" id="gCt-2H-Feg"/>
+                                            <action selector="backBtnPress:" destination="c2T-VZ-ceI" eventType="touchUpInside" id="9wr-Sx-rRl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3807,7 +3822,6 @@
         <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
         <image name="policy_Img" width="35" height="35"/>
-        <image name="profile_Icon" width="256" height="256"/>
         <image name="profile_pic" width="64" height="64"/>
         <image name="radio_Btn" width="24" height="24"/>
         <image name="road_Img" width="347" height="80.5"/>

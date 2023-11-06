@@ -10,8 +10,9 @@ import Lottie
 import Social
 import CoreAudio
 import FBSDKShareKit
+import UniformTypeIdentifiers
 
-class DogListingViewController: UIViewController, SharingDelegate {
+class DogListingViewController: UIViewController, SharingDelegate, UIDocumentPickerDelegate {
    
     
 
@@ -126,8 +127,8 @@ class DogListingViewController: UIViewController, SharingDelegate {
                 
                 kDataManager.importDogShare()
             }))
-            
-            kDataManager.onScreenViewController.present(alert, animated: true)
+            present(alert, animated: true, completion: nil)
+         //   kDataManager.onScreenViewController.present(alert, animated: true)
         } else {
             
             kAlertManager.triggerAlertTypeWarning(warningTitle: "NO DATA FOUND",
@@ -136,6 +137,32 @@ class DogListingViewController: UIViewController, SharingDelegate {
         }
         
     }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let fileURL = urls.first else {
+            return
+        }
+
+        let fileCoordinator = NSFileCoordinator()
+        var error: NSError?
+        
+        fileCoordinator.coordinate(readingItemAt: fileURL, options: .withoutChanges, error: &error) { newURL in
+            do {
+                let fileContent = try String(contentsOf: newURL, encoding: .utf8)
+                print(fileContent)
+                // You can now use the 'fileContent' string for your further processing.
+            } catch {
+                print("Error reading the file: \(error)")
+            }
+        }
+        
+        if let error = error {
+            print("Error coordinating access to the file: \(error)")
+        }
+    }
+
+
+
     
     }
 

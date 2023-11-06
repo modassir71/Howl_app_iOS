@@ -381,6 +381,7 @@ class DogWalkingViewController: UIViewController {
           kDataManager.walkId = generateRandomString(length: 30)//String().randomString(length: 30)
           print("Monitor ID", kDataManager.walkId!)
           UserDefaults.standard.set(kDataManager.monitorId, forKey: "DogMonitorId")
+          UserDefaults.standard.set(kDataManager.walkId, forKey: "MonitorIds")
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
           sendWalkIDToEmergencyContact()

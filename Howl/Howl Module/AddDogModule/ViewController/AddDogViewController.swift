@@ -262,6 +262,7 @@ class AddDogViewController: UIViewController {
         if isUpdate == true{
             DogDataManager.shared.dogs.remove(at: DogDataManager.shared.selectedIndex)
             DogDataManager.shared.dogs.insert(newDog, at: DogDataManager.shared.selectedIndex)
+            print(DogDataManager.shared.selectedIndex!)
         }else{
             DogDataManager.shared.dogs.append(newDog)
         }

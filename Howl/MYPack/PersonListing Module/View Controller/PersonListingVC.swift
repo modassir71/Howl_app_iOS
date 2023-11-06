@@ -146,6 +146,7 @@ extension PersonListingVC: UITableViewDelegate, UITableViewDataSource{
         alert.addAction(UIAlertAction(title: DogConstantString.proceedTitle, style: .default, handler: { _ in
             let storyBoard = AppStoryboard.Main.instance
             let addNewVc = storyBoard.instantiateViewController(withIdentifier: "AddNewPersonVc") as! AddNewPersonVc
+            self.peopleDataManager.selectedIndex = indexPath.row
             addNewVc.isEdit = true
             addNewVc.name = selectedItem.personName
             addNewVc.profileImge = selectedItem.personImage
