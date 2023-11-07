@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import CoreLocation
+import Photos
 
 class PermissionViewController: UIViewController {
 //MARK: - Outlet
@@ -40,6 +41,7 @@ class PermissionViewController: UIViewController {
         getSavedColor(key: "LocationBackgroundColor", color: &locationBtn.backgroundColor!)
         getSavedColor(key: "notificationBackgroundColor", color: &notificationBtn.backgroundColor!)
         getSavedColor(key: "allPermissionEnable", color: &grantAllPermissionBtn.backgroundColor!)
+        getSavedColor(key: "photoColor", color: &grantAllPermissionBtn.backgroundColor!)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = true
         let screenHeight = UIScreen.main.bounds.size.height
@@ -104,47 +106,29 @@ class PermissionViewController: UIViewController {
 //    MARK: - Button Action
     
     @IBAction func allPermissionBtnPress(_ sender: UIButton) {
-        let group = DispatchGroup()
-        
-        var microphoneGranted = false
-        var cameraGranted = false
-        var locationGranted = false
-        var notificationGranted = false
-        
-        group.enter()
-        requestMicrophonePermission { granted in
-            microphoneGranted = granted
-            group.leave()
-        }
-        
-       
-        group.enter()
-        setCameraPermission { granted in
-            cameraGranted = granted
-            group.leave()
-        }
-        
-        
-        group.enter()
-        setLocationPermission { granted in
-            locationGranted = granted
-            group.leave()
-        }
-        
-       
-        group.enter()
-        setNotificationPermission { granted in
-            notificationGranted = granted
-            group.leave()
-        }
-        
-       
-        group.notify(queue: .main) {
-            if microphoneGranted || cameraGranted || locationGranted || notificationGranted {
-                self.grantAllPermissionBtn.backgroundColor = self.enableBtnColor
-                self.saveColor(color: self.grantAllPermissionBtn.backgroundColor ?? UIColor(), key: "allPermissionEnable")
+        PHPhotoLibrary.requestAuthorization { status in
+                switch status {
+                case .authorized:
+                  
+                    DispatchQueue.main.async {
+                        self.grantAllPermissionBtn.backgroundColor = self.enableBtnColor
+                        self.saveColor(color: self.grantAllPermissionBtn.backgroundColor ?? UIColor(), key: "photoColor")
+                        // Your code to save the image here
+                    }
+                case .denied, .restricted:
+                    // User denied or restricted access, show an alert or guide the user on how to enable it in settings.
+                    DispatchQueue.main.async {
+                        // Show an alert or guide the user to settings
+                    }
+                case .notDetermined:
+                    // User hasn't made a decision yet, do nothing.
+                    break
+                case .limited:
+                    break
+                @unknown default:
+                    break
+                }
             }
-        }
     }
     
     @IBAction func microphoneBtnPress(_ sender: UIButton) {
@@ -206,7 +190,7 @@ class PermissionViewController: UIViewController {
     
     
     @IBAction func setPermissionBtnPress(_ sender: UIButton) {
-        if locationBtn.backgroundColor == enableBtnColor || microphoneBtn.backgroundColor == enableBtnColor || cameraBtn.backgroundColor == enableBtnColor || notificationBtn.backgroundColor == enableBtnColor {
+        if locationBtn.backgroundColor == enableBtnColor || microphoneBtn.backgroundColor == enableBtnColor || cameraBtn.backgroundColor == enableBtnColor || notificationBtn.backgroundColor == enableBtnColor || grantAllPermissionBtn.backgroundColor == enableBtnColor {
             let alert = UIAlertController(title: StringConstant.congrulationTitle, message: StringConstant.setupMsg, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 alert.dismiss(animated: true) {

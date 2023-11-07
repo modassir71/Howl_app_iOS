@@ -64,6 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("lastPath",lastPathComponenets ?? "")
             kDataManager.walkId = lastPathComponenets
             print(kDataManager.walkId ?? "")
+            UserDefaults.standard.set(lastPathComponenets, forKey: "MonitorOutPut")
 //            if let tabBarController = window?.rootViewController as? MainTabBar {
 //                if let viewControllers = tabBarController.viewControllers, viewControllers.count >= 1 {
 //                    // Assuming the first tab contains a UINavigationController

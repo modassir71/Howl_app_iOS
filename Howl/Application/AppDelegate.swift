@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.0)
+        print("retriveValue", UserDefaults.standard.string(forKey: "MonitorIds") ?? "")
+        print("outputvalue", UserDefaults.standard.string(forKey: "MonitorOutPut") ?? "")
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         } catch {

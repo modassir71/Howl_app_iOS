@@ -20,16 +20,10 @@ class WalkerStatusVc: UIViewController {
     var walkUpdates = [WalkFetch]()
     var refreshTimer: Timer?
     var endsession = String()
+    var status: Bool!
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
-                    if let walkUpdates = walkUpdates {
-                        self?.walkUpdates = walkUpdates
-                        print(walkUpdates)
-                        self?.walkerListTbLview.reloadData()
-                    }
-                }
         
         let refreshControl = UIRefreshControl()
            refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
@@ -62,7 +56,18 @@ class WalkerStatusVc: UIViewController {
                 self?.walkUpdates = walkUpdates
                 print(walkUpdates)
                 for i in walkUpdates{
-                    self?.endsession = i.walkStatus
+                    if i.walkStatus == "End Session"{
+                       //
+                        self?.status = true
+                        let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
+                            self?.navigationController?.popViewController(animated: true)
+                            
+                                })
+                        alertController.addAction(okAction)
+                        self?.present(alertController, animated: true, completion: nil)
+                    }
                 }
                 self?.walkerListTbLview.reloadData()
             }
@@ -72,15 +77,26 @@ class WalkerStatusVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         kDataManager.setOnscreenViewController(onscreenView: self)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateTableView),
-                                               name: NSNotification.Name(rawValue: "monitoring"),
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateMonitorYouLabels),
-                                               name: NSNotification.Name(rawValue: "monitoryouupdate"),
-                                               object: nil)
+        kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+                    if let walkUpdates = walkUpdates {
+                        self?.walkUpdates = walkUpdates
+                        for i in walkUpdates{
+                            if i.walkStatus == "End Session"{
+                               //
+                                self?.status = true
+                                let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                    UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
+                                    self?.navigationController?.popViewController(animated: true)
+                                    
+                                        })
+                                alertController.addAction(okAction)
+                                self?.present(alertController, animated: true, completion: nil)
+                            }
+                        }
+                        self?.walkerListTbLview.reloadData()
+                    }
+                }
         updateTableView()
         updateMonitorYouLabels()
     }

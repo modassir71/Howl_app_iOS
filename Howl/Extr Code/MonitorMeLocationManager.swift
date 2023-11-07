@@ -318,7 +318,9 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     func forceUpdateToMonitorMeServerWithState(state: String, latitude: String, longitude: String) {
         if Reachability.isConnectedToNetwork() {
             // Check for nil on first load
-            if let monitorMeID = kDataManager.walkId {
+            let monitorIds = UserDefaults.standard.string(forKey: "MonitorIds")
+            print("MonitorIds", monitorIds ?? "")
+            if let monitorMeID = monitorIds {
                 let databaseReference = Database.database().reference()
 
                 // Prepare the data to be stored in Firebase
@@ -340,7 +342,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                 ]
 
                 // Assuming 'monitorMeData' is the database node where you want to store this data
-                let newChildRef = databaseReference.child(monitorMeID).childByAutoId()
+                let newChildRef = databaseReference.child(monitorIds ?? "").childByAutoId()
 
                 // Conditionally update walkW3WWords and walkW3WURL if they are not nil
                 if let w3wWords = w3wWords, let w3wURL = w3wURL {
@@ -364,9 +366,60 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 
     func fetchWalkUpdatesFromFirebase(completion: @escaping ([WalkFetch]?) -> Void) {
         let databaseReference = Database.database().reference()
-        let monitorMeID = kDataManager.walkId ?? ""
-        print("monitorIds", monitorMeID)
-        databaseReference.child(monitorMeID).observeSingleEvent(of: .value) { snapshot,ee  in
+//        let monitorMeID = kDataManager.walkId ?? ""
+//        print("monitorIds", monitorMeID)
+        let retriveValue = UserDefaults.standard.string(forKey: "MonitorOutPut") ?? ""
+        
+        databaseReference.child(retriveValue).observeSingleEvent(of: .value) { snapshot,ee  in
+            guard let dataDict = snapshot.value as? [String: [String: Any]] else {
+                completion(nil)
+                return
+            }
+            
+            var walkUpdates = [WalkFetch]()
+            
+            for (_, value) in dataDict {
+                if let walkID = value["randomId"] as? String,
+                   let walkLongitude = value["lon"] as? String,
+                   let walkLatitude = value["lat"] as? String,
+                   let walkSpeed = value["speed"] as? String,
+                   let walkCourse = value["course"] as? String,
+                   let walkDate = value["date"] as? String,
+                   let walkTime = value["time"] as? String,
+                   let walkBattery = value["battery"] as? String,
+                   let walkStatus = value["state"] as? String,
+                   let walkW3WWords = value["w3w"] as? String,
+                   let walkW3WURL = value["w3wurl"] as? String,
+                   let flag = value["flag"] as? String,
+                   let device = value["device"] as? String{
+                    let walkUpdate = WalkFetch(
+                        walkID: walkID,
+                        walkLatitude: walkLatitude, walkLongitude: walkLongitude,
+                        walkSpeed: walkSpeed,
+                        walkCourse: walkCourse,
+                        walkDate: walkDate,
+                        walkTime: walkTime,
+                        walkBattery: walkBattery,
+                        walkStatus: walkStatus,
+                        walkW3WWords: walkW3WWords,
+                        walkW3WURL: walkW3WURL, flag: flag,
+                        device: device
+                    )
+                    walkUpdates.append(walkUpdate)
+                }
+            }
+            
+            completion(walkUpdates)
+        }
+    }
+    
+    func fetchDataForIncident(completion: @escaping ([WalkFetch]?) -> Void) {
+        let databaseReference = Database.database().reference()
+//        let monitorMeID = kDataManager.walkId ?? ""
+//        print("monitorIds", monitorMeID)
+        let retriveValue = UserDefaults.standard.string(forKey: "MonitorIds") ?? ""
+        
+        databaseReference.child(retriveValue).observeSingleEvent(of: .value) { snapshot,ee  in
             guard let dataDict = snapshot.value as? [String: [String: Any]] else {
                 completion(nil)
                 return
@@ -440,6 +493,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 
         kDataManager.monitorMeLocal.removeAll()
         kDataManager.walkId = ""
+        UserDefaults.standard.removeObject(forKey: "MonitorIds")
     }
     
     func removeAllDataFromFirebase() {
@@ -477,7 +531,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
             kDataManager.monitorMeLocal.removeAll()
             
         } else {
-            fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+            fetchDataForIncident { [weak self] walkUpdates in
                 if let walkUpdates = walkUpdates {
                     if let lastData = walkUpdates.last {
                         // if lastData.walkStatus == "End Session"{
@@ -498,11 +552,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
                         
                         // Append the last object to lastUpdatesArray
                         self?.lastUpdatesArray.append(newWalkUpdate)
-//                        print("lasttt", self?.lastUpdatesArray ?? [])
-//                        if let encodedData = try? JSONEncoder().encode(self?.lastUpdatesArray) {
-//                            UserDefaults.standard.set(encodedData, forKey: "lastWalkUpdates")
-//                            UserDefaults.standard.synchronize()
-//                        }
+
                     }
                 }
             }

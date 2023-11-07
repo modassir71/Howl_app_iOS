@@ -26,6 +26,7 @@ class PersonListingVC: UIViewController {
         _setUI()
         delegateMethod()
         registerCell()
+        personListingTblView.separatorColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {

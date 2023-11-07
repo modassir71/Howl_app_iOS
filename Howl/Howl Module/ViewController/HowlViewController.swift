@@ -12,7 +12,9 @@ import Firebase
 class HowlViewController: UIViewController {
 //MARK: - Outlet
     
+    
     @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var monitorLocationBtn: UIButton!
     
     @IBOutlet weak var dogVarietyCollectionView: UICollectionView!
     @IBOutlet weak var addNewDogBtn: UIButton!
@@ -53,6 +55,12 @@ class HowlViewController: UIViewController {
 //       tabBarItem.image = UIImage(named: "Howl_Selectable")
         self.tabBarController?.tabBar.isHidden = false
         dogVarietyCollectionView.reloadData()
+        let retriveVlaue = UserDefaults.standard.string(forKey: "MonitorIds")
+        if retriveVlaue != nil {
+            monitorLocationBtn.isHidden = true
+        }else{
+            monitorLocationBtn.isHidden = false
+        }
         
     }
     
@@ -137,7 +145,10 @@ class HowlViewController: UIViewController {
        // let retrive = UserDefaults.standard.string(forKey: "WalkIDs")
         
 //        if retrive != nil{
-        if kDataManager.walkId != "" && kDataManager.walkId != nil{
+        let monitorme = UserDefaults.standard.string(forKey: "MonitorIds")
+        let monitorOutput = UserDefaults.standard.string(forKey: "MonitorOutPut")
+        
+        if  monitorOutput != nil{
             let storyboard = AppStoryboard.Main.instance
             let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
             self.navigationController?.pushViewController(trackerVc, animated: true)

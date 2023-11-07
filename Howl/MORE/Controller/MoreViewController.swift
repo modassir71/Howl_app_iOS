@@ -11,6 +11,7 @@ class MoreViewController: UIViewController {
 
 //    MARK: - Outlet
     
+    @IBOutlet weak var monitorLocationView: UIButton!
     @IBOutlet weak var privacyBtn: UIButton!
     @IBOutlet weak var eulaBtn: UIButton!
     //@IBOutlet weak var tipsBtn: UIButton!
@@ -33,6 +34,12 @@ class MoreViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
+        let retriveVlaue = UserDefaults.standard.string(forKey: "MonitorIds")
+        if retriveVlaue != nil{
+            monitorLocationView.isHidden = true
+        }else{
+            monitorLocationView.isHidden = false
+        }
     }
     
 //    MARK: - setUp Ui
@@ -118,7 +125,8 @@ class MoreViewController: UIViewController {
     
     
     @IBAction func monitorLocationBtnPress(_ sender: UIButton) {
-        if kDataManager.walkId != "" && kDataManager.walkId != nil{
+        let monitorOutput = UserDefaults.standard.string(forKey: "MonitorOutPut")
+        if monitorOutput != nil{
             let storyboard = AppStoryboard.Main.instance
             let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
             self.navigationController?.pushViewController(trackerVc, animated: true)

@@ -34,14 +34,7 @@ class DogListingViewController: UIViewController, SharingDelegate, UIDocumentPic
             _setUI()
             _delegateMethod()
             registerCell()
-          //  print(kMonitorMeLocationManager.lastUpdatesArray)
-//            if let encodedData = UserDefaults.standard.data(forKey: "lastWalkUpdates") {
-//                if let lastUpdates = try? JSONDecoder().decode([WalkFetch].self, from: encodedData) {
-//                    kMonitorMeLocationManager.lastUpdatesArray = lastUpdates
-//                    print(kMonitorMeLocationManager.lastUpdatesArray)
-//                    print(kMonitorMeLocationManager.lastUpdatesArray)
-//                }
-//            }
+            dogTblView.separatorColor = .clear
         }
         
         override func viewWillAppear(_ animated: Bool) {

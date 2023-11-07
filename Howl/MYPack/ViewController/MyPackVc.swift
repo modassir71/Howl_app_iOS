@@ -11,6 +11,7 @@ class MyPackVc: UIViewController  {
     
     //MARK: - OUTLET
     
+    @IBOutlet weak var monitorLocationView: UIView!
     @IBOutlet weak var viewUpdate: UIButton!
     @IBOutlet weak var profileButtonView: UIView!
     @IBOutlet weak var notificationBtn: UIView!
@@ -45,6 +46,12 @@ class MyPackVc: UIViewController  {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
+        let retriveVlaue = UserDefaults.standard.string(forKey: "MonitorIds")
+        if retriveVlaue != nil{
+            monitorLocationView.isHidden = true
+        }else{
+            monitorLocationView.isHidden = false
+        }
     }
     
     //MARK: - Delegate
@@ -75,7 +82,8 @@ class MyPackVc: UIViewController  {
     
     
     @IBAction func monitorLocationBtnPress(_ sender: UIButton) {
-        if kDataManager.walkId != "" && kDataManager.walkId != nil{
+        let monitorOutput = UserDefaults.standard.string(forKey: "MonitorOutPut")
+        if monitorOutput != nil{
             let storyboard = AppStoryboard.Main.instance
             let trackerVc = storyboard.instantiateViewController(withIdentifier: "TrackWalkerVc") as! TrackWalkerVc
             self.navigationController?.pushViewController(trackerVc, animated: true)

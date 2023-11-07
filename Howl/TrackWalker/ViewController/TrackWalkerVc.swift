@@ -66,7 +66,7 @@ class TrackWalkerVc: UIViewController, CarbonTabSwipeNavigationDelegate {
         if index == 0{
             selectedViewController = storyboard.instantiateViewController(withIdentifier: "WalkerStatusVc") as! WalkerStatusVc
         }else{
-            selectedViewController = storyboard.instantiateViewController(withIdentifier: "WalkerViewController") as! WalkerViewController
+            selectedViewController = storyboard.instantiateViewController(withIdentifier: "WalkerMapVc") as! WalkerMapVc
         }
         
         return selectedViewController

@@ -9,8 +9,9 @@ import UIKit
 import Lottie
 import CoreLocation
 import Firebase
+import MessageUI
 
-class DogWalkingViewController: UIViewController {
+class DogWalkingViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
 //MARK: - Outlet
     
@@ -82,7 +83,7 @@ class DogWalkingViewController: UIViewController {
           dogImage.layer.borderColor = UIColor(displayP3Red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
           dogImage.layer.cornerRadius = dogImage.frame.width/2
           dogImage.clipsToBounds = true
-          dogImage.contentMode = .scaleAspectFit
+          dogImage.contentMode = .scaleAspectFill
           dogName.text = dogNameLbl.capitalizeFirstLetter()
           if let imageData = dogImgItem {
               let image = UIImage(data: imageData)
@@ -380,7 +381,6 @@ class DogWalkingViewController: UIViewController {
       func startWalk(indexOfEmergencyContact: Int){
           kDataManager.walkId = generateRandomString(length: 30)//String().randomString(length: 30)
           print("Monitor ID", kDataManager.walkId!)
-          UserDefaults.standard.set(kDataManager.monitorId, forKey: "DogMonitorId")
           UserDefaults.standard.set(kDataManager.walkId, forKey: "MonitorIds")
           kDataManager.indexOfPersonMonitoring = indexOfEmergencyContact
           kMonitorMeLocationManager.monitorMe()
@@ -416,24 +416,50 @@ class DogWalkingViewController: UIViewController {
               }
               
           }else{
-              let urlSMS = "sms://" + mobileNo + "&body=" + message
-              if let urlString = urlSMS.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
-                  
-                  if let smsURL = URL(string: urlString) {
-                      
-                      if UIApplication.shared.canOpenURL(smsURL){
-                          
-                          UIApplication.shared.open(smsURL, options: [:], completionHandler: nil)
-                      } else {
-                          kAlertManager.triggerAlertTypeWarning(warningTitle: "INSTALL MESSAGES",
-                                                                warningMessage: "You do not have the messages app installed on your device",
-                                                                initialiser: self)
+              if (MFMessageComposeViewController.canSendText()) {
+                          let controller = MFMessageComposeViewController()
+                          controller.body = message
+                          controller.recipients = [mobileNo]
+                          controller.messageComposeDelegate = self
+                  self.present(controller, animated: true, completion: nil)
                       }
-                  }
-              }
+//              let urlSMS = "sms://" + mobileNo + "&body=" + message
+//              if let urlString = urlSMS.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+//
+//                  if let smsURL = URL(string: urlString) {
+//
+//                      if UIApplication.shared.canOpenURL(smsURL){
+//
+//                          UIApplication.shared.open(smsURL, options: [:], completionHandler: nil)
+//                      } else {
+//                          kAlertManager.triggerAlertTypeWarning(warningTitle: "INSTALL MESSAGES",
+//                                                                warningMessage: "You do not have the messages app installed on your device",
+//                                                                initialiser: self)
+//                      }
+//                  }
+//              }
           }
           
       }
+      
+      func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+              switch (result) {
+              case .cancelled:
+                  print("Message was cancelled")
+              case .failed:
+                  print("Message failed")
+              case .sent:
+                  print("Message was sent")
+              default:
+                  return
+              }
+              dismiss(animated: true, completion: nil)
+          }
+      
+      func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+              //... handle sms screen actions
+          self.dismiss(animated: true, completion: nil)
+          }
       // MARK: - Animation View
       func animationView(){
           let jsonName = "animation_dogWalk"

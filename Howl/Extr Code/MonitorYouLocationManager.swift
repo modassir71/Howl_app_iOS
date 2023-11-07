@@ -38,7 +38,7 @@ class MonitorYouLocationManager: NSObject, CLLocationManagerDelegate {
     func testToStartMonitoringOnLoad() {
         
         // Check if monitor you is already active from previous crashed session
-        if kDataManager.monitorYouStatus == true && kDataManager.monitorYouID != "X" {
+        if kDataManager.monitorYouStatus == true && kDataManager.walkId != "X" {
             
             // Is an active monitor you in place?
             if kDataManager.monitorYouOutput.count > 0 {
@@ -77,10 +77,10 @@ class MonitorYouLocationManager: NSObject, CLLocationManagerDelegate {
                     
                     print("IMPORTED ID's:")
                     print("ID: \(id)")
-                    print("NEW ID: \(kDataManager.monitorYouID!)")
+                    print("NEW ID: \(kDataManager.walkId!)")
                     
                     // Same ID / session
-                    if id != kDataManager.monitorYouID! {
+                    if id != kDataManager.walkId! {
                         // New ID / session - clear session output
                         kDataManager.monitorYouOutput.removeAll()
                         kDataManager.saveMonitorYouData()
@@ -222,8 +222,8 @@ class MonitorYouLocationManager: NSObject, CLLocationManagerDelegate {
         isUpdating = false
         // Removed as user wanted to retain info
         kDataManager.setMonitorYouStatus(status: false)
-        //kDataManager.setMonitorYouID(id: "X")
-        //kDataManager.monitorYouOutput.removeAll()
+        kDataManager.setMonitorYouID(id: "X")
+        kDataManager.monitorYouOutput.removeAll()
         kDataManager.saveMonitorYouData()
         locationManager.stopUpdatingLocation()
         

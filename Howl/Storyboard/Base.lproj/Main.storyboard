@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -225,6 +224,7 @@
                     <connections>
                         <outlet property="BANNERIMG" destination="5d4-sq-M4G" id="1xI-0L-s6W"/>
                         <outlet property="dogCollectionView" destination="kal-ZZ-vXm" id="46W-1a-cnT"/>
+                        <outlet property="monitorLocationView" destination="YgN-qi-aI0" id="QTD-eW-r8C"/>
                         <outlet property="navigationView" destination="g7r-Ni-l1Z" id="hsd-rc-egm"/>
                         <outlet property="profileButtonView" destination="YgN-qi-aI0" id="Lio-rY-P0N"/>
                         <outlet property="titleLbl" destination="a2a-eL-3yL" id="pXX-Np-HU4"/>
@@ -558,6 +558,7 @@
                         <outlet property="addNewDogBtn" destination="5cy-pb-nhx" id="4pR-vX-F6k"/>
                         <outlet property="arrowIcons" destination="eVg-ud-6Pp" id="WZW-kE-Zrc"/>
                         <outlet property="dogVarietyCollectionView" destination="eqS-d8-USo" id="LYH-Kh-bhC"/>
+                        <outlet property="monitorLocationBtn" destination="9a7-HV-L03" id="58L-Ue-sDY"/>
                         <outlet property="navigationView" destination="bmQ-SJ-e4H" id="3DN-J7-5Vr"/>
                         <outlet property="petImageView" destination="Y12-b8-rpr" id="wyF-X8-47O"/>
                     </connections>
@@ -631,7 +632,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="location"/>
                                 <connections>
-                                    <action selector="monitorLocationBtnPress:" destination="6ps-01-jMU" eventType="touchUpInside" id="dFn-8m-4DE"/>
+                                    <action selector="monitorLocationBtnPress:" destination="6ps-01-jMU" eventType="touchUpInside" id="5hL-jl-2kI"/>
                                     <action selector="trackDogBtn:" destination="cqq-Us-DI0" eventType="touchUpInside" id="Qny-Jw-I1i"/>
                                 </connections>
                             </button>
@@ -863,6 +864,7 @@
                         <outlet property="eulaBtn" destination="0sr-um-iqC" id="0cL-gi-nRk"/>
                         <outlet property="howlSirenBtn" destination="hpp-s4-g7P" id="rdq-80-3am"/>
                         <outlet property="infoTxtView" destination="sQc-Dy-RUn" id="P5Z-au-A1N"/>
+                        <outlet property="monitorLocationView" destination="gQ3-qI-P3V" id="AAt-E8-i2Q"/>
                         <outlet property="navigationView" destination="yah-kJ-nRj" id="r1d-E9-kJ4"/>
                         <outlet property="permissionBtn" destination="jiT-1V-Q7l" id="jkb-c1-Ibw"/>
                         <outlet property="privacyBtn" destination="3S7-cM-Yam" id="REQ-QG-OQh"/>
@@ -1031,7 +1033,7 @@
                                             <constraint firstAttribute="height" constant="2" id="Ihp-Gz-7kW"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bruno" translatesAutoresizingMaskIntoConstraints="NO" id="E67-Gi-DSq">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bruno" translatesAutoresizingMaskIntoConstraints="NO" id="E67-Gi-DSq">
                                         <rect key="frame" x="15" y="11.666666666666657" width="60" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1047,6 +1049,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-fx-nzY">
                                         <rect key="frame" x="310" y="24" width="50" height="35"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="cross_Icon" title=" "/>
                                         <connections>
@@ -1089,7 +1092,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkm-ni-dyv" customClass="DSSlider" customModule="Howl" customModuleProvider="target">
-                                <rect key="frame" x="19.666666666666657" y="413.33333333333331" width="336" height="60"/>
+                                <rect key="frame" x="40" y="413.33333333333331" width="295" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="SG3-Ha-km3"/>
@@ -1187,14 +1190,14 @@
                             <constraint firstItem="Yyf-fZ-x2x" firstAttribute="trailing" secondItem="s0r-p9-eX8" secondAttribute="trailing" id="C6a-K4-cmR"/>
                             <constraint firstItem="Yyf-fZ-x2x" firstAttribute="top" secondItem="AaD-9c-1uu" secondAttribute="bottom" constant="10" id="E43-Az-HlY"/>
                             <constraint firstItem="BSN-fn-Nfs" firstAttribute="leading" secondItem="s0r-p9-eX8" secondAttribute="leading" constant="62.670000000000002" id="ExD-qf-QY7"/>
-                            <constraint firstItem="s0r-p9-eX8" firstAttribute="trailing" secondItem="zkm-ni-dyv" secondAttribute="trailing" constant="19.329999999999998" id="HSB-tW-vPP"/>
+                            <constraint firstItem="s0r-p9-eX8" firstAttribute="trailing" secondItem="zkm-ni-dyv" secondAttribute="trailing" constant="40" id="HSB-tW-vPP"/>
                             <constraint firstItem="AaD-9c-1uu" firstAttribute="leading" secondItem="s0r-p9-eX8" secondAttribute="leading" id="ICx-91-jEZ"/>
                             <constraint firstItem="loj-yU-pzo" firstAttribute="top" secondItem="Yyf-fZ-x2x" secondAttribute="bottom" constant="158" id="IdJ-0X-UJK"/>
                             <constraint firstItem="BSN-fn-Nfs" firstAttribute="top" secondItem="Yyf-fZ-x2x" secondAttribute="bottom" constant="9" id="NX7-RP-8wc"/>
                             <constraint firstItem="loj-yU-pzo" firstAttribute="height" secondItem="Ydk-KH-3dZ" secondAttribute="height" multiplier="0.17734" id="Qd3-vy-gcU"/>
                             <constraint firstItem="AaD-9c-1uu" firstAttribute="height" secondItem="Ydk-KH-3dZ" secondAttribute="height" multiplier="0.0862069" id="U7k-b8-7zS"/>
                             <constraint firstItem="kAl-3R-28r" firstAttribute="top" secondItem="Yyf-fZ-x2x" secondAttribute="bottom" constant="34.329999999999998" id="UQo-Oa-fhs"/>
-                            <constraint firstItem="zkm-ni-dyv" firstAttribute="leading" secondItem="s0r-p9-eX8" secondAttribute="leading" constant="19.670000000000002" id="Xwe-ie-p1C"/>
+                            <constraint firstItem="zkm-ni-dyv" firstAttribute="leading" secondItem="s0r-p9-eX8" secondAttribute="leading" constant="40" id="Xwe-ie-p1C"/>
                             <constraint firstItem="Wvl-Ci-UW3" firstAttribute="leading" secondItem="s0r-p9-eX8" secondAttribute="leading" constant="34" id="ZnR-dQ-oIY"/>
                             <constraint firstItem="kAl-3R-28r" firstAttribute="height" secondItem="Ydk-KH-3dZ" secondAttribute="height" multiplier="0.26601" id="j3w-D1-O5C"/>
                             <constraint firstItem="s0r-p9-eX8" firstAttribute="trailing" secondItem="BSN-fn-Nfs" secondAttribute="trailing" constant="62.329999999999998" id="jJM-jF-NKz"/>
@@ -2453,6 +2456,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="5ec-T1-FGz"/>
                                                     <constraint firstAttribute="width" constant="35" id="hEG-5o-x0w"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="back_icon"/>
                                                 <connections>
@@ -2562,7 +2566,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Grant All Permission"/>
+                                                <state key="normal" title="Photos"/>
                                                 <connections>
                                                     <action selector="allPermissionBtnPress:" destination="Jtk-ko-sz2" eventType="touchUpInside" id="g4d-ld-7cl"/>
                                                 </connections>
@@ -2734,7 +2738,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-jD-lvR">
                                                 <rect key="frame" x="127.33333333333331" y="0.0" width="120" height="120"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-Y3-weQ">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-Y3-weQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                                     </imageView>
@@ -3154,7 +3158,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2D-Sv-PEE">
                                 <rect key="frame" x="127.66666666666669" y="152" width="120" height="120"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-JQ-PG7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_PlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-JQ-PG7">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                     </imageView>
@@ -3718,31 +3722,16 @@
             </objects>
             <point key="canvasLocation" x="4902" y="757"/>
         </scene>
-        <!--Walker View Controller-->
+        <!--Walker Map Vc-->
         <scene sceneID="oQy-Cp-nWI">
             <objects>
-                <viewController storyboardIdentifier="WalkerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOU-ZA-RbC" customClass="WalkerViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkerMapVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOU-ZA-RbC" customClass="WalkerMapVc" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zUn-6T-eVU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7U-WQ-Oq7">
-                                <rect key="frame" x="0.0" y="70" width="375" height="688"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZHZ-Ow-4VE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ZHZ-Ow-4VE" firstAttribute="trailing" secondItem="I7U-WQ-Oq7" secondAttribute="trailing" id="FTc-Lk-By5"/>
-                            <constraint firstItem="ZHZ-Ow-4VE" firstAttribute="bottom" secondItem="I7U-WQ-Oq7" secondAttribute="bottom" constant="20" id="Qsj-NH-eM7"/>
-                            <constraint firstItem="I7U-WQ-Oq7" firstAttribute="top" secondItem="ZHZ-Ow-4VE" secondAttribute="top" constant="20" id="tLP-Y6-tkv"/>
-                            <constraint firstItem="I7U-WQ-Oq7" firstAttribute="leading" secondItem="ZHZ-Ow-4VE" secondAttribute="leading" id="uPK-Pd-edC"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="monitorYouMap" destination="I7U-WQ-Oq7" id="EwA-fS-d3H"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9X-D8-S2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3809,6 +3798,7 @@
         <image name="back_icon" width="19.333333969116211" height="14.333333015441895"/>
         <image name="bulb" width="35" height="35"/>
         <image name="cross_Icon" width="21" height="21"/>
+        <image name="dogPlaceholder" width="64" height="75"/>
         <image name="dogProfile_img" width="521" height="521"/>
         <image name="dog_StopWalking" width="187.5" height="162"/>
         <image name="dropdwn_icn" width="256" height="256"/>
@@ -3821,8 +3811,8 @@
         <image name="permission_Img" width="35" height="35"/>
         <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
+        <image name="person_PlaceHolder" width="64" height="75"/>
         <image name="policy_Img" width="35" height="35"/>
-        <image name="profile_pic" width="64" height="64"/>
         <image name="radio_Btn" width="24" height="24"/>
         <image name="road_Img" width="347" height="80.5"/>
         <image name="shop" width="35" height="35"/>

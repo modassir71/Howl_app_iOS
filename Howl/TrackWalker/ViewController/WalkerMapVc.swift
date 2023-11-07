@@ -1,81 +1,119 @@
-//
-//  WalkerMapVc.swift
-//  Howl
-//
-//  Created by apple on 03/10/23.
-//
 import UIKit
 import GoogleMaps
 import CoreLocation
+import Firebase
 
 class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
-    
+
     private var mapView: GMSMapView!
-      private let locationManager = CLLocationManager()
-    var walkUpdates = [WalkFetch]()
-    var latitude: String!
-    var longitude: String!
     private var timer: Timer?
-    var markers: [GMSMarker] = []
-    
+    private var markers = [GMSMarker]()
+    private var apiRequestsEnabled = true
 
     override func viewDidLoad() {
-            super.viewDidLoad()
-        let timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(fetchData), userInfo: nil, repeats: true)
-        self.timer = timer
-        fetchData()
-        if let latitudeStr = latitude, let longitudeStr = longitude,
-                  let latitude = Double(latitudeStr), let longitude = Double(longitudeStr) {
-                   let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 15.0)
-                   mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-                   mapView.delegate = self
-                   view = mapView
-               } else {
-                   // Initialize Google Maps view
-                          let camera = GMSCameraPosition.camera(withLatitude: 0.0, longitude: 0.0, zoom: 15.0)
-                          mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-                          mapView.delegate = self
-                          view = mapView
-               }
-          
+        super.viewDidLoad()
+
+        mapView = GMSMapView(frame: view.bounds)
+        mapView.delegate = self
+        view.addSubview(mapView)
+        timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+            if self.apiRequestsEnabled {
+                self.fetchWalkUpdatesFromFirebase { walkUpdates in
+                    self.addMarkersInBatch(walkUpdates)
+
+                    if let walkUpdates = walkUpdates {
+                        for walkUpdate in walkUpdates {
+                            if walkUpdate.walkStatus == "End Session" {
+                                self.apiRequestsEnabled = false // Disable API requests
+                                self.showSessionExpiredAlert()
+                            }
+                        }
+                    }
+                }
+            }
         }
-    
-    @objc func fetchData() {
-           if kDataManager.walkId != nil || kDataManager.walkId != "" {
-               kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
-                   if let walkUpdates = walkUpdates {
-                       self?.walkUpdates = walkUpdates
-                       
-                       // Remove existing markers before adding new ones
-                    //   self?.clearMarkers()
-                       
-                       for walkUpdate in walkUpdates {
-                           if let latitude = walkUpdate.walkLatitude,
-                              let longitude = walkUpdate.walkLongitude,
-                              let lat = Double(latitude),
-                              let long = Double(longitude) {
-                               // Create a marker and add it to the map
-                               let marker = GMSMarker()
-                               marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                               marker.map = self?.mapView
-                               self?.markers.append(marker)
-                           }
-                       }
+    }
 
-                   }
-               }
-           } else {
-               return
-           }
-       }
-    
-    func clearMarkers() {
-           for marker in markers {
-               marker.map = nil
-           }
-           markers.removeAll()
-       }
+    func showSessionExpiredAlert() {
+        let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] (action) in
+            UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 
-    
-  
+    private func addMarkersInBatch(_ walkUpdates: [WalkFetch]?) {
+        markers.forEach { $0.map = nil }
+        markers.removeAll()
+
+        for walkUpdate in walkUpdates ?? [] {
+            guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
+                  let longitude = Double(walkUpdate.walkLongitude ?? "0.0") else {
+                continue
+            }
+
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            markers.append(marker)
+        }
+
+        markers.forEach { $0.map = mapView }
+
+        // Set the camera position to the last added marker (if any)
+        if let lastMarker = markers.last {
+            let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
+                withTarget: lastMarker.position,
+                zoom: 20.0
+            ))
+            mapView.animate(with: cameraUpdate)
+        }
+    }
+
+    func fetchWalkUpdatesFromFirebase(completion: @escaping ([WalkFetch]?) -> Void) {
+        let databaseReference = Database.database().reference()
+        let monitorMeID = UserDefaults.standard.string(forKey: "MonitorOutPut") ?? ""
+        print("monitorIds", monitorMeID)
+        databaseReference.child(monitorMeID ?? "").observeSingleEvent(of: .value) { snapshot, _ in
+            guard let dataDict = snapshot.value as? [String: [String: Any]] else {
+                completion(nil)
+                return
+            }
+
+            var walkUpdates = [WalkFetch]()
+
+            for (_, value) in dataDict {
+                if let walkID = value["randomId"] as? String,
+                   let walkLongitude = value["lon"] as? String,
+                   let walkLatitude = value["lat"] as? String,
+                   let walkSpeed = value["speed"] as? String,
+                   let walkCourse = value["course"] as? String,
+                   let walkDate = value["date"] as? String,
+                   let walkTime = value["time"] as? String,
+                   let walkBattery = value["battery"] as? String,
+                   let walkStatus = value["state"] as? String,
+                   let walkW3WWords = value["w3w"] as? String,
+                   let walkW3WURL = value["w3wurl"] as? String,
+                   let flag = value["flag"] as? String,
+                   let device = value["device"] as? String {
+                    let walkUpdate = WalkFetch(
+                        walkID: walkID,
+                        walkLatitude: walkLatitude, walkLongitude: walkLongitude,
+                        walkSpeed: walkSpeed,
+                        walkCourse: walkCourse,
+                        walkDate: walkDate,
+                        walkTime: walkTime,
+                        walkBattery: walkBattery,
+                        walkStatus: walkStatus,
+                        walkW3WWords: walkW3WWords,
+                        walkW3WURL: walkW3WURL, flag: flag,
+                        device: device
+                    )
+                    walkUpdates.append(walkUpdate)
+                }
+            }
+
+            completion(walkUpdates)
+        }
+    }
 }
