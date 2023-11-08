@@ -47,12 +47,14 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
     var tapTimer: Timer!
     var lat: String?
     var long: String?
+    var sliderPosition: Int = 0
+    var index: Int!
     
       //MARK: - Life Cycle
       
       override func viewDidLoad() {
           super.viewDidLoad()
-          
+          print("Indexx", index ?? 0)
 //          locationManager.delegate = self
 //          locationManager.requestWhenInUseAuthorization()
           setUi()
@@ -223,7 +225,8 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
       @IBAction func concernBtnPress(_ sender: UIButton) {
           let storyboard = AppStoryboard.Main.instance
           let concernVc = storyboard.instantiateViewController(withIdentifier: "ConcernViewController") as! ConcernViewController
-          //  concernVc.modalPresentationStyle = .fullScreen
+          concernVc.lat = lat
+          concernVc.long = long
           self.navigationController?.present(concernVc, animated: true)
       }
       

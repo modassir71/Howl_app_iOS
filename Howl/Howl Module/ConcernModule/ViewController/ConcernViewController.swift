@@ -18,8 +18,11 @@ class ConcernViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var baseView: UIView!
     
-    var selectedIndexPath: IndexPath? = nil
-    
+    var selectedIndexPath: IndexPath?
+    var selectedIndex = 0
+    var hasRadioBtnArray: [Bool] = Array(repeating: false, count: DogIssues.allCases.count)
+    var lat: String?
+    var long: String?
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,7 @@ class ConcernViewController: UIViewController {
         tableViewDelegates()
         registerCell()
         concernTblView.allowsMultipleSelection = false
+        
     }
 // MARK: - Delegates
     func tableViewDelegates(){
@@ -60,7 +64,13 @@ class ConcernViewController: UIViewController {
     }
     
     @IBAction func emailBtnPress(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        print("selectedIndex", selectedIndex)
+          if selectedIndex == 0 {
+              kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Illness/Injury", latitude: lat ?? "", longitude: long ?? "")
+          } else {
+              kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Im Safe", latitude: lat ?? "", longitude: long ?? "")
+          }
+          self.dismiss(animated: true)
     }
     
     
@@ -78,11 +88,18 @@ extension ConcernViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.getCell() as ConcernCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.issueLbl.text = DogIssues.allCases[indexPath.row].rawValue
+
         if (selectedIndexPath == indexPath) {
-            cell.fillBtn.setImage(UIImage(named: "radio_Btn"),for:.normal)
+            cell.fillBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+            hasRadioBtnArray[indexPath.row] = true
         } else {
-            cell.fillBtn.setImage(UIImage(named: "empt_Img"),for:.normal)
+            cell.fillBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+            hasRadioBtnArray[indexPath.row] = false
         }
+
+        // Enable/disable the email button based on hasRadioBtnArray
+        emailBtn.isEnabled = hasRadioBtnArray.contains(true)
+
         return cell
     }
     
@@ -91,11 +108,15 @@ extension ConcernViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+
         if let selectedIndexPath = selectedIndexPath, selectedIndexPath == indexPath {
             self.selectedIndexPath = nil
         } else {
             selectedIndexPath = indexPath
         }
+        emailBtn.isEnabled = hasRadioBtnArray.contains(true)
+        emailBtn.backgroundColor = emailBtn.isEnabled ? ColorConstant.pinkColor : .gray
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }

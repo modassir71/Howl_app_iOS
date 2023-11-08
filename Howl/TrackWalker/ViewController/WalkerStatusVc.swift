@@ -8,7 +8,7 @@
 import UIKit
 import W3WSwiftApi
 import what3words
-
+import SVProgressHUD
 
 class WalkerStatusVc: UIViewController {
 //MARK: - Oultets
@@ -24,7 +24,7 @@ class WalkerStatusVc: UIViewController {
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        walkerListTbLview.separatorColor = .clear
         let refreshControl = UIRefreshControl()
            refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
            
@@ -75,9 +75,13 @@ class WalkerStatusVc: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        walkerListTbLview.separatorColor = .clear
         kDataManager.setOnscreenViewController(onscreenView: self)
-        
+        SVProgressHUD.show()
         kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                  }
                     if let walkUpdates = walkUpdates {
                         self?.walkUpdates = walkUpdates
                         for i in walkUpdates{

@@ -11,7 +11,7 @@ import IQKeyboardManagerSwift
 import GoogleMaps
 import Firebase
 import AVKit
-
+import SVProgressHUD
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
     var databaseRef: DatabaseReference!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        SVProgressHUD.setImageViewSize(CGSize(width: 60, height: 60))
+           SVProgressHUD.setOffsetFromCenter(UIOffset(horizontal: 200, vertical: 400))
         Thread.sleep(forTimeInterval: 1.0)
         print("retriveValue", UserDefaults.standard.string(forKey: "MonitorIds") ?? "")
         print("outputvalue", UserDefaults.standard.string(forKey: "MonitorOutPut") ?? "")

@@ -19,6 +19,7 @@ pod 'Swift-EventBus'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'FacebookShare'
+pod 'SVProgressHUD'
 
   target 'HowlTests' do
     inherit! :search_paths

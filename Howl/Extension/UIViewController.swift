@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-
+let loaderView = UIView()
+let activityIndicator = UIActivityIndicatorView(style: .large)
 extension UIViewController{
     
     func alert(_ title: String, message: String) {
@@ -24,6 +25,21 @@ extension UIViewController{
         let screenHeight = UIScreen.main.bounds.height
         return screenHeight <= 667
     }
+    
+    
+    func startLoader() {
+            loaderView.frame = view.bounds
+            loaderView.backgroundColor = UIColor(white: 0, alpha: 0.3)
+            activityIndicator.center = loaderView.center
+            activityIndicator.startAnimating()
+            view.addSubview(loaderView)
+        }
+    
+    func stopLoader() {
+           activityIndicator.stopAnimating()
+           loaderView.removeFromSuperview()
+       }
+    
 }
 extension String {
     func capitalizeFirstLetter() -> String {

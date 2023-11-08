@@ -113,6 +113,7 @@ PODS:
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.3.1)
   - SKCountryPicker (2.0.2)
+  - SVProgressHUD (2.2.5)
   - Swift-EventBus (0.4.2)
   - SwiftyJSON (5.0.1)
   - W3WSwiftApi (3.9.4)
@@ -128,6 +129,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - lottie-ios
   - SKCountryPicker
+  - SVProgressHUD
   - Swift-EventBus
   - SwiftyJSON
   - W3WSwiftApi
@@ -157,6 +159,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SKCountryPicker
+    - SVProgressHUD
     - Swift-EventBus
     - SwiftyJSON
     - W3WSwiftApi
@@ -185,11 +188,12 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   SKCountryPicker: f4882c36fa432d6450099a3e07da60eceda0a8f0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Swift-EventBus: 34fda6eed41f97a69dd42711ed12023fc424bdab
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   W3WSwiftApi: 59efd8528755afc26ce91a48dad8d128f2922718
   what3words: af6d77b4fa2044fdfc2a5de3382c52b40514443f
 
-PODFILE CHECKSUM: 4b5e727964e7ff85266cd8d66a8426397bdd2a22
+PODFILE CHECKSUM: d2bc89835b091e8c909aa5555cc811acdd79d48d
 
 COCOAPODS: 1.12.1

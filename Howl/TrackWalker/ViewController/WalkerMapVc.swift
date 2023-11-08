@@ -2,6 +2,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import Firebase
+import SVProgressHUD
 
 class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
@@ -18,7 +19,9 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         view.addSubview(mapView)
         timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
             if self.apiRequestsEnabled {
+                SVProgressHUD.show()
                 self.fetchWalkUpdatesFromFirebase { walkUpdates in
+                    SVProgressHUD.dismiss() 
                     self.addMarkersInBatch(walkUpdates)
 
                     if let walkUpdates = walkUpdates {
