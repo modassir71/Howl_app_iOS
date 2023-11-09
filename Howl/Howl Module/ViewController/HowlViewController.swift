@@ -26,7 +26,8 @@ class HowlViewController: UIViewController {
     let dataManager = DogDataManager.shared
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
     var selectedDogIndex: Int?
-    
+    var didSelect: Bool = false
+
    
     
     //MARK: - LIfeCycle
@@ -200,29 +201,52 @@ extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if selectedDogIndex == indexPath.row {
+        var comingValue = UserDefaults.standard.integer(forKey: "selectedIndex")
+        if comingValue == indexPath.row {
+            didSelect = true
             let storyboard = AppStoryboard.Main.instance
             let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
             let item = dataManager.dogs[indexPath.row]
             dogWalkingVC.dogNameLbl = item.dogName
             dogWalkingVC.index = selectedDogIndex
             dogWalkingVC.dogImgItem = item.dogImage
-            
             self.navigationController?.pushViewController(dogWalkingVC, animated: true)
         } else {
-            selectedDogIndex = indexPath.row
-            if let retriveValue = UserDefaults.standard.string(forKey: "MonitorIds") {
-                AlertManager.sharedInstance.showAlert(title: "HOWL", message: "You already have an active walk")
+            
+            if didSelect == false {
+                
+                didSelect = true
+                
+                comingValue = indexPath.row
+                
+                if let retriveValue = UserDefaults.standard.string(forKey: "MonitorIds") {
+                    AlertManager.sharedInstance.showAlert(title: "HOWL", message: "You already have an active walk")
+                } else {
+                    let storyboard = AppStoryboard.Main.instance
+                    let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
+                    let item = dataManager.dogs[indexPath.row]
+                    dogWalkingVC.dogNameLbl = item.dogName
+                    dogWalkingVC.dogImgItem = item.dogImage
+                    dogWalkingVC.index = selectedDogIndex
+                    self.navigationController?.pushViewController(dogWalkingVC, animated: true)
+                }
             } else {
-                let storyboard = AppStoryboard.Main.instance
-                let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
-                let item = dataManager.dogs[indexPath.row]
-                dogWalkingVC.dogNameLbl = item.dogName
-                dogWalkingVC.dogImgItem = item.dogImage
-                dogWalkingVC.index = selectedDogIndex
-                self.navigationController?.pushViewController(dogWalkingVC, animated: true)
+                if let retriveValue = UserDefaults.standard.string(forKey: "MonitorIds") {
+                    AlertManager.sharedInstance.showAlert(title: "HOWL", message: "You already have an active walk")
+                }
+                else {
+                    let storyboard = AppStoryboard.Main.instance
+                    let dogWalkingVC = storyboard.instantiateViewController(withIdentifier: "DogWalkingViewController") as! DogWalkingViewController
+                    let item = dataManager.dogs[indexPath.row]
+                    dogWalkingVC.dogNameLbl = item.dogName
+                    dogWalkingVC.dogImgItem = item.dogImage
+                    dogWalkingVC.index = selectedDogIndex
+                    self.navigationController?.pushViewController(dogWalkingVC, animated: true)
+                }
             }
         }
+        print("selectedIndexxxx", selectedDogIndex ?? "")
+        UserDefaults.standard.set(selectedDogIndex, forKey: "selectedIndex")
     }
 }
 
