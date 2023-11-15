@@ -25,11 +25,12 @@ class WalkerStatusVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         walkerListTbLview.separatorColor = .clear
-        let refreshControl = UIRefreshControl()
-           refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+        fetchAndReloadData()
+//        let refreshControl = UIRefreshControl()
+//           refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
            
            // Add the refresh control to your table view
-           walkerListTbLview.refreshControl = refreshControl
+//           walkerListTbLview.refreshControl = refreshControl
         liveIDSet = true
         _delegatesMethod()
         _registerCell()
@@ -186,6 +187,7 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
         let desiredPart = fullURL.replacingOccurrences(of: "https://what3words.com/", with: "")
         cell.w3wLbl.text = desiredPart
         cell.statusLbl.text = walkUpdates[indexPath.row].walkStatus
+      //  cell.monitorId.text = walkUpdates[indexPath.row].walkID
         return cell
     }
     

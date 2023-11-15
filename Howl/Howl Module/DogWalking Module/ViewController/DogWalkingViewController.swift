@@ -103,6 +103,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           concernBtn.clipsToBounds = true
           concernBtn.isHidden = true
           concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
+       //   concernBtn.backgroundColor = ColorConstant.amberColor
           concernBtn.layer.borderWidth = 2.0
           concernBtn.setTitle(DogConstantString.raiseConcern, for: .normal)
           concernBtn.setTitleColor(.black, for: .normal)

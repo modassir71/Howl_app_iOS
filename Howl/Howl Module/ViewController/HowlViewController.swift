@@ -183,7 +183,6 @@ class HowlViewController: UIViewController {
 extension HowlViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return dataManager.dogs.count
-       // return dogVarietyArr.count
         
     }
     

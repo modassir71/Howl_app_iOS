@@ -33,28 +33,28 @@
                         <rect key="frame" x="15" y="10" width="306" height="91"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOWL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXD-aq-7AT">
-                                <rect key="frame" x="128.33333333333334" y="5" width="49.666666666666657" height="19.333333333333332"/>
+                                <rect key="frame" x="129.33333333333334" y="5" width="47.666666666666657" height="18.666666666666668"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LFQ-eF-IYG">
-                                <rect key="frame" x="15" y="23.333333333333336" width="276" height="24"/>
+                                <rect key="frame" x="15" y="22.666666666666664" width="276" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iv-xu-LIs">
-                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgS-Ax-3e3">
-                                        <rect key="frame" x="131" y="0.0" width="38.333333333333343" height="24"/>
+                                        <rect key="frame" x="133.33333333333334" y="0.0" width="35" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-ah-0by">
-                                        <rect key="frame" x="220.66666666666666" y="0.0" width="55.333333333333343" height="24"/>
+                                        <rect key="frame" x="224.33333333333334" y="0.0" width="51.666666666666657" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -65,22 +65,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="00v-oX-uhz">
-                                <rect key="frame" x="10" y="49.333333333333336" width="286" height="24.000000000000007"/>
+                                <rect key="frame" x="10" y="48.666666666666664" width="286" height="23.999999999999993"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29/08/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-ne-yhg">
-                                        <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:08:03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGy-cj-tIO">
-                                        <rect key="frame" x="121" y="0.0" width="68.333333333333314" height="24"/>
+                                        <rect key="frame" x="121.66666666666666" y="0.0" width="68.333333333333343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-Nj-xCl">
-                                        <rect key="frame" x="220.66666666666666" y="0.0" width="65.333333333333343" height="24"/>
+                                        <rect key="frame" x="224.33333333333334" y="0.0" width="61.666666666666657" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -91,13 +91,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="w3w:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmj-we-1VD">
-                                <rect key="frame" x="10" y="71.666666666666671" width="40.333333333333336" height="20.666666666666671"/>
+                                <rect key="frame" x="10" y="71" width="40" height="20"/>
                                 <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="what three Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-He-WFv">
-                                <rect key="frame" x="58" y="72" width="247" height="20.666666666666671"/>
+                                <rect key="frame" x="57.666666666666671" y="71.333333333333329" width="247.33333333333331" height="20"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

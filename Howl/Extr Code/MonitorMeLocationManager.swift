@@ -369,7 +369,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
 //        let monitorMeID = kDataManager.walkId ?? ""
 //        print("monitorIds", monitorMeID)
         let retriveValue = UserDefaults.standard.string(forKey: "MonitorOutPut") ?? ""
-        
+        print("retriveValue", retriveValue)
         databaseReference.child(retriveValue).observeSingleEvent(of: .value) { snapshot,ee  in
             guard let dataDict = snapshot.value as? [String: [String: Any]] else {
                 completion(nil)

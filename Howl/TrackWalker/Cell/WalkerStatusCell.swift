@@ -9,6 +9,7 @@ import UIKit
 
 class WalkerStatusCell: UITableViewCell {
 
+    @IBOutlet weak var monitorId: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var batteryLbl: UILabel!
     

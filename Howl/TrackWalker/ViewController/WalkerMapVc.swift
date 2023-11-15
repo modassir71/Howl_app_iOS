@@ -17,6 +17,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         mapView = GMSMapView(frame: view.bounds)
         mapView.delegate = self
         view.addSubview(mapView)
+        fetchAndUpdateMarkers()
         timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
             if self.apiRequestsEnabled {
                 SVProgressHUD.show()
@@ -47,31 +48,50 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         self.present(alertController, animated: true, completion: nil)
     }
 
-    private func addMarkersInBatch(_ walkUpdates: [WalkFetch]?) {
-        markers.forEach { $0.map = nil }
-        markers.removeAll()
+    func addMarkersInBatch(_ walkUpdates: [WalkFetch]?) {
+            var newMarkers = [GMSMarker]()
+            var existingMarkers = [GMSMarker]()
 
-        for walkUpdate in walkUpdates ?? [] {
-            guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
-                  let longitude = Double(walkUpdate.walkLongitude ?? "0.0") else {
-                continue
+            for walkUpdate in walkUpdates ?? [] {
+                guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
+                      let longitude = Double(walkUpdate.walkLongitude ?? "0.0") else {
+                        continue
+                    }
+
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+
+                if markers.contains(where: { $0.position == marker.position }) {
+                    existingMarkers.append(marker)
+                } else {
+                    newMarkers.append(marker)
+                }
             }
 
-            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-            markers.append(marker)
+            for marker in newMarkers {
+                marker.icon = GMSMarker.markerImage(with: UIColor(displayP3Red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0))
+            }
+
+            for marker in existingMarkers {
+                marker.icon = GMSMarker.markerImage(with: .gray)
+            }
+
+            markers.removeAll()
+            markers.append(contentsOf: newMarkers)
+            markers.append(contentsOf: existingMarkers)
+
+            markers.forEach { $0.map = mapView }
+
+            // Set the camera position to the last added marker (if any)
+            if let lastMarker = markers.last {
+                let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
+                    withTarget: lastMarker.position,
+                    zoom: 20.0
+                ))
+                mapView.animate(with: cameraUpdate)
+            }
         }
 
-        markers.forEach { $0.map = mapView }
 
-        // Set the camera position to the last added marker (if any)
-        if let lastMarker = markers.last {
-            let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
-                withTarget: lastMarker.position,
-                zoom: 20.0
-            ))
-            mapView.animate(with: cameraUpdate)
-        }
-    }
 
     func fetchWalkUpdatesFromFirebase(completion: @escaping ([WalkFetch]?) -> Void) {
         let databaseReference = Database.database().reference()
@@ -118,5 +138,18 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
 
             completion(walkUpdates)
         }
+    }
+    
+    private func fetchAndUpdateMarkers() {
+            SVProgressHUD.show()
+            fetchWalkUpdatesFromFirebase { walkUpdates in
+                SVProgressHUD.dismiss()
+                self.addMarkersInBatch(walkUpdates)
+            }
+        }
+}
+extension CLLocationCoordinate2D: Equatable {
+    public static func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
     }
 }
