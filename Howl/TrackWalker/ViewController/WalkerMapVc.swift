@@ -29,7 +29,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
                         for walkUpdate in walkUpdates {
                             if walkUpdate.walkStatus == "End Session" {
                                 self.apiRequestsEnabled = false // Disable API requests
-                                self.showSessionExpiredAlert()
+                              //  self.showSessionExpiredAlert()
                             }
                         }
                     }

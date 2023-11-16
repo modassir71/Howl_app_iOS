@@ -26,11 +26,11 @@ class WalkerStatusVc: UIViewController {
         super.viewDidLoad()
         walkerListTbLview.separatorColor = .clear
         fetchAndReloadData()
-//        let refreshControl = UIRefreshControl()
-//           refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+        let refreshControl = UIRefreshControl()
+           refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
            
-           // Add the refresh control to your table view
-//           walkerListTbLview.refreshControl = refreshControl
+//            Add the refresh control to your table view
+           walkerListTbLview.refreshControl = refreshControl
         liveIDSet = true
         _delegatesMethod()
         _registerCell()
@@ -39,15 +39,15 @@ class WalkerStatusVc: UIViewController {
     
     @objc func handleRefresh(_ sender: UIRefreshControl) {
         fetchAndReloadData()
-        if endsession == "End Session"{
-            let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                self.navigationController?.popViewController(animated: true)
-                    })
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
-
-        }
+//        if endsession == "End Session"{
+//            let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                self.navigationController?.popViewController(animated: true)
+//                    })
+//            alertController.addAction(okAction)
+//            present(alertController, animated: true, completion: nil)
+//
+//        }
         sender.endRefreshing() // End the refresh animation when done
     }
     
@@ -56,20 +56,20 @@ class WalkerStatusVc: UIViewController {
             if let walkUpdates = walkUpdates {
                 self?.walkUpdates = walkUpdates
                 print(walkUpdates)
-                for i in walkUpdates{
-                    if i.walkStatus == "End Session"{
-                       //
-                        self?.status = true
-                        let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
-                            self?.navigationController?.popViewController(animated: true)
-                            
-                                })
-                        alertController.addAction(okAction)
-                        self?.present(alertController, animated: true, completion: nil)
-                    }
-                }
+//                for i in walkUpdates{
+//                    if i.walkStatus == "End Session"{
+//                       //
+//                        self?.status = true
+//                        let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                            UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
+//                            self?.navigationController?.popViewController(animated: true)
+//
+//                                })
+//                        alertController.addAction(okAction)
+//                        self?.present(alertController, animated: true, completion: nil)
+//                    }
+//                }
                 self?.walkerListTbLview.reloadData()
             }
         }
@@ -85,20 +85,19 @@ class WalkerStatusVc: UIViewController {
                   }
                     if let walkUpdates = walkUpdates {
                         self?.walkUpdates = walkUpdates
-                        for i in walkUpdates{
-                            if i.walkStatus == "End Session"{
-                               //
-                                self?.status = true
-                                let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
-                                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                    UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
-                                    self?.navigationController?.popViewController(animated: true)
-                                    
-                                        })
-                                alertController.addAction(okAction)
-                                self?.present(alertController, animated: true, completion: nil)
-                            }
-                        }
+//                        for i in walkUpdates{
+//                            if i.walkStatus == "End Session"{
+//                               //
+//                                self?.status = true
+//                                let alertController = UIAlertController(title: "Session Expired", message: "Your Session is expired", preferredStyle: .alert)
+//                                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                                    UserDefaults.standard.removeObject(forKey: "MonitorOutPut")
+//                                    self?.navigationController?.popViewController(animated: true)
+//                                        })
+//                                alertController.addAction(okAction)
+//                                self?.present(alertController, animated: true, completion: nil)
+//                            }
+//                        }
                         self?.walkerListTbLview.reloadData()
                     }
                 }
@@ -187,12 +186,12 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
         let desiredPart = fullURL.replacingOccurrences(of: "https://what3words.com/", with: "")
         cell.w3wLbl.text = desiredPart
         cell.statusLbl.text = walkUpdates[indexPath.row].walkStatus
-      //  cell.monitorId.text = walkUpdates[indexPath.row].walkID
+        cell.monitorId.text = walkUpdates[indexPath.row].walkID
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
+        return 140
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

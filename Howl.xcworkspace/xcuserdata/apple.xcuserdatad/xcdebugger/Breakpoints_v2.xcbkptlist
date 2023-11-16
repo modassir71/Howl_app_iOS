@@ -888,159 +888,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Howl/Application/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "scene(_:continue:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 1a4ec947ff41cdf6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, openURLContexts: Swift.Set&lt;__C.UIOpenURLContext&gt;) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "396">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "296">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "344">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "356">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "260">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "392">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "420">
-               </Location>
-               <Location
-                  uuid = "820EC20E-CE78-417D-A4C8-89A4F6D9AA3E - 72a6e0d3f8dd5e87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Howl.SceneDelegate.scene(_: __C.UIScene, continue: __C.NSUserActivity) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Application/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "416">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8D3A6228-28C0-4878-A38F-9AF8B8B1B631"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1354,6 +1201,21 @@
                   endingLineNumber = "42"
                   offsetFromSymbolStart = "104">
                </Location>
+               <Location
+                  uuid = "C06FB5BC-B5FB-4537-B2D9-5B288E7474BE - 6faf905ee67065e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Howl.WalkerStatusVc.handleRefresh(__C.UIRefreshControl) -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "72">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1402,6 +1264,21 @@
                   endingLineNumber = "62"
                   offsetFromSymbolStart = "1504">
                </Location>
+               <Location
+                  uuid = "266CEF6F-C1CE-426A-B867-6CEA3174BAA8 - 65956cb8cdb76bee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Howl.WalkFetch&gt;&gt;) -&gt; () in Howl.WalkerStatusVc.fetchAndReloadData() -&gt; ()"
+                  moduleName = "Howl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "492">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1433,7 +1310,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "388"
             endingLineNumber = "388"
-            landmarkName = "sliderDidFinishSliding(_:at:)"
+            landmarkName = "startWalk(indexOfEmergencyContact:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1750,6 +1627,22 @@
                   offsetFromSymbolStart = "576">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1E4F4AF-5786-4178-AB97-9ED5ADDA2E3F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Application/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "scene(_:continue:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

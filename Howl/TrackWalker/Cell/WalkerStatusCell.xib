@@ -22,39 +22,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="WalkerStatusCell" customModule="Howl" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="336" height="111"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="194" id="KGk-i7-Jjw" customClass="WalkerStatusCell" customModule="Howl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="155"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="336" height="111"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="155"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xah-lC-6mk">
-                        <rect key="frame" x="15" y="10" width="306" height="91"/>
+                        <rect key="frame" x="8" y="10" width="328" height="135"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOWL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXD-aq-7AT">
-                                <rect key="frame" x="129.33333333333334" y="5" width="47.666666666666657" height="18.666666666666668"/>
+                                <rect key="frame" x="139.33333333333334" y="29" width="49.666666666666657" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LFQ-eF-IYG">
-                                <rect key="frame" x="15" y="22.666666666666664" width="276" height="24"/>
+                                <rect key="frame" x="15" y="47.333333333333336" width="298" height="24.000000000000007"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Iv-xu-LIs">
-                                        <rect key="frame" x="0.0" y="0.0" width="77" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgS-Ax-3e3">
-                                        <rect key="frame" x="133.33333333333334" y="0.0" width="35" height="24"/>
+                                        <rect key="frame" x="142" y="0.0" width="38.333333333333343" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-ah-0by">
-                                        <rect key="frame" x="224.33333333333334" y="0.0" width="51.666666666666657" height="24"/>
+                                        <rect key="frame" x="242.66666666666671" y="0.0" width="55.333333333333343" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Bold" family="Aileron" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -65,22 +65,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="00v-oX-uhz">
-                                <rect key="frame" x="10" y="48.666666666666664" width="286" height="23.999999999999993"/>
+                                <rect key="frame" x="10" y="73.333333333333329" width="308" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29/08/2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-ne-yhg">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="24"/>
                                         <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:08:03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGy-cj-tIO">
-                                        <rect key="frame" x="121.66666666666666" y="0.0" width="68.333333333333343" height="24"/>
+                                        <rect key="frame" x="132" y="0.0" width="68.333333333333314" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-Nj-xCl">
-                                        <rect key="frame" x="224.33333333333334" y="0.0" width="61.666666666666657" height="24"/>
+                                        <rect key="frame" x="242.66666666666671" y="0.0" width="65.333333333333343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -91,14 +91,26 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="w3w:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmj-we-1VD">
-                                <rect key="frame" x="10" y="71" width="40" height="20"/>
+                                <rect key="frame" x="10" y="95.666666666666671" width="40.333333333333336" height="20.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="what three Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-He-WFv">
-                                <rect key="frame" x="57.666666666666671" y="71.333333333333329" width="247.33333333333331" height="20"/>
+                                <rect key="frame" x="58" y="96" width="269" height="20.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitor Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-WW-SEL">
+                                <rect key="frame" x="5" y="5" width="69.333333333333329" height="17"/>
+                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitor Id:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlL-x7-dk8">
+                                <rect key="frame" x="76.333333333333314" y="5" width="67.666666666666686" height="17"/>
+                                <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,17 +122,22 @@
                             <constraint firstItem="Vmj-we-1VD" firstAttribute="top" secondItem="00v-oX-uhz" secondAttribute="bottom" constant="-1.6666666666666856" id="21r-Gw-u4f"/>
                             <constraint firstAttribute="trailing" secondItem="LFQ-eF-IYG" secondAttribute="trailing" constant="15" id="9L3-bb-Xjb"/>
                             <constraint firstItem="KlX-Nj-xCl" firstAttribute="centerX" secondItem="Ihj-ah-0by" secondAttribute="centerX" id="9io-DL-MPJ"/>
+                            <constraint firstItem="fGY-WW-SEL" firstAttribute="top" secondItem="Xah-lC-6mk" secondAttribute="top" constant="5" id="G3m-R8-tCd"/>
                             <constraint firstItem="kMr-He-WFv" firstAttribute="top" secondItem="00v-oX-uhz" secondAttribute="bottom" constant="-1.3333333333333428" id="QNk-6W-wGO"/>
                             <constraint firstItem="LXD-aq-7AT" firstAttribute="centerX" secondItem="Xah-lC-6mk" secondAttribute="centerX" id="RZC-5h-6Hg"/>
                             <constraint firstItem="kMr-He-WFv" firstAttribute="leading" secondItem="Vmj-we-1VD" secondAttribute="trailing" constant="7.6666666666666643" id="RnM-oy-sOX"/>
+                            <constraint firstItem="QlL-x7-dk8" firstAttribute="top" secondItem="fGY-WW-SEL" secondAttribute="top" id="UXw-Ec-qL1"/>
                             <constraint firstItem="a8b-ne-yhg" firstAttribute="centerX" secondItem="1Iv-xu-LIs" secondAttribute="centerX" id="WC5-Nr-URw"/>
                             <constraint firstAttribute="trailing" secondItem="kMr-He-WFv" secondAttribute="trailing" constant="1" id="Xgg-h6-5Mu"/>
+                            <constraint firstItem="fGY-WW-SEL" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="5" id="Z2p-Bw-hDR"/>
                             <constraint firstItem="qGy-cj-tIO" firstAttribute="centerX" secondItem="FgS-Ax-3e3" secondAttribute="centerX" id="ZTc-ep-THU"/>
                             <constraint firstItem="Vmj-we-1VD" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="10" id="eBl-mi-zN8"/>
                             <constraint firstItem="00v-oX-uhz" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="10" id="hSx-dr-Wpg"/>
-                            <constraint firstItem="LXD-aq-7AT" firstAttribute="top" secondItem="Xah-lC-6mk" secondAttribute="top" constant="5" id="k0x-bk-E2U"/>
                             <constraint firstAttribute="trailing" secondItem="00v-oX-uhz" secondAttribute="trailing" constant="10" id="kre-21-eVm"/>
+                            <constraint firstItem="LXD-aq-7AT" firstAttribute="top" secondItem="QlL-x7-dk8" secondAttribute="bottom" constant="7" id="s2J-sh-jIf"/>
                             <constraint firstItem="LFQ-eF-IYG" firstAttribute="leading" secondItem="Xah-lC-6mk" secondAttribute="leading" constant="15" id="sbu-oa-4J6"/>
+                            <constraint firstItem="QlL-x7-dk8" firstAttribute="leading" secondItem="fGY-WW-SEL" secondAttribute="trailing" constant="2" id="vF0-o1-qOh"/>
+                            <constraint firstItem="QlL-x7-dk8" firstAttribute="centerY" secondItem="fGY-WW-SEL" secondAttribute="centerY" id="x4a-La-10J"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -128,8 +145,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Xah-lC-6mk" secondAttribute="bottom" constant="10" id="BU9-Yf-IgY"/>
                     <constraint firstItem="Xah-lC-6mk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="CLP-Tz-eZ6"/>
-                    <constraint firstAttribute="trailing" secondItem="Xah-lC-6mk" secondAttribute="trailing" constant="15" id="RxG-on-JB2"/>
-                    <constraint firstItem="Xah-lC-6mk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="WMK-SI-bm1"/>
+                    <constraint firstAttribute="trailing" secondItem="Xah-lC-6mk" secondAttribute="trailing" constant="8" id="RxG-on-JB2"/>
+                    <constraint firstItem="Xah-lC-6mk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WMK-SI-bm1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -137,11 +154,12 @@
                 <outlet property="batteryLbl" destination="KlX-Nj-xCl" id="TGN-kk-si5"/>
                 <outlet property="containerView" destination="Xah-lC-6mk" id="bcc-3D-WbP"/>
                 <outlet property="dateLbl" destination="a8b-ne-yhg" id="zdY-jt-4oz"/>
+                <outlet property="monitorId" destination="QlL-x7-dk8" id="LMm-qW-7Ec"/>
                 <outlet property="statusLbl" destination="LXD-aq-7AT" id="qPZ-ro-UD2"/>
                 <outlet property="timeLbl" destination="qGy-cj-tIO" id="93o-S0-OnE"/>
                 <outlet property="w3wLbl" destination="kMr-He-WFv" id="CxC-PF-bCn"/>
             </connections>
-            <point key="canvasLocation" x="68.702290076335871" y="23.591549295774648"/>
+            <point key="canvasLocation" x="74.809160305343511" y="8.0985915492957758"/>
         </tableViewCell>
     </objects>
     <resources>
