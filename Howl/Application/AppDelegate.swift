@@ -10,11 +10,12 @@ import CoreData
 import IQKeyboardManagerSwift
 import GoogleMaps
 import Firebase
+import FirebaseMessaging
 import AVKit
 import SVProgressHUD
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
     var databaseRef: DatabaseReference!
@@ -56,7 +57,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, U
             }
         }
         UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            }
+        }
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.hexString
+        print(deviceTokenString)
     }
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -127,3 +140,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, U
 
 }
 
+extension Data {
+    var hexString: String {
+        let hexString = map { String(format: "%02.2hhx", $0) }.joined()
+        return hexString
+    }
+}
