@@ -8,8 +8,10 @@
 //  Service: https://cloud.google.com/maps-platform/terms
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "GMSCollisionBehavior.h"
 #import "GMSMarker.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  * affected by other markers or labeled content on the map.
  */
 @property(nonatomic) GMSCollisionBehavior collisionBehavior;
+
 
 @end
 

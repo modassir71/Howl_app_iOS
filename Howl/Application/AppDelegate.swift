@@ -14,7 +14,7 @@ import AVKit
 import SVProgressHUD
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     var databaseRef: DatabaseReference!
@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
                 kDataManager.walkId = walkID
             }
         }
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     

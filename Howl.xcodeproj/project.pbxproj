@@ -73,6 +73,7 @@
 		189A796C2AAAE70A002A640C /* Siren4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79642AAAE70A002A640C /* Siren4.mp3 */; };
 		189A796D2AAAE70A002A640C /* Siren5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 189A79652AAAE70A002A640C /* Siren5.mp3 */; };
 		189A79822AAAFE8F002A640C /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A79812AAAFE8F002A640C /* PermissionViewController.swift */; };
+		18A587802B0C7DFF005059A8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A5877F2B0C7DFF005059A8 /* RegistrationViewController.swift */; };
 		18A7436C2AE1177000BD7CED /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7436A2AE1177000BD7CED /* RecordViewController.swift */; };
 		18A7436D2AE1177000BD7CED /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7436B2AE1177000BD7CED /* RecordViewController.xib */; };
 		18A7CFA62AC9C3C4009DFA71 /* TrackWalkerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */; };
@@ -221,6 +222,7 @@
 		189A79642AAAE70A002A640C /* Siren4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren4.mp3; sourceTree = "<group>"; };
 		189A79652AAAE70A002A640C /* Siren5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Siren5.mp3; sourceTree = "<group>"; };
 		189A79812AAAFE8F002A640C /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		18A5877F2B0C7DFF005059A8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		18A7436A2AE1177000BD7CED /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		18A7436B2AE1177000BD7CED /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		18A7CFA52AC9C3C4009DFA71 /* TrackWalkerVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackWalkerVc.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				18C86C1F2A8CABA800A1F937 /* AppDelegate.swift */,
 				18C42A0F2AC0925700C973F6 /* MainTabBar.swift */,
 				18C86C212A8CABA800A1F937 /* SceneDelegate.swift */,
+				18A5877F2B0C7DFF005059A8 /* RegistrationViewController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1348,6 +1351,7 @@
 				18C86C202A8CABA800A1F937 /* AppDelegate.swift in Sources */,
 				18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */,
 				182839992AB09175003D212D /* SoundDataManager.swift in Sources */,
+				18A587802B0C7DFF005059A8 /* RegistrationViewController.swift in Sources */,
 				18CB66B82AE6424400D57005 /* TipsViewController.swift in Sources */,
 				18B3FA752AD5368800F40F56 /* StringExtension.swift in Sources */,
 				18297F842AB4332B00D97A36 /* ApiProvider.swift in Sources */,
@@ -1563,7 +1567,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1603,7 +1607,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;

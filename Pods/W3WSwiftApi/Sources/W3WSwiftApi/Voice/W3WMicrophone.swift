@@ -36,6 +36,11 @@ open class W3WMicrophone: W3WAudioStream {
   /// the smallest "max" volume for the amplitude normalization function
   private static let smallestMaxVolume = 0.25
 
+  /// the session category to use, defaults to .record (only for iOS)
+  #if canImport(UIKit)
+  public static var category: AVAudioSession.Category? = .record
+  #endif
+  
   
   // MARK: Initialization
 
@@ -60,15 +65,15 @@ open class W3WMicrophone: W3WAudioStream {
     
     do {
       #if canImport(UIKit)
-      try AVAudioSession.sharedInstance().setCategory(.record)
+      if let c = Self.category {
+        try AVAudioSession.sharedInstance().setCategory(c)
+      }
       try AVAudioSession.sharedInstance().setActive(true)
       #endif
     } catch {
       print("Error using microphone")
     }
   }
-  
-  
   
   
   // MARK: Accessors
@@ -96,6 +101,7 @@ open class W3WMicrophone: W3WAudioStream {
       return false
     }
   }
+ 
   
   /// returns whether the mic is live or idle
   public func isRecording() -> Bool {
@@ -120,6 +126,7 @@ open class W3WMicrophone: W3WAudioStream {
   
   
   // MARK: start() stop()
+ 
   
   /// start the mic recording
   public func start() {
@@ -161,9 +168,6 @@ open class W3WMicrophone: W3WAudioStream {
           
           self.micReturnedSamples(buffer: convertedBuffer, time: time)
         }
-        
-      } else {
-        //print("Warning: microphone was started twice")
       }
       
     } else {

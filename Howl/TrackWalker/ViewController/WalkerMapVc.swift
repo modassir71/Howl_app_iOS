@@ -10,6 +10,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
     private var timer: Timer?
     private var markers = [GMSMarker]()
     private var apiRequestsEnabled = true
+    var walkUpdated = [WalkFetch]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
                 self.fetchWalkUpdatesFromFirebase { walkUpdates in
                     SVProgressHUD.dismiss() 
                     self.addMarkersInBatch(walkUpdates)
-
+                    self.walkUpdated = walkUpdates ?? []
                     if let walkUpdates = walkUpdates {
                         for walkUpdate in walkUpdates {
                             if walkUpdate.walkStatus == "End Session" {
@@ -49,47 +50,61 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
     }
 
     func addMarkersInBatch(_ walkUpdates: [WalkFetch]?) {
-            var newMarkers = [GMSMarker]()
-            var existingMarkers = [GMSMarker]()
+        var newMarkers = [GMSMarker]()
+        var existingMarkers = [GMSMarker]()
 
-            for walkUpdate in walkUpdates ?? [] {
-                guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
-                      let longitude = Double(walkUpdate.walkLongitude ?? "0.0") else {
-                        continue
-                    }
-
-                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-
-                if markers.contains(where: { $0.position == marker.position }) {
-                    existingMarkers.append(marker)
-                } else {
-                    newMarkers.append(marker)
-                }
+        for walkUpdate in walkUpdates ?? [] {
+            guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
+                  let longitude = Double(walkUpdate.walkLongitude ?? "0.0") else {
+                continue
             }
 
-            for marker in newMarkers {
-                marker.icon = GMSMarker.markerImage(with: UIColor(displayP3Red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0))
-            }
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
 
-            for marker in existingMarkers {
+            // Set marker color based on walkStatus
+            switch walkUpdate.walkStatus {
+            case "Start Session":
+                marker.icon = GMSMarker.markerImage(with: .white)
+            case "Auto-Update":
+                marker.icon = GMSMarker.markerImage(with: .lightGray)
+            case "Im Safe":
+                marker.icon = GMSMarker.markerImage(with: .green)
+            case "Concerned":
+                marker.icon = GMSMarker.markerImage(with: .orange)
+            case "End Session":
+                marker.icon = GMSMarker.markerImage(with: .green)
+            default:
                 marker.icon = GMSMarker.markerImage(with: .gray)
             }
 
-            markers.removeAll()
-            markers.append(contentsOf: newMarkers)
-            markers.append(contentsOf: existingMarkers)
-
-            markers.forEach { $0.map = mapView }
-
-            // Set the camera position to the last added marker (if any)
-            if let lastMarker = markers.last {
-                let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
-                    withTarget: lastMarker.position,
-                    zoom: 20.0
-                ))
-                mapView.animate(with: cameraUpdate)
+            if markers.contains(where: { $0.position == marker.position }) {
+                existingMarkers.append(marker)
+            } else {
+                newMarkers.append(marker)
             }
         }
+
+        for marker in newMarkers {
+            marker.map = mapView
+        }
+
+        for marker in existingMarkers {
+            marker.map = mapView
+        }
+
+        markers.append(contentsOf: newMarkers)
+        markers.append(contentsOf: existingMarkers)
+
+        // Set the camera position to the last added marker (if any)
+        if let lastMarker = markers.last {
+            let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
+                withTarget: lastMarker.position,
+                zoom: 20.0
+            ))
+            mapView.animate(with: cameraUpdate)
+        }
+    }
+
 
 
 

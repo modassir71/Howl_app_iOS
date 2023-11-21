@@ -81,7 +81,7 @@ class HowlViewController: UIViewController {
         let hasAppLaunchedBefore = UserDefaults.standard.bool(forKey: StringConstant.hasAppLaunchedBeforeKey)
         if !hasAppLaunchedBefore {
             let storyboard = AppStoryboard.Main.instance
-            let instructionVc = storyboard.instantiateViewController(withIdentifier: "InstructionViewController") as! InstructionViewController
+            let instructionVc = storyboard.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
             self.navigationController?.pushViewController(instructionVc, animated: true)
             
         }else{

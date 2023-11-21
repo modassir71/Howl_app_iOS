@@ -18,8 +18,10 @@ pod 'SwiftyJSON'
 pod 'Swift-EventBus'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Messaging'
 pod 'FacebookShare'
 pod 'SVProgressHUD'
+pod 'Firebase'
 
   target 'HowlTests' do
     inherit! :search_paths

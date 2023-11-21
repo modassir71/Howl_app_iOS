@@ -13,6 +13,7 @@ framework module GoogleMapsCore {
   link framework "GLKit"
   link framework "ImageIO"
   link framework "Metal"
+  link framework "OSLog"
   link framework "OpenGLES"
   link framework "QuartzCore"
   link framework "Security"

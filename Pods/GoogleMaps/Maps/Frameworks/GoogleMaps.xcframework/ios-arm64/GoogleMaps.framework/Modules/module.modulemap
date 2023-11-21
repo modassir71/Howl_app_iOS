@@ -1,5 +1,7 @@
 framework module GoogleMaps {
   umbrella header "GoogleMaps.h"
+  
+
   export *
   module * { export * }
   link "m"
@@ -15,6 +17,7 @@ framework module GoogleMaps {
   link framework "GLKit"
   link framework "ImageIO"
   link framework "Metal"
+  link framework "OSLog"
   link framework "OpenGLES"
   link framework "QuartzCore"
   link framework "Security"
