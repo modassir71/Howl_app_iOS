@@ -13,7 +13,7 @@ class AddPeopleDataManager{
         let instance = AddPeopleDataManager()
         return instance
     }()
-    
+    var indexOfPersonMonitoring: Int = 0 
     var people: [Person]! = []
     var updating: Bool! = false
     var selectedIndex: Int! = 0

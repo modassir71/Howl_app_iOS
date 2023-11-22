@@ -9,6 +9,7 @@ import UIKit
 import SKCountryPicker
 import ContactsUI
 import W3WSwiftApi
+import Firebase
 
 class AddNewPersonVc: UIViewController {
     //MARK: - Outlet
@@ -196,57 +197,62 @@ class AddNewPersonVc: UIViewController {
     
     
     @IBAction func createBtnPress(_ sender: UIButton) {
-        let validationResult = vm.initialBasicInfoVlaidate(name: nameTxtFld.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: messageType ?? "")
-        let status = validationResult.0
-        let message = validationResult.1
-        if status == true{
-            if let personImage = profilePicImg.image {
-                personImageData = personImage.jpegData(compressionQuality: 1)
-            } else {
-                personImageData = Data()
-            }
-            if messageType == nil{
-                messageType = "iMessage"
-            }
-            print("PhoneNumber", messageType!)
-            let newPerson = Person(name: nameTxtFld.text ?? "", countryCode: countryCodeLbl.text ?? "", mobileNumber: phoneNoTxtFld.text ?? "", notificationType: messageType ?? "", image: personImageData)
-            if isEdit == true {
-                //Update data
-                print(AddPeopleDataManager.sharedInstance.selectedIndex!)
-                AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)
-                AddPeopleDataManager.sharedInstance.people.insert(newPerson, at: AddPeopleDataManager.sharedInstance.selectedIndex)
-            }else{
-                //Save new data
-                AddPeopleDataManager.sharedInstance.people.append(newPerson)
-            }
-            if AddPeopleDataManager.sharedInstance.savePeople() {
-          //      switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+        checkMobileNumberExists(phoneNoTxtFld.text ?? "") { exists in
+            if exists {
+                let validationResult = self.vm.initialBasicInfoVlaidate(name: self.nameTxtFld.text ?? "", mobileNumber: self.phoneNoTxtFld.text ?? "", notificationType: self.messageType ?? "")
+                let status = validationResult.0
+                let message = validationResult.1
+                if status == true{
+                    if let personImage = self.profilePicImg.image {
+                        self.personImageData = personImage.jpegData(compressionQuality: 1)
+                    } else {
+                        self.personImageData = Data()
+                    }
+                    if self.messageType == nil{
+                        self.messageType = "iMessage"
+                    }
+                    print("PhoneNumber", self.messageType!)
+                    let newPerson = Person(name: self.nameTxtFld.text ?? "", countryCode: self.countryCodeLbl.text ?? "", mobileNumber: self.phoneNoTxtFld.text ?? "", notificationType: self.messageType ?? "", image: self.personImageData)
+                    if self.isEdit == true {
+                        //Update data
+                        print(AddPeopleDataManager.sharedInstance.selectedIndex!)
+                        AddPeopleDataManager.sharedInstance.people.remove(at: AddPeopleDataManager.sharedInstance.selectedIndex)
+                        AddPeopleDataManager.sharedInstance.people.insert(newPerson, at: AddPeopleDataManager.sharedInstance.selectedIndex)
+                    }else{
+                        //Save new data
+                        AddPeopleDataManager.sharedInstance.people.append(newPerson)
+                    }
+                    if AddPeopleDataManager.sharedInstance.savePeople() {
+                        //      switch UserDefaults.standard.bool(forKey: "firstloadcompleted") {
+                        
+                        //case true:
+                        if self.iscomeFromInstruction == true{
+                            let storyboard = AppStoryboard.Main.instance
+                            let sirenVc = storyboard.instantiateViewController(withIdentifier: "SirenViewController") as! SirenViewController
+                            sirenVc.iscomeFromInstruction = true
+                            self.navigationController?.pushViewController(sirenVc, animated: true)
+                        }else{
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                        //                case false:
+                        //                    self.navigationController?.popViewController(animated: true)
+                        //                    DispatchQueue.main.async {
+                        //                        self.performSegue(withIdentifier: "personToSiren", sender: self)
+                        //                    }
+                        //  print("Not Saved")
+                        // }
+                    }else{
+                        print("Error")
+                    }
                     
-                //case true:
-                if iscomeFromInstruction == true{
-                    let storyboard = AppStoryboard.Main.instance
-                    let sirenVc = storyboard.instantiateViewController(withIdentifier: "SirenViewController") as! SirenViewController
-                    sirenVc.iscomeFromInstruction = true
-                    self.navigationController?.pushViewController(sirenVc, animated: true)
                 }else{
-                    self.navigationController?.popViewController(animated: true)
+                    self.alert("Alert", message: message)
                 }
-                    
-//                case false:
-//                    self.navigationController?.popViewController(animated: true)
-//                    DispatchQueue.main.async {
-//                        self.performSegue(withIdentifier: "personToSiren", sender: self)
-//                    }
-                  //  print("Not Saved")
-               // }
             }else{
-                print("Error")
+                self.alert("Howl", message: "Number not registered")
             }
-           
-        }else{
-            alert("Alert", message: message)
         }
-        
     }
     
     @IBAction func backBtnPress(_ sender: UIButton) {
@@ -270,6 +276,14 @@ class AddNewPersonVc: UIViewController {
       //countryPickerVC.detailColor = UIColor.red
         
         
+    }
+    
+    func checkMobileNumberExists(_ mobileNumber: String, completion: @escaping (Bool) -> Void) {
+        let dbRef = Database.database().reference().child("users")
+        
+        dbRef.child(mobileNumber).observeSingleEvent(of: .value) { snapshot in
+            completion(snapshot.exists())
+        }
     }
 }
 extension AddNewPersonVc: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

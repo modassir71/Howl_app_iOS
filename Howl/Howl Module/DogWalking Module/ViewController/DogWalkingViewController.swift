@@ -399,12 +399,12 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           var notificationType = ""
           var mobileNo = ""
           let message = "Hello, please follow my walk on HOWL:"+base_url+kDataManager.walkId
-          for person in AddPeopleDataManager.sharedInstance.people{
-              notificationType = person.personNotificationType
-              mobileNo = person.personCountryCode+person.personMobileNumber
-              print("MobileNo", mobileNo)
-              print("notifiiiii",notificationType)
-          }
+          let mobileNum = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber
+          let code = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personCountryCode
+          let combinedString = (code ?? "") + (mobileNum ?? "")
+          mobileNo = combinedString
+          let notiType = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personNotificationType
+          notificationType = notiType
           if notificationType == "WHATSAPP"{
               if let mobileNoEncoded = mobileNo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
                  let messageEncoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
