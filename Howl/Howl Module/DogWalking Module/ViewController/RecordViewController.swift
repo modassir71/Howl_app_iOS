@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Photos
+import Alamofire
 
 class RecordViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCaptureFileOutputRecordingDelegate {
     
@@ -237,12 +238,53 @@ class RecordViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVC
     
     @IBAction func stopRecordingBtn(_ sender: UIButton) {
         if captureSession.isRunning && videoOutput.isRecording {
-            
-            // Stop monitoring and save the incident to file
-            kMonitorMeLocationManager.stopMonitoringMeWithIncident()
-            videoOutput.stopRecording()
-        }
+                // Stop monitoring and save the incident to file
+                kMonitorMeLocationManager.stopMonitoringMeWithIncident()
+                videoOutput.stopRecording()
+
+                // Post a push notification
+           
+            }
     }
-    
-    
+}
+
+struct PushNotification: Encodable {
+    let title: String
+    let body: String
+    // Add other properties as needed
+
+    init(title: String, body: String) {
+        self.title = title
+        self.body = body
+    }
+}
+struct NotificationApi {
+    struct Constants {
+        static let contentType = "application/json"
+        static let apiKey = "AAAAXFpGK20:APA91bG9zWTwiIlbOFWc8tDi8ysMJ-JsMjzxUv4tBzbnjGZ6lqwtVxHVZJppGiE_SjCWQN8IoyH9fpztWq9YdqH9Lh4anO4qLmrB2d24Su9_h9wLtpliebjLGbn-01V2NnmKzwkPi9M1"
+    }
+
+    private static let baseUrl = "https://fcm.googleapis.com"
+
+    static func postNotification(notification: PushNotification) {
+        let url = "\(baseUrl)/fcm/send"
+        let headers: HTTPHeaders = [
+            "Authorization": "key=\(Constants.apiKey)",
+            "Content-Type": Constants.contentType
+        ]
+
+        AF.request(url, method: .post, parameters: notification, encoder: JSONParameterEncoder.default, headers: headers)
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    // Handle success
+                    if let data = data {
+                        print("Push notification response: \(String(data: data, encoding: .utf8) ?? "")")
+                    }
+                case .failure(let error):
+                    // Handle failure
+                    print("Error sending push notification: \(error)")
+                }
+            }
+    }
 }

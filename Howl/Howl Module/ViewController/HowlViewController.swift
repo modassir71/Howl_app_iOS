@@ -27,6 +27,7 @@ class HowlViewController: UIViewController {
     var dogVarietyArr = ["simba","Rocky", "Polly", "Monster", "Aster", "Monk", "Bella", "Marlo", "Pablo", "Bruno", "Penny"]
     var selectedDogIndex: Int?
     var didSelect: Bool = false
+    var walkUpdated = [WalkFetch]()
 
    
     
@@ -57,12 +58,36 @@ class HowlViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         dogVarietyCollectionView.reloadData()
         let retriveVlaue = UserDefaults.standard.string(forKey: "MonitorIds")
+        
         if retriveVlaue != nil {
             monitorLocationBtn.isHidden = true
         }else{
             monitorLocationBtn.isHidden = false
         }
-        
+       
+    }
+    
+    func showLocalNotification(){
+        let content = UNMutableNotificationContent()
+        content.title = "HOWL"
+        content.body = "Howl for help"
+        content.sound = UNNotificationSound.default
+
+        // Set the notification trigger (e.g., display the notification after 5 seconds)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+
+        // Create the notification request
+        let request = UNNotificationRequest(identifier: "availabilityNotification", content: content, trigger: trigger)
+
+        // Add the notification request to the notification center
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                // Handle the case where there was an error scheduling the notification
+                print("Error scheduling local notification: \(error.localizedDescription)")
+            } else {
+                print("Local notification scheduled successfully")
+            }
+        }
     }
     
     override func viewWillLayoutSubviews() {

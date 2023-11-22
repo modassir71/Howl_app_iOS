@@ -10,6 +10,8 @@ import Lottie
 import CoreLocation
 import Firebase
 import MessageUI
+import FirebaseMessaging
+import UserNotifications
 
 class DogWalkingViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
@@ -247,6 +249,18 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                 tapLabel.text = "Tap 1 Times To"
                 
             case 2:
+
+//                let recipientToken = "cKjn7K453UuOqlyciw7rrS:APA91bGTf2aoOhlb3hAq7AMFtMbXfuDC7zUjxPf7YvnqfJcNYvUIfqKzUpSoDDrXOPXxp_nK-W4bgwR8RWH80_9CXzX8pYAjmPk9yA1cbxgvklbXrm36Gic0zoU_CBe_6UyVooDFX-wN"
+//                let message = ["message": "Hi user"]
+//                sendFCMNotification(to: recipientToken, with: message)
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                            if granted {
+                                self.scheduleLocalNotification()
+                            } else {
+                                // Handle the case where the user denied permission
+                                print("Permission denied for local notifications")
+                            }
+                        }
                 let customViewController = RecordViewController()
                 customViewController.executeCodeBlock = { [weak self] in
                     self?.resetHOWLTap()
@@ -284,9 +298,68 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
         
     }
     
+    func scheduleLocalNotification() {
+           // Create a notification content
+           let content = UNMutableNotificationContent()
+           content.title = "HOWL"
+           content.body = "Howl for help"
+           content.sound = UNNotificationSound.default
+
+           // Set the notification trigger (e.g., display the notification after 5 seconds)
+           let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+
+           // Create the notification request
+           let request = UNNotificationRequest(identifier: "availabilityNotification", content: content, trigger: trigger)
+
+           // Add the notification request to the notification center
+           UNUserNotificationCenter.current().add(request) { error in
+               if let error = error {
+                   // Handle the case where there was an error scheduling the notification
+                   print("Error scheduling local notification: \(error.localizedDescription)")
+               } else {
+                   print("Local notification scheduled successfully")
+               }
+           }
+       }
+   }
+
+    func sendFCMNotification(to token: String, with message: [String: Any]) {
+        let urlString = "https://fcm.googleapis.com/fcm/send"
+        guard let url = URL(string: urlString) else { return }
+        
+        // Construct the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("AAAAXFpGK20:APA91bG9zWTwiIlbOFWc8tDi8ysMJ-JsMjzxUv4tBzbnjGZ6lqwtVxHVZJppGiE_SjCWQN8IoyH9fpztWq9YdqH9Lh4anO4qLmrB2d24Su9_h9wLtpliebjLGbn-01V2NnmKzwkPi9M1", forHTTPHeaderField: "Authorization")  // Replace with your server key
+        
+        // Construct the notification payload
+        let payload: [String: Any] = [
+            "to": token,
+            "notification": message
+        ]
+        
+        // Convert payload to JSON data
+        let jsonData = try? JSONSerialization.data(withJSONObject: payload)
+        request.httpBody = jsonData
+        
+        // Send the request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error sending FCM notification: \(error.localizedDescription)")
+            } else if let data = data {
+                // Handle the response if needed
+                let responseString = String(data: data, encoding: .utf8)
+                print("FCM notification sent successfully. Response: \(responseString ?? "")")
+            }
+        }
+        
+        task.resume()
+    }
+    
       
       
-  }
+
   //MARK: - Swipe Button
   extension DogWalkingViewController: DSSliderDelegate{
       func sliderDidFinishSliding(_ slider: DSSlider, at position: DSSliderPosition) {

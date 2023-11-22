@@ -2,55 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to save photos to your gallery for save Incidient</string>
-	<key>UTImportedTypeDeclarations</key>
+	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-			</array>
-			<key>UTTypeDescription</key>
+			<key>CFBundleTypeName</key>
 			<string>HOWL Share</string>
-			<key>UTTypeIconFiles</key>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
 			<array>
-				<string>Howl_select.png</string>
+				<string>com.howl.barkside</string>
 			</array>
-			<key>UTTypeIdentifier</key>
-			<string>com.howl.barkside</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>howlshare</string>
-				</array>
-				<key>public.mime-type</key>
-				<array>
-					<string>text</string>
-				</array>
-			</dict>
 		</dict>
 	</array>
-    <key>CFBundleDocumentTypes</key>
-    <array>
-        <dict>
-            <key>LSItemContentTypes</key>
-            <array>
-                <string>com.howl.barkside</string>
-            </array>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleTypeName</key>
-            <string>HOWL Share</string>
-            <key>LSHandlerRank</key>
-            <string>Owner</string>
-        </dict>
-    </array>
-    <key>LSSupportsOpeningDocumentsInPlace</key>
-    <true/>
-    <key>UISupportsDocumentBrowser</key>
-    <true/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -68,6 +34,8 @@
 	<array>
 		<string>whatsapp</string>
 	</array>
+	<key>NSNotificationsUsageDescription</key>
+	<string>Notifications usage description</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>NSUserActivityTypeBrowsingWeb</string>
@@ -113,6 +81,35 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>HOWL Share</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>Howl_select.png</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.howl.barkside</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>howlshare</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>text</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
 	<key>com.apple.developer.associated-domains</key>
 	<array>

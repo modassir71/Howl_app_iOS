@@ -13,13 +13,15 @@ import Firebase
 import FirebaseMessaging
 import AVKit
 import SVProgressHUD
+import UserNotifications
+import FirebaseCore
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
     
     var window: UIWindow?
     var databaseRef: DatabaseReference!
-    
+    let gcmMessageIDKey = "gcm.Message_ID"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SVProgressHUD.setImageViewSize(CGSize(width: 60, height: 60))
            SVProgressHUD.setOffsetFromCenter(UIOffset(horizontal: 200, vertical: 400))
@@ -56,21 +58,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate, U
                 kDataManager.walkId = walkID
             }
         }
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    application.registerForRemoteNotifications()
-                }
-            }
+        if #available(iOS 10.0, *){
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: { _, _ in }
+            )
+        }else{
+//            let setting: UIUserNotificationType = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//            application.registerUserNotificationSettings(setting)
         }
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
         return true
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let deviceTokenString = deviceToken.hexString
-        print(deviceTokenString)
-    }
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Handle the URL here
@@ -144,5 +147,70 @@ extension Data {
     var hexString: String {
         let hexString = map { String(format: "%02.2hhx", $0) }.joined()
         return hexString
+    }
+}
+extension AppDelegate: UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
+                                -> Void) {
+      let userInfo = notification.request.content.userInfo
+      
+      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      // Messaging.messaging().appDidReceiveMessage(userInfo)
+      
+      // ...
+      
+      // Print full message.
+      print(userInfo)
+      
+      // Change this to your preferred presentation option
+      completionHandler([[.alert, .sound]])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+      let userInfo = response.notification.request.content.userInfo
+      
+      // ...
+      
+      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      // Messaging.messaging().appDidReceiveMessage(userInfo)
+      
+      // Print full message.
+      print(userInfo)
+      
+      completionHandler()
+    }
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
+                       -> Void) {
+      // If you are receiving a notification message while your app is in the background,
+      // this callback will not be fired till the user taps on the notification launching the application.
+      // TODO: Handle data of notification
+
+      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      // Messaging.messaging().appDidReceiveMessage(userInfo)
+
+      // Print message ID.
+      if let messageID = userInfo[gcmMessageIDKey] {
+        print("Message ID: \(messageID)")
+      }
+
+      // Print full message.
+      print(userInfo)
+
+      completionHandler(UIBackgroundFetchResult.newData)
+    }
+}
+extension AppDelegate: MessagingDelegate{
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase Registration token: \(String(describing: fcmToken))")
+        UserDefaults.standard.set(fcmToken, forKey: "FirebaseToken")
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(name: Notification.Name("FCMTOKEN"), object: nil, userInfo: dataDict)
     }
 }

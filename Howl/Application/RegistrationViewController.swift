@@ -52,12 +52,13 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM token: \(error.localizedDescription)")
-                return
-            }
+//        Messaging.messaging().token { token, error in
+//            if let error = error {
+//                print("Error fetching FCM token: \(error.localizedDescription)")
+//                return
+//            }
 
+        let token = UserDefaults.standard.string(forKey: "FirebaseToken")
             let user = [
                 "name": name,
                 "number": mobileNumber,
@@ -76,7 +77,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             let storyboard = AppStoryboard.Main.instance
             let instructionVc = storyboard.instantiateViewController(withIdentifier: "InstructionViewController") as! InstructionViewController
             self.navigationController?.pushViewController(instructionVc, animated: true)
-        }
+//        }
     }
 
     
