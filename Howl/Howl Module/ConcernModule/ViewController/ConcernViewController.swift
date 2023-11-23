@@ -68,7 +68,7 @@ class ConcernViewController: UIViewController {
           if selectedIndex == 0 {
               kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Illness/Injury", latitude: lat ?? "", longitude: long ?? "")
           } else {
-              kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Im Safe", latitude: lat ?? "", longitude: long ?? "")
+              kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Safety Concern", latitude: lat ?? "", longitude: long ?? "")
           }
           self.dismiss(animated: true)
     }

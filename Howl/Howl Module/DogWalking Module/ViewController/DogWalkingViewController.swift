@@ -57,6 +57,8 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
       override func viewDidLoad() {
           super.viewDidLoad()
           print("Indexx", index ?? 0)
+          crossBtn.layer.cornerRadius = 10.0
+          crossBtn.clipsToBounds = true
 //          locationManager.delegate = self
 //          locationManager.requestWhenInUseAuthorization()
           setUi()
@@ -67,6 +69,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
           locationManager.requestWhenInUseAuthorization()
           locationManager.startUpdatingLocation()
+          crossBtn.backgroundColor = ColorConstant.greenColor
       }
       
       override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +107,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           concernBtn.layer.cornerRadius = 20.0
           concernBtn.clipsToBounds = true
           concernBtn.isHidden = true
+          crossBtn.isHidden = true
           concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
        //   concernBtn.backgroundColor = ColorConstant.amberColor
           concernBtn.layer.borderWidth = 2.0
@@ -148,8 +152,12 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
     }
       //MARK: - Action
       
+    @IBAction func backBtnPress(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
       @IBAction func crossBtnPress(_ sender: UIButton) {
-          self.navigationController?.popViewController(animated: true)
+          kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Im Safe", latitude: lat ?? "", longitude: long ?? "")
       }
       
       
@@ -211,6 +219,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                       self.shadowView.isHidden = false
                       self.redBtn.isHidden = false
                       self.concernBtn.isHidden = false
+                      self.crossBtn.isHidden = false
                   }
                   
 
@@ -269,6 +278,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                         self!.shadowView.isHidden = true
                         self!.redBtn.isHidden = true
                         self!.concernBtn.isHidden = true
+                        self!.crossBtn.isHidden = true
                         
                     }
                     print("Slider position",self?.swipeSlider.sliderPosition)
@@ -394,6 +404,7 @@ func sendNotification(to fcmToken: String) {
                   self.shadowView.isHidden = true
                   self.redBtn.isHidden = true
                   self.concernBtn.isHidden = true
+                  self.crossBtn.isHidden = true
                   print("position2", position)
                   kMonitorMeLocationManager.stopMonitoringMe()
                   DogDataManager.shared.walkMonitor = ""
@@ -427,6 +438,7 @@ func sendNotification(to fcmToken: String) {
                       self.shadowView.isHidden = false
                       self.redBtn.isHidden = false
                       self.concernBtn.isHidden = false
+                      self.crossBtn.isHidden = false
                       self.startWalk(indexOfEmergencyContact: 0)
                       print("position6", position)
                   }
@@ -450,6 +462,7 @@ func sendNotification(to fcmToken: String) {
                               self.shadowView.isHidden = false
                               self.redBtn.isHidden = false
                               self.concernBtn.isHidden = false
+                              self.crossBtn.isHidden = false
                               print("position6", position)
                           }
                          print("indexxx", index)

@@ -124,8 +124,8 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "495"
-            endingLineNumber = "495"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
             landmarkName = "sendWalkIDToEmergencyContact()"
             landmarkType = "7">
             <Locations>
@@ -172,8 +172,8 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "sendWalkIDToEmergencyContact()"
             landmarkType = "7">
             <Locations>
@@ -1086,8 +1086,8 @@
             filePath = "Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -1213,28 +1213,28 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
             landmarkName = "sliderDidFinishSliding(_:at:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6EE3231C-D8D8-4093-BBC8-325793F4448D - a45996fa8286159d"
+                  uuid = "6EE3231C-D8D8-4093-BBC8-325793F4448D - e86c8a40ce9f2bf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Howl.DogWalkingViewController.sliderDidFinishSliding(_: Howl.DSSlider, at: Howl.DSSliderPosition) -&gt; ()"
+                  symbolName = "closure #5 (__C.UIAlertAction) -&gt; () in Howl.DogWalkingViewController.sliderDidFinishSliding(_: Howl.DSSlider, at: Howl.DSSliderPosition) -&gt; ()"
                   moduleName = "Howl"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
-                  offsetFromSymbolStart = "3444">
+                  startingLineNumber = "451"
+                  endingLineNumber = "451"
+                  offsetFromSymbolStart = "300">
                </Location>
                <Location
-                  uuid = "6EE3231C-D8D8-4093-BBC8-325793F4448D - a45996fa8286159d"
+                  uuid = "6EE3231C-D8D8-4093-BBC8-325793F4448D - a45996fa82861309"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1244,8 +1244,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
+                  startingLineNumber = "451"
+                  endingLineNumber = "451"
                   offsetFromSymbolStart = "2836">
                </Location>
             </Locations>
@@ -1261,28 +1261,28 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "455"
-            endingLineNumber = "455"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "sliderDidFinishSliding(_:at:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "ECB65178-3831-4CCD-9190-EC34DD92E215 - e86c8a40ce9f23b"
+                  uuid = "ECB65178-3831-4CCD-9190-EC34DD92E215 - d52fe6e28fb19aed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (__C.UIAlertAction) -&gt; () in Howl.DogWalkingViewController.sliderDidFinishSliding(_: Howl.DSSlider, at: Howl.DSSliderPosition) -&gt; ()"
+                  symbolName = "closure #6 (__C.UIAlertAction) -&gt; () in Howl.DogWalkingViewController.sliderDidFinishSliding(_: Howl.DSSlider, at: Howl.DSSliderPosition) -&gt; ()"
                   moduleName = "Howl"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "455"
-                  endingLineNumber = "455"
-                  offsetFromSymbolStart = "1308">
+                  startingLineNumber = "468"
+                  endingLineNumber = "468"
+                  offsetFromSymbolStart = "76">
                </Location>
                <Location
-                  uuid = "ECB65178-3831-4CCD-9190-EC34DD92E215 - e86c8a40ce9f23b"
+                  uuid = "ECB65178-3831-4CCD-9190-EC34DD92E215 - e86c8a40ce9f0ee"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1292,8 +1292,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "455"
-                  endingLineNumber = "455"
+                  startingLineNumber = "468"
+                  endingLineNumber = "468"
                   offsetFromSymbolStart = "1060">
                </Location>
             </Locations>
@@ -1309,13 +1309,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "488"
-            endingLineNumber = "488"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
             landmarkName = "sendWalkIDToEmergencyContact()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B2DF1D8F-6181-4942-B2DA-68AA350A4F5F - 689792b79d31310"
+                  uuid = "B2DF1D8F-6181-4942-B2DA-68AA350A4F5F - 689792b79d31147"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1325,12 +1325,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "488"
-                  endingLineNumber = "488"
-                  offsetFromSymbolStart = "1544">
+                  startingLineNumber = "501"
+                  endingLineNumber = "501"
+                  offsetFromSymbolStart = "2232">
                </Location>
                <Location
-                  uuid = "B2DF1D8F-6181-4942-B2DA-68AA350A4F5F - 689792b79d31310"
+                  uuid = "B2DF1D8F-6181-4942-B2DA-68AA350A4F5F - 689792b79d31147"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1340,8 +1340,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "488"
-                  endingLineNumber = "488"
+                  startingLineNumber = "501"
+                  endingLineNumber = "501"
                   offsetFromSymbolStart = "928">
                </Location>
             </Locations>
@@ -1579,13 +1579,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "sendNotification(to:)"
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "1D0C7259-862C-4962-BD1D-F3AB009A694E - 941297d2b7443d7c"
+                  uuid = "1D0C7259-862C-4962-BD1D-F3AB009A694E - 941297d2b7443e0a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1595,12 +1595,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "932">
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "1556">
                </Location>
                <Location
-                  uuid = "1D0C7259-862C-4962-BD1D-F3AB009A694E - 941297d2b7443d7c"
+                  uuid = "1D0C7259-862C-4962-BD1D-F3AB009A694E - 941297d2b7443e0a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1610,8 +1610,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
                   offsetFromSymbolStart = "356">
                </Location>
             </Locations>
@@ -1627,13 +1627,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
             landmarkName = "sendNotification(to:)"
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "E1299DBF-6D6A-4082-BE74-13C8C9015048 - 941297d2b7443d13"
+                  uuid = "E1299DBF-6D6A-4082-BE74-13C8C9015048 - 941297d2b7443fa9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1643,12 +1643,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "364"
-                  endingLineNumber = "364"
-                  offsetFromSymbolStart = "1332">
+                  startingLineNumber = "374"
+                  endingLineNumber = "374"
+                  offsetFromSymbolStart = "1388">
                </Location>
                <Location
-                  uuid = "E1299DBF-6D6A-4082-BE74-13C8C9015048 - 941297d2b7443d13"
+                  uuid = "E1299DBF-6D6A-4082-BE74-13C8C9015048 - 941297d2b7443fa9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1658,8 +1658,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "364"
-                  endingLineNumber = "364"
+                  startingLineNumber = "374"
+                  endingLineNumber = "374"
                   offsetFromSymbolStart = "1556">
                </Location>
             </Locations>
@@ -1675,13 +1675,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "sendNotification(to:)"
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "CB3055DB-32EC-4BC3-816C-D1ECBB44A6B3 - 941297d2b7443eb6"
+                  uuid = "CB3055DB-32EC-4BC3-816C-D1ECBB44A6B3 - 941297d2b7443f4c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1691,12 +1691,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "367"
-                  endingLineNumber = "367"
-                  offsetFromSymbolStart = "2256">
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "2268">
                </Location>
                <Location
-                  uuid = "CB3055DB-32EC-4BC3-816C-D1ECBB44A6B3 - 941297d2b7443eb6"
+                  uuid = "CB3055DB-32EC-4BC3-816C-D1ECBB44A6B3 - 941297d2b7443f4c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1706,23 +1706,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "367"
-                  endingLineNumber = "367"
-                  offsetFromSymbolStart = "2264">
-               </Location>
-               <Location
-                  uuid = "CB3055DB-32EC-4BC3-816C-D1ECBB44A6B3 - 941297d2b7443eb6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Howl.sendNotification(to: Swift.String) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "367"
-                  endingLineNumber = "367"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
                   offsetFromSymbolStart = "1388">
                </Location>
             </Locations>
@@ -1738,13 +1723,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "findUserByPhoneNumber(phoneNumber:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b076"
+                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b32f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1754,12 +1739,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
                   offsetFromSymbolStart = "180">
                </Location>
                <Location
-                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b076"
+                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b32f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1769,12 +1754,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
                   offsetFromSymbolStart = "524">
                </Location>
                <Location
-                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - e02b5c75e256c823"
+                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - e02b5c75e256cb95"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1784,12 +1769,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "298"
-                  endingLineNumber = "298"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
                   offsetFromSymbolStart = "268">
                </Location>
                <Location
-                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b076"
+                  uuid = "F1453576-19F6-41C1-9E5C-C80985094567 - 673c7c8bcbe6b30c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1799,8 +1784,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
                   offsetFromSymbolStart = "156">
                </Location>
             </Locations>
@@ -1816,13 +1801,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "findUserByPhoneNumber(phoneNumber:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b034"
+                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b2ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1832,12 +1817,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
-                  offsetFromSymbolStart = "880">
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "1208">
                </Location>
                <Location
-                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b034"
+                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b2ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1847,27 +1832,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
-                  offsetFromSymbolStart = "1156">
-               </Location>
-               <Location
-                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b034"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Howl.DogWalkingViewController.findUserByPhoneNumber(phoneNumber: Swift.String) -&gt; ()"
-                  moduleName = "Howl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
                   offsetFromSymbolStart = "180">
                </Location>
                <Location
-                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b034"
+                  uuid = "A5EC209D-750B-4332-BB43-B27E6C743E8F - 673c7c8bcbe6b2ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1877,8 +1847,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
                   offsetFromSymbolStart = "524">
                </Location>
             </Locations>
@@ -1894,13 +1864,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "tap3TimesBtnPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1D4D576F-9BDC-4C63-BAE2-CA52C7974F6F - ca0ef86d361c1f53"
+                  uuid = "1D4D576F-9BDC-4C63-BAE2-CA52C7974F6F - ca0ef86d361c1e68"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1910,12 +1880,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "2308">
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "2600">
                </Location>
                <Location
-                  uuid = "1D4D576F-9BDC-4C63-BAE2-CA52C7974F6F - ca0ef86d361c1f53"
+                  uuid = "1D4D576F-9BDC-4C63-BAE2-CA52C7974F6F - ca0ef86d361c1e68"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1925,8 +1895,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
                   offsetFromSymbolStart = "2344">
                </Location>
             </Locations>
@@ -1942,13 +1912,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "tap3TimesBtnPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "246E3A0E-5AA9-4CA4-AA08-A7CE7144B23E - ca0ef86d361c185b"
+                  uuid = "246E3A0E-5AA9-4CA4-AA08-A7CE7144B23E - ca0ef86d361c1f70"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1958,12 +1928,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "248"
-                  endingLineNumber = "248"
-                  offsetFromSymbolStart = "1124">
+                  startingLineNumber = "257"
+                  endingLineNumber = "257"
+                  offsetFromSymbolStart = "1656">
                </Location>
                <Location
-                  uuid = "246E3A0E-5AA9-4CA4-AA08-A7CE7144B23E - ca0ef86d361c185b"
+                  uuid = "246E3A0E-5AA9-4CA4-AA08-A7CE7144B23E - ca0ef86d361c1f70"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1973,8 +1943,8 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "248"
-                  endingLineNumber = "248"
+                  startingLineNumber = "257"
+                  endingLineNumber = "257"
                   offsetFromSymbolStart = "1136">
                </Location>
             </Locations>
@@ -1990,13 +1960,13 @@
             filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "tap3TimesBtnPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "25843A89-A1FD-4A1D-9A90-E8BA95FB873F - ca0ef86d361c1878"
+                  uuid = "25843A89-A1FD-4A1D-9A90-E8BA95FB873F - ca0ef86d361c1f11"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2006,12 +1976,12 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "249"
-                  endingLineNumber = "249"
-                  offsetFromSymbolStart = "1328">
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "1696">
                </Location>
                <Location
-                  uuid = "25843A89-A1FD-4A1D-9A90-E8BA95FB873F - ca0ef86d361c1878"
+                  uuid = "25843A89-A1FD-4A1D-9A90-E8BA95FB873F - ca0ef86d361c1f11"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2021,11 +1991,75 @@
                   urlString = "file:///Users/apple/Desktop/Modassir/Howl_app_iOS/Howl/Howl%20Module/DogWalking%20Module/ViewController/DogWalkingViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "249"
-                  endingLineNumber = "249"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
                   offsetFromSymbolStart = "1628">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E549F60-9337-4695-9078-DDFC4B4C88AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/TrackWalker/ViewController/WalkerStatusVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C4B5400-FD93-4850-8B3B-93FBE723E8F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "crossBtnPress(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03B942E9-ACA0-4F95-9A61-A455DC72056F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Howl Module/DogWalking Module/ViewController/DogWalkingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "crossBtnPress(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33496F2A-28F0-444F-B72E-13D331138C4A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Howl/Application/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

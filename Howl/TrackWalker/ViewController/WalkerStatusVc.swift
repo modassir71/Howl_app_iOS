@@ -118,7 +118,11 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell() as WalkerStatusCell
-        cell.batteryLbl.text = walkUpdates[indexPath.row].walkBattery
+        if let batteryValue = Double(walkUpdates[indexPath.row].walkBattery) {
+            cell.batteryLbl.text = String(format: "%.1f%%", batteryValue + 0.01)
+        } else {
+            // Handle the case when the value could not be converted to a double
+        }
         cell.timeLbl.text = walkUpdates[indexPath.row].walkTime
         cell.dateLbl.text = walkUpdates[indexPath.row].walkDate
         let fullURL = walkUpdates[indexPath.row].walkW3WURL
