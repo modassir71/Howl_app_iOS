@@ -516,7 +516,7 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
     
     
     func stopMonitoringMeWithIncident() {
-        forceUpdateToMonitorMeServerWithState(state: "End Session with incident", latitude: lat ?? "", longitude: lng ?? "")
+        forceUpdateToMonitorMeServerWithState(state: "End Session", latitude: lat ?? "", longitude: lng ?? "")
         
         // Confirm you will stop being monitored
         kDataManager.setMonitorMeStatus(status: false)

@@ -16,7 +16,7 @@ import UserNotifications
 class DogWalkingViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
 //MARK: - Outlet
-    
+    var getToken = ""
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var concernBtnHeight: NSLayoutConstraint!
     @IBOutlet weak var concernBtnTop: NSLayoutConstraint!
@@ -245,22 +245,16 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                 tapLabel.text = "Tap 2 Times To"
                 
             case 1:
+                let num = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
+                findUserByPhoneNumber(phoneNumber: num)
+                let recipientToken = getToken//
                 tapsToHOWL += 1
                 tapLabel.text = "Tap 1 Times To"
                 
             case 2:
-
-//                let recipientToken = "cKjn7K453UuOqlyciw7rrS:APA91bGTf2aoOhlb3hAq7AMFtMbXfuDC7zUjxPf7YvnqfJcNYvUIfqKzUpSoDDrXOPXxp_nK-W4bgwR8RWH80_9CXzX8pYAjmPk9yA1cbxgvklbXrm36Gic0zoU_CBe_6UyVooDFX-wN"
-//                let message = ["message": "Hi user"]
-//                sendFCMNotification(to: recipientToken, with: message)
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                            if granted {
-                                self.scheduleLocalNotification()
-                            } else {
-                                // Handle the case where the user denied permission
-                                print("Permission denied for local notifications")
-                            }
-                        }
+                
+                print("tokenn", getToken)
+               sendNotification(to: getToken)
                 let customViewController = RecordViewController()
                 customViewController.executeCodeBlock = { [weak self] in
                     self?.resetHOWLTap()
@@ -298,6 +292,25 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
         
     }
     
+    func findUserByPhoneNumber(phoneNumber: String) {
+        let databaseReference = Database.database().reference().child("users")
+
+        databaseReference.queryOrdered(byChild: "number").queryEqual(toValue: phoneNumber).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                // User with the specified phone number found
+                if let userSnapshot = snapshot.children.allObjects.first as? DataSnapshot,
+                   let user = userSnapshot.value as? [String: Any],
+                   let token = user["token"] as? String {
+                    print("Token for user with phone number \(phoneNumber): \(token)")
+                    self.getToken = token
+                }
+            } else {
+                print("User with phone number \(phoneNumber) not found.")
+            }
+        }
+    }
+
+    
     func scheduleLocalNotification() {
            // Create a notification content
            let content = UNMutableNotificationContent()
@@ -323,39 +336,39 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
        }
    }
 
-    func sendFCMNotification(to token: String, with message: [String: Any]) {
-        let urlString = "https://fcm.googleapis.com/fcm/send"
-        guard let url = URL(string: urlString) else { return }
-        
-        // Construct the request
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("AAAAXFpGK20:APA91bG9zWTwiIlbOFWc8tDi8ysMJ-JsMjzxUv4tBzbnjGZ6lqwtVxHVZJppGiE_SjCWQN8IoyH9fpztWq9YdqH9Lh4anO4qLmrB2d24Su9_h9wLtpliebjLGbn-01V2NnmKzwkPi9M1", forHTTPHeaderField: "Authorization")  // Replace with your server key
-        
-        // Construct the notification payload
-        let payload: [String: Any] = [
-            "to": token,
-            "notification": message
+func sendNotification(to fcmToken: String) {
+    let urlString = "https://fcm.googleapis.com/fcm/send"
+    guard let url = URL(string: urlString) else { return }
+
+    let notification = [
+        "to": fcmToken,
+        "notification": [
+            "title": "HOWL",
+            "body": "Howl for help"
         ]
-        
-        // Convert payload to JSON data
-        let jsonData = try? JSONSerialization.data(withJSONObject: payload)
-        request.httpBody = jsonData
-        
-        // Send the request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error sending FCM notification: \(error.localizedDescription)")
-            } else if let data = data {
-                // Handle the response if needed
+    ] as [String : Any]
+
+    let jsonData = try? JSONSerialization.data(withJSONObject: notification)
+
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.httpBody = jsonData
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue("key=AAAAXFpGK20:APA91bG9zWTwiIlbOFWc8tDi8ysMJ-JsMjzxUv4tBzbnjGZ6lqwtVxHVZJppGiE_SjCWQN8IoyH9fpztWq9YdqH9Lh4anO4qLmrB2d24Su9_h9wLtpliebjLGbn-01V2NnmKzwkPi9M1", forHTTPHeaderField: "Authorization") // Replace YOUR_SERVER_KEY with your Firebase Cloud Messaging server key
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+            print("Error sending notification: \(error.localizedDescription)")
+        } else if let data = data {
+            if let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                print("Notification sent successfully: \(result)")
+            } else {
                 let responseString = String(data: data, encoding: .utf8)
-                print("FCM notification sent successfully. Response: \(responseString ?? "")")
+                print("Unable to parse JSON response: \(responseString ?? "")")
             }
         }
-        
-        task.resume()
     }
+    task.resume()}
     
       
       
