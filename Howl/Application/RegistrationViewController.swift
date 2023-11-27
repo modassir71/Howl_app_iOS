@@ -37,7 +37,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         phoneTxtFld.layer.cornerRadius = 2.0
         phoneTxtFld.layer.borderColor = ColorConstant.pinkColor.cgColor
         phoneTxtFld.layer.borderWidth = 1.0
-        
+        phoneTxtFld.keyboardType = .numberPad
 
 
     }
@@ -52,12 +52,14 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
-//        Messaging.messaging().token { token, error in
-//            if let error = error {
-//                print("Error fetching FCM token: \(error.localizedDescription)")
-//                return
-//            }
-
+        if nameTxtFld.text == ""{
+            AlertManager.sharedInstance.showAlert(title: "HOWL", message: "Please enter your name")
+            return
+        }
+        if phoneTxtFld.text == ""{
+            AlertManager.sharedInstance.showAlert(title: "HOWL", message: "Please enter your phone number")
+            return
+        }
         let token = UserDefaults.standard.string(forKey: "FirebaseToken")
             let user = [
                 "name": name,

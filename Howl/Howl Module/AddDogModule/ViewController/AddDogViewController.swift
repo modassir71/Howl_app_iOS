@@ -233,13 +233,12 @@ class AddDogViewController: UIViewController {
         neuteredBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
         inatactBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
         dogType = "SPAYED"
-    
     }
     
     
     @IBAction func createdBtnOPress(_ sender: UIButton) {
        
-        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", microchipDb: microchipDatabaseTxtFld.text ?? "", microchipNo: microchipNumberTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "", gender: genderType ?? "", type: dogType ?? "")
+        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "", gender: genderType ?? "", type: dogType ?? "")
         let status = validationResult.0
         let message = validationResult.1
             if status == true{

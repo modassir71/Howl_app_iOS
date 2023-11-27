@@ -40,8 +40,8 @@ final class RegistrationValidation {
     
 //    MARK: - Dog Validation
     
-    func validationDogInfo(dogName: String?, breed: String?, color: String?, dob: String?, microchipDb: String?, microchipNo: String?, districtiveFeature: String?, gender: String, type: String) ->(Bool, String){
-        guard dogName != "" && breed != "" && color !=  "" && dob != "" && microchipDb != "" && microchipNo != "" && districtiveFeature != "" else{
+    func validationDogInfo(dogName: String?, breed: String?, color: String?, dob: String?, districtiveFeature: String?, gender: String, type: String) ->(Bool, String){
+        guard dogName != "" && breed != "" && color !=  "" && dob != "" && districtiveFeature != "" else{
             return (false, "Please fill the required fields")
         }
         guard gender != "" else{
