@@ -196,44 +196,44 @@ class AddDogViewController: UIViewController {
     }
 //MARK: - Button Action
     @IBAction func addProfilePicBtn(_ sender: UIButton) {
-       // openActionSheetForUploadImage()
-        let permissionManager = PermissionManager.shared
-            
-            let alertController = UIAlertController(
-                title: "Choose Image Source",
-                message: nil,
-                preferredStyle: .actionSheet
-            )
-            
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-                permissionManager.requestCameraPermission { granted in
-                    if granted {
-                        self.openCamera()
-                    } else {
-                        // Handle denied access
-                        print("Camera access denied.")
-                    }
-                }
-            }
-            
-            let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
-                permissionManager.requestGalleryPermission { granted in
-                    if granted {
-                        self.openGallary()
-                    } else {
-                        // Handle denied access
-                        print("Gallery access denied.")
-                    }
-                }
-            }
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
-
-            alertController.addAction(cameraAction)
-            alertController.addAction(galleryAction)
-            alertController.addAction(cancelAction)
-
-            present(alertController, animated: true, completion: nil)
+        openActionSheetForUploadImage()
+//        let permissionManager = PermissionManager.shared
+//
+//            let alertController = UIAlertController(
+//                title: "Choose Image Source",
+//                message: nil,
+//                preferredStyle: .actionSheet
+//            )
+//
+//            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+//                permissionManager.requestCameraPermission { granted in
+//                    if granted {
+//                        self.openCamera()
+//                    } else {
+//                        // Handle denied access
+//                        print("Camera access denied.")
+//                    }
+//                }
+//            }
+//
+//            let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
+//                permissionManager.requestGalleryPermission { granted in
+//                    if granted {
+//                        self.openGallary()
+//                    } else {
+//                        // Handle denied access
+//                        print("Gallery access denied.")
+//                    }
+//                }
+//            }
+//
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+//
+//            alertController.addAction(cameraAction)
+//            alertController.addAction(galleryAction)
+//            alertController.addAction(cancelAction)
+//
+//            present(alertController, animated: true, completion: nil)
     }
     
     
@@ -363,9 +363,12 @@ extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func openGallary(){
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        imagePicker.allowsEditing = true
-        self.present(imagePicker, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.imagePicker.allowsEditing = true
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+       
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
