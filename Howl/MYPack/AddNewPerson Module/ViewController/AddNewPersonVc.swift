@@ -162,10 +162,36 @@ class AddNewPersonVc: UIViewController {
     //MARK: - Button Action
     
     @IBAction func contactBtnPress(_ sender: UIButton) {
-        let contactPicker = CNContactPickerViewController()
-               contactPicker.delegate = self
-               present(contactPicker, animated: true, completion: nil)
+        let contactStore = CNContactStore()
+
+            switch CNContactStore.authorizationStatus(for: .contacts) {
+            case .authorized:
+                showContactPicker()
+            case .notDetermined:
+                contactStore.requestAccess(for: .contacts) { [weak self] (granted, error) in
+                    if granted {
+                        self?.showContactPicker()
+                    } else {
+                        // Handle denied access
+                        print("Access to contacts denied.")
+                    }
+                }
+            case .denied, .restricted:
+                // Handle denied or restricted access
+                print("Access to contacts denied or restricted.")
+            @unknown default:
+                break
+            }
     }
+    
+    func showContactPicker() {
+        DispatchQueue.main.async {
+            let contactPicker = CNContactPickerViewController()
+            contactPicker.delegate = self
+            self.present(contactPicker, animated: true, completion: nil)
+        }
+    }
+
     
     @IBAction func whatsappBtnPress(_ sender: UIButton) {
         messageType = "WHATSAPP"

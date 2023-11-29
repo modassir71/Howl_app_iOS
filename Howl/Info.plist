@@ -40,6 +40,10 @@
 	<array>
 		<string>NSUserActivityTypeBrowsingWeb</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>Your contacts can be used to configure your emergency contacts</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Your camera can be used to capture an image of your dog or emergency contact and for recording video of a dog theft incident</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Aileron-Black.otf</string>

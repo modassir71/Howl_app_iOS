@@ -157,6 +157,7 @@
 		18EE75F62AE10FED00C1D7D8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */; };
 		18EF9D142AEBCDF5003EA7A0 /* MailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9D132AEBCDF5003EA7A0 /* MailController.swift */; };
 		18EF9D162AEBD0E4003EA7A0 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF9D152AEBD0E4003EA7A0 /* CSVWriter.swift */; };
+		18F02D172B1749F400A8A64B /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F02D162B1749F400A8A64B /* PermissionManager.swift */; };
 		18F06A732A95C853007DF0D4 /* TGFlingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */; };
 		18F06A752A95DD2E007DF0D4 /* SwitchSliderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */; };
 		18F06A772A95ECDB007DF0D4 /* animation_dogWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */; };
@@ -310,6 +311,7 @@
 		18EE75F52AE10FED00C1D7D8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		18EF9D132AEBCDF5003EA7A0 /* MailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailController.swift; sourceTree = "<group>"; };
 		18EF9D152AEBD0E4003EA7A0 /* CSVWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
+		18F02D162B1749F400A8A64B /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		18F06A722A95C853007DF0D4 /* TGFlingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGFlingActionButton.swift; sourceTree = "<group>"; };
 		18F06A742A95DD2E007DF0D4 /* SwitchSliderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchSliderAnimation.swift; sourceTree = "<group>"; };
 		18F06A762A95ECDB007DF0D4 /* animation_dogWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_dogWalk.json; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				18261DE42AD6CB2A00E388C5 /* WebURLs.swift */,
 				18261DE92AD6CCDF00E388C5 /* Constant.swift */,
 				18ADE6DD2ADFB92300BF1934 /* Utils.swift */,
+				18F02D162B1749F400A8A64B /* PermissionManager.swift */,
 			);
 			path = "Extr Code";
 			sourceTree = "<group>";
@@ -1400,6 +1403,7 @@
 				180254D62A8DED2E00C744CE /* UITableView+Extension.swift in Sources */,
 				18A7CFAE2ACC0083009DFA71 /* WalkerStatusCell.swift in Sources */,
 				18261DF22AD6D00100E388C5 /* Helpers.swift in Sources */,
+				18F02D172B1749F400A8A64B /* PermissionManager.swift in Sources */,
 				18EE75F62AE10FED00C1D7D8 /* SoundManager.swift in Sources */,
 				1872D2FD2A9DBFDF0094B522 /* ViewConstant.swift in Sources */,
 				18E02AA32A97671D007E2FF5 /* ConcernCell.swift in Sources */,
@@ -1651,7 +1655,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.8;
+				CURRENT_PROJECT_VERSION = 2.9;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;
@@ -1695,7 +1699,7 @@
 				CODE_SIGN_ENTITLEMENTS = Howl/Howl.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.8;
+				CURRENT_PROJECT_VERSION = 2.9;
 				DEVELOPMENT_TEAM = 82RKP3YAL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Howl/Info.plist;

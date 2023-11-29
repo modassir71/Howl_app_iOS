@@ -196,7 +196,44 @@ class AddDogViewController: UIViewController {
     }
 //MARK: - Button Action
     @IBAction func addProfilePicBtn(_ sender: UIButton) {
-        openActionSheetForUploadImage()
+       // openActionSheetForUploadImage()
+        let permissionManager = PermissionManager.shared
+            
+            let alertController = UIAlertController(
+                title: "Choose Image Source",
+                message: nil,
+                preferredStyle: .actionSheet
+            )
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+                permissionManager.requestCameraPermission { granted in
+                    if granted {
+                        self.openCamera()
+                    } else {
+                        // Handle denied access
+                        print("Camera access denied.")
+                    }
+                }
+            }
+            
+            let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
+                permissionManager.requestGalleryPermission { granted in
+                    if granted {
+                        self.openGallary()
+                    } else {
+                        // Handle denied access
+                        print("Gallery access denied.")
+                    }
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+
+            alertController.addAction(cameraAction)
+            alertController.addAction(galleryAction)
+            alertController.addAction(cancelAction)
+
+            present(alertController, animated: true, completion: nil)
     }
     
     
@@ -314,12 +351,15 @@ extension AddDogViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-           
+        DispatchQueue.main.async {
+            if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
+                self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+            } else {
+               
+            }
         }
+        
     }
     
     func openGallary(){
