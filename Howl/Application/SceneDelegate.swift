@@ -65,15 +65,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             kDataManager.walkId = lastPathComponenets
             print(kDataManager.walkId ?? "")
             UserDefaults.standard.set(lastPathComponenets, forKey: "MonitorOutPut")
-//            if let tabBarController = window?.rootViewController as? MainTabBar {
-//                if let viewControllers = tabBarController.viewControllers, viewControllers.count >= 1 {
-//                    // Assuming the first tab contains a UINavigationController
-//                    if let navigationController = viewControllers[0] as? UINavigationController {
-//                        let trackWalkerVC = TrackWalkerVc()
-//                        navigationController.pushViewController(trackWalkerVC, animated: true)
-//                    }
-//                }
-//            }
 
             
             

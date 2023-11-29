@@ -158,6 +158,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
     
       @IBAction func crossBtnPress(_ sender: UIButton) {
           kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Im Safe", latitude: lat ?? "", longitude: long ?? "")
+          AlertManager.sharedInstance.showAlert(title: "HOWL", message: "Update sent")
       }
       
       

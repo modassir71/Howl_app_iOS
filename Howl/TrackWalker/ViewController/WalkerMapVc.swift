@@ -19,7 +19,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
         mapView.delegate = self
         view.addSubview(mapView)
         fetchAndUpdateMarkers()
-        timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: true) { timer in
             if self.apiRequestsEnabled {
                 SVProgressHUD.show()
                 self.fetchWalkUpdatesFromFirebase { walkUpdates in
@@ -30,7 +30,6 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
                         for walkUpdate in walkUpdates {
                             if walkUpdate.walkStatus == "End Session" {
                                 self.apiRequestsEnabled = false // Disable API requests
-                              //  self.showSessionExpiredAlert()
                             }
                         }
                     }
@@ -52,6 +51,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
     func addMarkersInBatch(_ walkUpdates: [WalkFetch]?) {
         var newMarkers = [GMSMarker]()
         var existingMarkers = [GMSMarker]()
+        var isFirstAutoUpdateMarker = true
 
         for walkUpdate in walkUpdates ?? [] {
             guard let latitude = Double(walkUpdate.walkLatitude ?? "0.0"),
@@ -61,18 +61,28 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
 
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
 
-            // Set marker color based on walkStatus
             switch walkUpdate.walkStatus {
             case "Start Session":
-                marker.icon = GMSMarker.markerImage(with: .white)
+                marker.icon = GMSMarker.markerImage(with: .red)
+            case "HOWL":
+                marker.icon = GMSMarker.markerImage(with: .systemPink)
             case "Auto-Update":
-                marker.icon = GMSMarker.markerImage(with: .lightGray)
+                if isFirstAutoUpdateMarker {
+                    // First "Auto-Update" marker, set to green
+                    marker.icon = GMSMarker.markerImage(with: .green)
+                    isFirstAutoUpdateMarker = false
+                } else {
+                    // Existing "Auto-Update" marker, set to light gray
+                    marker.icon = GMSMarker.markerImage(with: .lightGray)
+                }
             case "Im Safe":
-                marker.icon = GMSMarker.markerImage(with: .green)
-            case "Concerned":
+                marker.icon = GMSMarker.markerImage(with: .yellow)
+            case "Safety Concern":
                 marker.icon = GMSMarker.markerImage(with: .orange)
+            case "Illness/Injury":
+                marker.icon = GMSMarker.markerImage(with: .yellow)
             case "End Session":
-                marker.icon = GMSMarker.markerImage(with: .green)
+                marker.icon = GMSMarker.markerImage(with: .lightGray)
             default:
                 marker.icon = GMSMarker.markerImage(with: .gray)
             }
@@ -84,19 +94,14 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
             }
         }
 
-        for marker in newMarkers {
-            marker.map = mapView
-        }
-
-        for marker in existingMarkers {
-            marker.map = mapView
-        }
+        // Set all markers on the map
+        markers.forEach { $0.map = mapView }
 
         markers.append(contentsOf: newMarkers)
         markers.append(contentsOf: existingMarkers)
 
-        // Set the camera position to the last added marker (if any)
         if let lastMarker = markers.last {
+            // Set the camera position to the last added marker
             let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition.camera(
                 withTarget: lastMarker.position,
                 zoom: 20.0
@@ -104,7 +109,6 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
             mapView.animate(with: cameraUpdate)
         }
     }
-
 
 
 
@@ -117,9 +121,7 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
                 completion(nil)
                 return
             }
-
             var walkUpdates = [WalkFetch]()
-
             for (_, value) in dataDict {
                 if let walkID = value["randomId"] as? String,
                    let walkLongitude = value["lon"] as? String,
@@ -150,7 +152,6 @@ class WalkerMapVc: UIViewController, CLLocationManagerDelegate, GMSMapViewDelega
                     walkUpdates.append(walkUpdate)
                 }
             }
-
             completion(walkUpdates)
         }
     }

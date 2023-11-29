@@ -71,6 +71,7 @@ class ConcernViewController: UIViewController {
               kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Safety Concern", latitude: lat ?? "", longitude: long ?? "")
           }
           self.dismiss(animated: true)
+        AlertManager.sharedInstance.showAlert(title: "Howl", message: "Update Sent")
     }
     
     

@@ -237,13 +237,11 @@ class AddDogViewController: UIViewController {
     
     
     @IBAction func createdBtnOPress(_ sender: UIButton) {
-       
-        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", dob: dogNameTxtFld.text ?? "", districtiveFeature: districtiveFeature.text ?? "", gender: genderType ?? "", type: dogType ?? "")
+        let validationResult = vm.initialDogInfoVlaidate(dogName: dogNameTxtFld.text ?? "", breed: bredextFld.text ?? "", color: colorTxtFld.text ?? "", gender: genderType ?? "", type: dogType ?? "")
         let status = validationResult.0
         let message = validationResult.1
             if status == true{
                 createDog()
-                
             }else{
                 alert("Alert", message: message)
             }

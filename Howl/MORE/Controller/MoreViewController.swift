@@ -24,6 +24,9 @@ class MoreViewController: UIViewController {
     @IBOutlet weak var infoTxtView: UITextView!
     @IBOutlet weak var navigationView: UIView!
     
+    @IBOutlet weak var profileBtn: UIButton!
+    @IBOutlet weak var profileView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tabBarItem.selectedImage = UIImage(named: "More_Selectable")?.withRenderingMode(.alwaysOriginal)
@@ -49,7 +52,7 @@ class MoreViewController: UIViewController {
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
         infoTxtView.isEditable = false
-        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn]
+        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn, profileBtn]
         for button in buttons {
             button.layer.cornerRadius = 10.0
             button.layer.shadowColor = UIColor.black.cgColor
@@ -134,4 +137,12 @@ class MoreViewController: UIViewController {
             AlertManager.sharedInstance.showAlert(title: "ID Required", message: "Set a monitoring ID by clicking the hyperlink passed to you by the dog walker when their walk began")
         }
     }
+    
+    @IBAction func profileBtnPress(_ sender: UIButton) {
+        let storyboard = AppStoryboard.Main.instance
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        vc.istrue = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
