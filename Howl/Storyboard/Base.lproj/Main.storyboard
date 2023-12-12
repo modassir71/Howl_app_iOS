@@ -640,7 +640,7 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="682"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKG-5Q-cP2">
-                                        <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="586"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="649"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="See detailed instructions below along with links to our policies to help provide the best HOWL experience possible - thank you" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-Dy-RUn">
                                                 <rect key="frame" x="15" y="0.0" width="344.66666666666669" height="128"/>
@@ -653,7 +653,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mxN-JY-s7y">
-                                                <rect key="frame" x="0.0" y="138" width="374.66666666666669" height="426"/>
+                                                <rect key="frame" x="0.0" y="138" width="374.66666666666669" height="489"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-1l-dh9">
                                                         <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="48"/>
@@ -838,6 +838,33 @@
                                                             <constraint firstAttribute="height" constant="48" id="no8-q3-xaQ"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8my-vA-JTz">
+                                                        <rect key="frame" x="0.0" y="441" width="374.66666666666669" height="48"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-cS-ZL3">
+                                                                <rect key="frame" x="20" y="0.0" width="334.66666666666669" height="48"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="Aileron-SemiBold" family="Aileron" pointSize="18"/>
+                                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="106" maxY="0.0"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="132" maxY="0.0"/>
+                                                                <state key="normal" title="DELETE PROFILE" image="profile_pic">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="deleteMyaccount:" destination="6ps-01-jMU" eventType="touchUpInside" id="VFc-1f-pbJ"/>
+                                                                    <action selector="profileBtnPress:" destination="6ps-01-jMU" eventType="touchUpInside" id="s68-GK-yhh"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="jS0-cS-ZL3" firstAttribute="top" secondItem="8my-vA-JTz" secondAttribute="top" id="1Ln-zx-TjH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jS0-cS-ZL3" secondAttribute="bottom" id="1Qd-Fj-Ptl"/>
+                                                            <constraint firstItem="jS0-cS-ZL3" firstAttribute="leading" secondItem="8my-vA-JTz" secondAttribute="leading" constant="20" id="bYV-m6-KbS"/>
+                                                            <constraint firstAttribute="height" constant="48" id="kgC-bV-iLu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jS0-cS-ZL3" secondAttribute="trailing" constant="20" id="vv1-yq-Odt"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="ov9-1l-dh9" secondAttribute="trailing" id="OxR-6A-5q2"/>
@@ -887,6 +914,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="configureBtn" destination="doL-RL-ix1" id="Z7E-TO-Xj5"/>
+                        <outlet property="deleteProfileBtn" destination="jS0-cS-ZL3" id="edJ-va-TlH"/>
+                        <outlet property="deleteProfileView" destination="8my-vA-JTz" id="3EB-qm-r3i"/>
                         <outlet property="eulaBtn" destination="0sr-um-iqC" id="0cL-gi-nRk"/>
                         <outlet property="howlSirenBtn" destination="hpp-s4-g7P" id="rdq-80-3am"/>
                         <outlet property="infoTxtView" destination="sQc-Dy-RUn" id="P5Z-au-A1N"/>

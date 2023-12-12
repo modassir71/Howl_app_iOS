@@ -27,6 +27,8 @@ class MoreViewController: UIViewController {
     @IBOutlet weak var profileBtn: UIButton!
     @IBOutlet weak var profileView: UIView!
     
+    @IBOutlet weak var deleteProfileBtn: UIButton!
+    @IBOutlet weak var deleteProfileView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tabBarItem.selectedImage = UIImage(named: "More_Selectable")?.withRenderingMode(.alwaysOriginal)
@@ -52,7 +54,7 @@ class MoreViewController: UIViewController {
         navigationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         navigationView.layer.shadowRadius = 2
         infoTxtView.isEditable = false
-        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn, profileBtn]
+        let buttons: [UIButton] = [privacyBtn, eulaBtn, unarchiveBtn, configureBtn, permissionBtn, howlSirenBtn, profileBtn, deleteProfileBtn]
         for button in buttons {
             button.layer.cornerRadius = 10.0
             button.layer.shadowColor = UIColor.black.cgColor
@@ -144,5 +146,11 @@ class MoreViewController: UIViewController {
         vc.istrue = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    @IBAction func deleteMyaccount(_ sender: UIButton) {
+        AlertManager.sharedInstance.showAlert(title: "HOWL", message: "Account delete successfully")
+    }
+    
     
 }

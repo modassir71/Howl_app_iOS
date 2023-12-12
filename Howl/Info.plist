@@ -40,6 +40,8 @@
 	<array>
 		<string>NSUserActivityTypeBrowsingWeb</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>HOWL users your microphone to record sound during videos of incidents</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Your contacts can be used to configure your emergency contacts</string>
 	<key>NSCameraUsageDescription</key>
