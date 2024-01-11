@@ -195,8 +195,10 @@ class AddNewPersonVc: UIViewController {
     
     @IBAction func whatsappBtnPress(_ sender: UIButton) {
         messageType = "WHATSAPP"
-        whatsAppBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
-        txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+        whatsAppBtn.isSelected = true
+        txtMsgBtn.isSelected = false
+//        whatsAppBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+//        txtMsgBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
 //        sender.isSelected = !sender.isSelected
 //        if nameTxtFld.text == ""{
 //            AlertManager.sharedInstance.showAlert(title: "Howl", message: "You should first enter your name")
@@ -217,8 +219,10 @@ class AddNewPersonVc: UIViewController {
     
     @IBAction func textBtnPress(_ sender: UIButton) {
         messageType = "iMessage"
-        whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
-        txtMsgBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
+        whatsAppBtn.isSelected = false
+        txtMsgBtn.isSelected = true
+//        whatsAppBtn.setImage(UIImage(named: "empt_Img"), for: .normal)
+//        txtMsgBtn.setImage(UIImage(named: "radio_Btn"), for: .normal)
     }
     
     

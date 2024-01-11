@@ -21,7 +21,8 @@ class WalkerStatusVc: UIViewController {
     var refreshTimer: Timer?
     var endsession = String()
     var status: Bool!
-
+    var timerRunning = true
+    
 //    MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,17 @@ class WalkerStatusVc: UIViewController {
         _registerCell()
         _setUI()
         refreshTimer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(fetchAndReloadData), userInfo: nil, repeats: true)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(fetchAndReloadData),
+                                               name: NSNotification.Name(rawValue: "monitoring"),
+                                               object: nil)
     }
     
    @objc func fetchAndReloadData() {
-           guard !walkUpdates.contains(where: { $0.walkStatus.contains("End Session") }) else {
-               stopRefreshTimer()
-               return
-           }
+//           guard !walkUpdates.contains(where: { $0.walkStatus.contains("End Session") }) else {
+//               stopRefreshTimer()
+//               return
+//           }
 
            kMonitorMeLocationManager.fetchWalkUpdatesFromFirebase { [weak self] walkUpdates in
                if let walkUpdates = walkUpdates {
@@ -47,10 +52,16 @@ class WalkerStatusVc: UIViewController {
                    DispatchQueue.main.async { [weak self] in
                        self?.walkUpdates = sortedWalkUpdates
 
+                       if !(self?.timerRunning ?? true) {
+                           self?.refreshTimer = Timer.scheduledTimer(timeInterval: 15, target: self!, selector: #selector(self?.fetchAndReloadData), userInfo: nil, repeats: true)
+                           self?.timerRunning = true
+                       }
+                       
                        for i in sortedWalkUpdates {
                            let status = i.walkStatus
                            if status.contains("End Session") {
                                self?.stopRefreshTimer()
+                               self?.timerRunning = false
                            }
                        }
 
@@ -62,7 +73,7 @@ class WalkerStatusVc: UIViewController {
     
     func stopRefreshTimer() {
            refreshTimer?.invalidate()
-           refreshTimer = nil
+//           refreshTimer = nil
        }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +85,7 @@ class WalkerStatusVc: UIViewController {
                 SVProgressHUD.dismiss()
             }
             if let walkUpdates = walkUpdates {
-                self?.walkUpdates = walkUpdates
+                self?.walkUpdates = walkUpdates.sorted { $0.walkTime > $1.walkTime }
                 self?.walkerListTbLview.reloadData()
             }
         }

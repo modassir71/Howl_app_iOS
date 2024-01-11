@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NSUserActivityDelegate {
     let gcmMessageIDKey = "gcm.Message_ID"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SVProgressHUD.setImageViewSize(CGSize(width: 60, height: 60))
-           SVProgressHUD.setOffsetFromCenter(UIOffset(horizontal: 200, vertical: 400))
+        SVProgressHUD.setOffsetFromCenter(UIOffset(horizontal: 0, vertical: 40))
         Thread.sleep(forTimeInterval: 1.0)
         print("retriveValue", UserDefaults.standard.string(forKey: "MonitorIds") ?? "")
         print("outputvalue", UserDefaults.standard.string(forKey: "MonitorOutPut") ?? "")

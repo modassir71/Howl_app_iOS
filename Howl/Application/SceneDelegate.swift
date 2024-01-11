@@ -66,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print(kDataManager.walkId ?? "")
             UserDefaults.standard.set(lastPathComponenets, forKey: "MonitorOutPut")
 
-            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "monitoring"), object: nil)
             
         }
         
