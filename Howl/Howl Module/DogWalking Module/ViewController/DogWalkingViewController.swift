@@ -12,6 +12,7 @@ import Firebase
 import MessageUI
 import FirebaseMessaging
 import UserNotifications
+import SVProgressHUD
 
 class DogWalkingViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
@@ -70,6 +71,9 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           locationManager.requestWhenInUseAuthorization()
           locationManager.startUpdatingLocation()
           crossBtn.backgroundColor = ColorConstant.greenColor
+          kMonitorMeLocationManager.requestAlwaysAuthorize()
+          SVProgressHUD.show()
+          setTokenUsingPhoneNumber()
       }
       
       override func viewWillAppear(_ animated: Bool) {
@@ -108,11 +112,12 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
           concernBtn.clipsToBounds = true
           concernBtn.isHidden = true
           crossBtn.isHidden = true
-          concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
+//          concernBtn.layer.borderColor = UIColor(displayP3Red: 31/255, green: 31/255, blue: 31/255, alpha: 1.0).cgColor
        //   concernBtn.backgroundColor = ColorConstant.amberColor
-          concernBtn.layer.borderWidth = 2.0
+//          concernBtn.layer.borderWidth = 2.0
+          concernBtn.backgroundColor = ColorConstant.amberColor
           concernBtn.setTitle(DogConstantString.raiseConcern, for: .normal)
-          concernBtn.setTitleColor(.black, for: .normal)
+          concernBtn.setTitleColor(.white, for: .normal)
           concernBtn.titleLabel?.font = .appFont(.AileronBold, size: 20)
           dogName.font = .appFont(.AileronBold, size: 20.0)
           if isiPhoneSE(){
@@ -157,8 +162,11 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
     }
     
       @IBAction func crossBtnPress(_ sender: UIButton) {
+          setTokenUsingPhoneNumber()
           kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Im Safe", latitude: lat ?? "", longitude: long ?? "")
+          sendNotification(to: getToken, for: StringConstant.ImSafe)
           AlertManager.sharedInstance.showAlert(title: "HOWL", message: "Update sent")
+          
       }
       
       
@@ -236,16 +244,19 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
       //MARK: - Button Action
       
       @IBAction func concernBtnPress(_ sender: UIButton) {
+          setTokenUsingPhoneNumber()
           let storyboard = AppStoryboard.Main.instance
           let concernVc = storyboard.instantiateViewController(withIdentifier: "ConcernViewController") as! ConcernViewController
           concernVc.lat = lat
           concernVc.long = long
+          concernVc.getToken = getToken
+          print("token",getToken)
           self.navigationController?.present(concernVc, animated: true)
       }
       
     
     @IBAction func tap3TimesBtnPress(_ sender: UIButton) {
-        if kDataManager.walkId != nil{
+//        if kDataManager.walkId != nil{
             switch tapsToHOWL {
                 
             case 0:
@@ -255,8 +266,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                 tapLabel.text = "Tap 2 Times To"
                 
             case 1:
-                let num = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
-                findUserByPhoneNumber(phoneNumber: num)
+                setTokenUsingPhoneNumber()
                 let recipientToken = getToken//
                 tapsToHOWL += 1
                 tapLabel.text = "Tap 1 Times To"
@@ -264,7 +274,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
             case 2:
                 
                 print("tokenn", getToken)
-               sendNotification(to: getToken)
+                sendNotification(to: getToken, for: StringConstant.HowlForHelp)
                 let customViewController = RecordViewController()
                 customViewController.executeCodeBlock = { [weak self] in
                     self?.resetHOWLTap()
@@ -297,9 +307,15 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
             default:
                 ()
             }
-        }else{
-
-        }
+//        }else{
+//
+//        }
+        
+    }
+    
+    func setTokenUsingPhoneNumber(){
+        let num = AddPeopleDataManager.sharedInstance.people[kDataManager.indexOfPersonMonitoring].personMobileNumber ?? ""
+        findUserByPhoneNumber(phoneNumber: num)
         
     }
     
@@ -314,6 +330,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
                    let token = user["token"] as? String {
                     print("Token for user with phone number \(phoneNumber): \(token)")
                     self.getToken = token
+                    SVProgressHUD.dismiss()
                 }
             } else {
                 print("User with phone number \(phoneNumber) not found.")
@@ -347,7 +364,7 @@ class DogWalkingViewController: UIViewController, MFMessageComposeViewController
        }
    }
 
-func sendNotification(to fcmToken: String) {
+func sendNotification(to fcmToken: String, for body: String) {
     let urlString = "https://fcm.googleapis.com/fcm/send"
     guard let url = URL(string: urlString) else { return }
 
@@ -355,7 +372,7 @@ func sendNotification(to fcmToken: String) {
         "to": fcmToken,
         "notification": [
             "title": "HOWL",
-            "body": "Howl for help"
+            "body":  body
         ]
     ] as [String : Any]
 
@@ -422,6 +439,8 @@ func sendNotification(to fcmToken: String) {
                   
                   let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                       self.swipeSlider.slideToEndLft()
+                      positionValue = 0
+                      UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
                       print("position5", position)
                   }
                   
@@ -443,7 +462,7 @@ func sendNotification(to fcmToken: String) {
                       self.startWalk(indexOfEmergencyContact: 0)
                       print("position6", position)
                   }
-
+                  positionValue = 1
               }else{
               checkLocationPermission()
                let alert = UIAlertController(title: "Choose Emergency Contact",
@@ -468,16 +487,19 @@ func sendNotification(to fcmToken: String) {
                           }
                          print("indexxx", index)
                           self.startWalk(indexOfEmergencyContact: index)
+                          positionValue = 1
+                          UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
                       }))
                   }
 //                  alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
                   alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
                       self.swipeSlider.slideToEndLft()
+                      positionValue = 0
+                      UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
                   }))
                   self.present(alert, animated: true, completion: nil)
              // if locationEnabled == true{
               }
-              positionValue = 1
           }
           UserDefaults.standard.set(positionValue, forKey: "SliderPosition")
       }
@@ -492,6 +514,7 @@ func sendNotification(to fcmToken: String) {
           print("lattt",lat ?? "")
           print("lngg",long ?? "")
           kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "HOWL", latitude: lat ?? "", longitude: long ?? "")
+          setTokenUsingPhoneNumber()
       }
       
     

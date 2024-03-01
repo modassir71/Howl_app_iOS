@@ -146,17 +146,17 @@ extension WalkerStatusVc: UITableViewDelegate, UITableViewDataSource{
         case "Start Session":
             cell.containerView.backgroundColor = .white
         case "Auto-Update":
-            cell.containerView.backgroundColor = .lightGray
+            cell.containerView.backgroundColor = ColorConstant.grayColor
         case "Im Safe":
             cell.containerView.backgroundColor = ColorConstant.greenColor
-        case "Illness/Injury":
+        case "Illness/Injury","Safety Concern":
             cell.containerView.backgroundColor = ColorConstant.amberColor
         case "HOWL":
             cell.containerView.backgroundColor = ColorConstant.pinkColor
         case "End Session":
-            cell.containerView.backgroundColor = .lightGray
+            cell.containerView.backgroundColor = .white
         default:
-            cell.containerView.backgroundColor = .lightGray
+            cell.containerView.backgroundColor = ColorConstant.grayColor
         }
         return cell
     }

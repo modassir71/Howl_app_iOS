@@ -37,6 +37,10 @@ struct StringConstant {
 //    Userdefault key
      static let hasAppLaunchedBeforeKey = "HasAppLaunchedBefore"
     
+    //Notification Msg
+    static let HowlForHelp = "Howl for help"
+    static let RaisedConcern = "Raised a Concern"
+    static let ImSafe = "I am Safe"
 }
 
 struct ImageStringConstant{
@@ -62,6 +66,9 @@ struct ColorConstant{
     static let pinkColor = UIColor(red: 229.0/255.0, green: 6.0/255.0, blue: 82.0/255.0, alpha: 1.0)
     static let greenColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 181.0/255.0, alpha: 1.0)
     static let amberColor = UIColor(red: 251.0/255.0, green: 189.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+    static let amber3Color = UIColor(red: 231.0/255.0, green: 189.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+    static let grayColor = UIColor(red: 0.8274509804, green: 0.8274509804, blue: 0.8274509804, alpha: 1)
+    static let amber2Color = UIColor(red: 250.0/255.0, green: 220.0/255.0, blue: 100.0/255.0, alpha: 1.0)
     
 }
 

@@ -23,6 +23,8 @@ class ConcernViewController: UIViewController {
     var hasRadioBtnArray: [Bool] = Array(repeating: false, count: DogIssues.allCases.count)
     var lat: String?
     var long: String?
+    var getToken: String?
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,7 @@ class ConcernViewController: UIViewController {
           } else {
               kMonitorMeLocationManager.forceUpdateToMonitorMeServerWithState(state: "Safety Concern", latitude: lat ?? "", longitude: long ?? "")
           }
+        sendNotification(to: getToken ?? "", for: StringConstant.RaisedConcern)
           self.dismiss(animated: true)
         AlertManager.sharedInstance.showAlert(title: "Howl", message: "Update Sent")
     }
@@ -100,7 +103,7 @@ extension ConcernViewController: UITableViewDelegate, UITableViewDataSource{
 
         // Enable/disable the email button based on hasRadioBtnArray
         emailBtn.isEnabled = hasRadioBtnArray.contains(true)
-
+        emailBtn.backgroundColor = emailBtn.isEnabled ? ColorConstant.pinkColor : .gray
         return cell
     }
     

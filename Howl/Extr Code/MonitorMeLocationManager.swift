@@ -111,6 +111,34 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func requestAlwaysAuthorize(){
+        switch locationManager.authorizationStatus {
+        
+        case .authorizedAlways:
+            break
+            
+        case .authorizedWhenInUse:
+            
+            locationManager.requestAlwaysAuthorization()
+            
+        case .notDetermined:
+            
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .denied:
+            
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .restricted:
+            
+            locationManager.requestWhenInUseAuthorization()
+            
+        @unknown default:
+            
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
     func monitorMe() {
         
         // Confirm you are being monitored
@@ -129,6 +157,11 @@ class MonitorMeLocationManager: NSObject, CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             
             locationManager.requestAlwaysAuthorization()
+            kDataManager.setMonitorMeStatus(status: true)
+            firstOutput = true
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.allowsBackgroundLocationUpdates = false
             
         case .notDetermined:
             

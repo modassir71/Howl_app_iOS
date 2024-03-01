@@ -18,6 +18,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         // Capture the HOWL monitor me ID and save for use in the monitoring menu
+        
+        if let userActivity = connectionOptions.userActivities.first, let url = userActivity.webpageURL {
+               // Handle the universal link here
+            if userActivity.activityType == NSUserActivityTypeBrowsingWeb{
+                print("Universal Link: \(url)")
+                let lastPathComponenets = url.pathComponents.last
+                print("lastPath",lastPathComponenets ?? "")
+                kDataManager.walkId = lastPathComponenets
+                print(kDataManager.walkId ?? "")
+                UserDefaults.standard.set(lastPathComponenets, forKey: "MonitorOutPut")
+
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "monitoring"), object: nil)
+                
+            }
+           }
+        
         if let url = connectionOptions.urlContexts.first?.url {
             
             let checkType = String(url.absoluteString.prefix(4))

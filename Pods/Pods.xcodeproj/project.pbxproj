@@ -17,6 +17,7 @@
 				CFB303E1E3047575DF71517C1AC52CCF /* PBXTargetDependency */,
 			);
 			name = GoogleMaps;
+			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -951,7 +952,7 @@
 		ABEACB0BBFE351FE44D9447CBA2C63DC /* W3WAutosuggestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BD15E6A2B61180ECD56EF76455B2A /* W3WAutosuggestHelper.swift */; };
 		AC05BB6407665A0623ACB690F5E04DA6 /* ZM.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3ED65796CE745105284674595C07E /* ZM.png */; };
 		AC0CAA692F91F8B59152B728894080FD /* CZ.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D5D8D441CC180AAAF2C5DA3D14ED1C /* CZ.png */; };
-		AC53BE298517AB4A108D086E53470664 /* SKCountryPicker-CountryPickerController in Resources */ = {isa = PBXBuildFile; fileRef = DE277629B5C09BE727E2EA152C0F7D19 /* SKCountryPicker-CountryPickerController */; };
+		AC53BE298517AB4A108D086E53470664 /* CountryPickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */; };
 		AC5998125A1F35A8A9F6FAA578A5760D /* BB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E72FA4F6CF2A4DFAC590CC1ADE5C7D15 /* BB@2x.png */; };
 		AC75B1E36301242EF04FB4CDAB9695D3 /* AE.png in Resources */ = {isa = PBXBuildFile; fileRef = 93EBA703A4B2D1C07C307380FD5D0550 /* AE.png */; };
 		ACD79FD1FEE1E8F62EAA93DFFA989BED /* FBSDKGraphRequestPiggybackManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D6A9FEEFABD4E4247E9209085B4F474B /* FBSDKGraphRequestPiggybackManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1712,7 +1713,7 @@
 		0AF285344782C8F1F69233AAD1D76EBC /* SH.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SH.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SH.png; sourceTree = "<group>"; };
 		0B0721909B6164C001D783EC54A55620 /* UnitBezier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnitBezier.swift; path = Sources/Private/Utility/Primitives/UnitBezier.swift; sourceTree = "<group>"; };
 		0B2B813608FAC5012FC939BBE245DA69 /* FacebookCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FacebookCore.modulemap; sourceTree = "<group>"; };
-		0B4315EAAA90167C0A02EC07174082D0 /* Pods-HowlTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HowlTests"; path = Pods_HowlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4315EAAA90167C0A02EC07174082D0 /* Pods_HowlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4B8BD3BB38886122A5C5DCB959B67A /* FBSDKAddressFilterManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKAddressFilterManager.h; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/RestrictiveDataFilter/FBSDKAddressFilterManager.h; sourceTree = "<group>"; };
 		0B914890A15CA42DAFD4306A063217D2 /* KE@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "KE@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/KE@2x.png"; sourceTree = "<group>"; };
 		0BA40E66A6BA0B944229D5143045663C /* BW.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BW.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BW.png; sourceTree = "<group>"; };
@@ -1838,7 +1839,7 @@
 		1F1EA6430A46223C4558376C23605199 /* NR.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NR.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/NR.png; sourceTree = "<group>"; };
 		1F386D2035CFBBBC09C053EAB3A82558 /* TM@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "TM@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/TM@2x.png"; sourceTree = "<group>"; };
 		1FB7BDDAAE1964B3AF43A1A3814B141C /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = EventBus/Options.swift; sourceTree = "<group>"; };
-		1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = W3WSwiftApi; path = W3WSwiftApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = W3WSwiftApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF647F97272BE47831ABBCBE56B15BA /* CarbonKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CarbonKit-prefix.pch"; sourceTree = "<group>"; };
 		202692CFDC51BFB250FB343D8E356CCA /* FBSDKSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSwizzler.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSwizzler.h; sourceTree = "<group>"; };
 		2029B05225B68A53B8AB74F1CA6921B3 /* StrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/StrokeRenderer.swift; sourceTree = "<group>"; };
@@ -1847,7 +1848,7 @@
 		20EC39EEB26C9A6A3BAC5E1C1E1AD8FD /* NU.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NU.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/NU.png; sourceTree = "<group>"; };
 		21576CA764F0DDD31077A60FF2E1BB41 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		21848F62A9FE5A8A5E9A819A47BF72D6 /* FBSDKShareDialogMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareDialogMode.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareDialogMode.m; sourceTree = "<group>"; };
-		21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "GoogleMaps-GoogleMapsResources"; path = GoogleMapsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMapsResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FB8675864DEC72BDCFCE8CCA4F6C5C /* Pods-Howl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Howl-dummy.m"; sourceTree = "<group>"; };
 		223085B7A957930CD851B21E4293D164 /* MN@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MN@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MN@2x.png"; sourceTree = "<group>"; };
 		227056F8484ABCFD8DBE0ED1F87A420F /* LRUAnimationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LRUAnimationCache.swift; path = Sources/Public/AnimationCache/LRUAnimationCache.swift; sourceTree = "<group>"; };
@@ -1885,7 +1886,7 @@
 		27BC2E5E289694019E2E8C9D0E2D24C4 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		27F85886199ABCE520CB19760198CEC8 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		28101106E062AB25CF52421FF16C4021 /* FBSDKServerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.h; sourceTree = "<group>"; };
-		2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FacebookCore; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		284F9D421B13769F8DA52D834CFE0722 /* FBSDKMeasurementEventListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKMeasurementEventListener.m; path = FBSDKCoreKit/FBSDKCoreKit/AppLink/Internal/FBSDKMeasurementEventListener.m; sourceTree = "<group>"; };
 		288126337BB5804C0D5E25FC51A0C002 /* SKCountryPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SKCountryPicker.debug.xcconfig; sourceTree = "<group>"; };
 		290F9E8E0C330A402B66EBC956FA02F1 /* W3WAudioRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = W3WAudioRecorder.swift; path = Sources/W3WSwiftApi/Voice/Recording/W3WAudioRecorder.swift; sourceTree = "<group>"; };
@@ -1926,7 +1927,7 @@
 		2E78E6D0C2DFF186A3FACDCBF6303CB0 /* SV@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SV@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SV@2x.png"; sourceTree = "<group>"; };
 		2EB8E6DC7F0C18687883BD6D385886E0 /* SwiftUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftUIView.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/SwiftUI/SwiftUIView.swift; sourceTree = "<group>"; };
 		2EDC00C87B4F3E73B5F54AC93DBF1B1D /* What3Words+VoiceAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "What3Words+VoiceAPI.swift"; path = "Sources/W3WSwiftApi/Voice/Api/What3Words+VoiceAPI.swift"; sourceTree = "<group>"; };
-		2EF0B02577DEDA1B39A7EE4ADE220FF9 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
+		2EF0B02577DEDA1B39A7EE4ADE220FF9 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
 		2FAF668F7AC259323C08FEF33D67654D /* FBSDKApplicationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKApplicationDelegate.h; path = FBSDKCoreKit/FBSDKCoreKit/FBSDKApplicationDelegate.h; sourceTree = "<group>"; };
 		2FD7BEA730C40FE69185B3AE4DBAFAF9 /* Asset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Sources/Private/Model/Assets/Asset.swift; sourceTree = "<group>"; };
 		3006F86F9526E9F6733E341972919544 /* PF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/PF@2x.png"; sourceTree = "<group>"; };
@@ -1947,7 +1948,7 @@
 		33FBDCD5E30D7D6AB385223415C9D50E /* Pods-Howl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Howl.release.xcconfig"; sourceTree = "<group>"; };
 		3427F335CCBFD4327CBA9808426BB4D9 /* FBSDKCrashObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCrashObserver.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Instrument/CrashReport/FBSDKCrashObserver.h; sourceTree = "<group>"; };
 		34572AEA5CBA398E81B734DD78B6ABF4 /* LC.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LC.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LC.png; sourceTree = "<group>"; };
-		34598C00C5C476F58A9919503F37E399 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
+		34598C00C5C476F58A9919503F37E399 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
 		3489A59F915E748D04228E1A4B50040B /* FBSDKBridgeAPIRequest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKBridgeAPIRequest+Private.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/FBSDKBridgeAPIRequest+Private.h"; sourceTree = "<group>"; };
 		34CE3125101747A940ACDA990DDC7A39 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		34D87DBA4B9CE3C3861654649227E23A /* EC.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = EC.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/EC.png; sourceTree = "<group>"; };
@@ -1963,7 +1964,7 @@
 		367595CBC537821CF5437E66E9496F75 /* AD@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AD@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AD@2x.png"; sourceTree = "<group>"; };
 		3675B5D5FEA758B8DFD326FC0CBC52A4 /* LB.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = LB.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/LB.png; sourceTree = "<group>"; };
 		369172197828E83B9B713E4D79A93CE3 /* FBSDKErrorRecoveryAttempter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKErrorRecoveryAttempter.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ErrorRecovery/FBSDKErrorRecoveryAttempter.m; sourceTree = "<group>"; };
-		36AC87A11E907DDF5946558A2AEEBE01 /* Pods-Howl-HowlUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Howl-HowlUITests"; path = Pods_Howl_HowlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AC87A11E907DDF5946558A2AEEBE01 /* Pods_Howl_HowlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Howl_HowlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E37F2AC708637A94513D2FF87CFA31 /* EpoxyModelArrayBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxyModelArrayBuilder.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Model/EpoxyModelArrayBuilder.swift; sourceTree = "<group>"; };
 		3703CE52B099BACADA4A1DA233BF070D /* BG.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BG.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BG.png; sourceTree = "<group>"; };
 		370F514D6C781C8B61C5CA2B70E691A1 /* What3WordsObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = What3WordsObjC.swift; path = Sources/W3WSwiftApi/Lib/ObjC/What3WordsObjC.swift; sourceTree = "<group>"; };
@@ -2087,7 +2088,7 @@
 		4D7A69CE99D4BFDEE7EF8595B9C53C60 /* KZ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KZ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KZ.png; sourceTree = "<group>"; };
 		4D923C7471D47F14AC9CB6A6A6C61CE0 /* UM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = UM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/UM.png; sourceTree = "<group>"; };
 		4DC6B48830162DCCB2D72C856D602A70 /* MR.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MR.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MR.png; sourceTree = "<group>"; };
-		4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift-EventBus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Swift-EventBus"; path = Swift_EventBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift_EventBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swift_EventBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E037ADA7ECA8787727DF06B77285336 /* FacebookCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FacebookCore-prefix.pch"; sourceTree = "<group>"; };
 		4E3F09224DADA3DFACCA54F7161DC581 /* BJ.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BJ.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BJ.png; sourceTree = "<group>"; };
 		4E51AA3D20A0A15BF8B2FF3E11AB6DC6 /* AM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AM.png; sourceTree = "<group>"; };
@@ -2105,7 +2106,7 @@
 		50A3E77174E5ED7937A81A1A9895F781 /* IN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/IN.png; sourceTree = "<group>"; };
 		50CB606230D074CE816B564923018DC4 /* URL+ZIP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+ZIP.swift"; path = "Sources/Private/EmbeddedLibraries/ZipFoundation/URL+ZIP.swift"; sourceTree = "<group>"; };
 		511FF950F8546955556C263E229AF77B /* PathOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PathOutputNode.swift; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		521A7053EE8EF0858593DB1315924551 /* SY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SY@2x.png"; sourceTree = "<group>"; };
 		524A4B4F3C841B7E26EA46B44B84DC45 /* SD@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "SD@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/SD@2x.png"; sourceTree = "<group>"; };
 		524BAE04D16D4C3FB10DE7BCB070A6C3 /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeScrollView.h; path = CarbonKit/CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
@@ -2175,7 +2176,7 @@
 		5CFDB033A1D6993F1D1191D65BD8CEA7 /* FBSDKModelUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKModelUtility.h; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/ML/FBSDKModelUtility.h; sourceTree = "<group>"; };
 		5D0C46462E00EB1B3CA5341AFCEB79D4 /* W3WAudioStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = W3WAudioStream.swift; path = Sources/W3WSwiftApi/Voice/Util/W3WAudioStream.swift; sourceTree = "<group>"; };
 		5D0CD5F22A495CFD18498ECE8E7DB64F /* BD@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BD@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BD@2x.png"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D94399CE4DBA5A1D54CA454A6CA8990 /* LottieAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimation.swift; path = Sources/Public/Animation/LottieAnimation.swift; sourceTree = "<group>"; };
 		5DF7A4206E8712D9F7FEB07E4BA067F5 /* FBSDKBridgeAPIProtocolWebV1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV1.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV1.m; sourceTree = "<group>"; };
 		5E5299220D749F68266305A0E1E81EEA /* W3WMicrophone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = W3WMicrophone.swift; path = Sources/W3WSwiftApi/Voice/W3WMicrophone.swift; sourceTree = "<group>"; };
@@ -2253,7 +2254,7 @@
 		6953FD76E34136EB2B4BA9FA8803E989 /* FBSDKMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKMath.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKMath.h; sourceTree = "<group>"; };
 		69A02B591AE6F5EAFD02FCAFBC3B5584 /* FBSDKGraphRequestMetadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestMetadata.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestMetadata.m; sourceTree = "<group>"; };
 		6A0A45D6F79E93DFD672AFBB7A27471F /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		6A12493EFBA30719432009FA2160D39F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = SVProgressHUD/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6A12493EFBA30719432009FA2160D39F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = SVProgressHUD/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6A5DC179C0B1442773F8429F385679BE /* FBSDKVideoUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKVideoUploader.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKVideoUploader.h; sourceTree = "<group>"; };
 		6A7A5150CE5E4A2267B2F9D7288CD8F0 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		6A7A7B818EC25C8E012E78FDAD8A8C0B /* FBSDKShareMessengerURLActionButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareMessengerURLActionButton.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMessengerURLActionButton.m; sourceTree = "<group>"; };
@@ -2272,7 +2273,7 @@
 		6C399699B480995EEA973233382A290F /* JP@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "JP@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/JP@2x.png"; sourceTree = "<group>"; };
 		6C697B047C8EBE469FF921A6D7E8CBB0 /* FBSDKLikeObjectType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLikeObjectType.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKLikeObjectType.h; sourceTree = "<group>"; };
 		6C7B307536BA6CFE8FB24B2B095F300B /* FBSDKHashtag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKHashtag.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKHashtag.m; sourceTree = "<group>"; };
-		6CE56DE6D1DBBA07800D641A1DD90CCB /* FBSDKEventInferencer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = FBSDKEventInferencer.mm; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/SuggestedEvents/FBSDKEventInferencer.mm; sourceTree = "<group>"; };
+		6CE56DE6D1DBBA07800D641A1DD90CCB /* FBSDKEventInferencer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = FBSDKEventInferencer.mm; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/SuggestedEvents/FBSDKEventInferencer.mm; sourceTree = "<group>"; };
 		6DAB910EBFC2CF5D311993206165CB77 /* BundleImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleImageProvider.swift; path = Sources/Public/iOS/BundleImageProvider.swift; sourceTree = "<group>"; };
 		6DB1483032F78897735814E008E043CA /* ML@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ML@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/ML@2x.png"; sourceTree = "<group>"; };
 		6E11C7031FFEDE42C4A265E5C15D2AE4 /* AnimationTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTime.swift; path = Sources/Public/Primitives/AnimationTime.swift; sourceTree = "<group>"; };
@@ -2352,7 +2353,7 @@
 		7C592074EE73126DB88F2A0280D32C58 /* GN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GN.png; sourceTree = "<group>"; };
 		7C6CF0FB5E46733B03DF16A86839254B /* UY@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "UY@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/UY@2x.png"; sourceTree = "<group>"; };
 		7CF489306F9B6E64E3A749EAEAB83D60 /* EpoxyModelStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxyModelStorage.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Model/EpoxyModelStorage.swift; sourceTree = "<group>"; };
-		7D52F158429A6FAA1F8A1927DED0DB71 /* Pods-Howl */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Howl"; path = Pods_Howl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D52F158429A6FAA1F8A1927DED0DB71 /* Pods_Howl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Howl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1E56320F5C4DEFDFDF97E0CDFE7A4 /* BV@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BV@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/BV@2x.png"; sourceTree = "<group>"; };
 		7DFE96416935C11483A2A6FA09444AAF /* InvertedMatteLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvertedMatteLayer.swift; path = Sources/Private/MainThread/LayerContainers/Utility/InvertedMatteLayer.swift; sourceTree = "<group>"; };
 		7E5215E34A61476B148F84E9D1151CD7 /* FBSDKShareAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareAPI.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareAPI.m; sourceTree = "<group>"; };
@@ -2407,9 +2408,9 @@
 		84E2F78B970B86E8D7D07BFF84A40917 /* CarbonKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonKit.h; path = CarbonKit/CarbonKit.h; sourceTree = "<group>"; };
 		850EC63E14536E0645CD848F29227CAB /* FBSDKImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKImageDownloader.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKImageDownloader.h; sourceTree = "<group>"; };
 		8511077F4B4479039030F19600337C08 /* VE@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VE@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/VE@2x.png"; sourceTree = "<group>"; };
-		85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSDKShareKit; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKShareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853E6BE9344FD480D44798C1579D6BDA /* AT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AT.png; sourceTree = "<group>"; };
-		857D0B90490FD8083F79B97597566B28 /* CarbonKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CarbonKit; path = CarbonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857D0B90490FD8083F79B97597566B28 /* CarbonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CarbonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859C50E5C4FB91D15C9ED54491A6F314 /* GE.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GE.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GE.png; sourceTree = "<group>"; };
 		85A4A6A8F226786C49EFAB136F71B3ED /* MM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MM.png; sourceTree = "<group>"; };
 		85A7D0A29B55A205DA2071E4195E8FDA /* ML.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ML.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/ML.png; sourceTree = "<group>"; };
@@ -2476,7 +2477,7 @@
 		8F9C7F5298BF9EF45519D43B7F988C58 /* GradientValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/GradientValueProvider.swift; sourceTree = "<group>"; };
 		8F9EE0B3034D4AA927F29D1FDB970195 /* PR.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PR.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PR.png; sourceTree = "<group>"; };
 		8FA498C32C98072EE0AC6C642C491D06 /* VA@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VA@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/VA@2x.png"; sourceTree = "<group>"; };
-		8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FacebookShare; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FACA8C5FE3B8022B57808ADE49F0452 /* FBSDKUserDataStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKUserDataStore.m; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/FBSDKUserDataStore.m; sourceTree = "<group>"; };
 		900D8DAA5A069A74080B226F49135D36 /* GS@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GS@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GS@2x.png"; sourceTree = "<group>"; };
 		9010CC84EAAA388ED6EF038DE69006BE /* FBSDKTypeUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTypeUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Basics/Internal/FBSDKTypeUtility.m; sourceTree = "<group>"; };
@@ -2537,7 +2538,7 @@
 		9918100ECDC89711FE31FD0326C9F8FD /* What3WordsObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = What3WordsObjC.swift; path = Sources/W3WSwiftApi/Lib/ObjC/What3WordsObjC.swift; sourceTree = "<group>"; };
 		991DDE0191D50DDF8C7FAA4240205FF8 /* FBSDKShareLinkContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareLinkContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareLinkContent.h; sourceTree = "<group>"; };
 		992998FC85831359AAD569553410D1F6 /* LU@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "LU@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/LU@2x.png"; sourceTree = "<group>"; };
-		9934831B551EE1B31E0F3BC14229FBA7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		9934831B551EE1B31E0F3BC14229FBA7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = IQKeyboardManagerSwift/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		99566E374A727781069B8FD249C28251 /* HN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = HN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/HN.png; sourceTree = "<group>"; };
 		99594160E81E3E89F1436718A6603195 /* W3WSwiftApi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = W3WSwiftApi.modulemap; sourceTree = "<group>"; };
 		9968B1218C1A94F7C1BD74D7A6239F07 /* EpoxySwiftUIHostingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxySwiftUIHostingView.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/SwiftUI/EpoxySwiftUIHostingView.swift; sourceTree = "<group>"; };
@@ -2562,7 +2563,7 @@
 		9D4524E09C96A4466033CFB4E9FFC89B /* CompoundBezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompoundBezierPath.swift; path = Sources/Private/Utility/Primitives/CompoundBezierPath.swift; sourceTree = "<group>"; };
 		9D4E9918B3C969DEC99D2D163805D0C9 /* MN.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MN.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/MN.png; sourceTree = "<group>"; };
 		9D4FD3D300CE48292E54D03FB099C0F1 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA4923229030C724AC9A437F1180E4D /* Swift-EventBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Swift-EventBus.debug.xcconfig"; sourceTree = "<group>"; };
 		9DAE89DA1B2A66B584E7CBC642E341B9 /* FBSDKGraphRequestConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGraphRequestConnection.m; path = FBSDKCoreKit/FBSDKCoreKit/GraphAPI/FBSDKGraphRequestConnection.m; sourceTree = "<group>"; };
 		9E176AC0E4C884FAFF75857509A18856 /* BaseAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseAnimationLayer.swift; path = Sources/Private/CoreAnimation/Layers/BaseAnimationLayer.swift; sourceTree = "<group>"; };
@@ -2632,7 +2633,7 @@
 		A82E2C4795ECFF6B27173C96EF1A9F93 /* SI.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = SI.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/SI.png; sourceTree = "<group>"; };
 		A8D550F667CEA6CCDE2C9C569CEBDBA0 /* PW@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "PW@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/PW@2x.png"; sourceTree = "<group>"; };
 		A8D9E3A812304D28065F2F76E853D1D2 /* W3WVoiceSocketError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = W3WVoiceSocketError.swift; path = Sources/W3WSwiftApi/Voice/Types/W3WVoiceSocketError.swift; sourceTree = "<group>"; };
-		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92DCA5D0DF79CF7102E527C8FA91AA1 /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonSwipeRefresh.h; path = CarbonKit/CarbonSwipeRefresh.h; sourceTree = "<group>"; };
 		A93E3DFB85DBCD7165CE1CDEC055FC50 /* FBSDKSuggestedEventsIndexer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKSuggestedEventsIndexer.h; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/SuggestedEvents/FBSDKSuggestedEventsIndexer.h; sourceTree = "<group>"; };
 		A985A4AD01FA97B315FB14C965740A81 /* ShapeItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeItem.swift; path = Sources/Private/Model/ShapeItems/ShapeItem.swift; sourceTree = "<group>"; };
@@ -2740,7 +2741,7 @@
 		BDFC8EA10AC56A7A568DB87EECDF7D65 /* IL@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "IL@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/IL@2x.png"; sourceTree = "<group>"; };
 		BDFEF5955EF710A0A55C7F101FD66A82 /* HM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = HM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/HM.png; sourceTree = "<group>"; };
 		BE1B999D1719DDB45AC7D6373D1EB2B1 /* Archive+BackingConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+BackingConfiguration.swift"; path = "Sources/Private/EmbeddedLibraries/ZipFoundation/Archive+BackingConfiguration.swift"; sourceTree = "<group>"; };
-		BE78C4BA123CF19827A33DF32EB2792B /* FBSDKAddressInferencer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = FBSDKAddressInferencer.mm; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/RestrictiveDataFilter/FBSDKAddressInferencer.mm; sourceTree = "<group>"; };
+		BE78C4BA123CF19827A33DF32EB2792B /* FBSDKAddressInferencer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = FBSDKAddressInferencer.mm; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/RestrictiveDataFilter/FBSDKAddressInferencer.mm; sourceTree = "<group>"; };
 		BE840E461C6F4C370747F6C1A1248356 /* IS.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = IS.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/IS.png; sourceTree = "<group>"; };
 		BE9CB5C54BE0B7E581389EDF91765333 /* FBSDKCoreKit+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSDKCoreKit+Internal.h"; path = "FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKCoreKit+Internal.h"; sourceTree = "<group>"; };
 		BEAEE1E94626D3C438A42E8D4E0521EA /* LottieButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieButton.swift; path = Sources/Public/Controls/LottieButton.swift; sourceTree = "<group>"; };
@@ -2761,7 +2762,7 @@
 		C08788C9450156FF7BCDB880B42581E7 /* W3WTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = W3WTypes.swift; path = Sources/W3WSwiftApi/Lib/DataTypes/W3WTypes.swift; sourceTree = "<group>"; };
 		C156CDA69CAE802448E0BC9BFD53C332 /* PreCompLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreCompLayerModel.swift; path = Sources/Private/Model/Layers/PreCompLayerModel.swift; sourceTree = "<group>"; };
 		C17E51F6C129E043C0B21A661008C330 /* GM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = GM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/GM.png; sourceTree = "<group>"; };
-		C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = what3words; path = what3words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = what3words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2365C4311338C94745C84852C6076C9 /* FBSDKCodelessParameterComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKCodelessParameterComponent.h; path = FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/Codeless/FBSDKCodelessParameterComponent.h; sourceTree = "<group>"; };
 		C2483C34D63490C5273E3AACA9708FCD /* SetBehaviorsProviding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SetBehaviorsProviding.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Model/Providers/SetBehaviorsProviding.swift; sourceTree = "<group>"; };
 		C2B7C9358C1B4F9964A1360C3716E11D /* GR@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "GR@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/GR@2x.png"; sourceTree = "<group>"; };
@@ -2923,7 +2924,7 @@
 		DDB68B6C7D3B34560773D7DCDC14FDF6 /* LayerTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTextProvider.swift; path = Sources/Private/MainThread/LayerContainers/Utility/LayerTextProvider.swift; sourceTree = "<group>"; };
 		DE13BD5B35408DC6C5B64EC80D239060 /* Pods-Howl-HowlUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Howl-HowlUITests-frameworks.sh"; sourceTree = "<group>"; };
 		DE1B12916134E0B36FB56C64117B6827 /* XK.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = XK.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/XK.png; sourceTree = "<group>"; };
-		DE277629B5C09BE727E2EA152C0F7D19 /* SKCountryPicker-CountryPickerController */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SKCountryPicker-CountryPickerController"; path = CountryPickerController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryPickerController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2F7DCFAFF74A65D685F59C12BA6C11 /* JO.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = JO.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/JO.png; sourceTree = "<group>"; };
 		DE66040A733C973D522D4216AEF45EE2 /* SKCountryPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SKCountryPicker.modulemap; sourceTree = "<group>"; };
 		DE6DA1C833BAB75A0CBABA536DBE1816 /* YT.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = YT.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/YT.png; sourceTree = "<group>"; };
@@ -2949,14 +2950,14 @@
 		E1C9E133F26611292C51C3182E01D414 /* Swift-EventBus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Swift-EventBus.modulemap"; sourceTree = "<group>"; };
 		E1EB848387DECD9E499E3F7C344E6938 /* MaskContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaskContainerLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/MaskContainerLayer.swift; sourceTree = "<group>"; };
 		E1F70DEB332C4A3E966BA3431FA0EA34 /* Pods-Howl-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Howl-resources.sh"; sourceTree = "<group>"; };
-		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26D0ED708895B516A8C3385793C797E /* Dictionary+KeyValueMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+KeyValueMap.swift"; path = "Sources/Core/Dictionary+KeyValueMap.swift"; sourceTree = "<group>"; };
 		E29853F878800F46D370833D31F1E5D4 /* FBSDKModalFormPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKModalFormPresentationController.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Device/FBSDKModalFormPresentationController.h; sourceTree = "<group>"; };
 		E2B085F5FA1158F7DCE987A355A09FBC /* FBSDKShareMessengerOpenGraphMusicTemplateContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareMessengerOpenGraphMusicTemplateContent.h; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMessengerOpenGraphMusicTemplateContent.h; sourceTree = "<group>"; };
 		E2EBE9755135EF28F3E782775DA9D74D /* AF.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AF.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AF.png; sourceTree = "<group>"; };
 		E331B2A169CAEB48696D3249C981C62D /* TK.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = TK.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/TK.png; sourceTree = "<group>"; };
 		E33A7BC2218C132B3D8BEFBA6D51CB7C /* ErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorHandler.swift; path = EventBus/ErrorHandler.swift; sourceTree = "<group>"; };
-		E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SKCountryPicker; path = SKCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E392BB1D751914D69915BFAFCD9EB952 /* Pods-HowlTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HowlTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E397BB50BD90342C6526CDBE5D8FA953 /* VU@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "VU@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/VU@2x.png"; sourceTree = "<group>"; };
 		E3AEF6799BBA0760F43E9D91E6D125F9 /* FBSDKGraphRequestBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestBody.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestBody.h; sourceTree = "<group>"; };
@@ -2991,7 +2992,7 @@
 		E8CB1A143B724DEB91DA6B9B25242ECD /* BA.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BA.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/BA.png; sourceTree = "<group>"; };
 		E96931150C484B865A8CD6C8A22046BD /* StarNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/StarNode.swift; sourceTree = "<group>"; };
 		E9786142A21B38754D2BA0D420850041 /* PL.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PL.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/PL.png; sourceTree = "<group>"; };
-		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C20B2C5A07A62D100A7C61DC9E982C /* UG@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "UG@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/UG@2x.png"; sourceTree = "<group>"; };
 		E9CA9199EB137B7BA8FC6BE679AC2989 /* FBSDKCameraEffectTextures.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCameraEffectTextures.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKCameraEffectTextures.m; sourceTree = "<group>"; };
 		E9CD300E72CA982CBAC00765A61BDADA /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
@@ -3006,7 +3007,7 @@
 		EBB0E6930089BD098E2AFE6624BE9A8D /* tickMark.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = tickMark.png; path = CountryPicker/CountryPicker/tickMark.png; sourceTree = "<group>"; };
 		EBC24B171BB007B2D17EDF9D51A115A8 /* FBSDKBridgeAPIProtocolWebV2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKBridgeAPIProtocolWebV2.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/BridgeAPI/ProtocolVersions/FBSDKBridgeAPIProtocolWebV2.m; sourceTree = "<group>"; };
 		EBDFAD50E5E6F26C14753A18D4EFE8A0 /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
-		EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSDKCoreKit; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECCF16B9975B26A0CBCD88A115A0A9A3 /* KZ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "KZ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/KZ@2x.png"; sourceTree = "<group>"; };
 		ECD3A316CAB972C1A5F056A7DE97C452 /* CarbonKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CarbonKit.modulemap; sourceTree = "<group>"; };
 		ED02159ED90725953ADC28086ECB3E5B /* FBSDKShareMessengerGenericTemplateContent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKShareMessengerGenericTemplateContent.m; path = FBSDKShareKit/FBSDKShareKit/FBSDKShareMessengerGenericTemplateContent.m; sourceTree = "<group>"; };
@@ -3018,7 +3019,7 @@
 		ED8DAA3F56B37CBB984B44C7420435DE /* MQ@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MQ@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/MQ@2x.png"; sourceTree = "<group>"; };
 		ED944F753838B3FCA530A607B09FC41F /* AF@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AF@2x.png"; path = "CountryPicker/CountryPicker/CountryPickerController.bundle/AF@2x.png"; sourceTree = "<group>"; };
 		ED954540651A54FC2EFF471F3EDC3854 /* FBSDKLogo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLogo.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKLogo.h; sourceTree = "<group>"; };
-		EDA793DBAB2EDD4ECA9BE8D077563BAE /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		EDA793DBAB2EDD4ECA9BE8D077563BAE /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		EDB0F09161D7701ACE36330CC636F139 /* KM.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = KM.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/KM.png; sourceTree = "<group>"; };
 		EDC66CECCBADF7F2D8803AF6A2527635 /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = Sources/Private/Model/Extensions/Bundle.swift; sourceTree = "<group>"; };
 		EDDDDF384F41B410BC517E08A1359D67 /* AS.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = AS.png; path = CountryPicker/CountryPicker/CountryPickerController.bundle/AS.png; sourceTree = "<group>"; };
@@ -3351,7 +3352,6 @@
 				804DEBF85693325DF2BFBBDAB98B1503 /* Maps */,
 				0520C52EF46B4F6A60044608BFF5226A /* Support Files */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -3412,7 +3412,6 @@
 				586A3A34BBCD296305D2B32C6DE6D7C5 /* Validation.swift */,
 				E2406A812D8F70920F2806B8E634DFCD /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -3823,7 +3822,6 @@
 				AE112EAC557472721D2ECE5811B443F5 /* WillDisplayProviding.swift */,
 				037E4A1065F176AB56490B151F30B5CD /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -3833,7 +3831,6 @@
 				8962BD638230C21DBA26C3005B0B5F56 /* Core */,
 				A1EB970CD12DD4398FF8E20772A68D5F /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -3844,7 +3841,6 @@
 				8F09440C29B9B3865AAFC7CC5C616555 /* Core */,
 				E237371C74E7380E9C2E9D41ACA42BEA /* Support Files */,
 			);
-			name = FBSDKCoreKit;
 			path = FBSDKCoreKit;
 			sourceTree = "<group>";
 		};
@@ -4393,7 +4389,6 @@
 				1B09C9FAB8C443DB62943A91E59B7813 /* CarbonTabSwipeSegmentedControl.m */,
 				F3A4CCD49FD088FFC6F1D2AE7828FD6D /* Support Files */,
 			);
-			name = CarbonKit;
 			path = CarbonKit;
 			sourceTree = "<group>";
 		};
@@ -4412,7 +4407,6 @@
 				49A869C4C0251E9F388CDE766BAF921C /* Resources */,
 				ADD5547B366B9D40CC22A71D419FA9A4 /* Support Files */,
 			);
-			name = SKCountryPicker;
 			path = SKCountryPicker;
 			sourceTree = "<group>";
 		};
@@ -4485,7 +4479,6 @@
 				1FB7BDDAAE1964B3AF43A1A3814B141C /* Options.swift */,
 				7DA98E123E5B9A9F0FC3C9EFA30DD70C /* Support Files */,
 			);
-			name = "Swift-EventBus";
 			path = "Swift-EventBus";
 			sourceTree = "<group>";
 		};
@@ -4529,7 +4522,6 @@
 				C31C4F9E57C6ABF92206CE91D5A3C7F0 /* Resources */,
 				7854E77A8BABCEECCB03036E3D66EA61 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -4799,7 +4791,6 @@
 				154D0BA26F1E1990728AB8802E6D2781 /* SwiftyJSON.swift */,
 				971302E78B20A2C9290162DB738E3BCE /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -4829,7 +4820,6 @@
 				2BB411C8ADE23286CE753154DD0C77FA /* Settings.swift */,
 				DDD196D9749FCA876A4008E68BE6ED8F /* Support Files */,
 			);
-			name = FacebookCore;
 			path = FacebookCore;
 			sourceTree = "<group>";
 		};
@@ -4840,7 +4830,6 @@
 				5ADC0D1436EE418E1017C02C43CE85DA /* FBSDKShareKit+Typealiases.swift */,
 				0CECFF77050793C62A9C618C6BAC00C1 /* Support Files */,
 			);
-			name = FacebookShare;
 			path = FacebookShare;
 			sourceTree = "<group>";
 		};
@@ -4924,7 +4913,6 @@
 				2036663D648ACA476C9259EF16BB8602 /* Share */,
 				FC346B27D376B5B77EF58BEB7349B900 /* Support Files */,
 			);
-			name = FBSDKShareKit;
 			path = FBSDKShareKit;
 			sourceTree = "<group>";
 		};
@@ -4987,7 +4975,6 @@
 				B77A1B5DB06DE06B052A5BFFBCAFA672 /* What3WordsV3.swift */,
 				1E682C1D42BE7B1543B6E4F099B0FA87 /* Support Files */,
 			);
-			name = what3words;
 			path = what3words;
 			sourceTree = "<group>";
 		};
@@ -5035,25 +5022,25 @@
 		D6E28B6D07CB3B6D35248234ABBF22D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				857D0B90490FD8083F79B97597566B28 /* CarbonKit */,
-				2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore */,
-				8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare */,
-				EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit */,
-				85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit */,
-				21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */,
-				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
-				7D52F158429A6FAA1F8A1927DED0DB71 /* Pods-Howl */,
-				36AC87A11E907DDF5946558A2AEEBE01 /* Pods-Howl-HowlUITests */,
-				0B4315EAAA90167C0A02EC07174082D0 /* Pods-HowlTests */,
-				E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker */,
-				DE277629B5C09BE727E2EA152C0F7D19 /* SKCountryPicker-CountryPickerController */,
-				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */,
-				4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift-EventBus */,
-				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */,
-				1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi */,
-				C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				857D0B90490FD8083F79B97597566B28 /* CarbonKit.framework */,
+				2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore.framework */,
+				8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare.framework */,
+				EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit.framework */,
+				85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit.framework */,
+				21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMapsResources.bundle */,
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				7D52F158429A6FAA1F8A1927DED0DB71 /* Pods_Howl.framework */,
+				36AC87A11E907DDF5946558A2AEEBE01 /* Pods_Howl_HowlUITests.framework */,
+				0B4315EAAA90167C0A02EC07174082D0 /* Pods_HowlTests.framework */,
+				E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker.framework */,
+				DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */,
+				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */,
+				4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift_EventBus.framework */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
+				1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi.framework */,
+				C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -5169,7 +5156,6 @@
 				AAF972599709256E41FC7B7D12657B0C /* What3WordsV3.swift */,
 				9257DF735796A8B362863C95B5E20CFA /* Support Files */,
 			);
-			name = W3WSwiftApi;
 			path = W3WSwiftApi;
 			sourceTree = "<group>";
 		};
@@ -5553,7 +5539,7 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0F483A4907CD54C03C0B1542A56ACDD4 /* Pods-Howl-HowlUITests */ = {
@@ -5586,7 +5572,7 @@
 			);
 			name = "Pods-Howl-HowlUITests";
 			productName = Pods_Howl_HowlUITests;
-			productReference = 36AC87A11E907DDF5946558A2AEEBE01 /* Pods-Howl-HowlUITests */;
+			productReference = 36AC87A11E907DDF5946558A2AEEBE01 /* Pods_Howl_HowlUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */ = {
@@ -5604,7 +5590,7 @@
 			);
 			name = SVProgressHUD;
 			productName = SVProgressHUD;
-			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */;
+			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		28907903AF6DD0AD321D92CD660E7E23 /* FBSDKCoreKit */ = {
@@ -5622,7 +5608,7 @@
 			);
 			name = FBSDKCoreKit;
 			productName = FBSDKCoreKit;
-			productReference = EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit */;
+			productReference = EC8F4D0BE3B0C192EBA4A93F8887D89F /* FBSDKCoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		290D7B2F80A1721A35508C1739C47F56 /* FacebookCore */ = {
@@ -5641,7 +5627,7 @@
 			);
 			name = FacebookCore;
 			productName = FacebookCore;
-			productReference = 2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore */;
+			productReference = 2841AEF52E29FA3509917881FAAF0B39 /* FacebookCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		34DEBE35159561A5F3F61B9A84037C60 /* Pods-HowlTests */ = {
@@ -5660,7 +5646,7 @@
 			);
 			name = "Pods-HowlTests";
 			productName = Pods_HowlTests;
-			productReference = 0B4315EAAA90167C0A02EC07174082D0 /* Pods-HowlTests */;
+			productReference = 0B4315EAAA90167C0A02EC07174082D0 /* Pods_HowlTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		56F4191D8CB8B4E6B4E5E4FA1A9F0F46 /* FBSDKShareKit */ = {
@@ -5679,7 +5665,7 @@
 			);
 			name = FBSDKShareKit;
 			productName = FBSDKShareKit;
-			productReference = 85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit */;
+			productReference = 85128AF76199890A6DD56FE81089D883 /* FBSDKShareKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		77E7BFE32BE343CA0C9B41F66F94ACAD /* Swift-EventBus */ = {
@@ -5697,7 +5683,7 @@
 			);
 			name = "Swift-EventBus";
 			productName = Swift_EventBus;
-			productReference = 4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift-EventBus */;
+			productReference = 4DDA2322A3C1A6A9267A4683C5D398B8 /* Swift_EventBus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7B026DDDF280F148DD87281679B51154 /* GoogleMaps-GoogleMapsResources */ = {
@@ -5714,7 +5700,7 @@
 			);
 			name = "GoogleMaps-GoogleMapsResources";
 			productName = GoogleMapsResources;
-			productReference = 21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMaps-GoogleMapsResources */;
+			productReference = 21BC9DE5EE18F27517C52ABD3FBF38ED /* GoogleMapsResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		83B12C45254E805A37CBD28F01955E3E /* W3WSwiftApi */ = {
@@ -5732,7 +5718,7 @@
 			);
 			name = W3WSwiftApi;
 			productName = W3WSwiftApi;
-			productReference = 1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi */;
+			productReference = 1FC25CC2A1E0CA0454B7FB407124A487 /* W3WSwiftApi.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		945D6F094A44302C9A9DB64E40269790 /* Pods-Howl */ = {
@@ -5765,7 +5751,7 @@
 			);
 			name = "Pods-Howl";
 			productName = Pods_Howl;
-			productReference = 7D52F158429A6FAA1F8A1927DED0DB71 /* Pods-Howl */;
+			productReference = 7D52F158429A6FAA1F8A1927DED0DB71 /* Pods_Howl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AD5DDE18FD5EB97540CD21988269989D /* SKCountryPicker-CountryPickerController */ = {
@@ -5782,7 +5768,7 @@
 			);
 			name = "SKCountryPicker-CountryPickerController";
 			productName = CountryPickerController;
-			productReference = DE277629B5C09BE727E2EA152C0F7D19 /* SKCountryPicker-CountryPickerController */;
+			productReference = DE277629B5C09BE727E2EA152C0F7D19 /* CountryPickerController.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		AF9228424A074D42F13FABA26E972B57 /* CarbonKit */ = {
@@ -5800,7 +5786,7 @@
 			);
 			name = CarbonKit;
 			productName = CarbonKit;
-			productReference = 857D0B90490FD8083F79B97597566B28 /* CarbonKit */;
+			productReference = 857D0B90490FD8083F79B97597566B28 /* CarbonKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
@@ -5818,7 +5804,7 @@
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
-			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
+			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CA09A2FD7A98221701B5DA2209B6EC97 /* FacebookShare */ = {
@@ -5839,7 +5825,7 @@
 			);
 			name = FacebookShare;
 			productName = FacebookShare;
-			productReference = 8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare */;
+			productReference = 8FA85C691FE86D8C0503CEC8E3285F8D /* FacebookShare.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CD6AE62B70B78355A3257C4DC46F7A3E /* SKCountryPicker */ = {
@@ -5858,7 +5844,7 @@
 			);
 			name = SKCountryPicker;
 			productName = SKCountryPicker;
-			productReference = E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker */;
+			productReference = E35D40CE0FDD4C4651AABDFD4367BC74 /* SKCountryPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
@@ -5876,7 +5862,7 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */;
+			productReference = E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E7C0DCD62FBFE89B7A5FC1F7B1F4EBDB /* what3words */ = {
@@ -5894,7 +5880,7 @@
 			);
 			name = what3words;
 			productName = what3words;
-			productReference = C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words */;
+			productReference = C20F036CC1BFE3FE1E2B4DB664C408D0 /* what3words.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
@@ -5912,7 +5898,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -6584,7 +6570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC53BE298517AB4A108D086E53470664 /* SKCountryPicker-CountryPickerController in Resources */,
+				AC53BE298517AB4A108D086E53470664 /* CountryPickerController.bundle in Resources */,
 				9CC3A6555509B70940B87808BD0DB10A /* tickMark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7610,7 +7596,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FacebookCore/FacebookCore-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FacebookCore/FacebookCore-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7644,7 +7630,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/what3words/what3words-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/what3words/what3words-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7680,7 +7666,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7715,7 +7701,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CarbonKit/CarbonKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CarbonKit/CarbonKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7751,7 +7737,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Howl/Pods-Howl-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7787,7 +7773,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FacebookShare/FacebookShare-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FacebookShare/FacebookShare-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7821,7 +7807,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKCoreKit/FBSDKCoreKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSDKCoreKit/FBSDKCoreKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7857,7 +7843,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SKCountryPicker/SKCountryPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/SKCountryPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7884,7 +7870,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -7903,7 +7889,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SKCountryPicker";
 				IBSC_MODULE = SKCountryPicker;
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = CountryPickerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -7986,7 +7972,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
 				IBSC_MODULE = GoogleMaps;
 				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = GoogleMapsResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -8011,7 +7997,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/W3WSwiftApi/W3WSwiftApi-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/W3WSwiftApi/W3WSwiftApi-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8047,7 +8033,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/W3WSwiftApi/W3WSwiftApi-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/W3WSwiftApi/W3WSwiftApi-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8109,7 +8095,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8127,7 +8113,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SKCountryPicker";
 				IBSC_MODULE = SKCountryPicker;
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/ResourceBundle-CountryPickerController-SKCountryPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = CountryPickerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -8151,7 +8137,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CarbonKit/CarbonKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CarbonKit/CarbonKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8185,7 +8171,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKShareKit/FBSDKShareKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSDKShareKit/FBSDKShareKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8212,7 +8198,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleMaps";
 				IBSC_MODULE = GoogleMaps;
 				INFOPLIST_FILE = "Target Support Files/GoogleMaps/ResourceBundle-GoogleMapsResources-GoogleMaps-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = GoogleMapsResources;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -8237,7 +8223,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-HowlTests/Pods-HowlTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8335,7 +8321,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKShareKit/FBSDKShareKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSDKShareKit/FBSDKShareKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8371,7 +8357,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8407,7 +8393,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Swift-EventBus/Swift-EventBus-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Swift-EventBus/Swift-EventBus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8441,7 +8427,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Swift-EventBus/Swift-EventBus-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Swift-EventBus/Swift-EventBus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8477,7 +8463,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8511,7 +8497,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8547,7 +8533,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SKCountryPicker/SKCountryPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SKCountryPicker/SKCountryPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8582,7 +8568,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8617,7 +8603,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Howl-HowlUITests/Pods-Howl-HowlUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8654,7 +8640,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FBSDKCoreKit/FBSDKCoreKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FBSDKCoreKit/FBSDKCoreKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8688,7 +8674,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8758,7 +8744,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Howl/Pods-Howl-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8795,7 +8781,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FacebookShare/FacebookShare-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FacebookShare/FacebookShare-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8830,7 +8816,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FacebookCore/FacebookCore-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FacebookCore/FacebookCore-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8866,7 +8852,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-HowlTests/Pods-HowlTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8904,7 +8890,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8938,7 +8924,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/what3words/what3words-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/what3words/what3words-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -8973,7 +8959,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -9009,7 +8995,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

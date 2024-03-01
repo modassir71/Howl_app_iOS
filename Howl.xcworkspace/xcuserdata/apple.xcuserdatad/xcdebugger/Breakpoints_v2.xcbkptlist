@@ -126,7 +126,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "509"
             endingLineNumber = "509"
-            landmarkName = "sendWalkIDToEmergencyContact()"
+            landmarkName = "startWalk(indexOfEmergencyContact:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -174,7 +174,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "508"
             endingLineNumber = "508"
-            landmarkName = "sendWalkIDToEmergencyContact()"
+            landmarkName = "startWalk(indexOfEmergencyContact:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1611,7 +1611,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "502"
             endingLineNumber = "502"
-            landmarkName = "sendWalkIDToEmergencyContact()"
+            landmarkName = "sliderDidFinishSliding(_:at:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1908,7 +1908,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
             endingLineNumber = "372"
-            landmarkName = "sendNotification(to:)"
+            landmarkName = "sendNotification(to:for:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -1986,7 +1986,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "375"
             endingLineNumber = "375"
-            landmarkName = "sendNotification(to:)"
+            landmarkName = "sendNotification(to:for:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -2064,7 +2064,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "378"
             endingLineNumber = "378"
-            landmarkName = "sendNotification(to:)"
+            landmarkName = "sendNotification(to:for:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -2142,7 +2142,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
             endingLineNumber = "309"
-            landmarkName = "findUserByPhoneNumber(phoneNumber:)"
+            landmarkName = "tap3TimesBtnPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2250,7 +2250,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "312"
             endingLineNumber = "312"
-            landmarkName = "findUserByPhoneNumber(phoneNumber:)"
+            landmarkName = "tap3TimesBtnPress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
